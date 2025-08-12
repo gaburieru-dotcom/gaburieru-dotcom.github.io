@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5/3/1プログラム インタラクティブガイド - 筋力向上とトレーニング計画</title>
+    
+    <!-- SEO対策: Google Search Consoleの正しいメタタグ -->
+    <meta name="google-site-verification" content="uvV8RvuTlFAxxs4Y07ph-xPMdADIE3NP0m2RXdYGsaY" />
+    
+    <!-- SEO対策: 検索エンジンにサイトの目的を明確に伝えるためのdescriptionメタタグを更新 -->
+    <meta name="description" content="ジム・ウェンドラーの5/3/1プログラムに特化した包括的なインタラクティブガイド。1RM計算機であなただけのトレーニング計画を作成し、漸進的過負荷で筋力向上を目指しましょう。BBBやジョーカーセット、補助種目の解説、スプレッドシートの活用法、成功の秘訣、週3回トレーニングのやり方まで網羅。" />
+    
+    <!-- SEO対策: 関連キーワードを検索エンジンに伝えるためのkeywordsメタタグを更新 -->
+    <meta name="keywords" content="5/3/1, 531, 筋トレ, 筋力トレーニング, プログラム, ジム・ウェンドラー, 1RM, トレーニングマックス, サイクル計算機, ウェイトトレーニング, 漸進的過負荷, BIG3, スクワット, ベンチプレス, デッドリフト, OHP, アシスタンスワーク, 筋力向上, フィットネス, トレーニング計画, 531プログラム bbb, 531プログラム ジョーカーセット, 531プログラム 補助種目, 531プログラム スプレッドシート, 531プログラム 失敗, 531プログラム やり方, 531プログラム 週3回, ジョーカーセット" />
+    
+    <!-- Google AdSenseアカウント -->
+    <!-- このメタタグは通常不要です。AdSenseスクリプトがアカウントを紐付けます。 -->
+    <meta name="google-adsense-account" content="ca-pub-1919146669320647">
+    
+    <!-- Open Graph Protocol (SNS共有時の表示最適化) を更新 -->
+    <meta property="og:title" content="5/3/1プログラム インタラクティブガイド">
+    <meta property="og:description" content="ジム・ウェンドラーの5/3/1プログラムに特化した包括的なインタラクティブガイド。1RM計算機であなただけのトレーニング計画を作成し、漸進的過負荷で筋力向上を目指しましょう。BBBやジョーカーセット、補助種目の解説、スプレッドシートの活用法、成功の秘訣、週3回トレーニングのやり方まで網羅。" />
+    <meta property="og:image" content="https://placehold.co/1200x630/3D3834/FFFFFF?text=5/3/1+Guide"> <!-- 適切なOGP画像を配置してください -->
+    <meta property="og:url" content="https://yourwebsite.com/531-guide"> <!-- 実際のページのURLに置き換えてください -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Twitter Cards (Twitter共有時の表示最適化) を更新 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle"> <!-- あなたのTwitterアカウントがあれば設定 -->
+    <meta name="twitter:creator" content="@yourtwitterhandle"> <!-- あなたのTwitterアカウントがあれば設定 -->
+    <meta name="twitter:title" content="5/3/1プログラム インタラクティブガイド">
+    <meta name="twitter:description" content="ジム・ウェンドラーの5/3/1プログラムに特化した包括的なインタラクティブガイド。1RM計算機であなただけのトレーニング計画を作成し、漸進的過負荷で筋力向上を目指しましょう。BBBやジョーカーセット、補助種目の解説、スプレッドシートの活用法、成功の秘訣、週3回トレーニングのやり方まで網羅。" />
+    <meta name="twitter:image" content="https://placehold.co/1200x675/3D3834/FFFFFF?text=5/3/1+Guide"> <!-- 適切なTwitterカード画像を配置してください -->
+
+    <!-- ロボットクローラーへの指示 -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- html2canvas CDN (スクリーンショット機能用) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <!-- Google Fonts: Noto Sans JP (日本語フォント) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Google AdSense スクリプト -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1919146669320647"
+      crossorigin="anonymous"></script>
+    
+    <style>
+        /* 日本語フォントの適用 */
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        /* チャートコンテナのレスポンシブスタイル */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        /* タブのアクティブ/非アクティブ状態のスタイル */
+        .tab-active {
+            border-color: #374151; /* stone-700 */
+            color: #111827; /* stone-900 */
+            background-color: #f3f4f6; /* stone-100 */
+        }
+        .tab-inactive {
+            border-color: transparent;
+            color: #6b7280; /* stone-500 */
+        }
+        /* フェードインアニメーション */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* ローディングスピナーのスタイル */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #333;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Schema.org 構造化データ (JSON-LD) を更新 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "5/3/1プログラム インタラクティブガイド",
+      "description": "ジム・ウェンドラーの5/3/1プログラムに特化した包括的なインタラクティブガイド。1RM計算機であなただけのトレーニング計画を作成し、漸進的過負荷で筋力向上を目指しましょう。BBBやジョーカーセット、補助種目の解説、スプレッドシートの活用法、成功の秘訣、週3回トレーニングのやり方まで網羅。",
+      "url": "https://yourwebsite.com/531-guide",
+      "image": "https://placehold.co/1200x630/3D3834/FFFFFF?text=5/3/1+Guide",
+      "publisher": {
+        "@type": "Organization",
+        "name": "5/3/1 Interactive Guide",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://placehold.co/40x40/3D3834/FFFFFF?text=531"
+        }
+      },
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "5/3/1トレーニング計画の作成方法",
+        "description": "ジム・ウェンドラーの5/3/1プログラムに基づき、あなたの1RMからパーソナライズされたトレーニング計画を計算します。BBB、ジョーカーセット、補助種目の選択やスプレッドシートでの管理方法、効果的な週3回トレーニングのやり方について解説します。",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "1RMの入力",
+            "text": "スクワット、ベンチプレス、デッドリフト、オーバーヘッドプレスの各1RM（1回最大挙上重量）を、kgまたはlbで入力します。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "トレーニングマックスの計算",
+            "text": "入力された1RMの90%をトレーニングマックス(TM)として自動的に計算します。このTMが、ワークセットの基準重量となります。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "サイクル計画の確認",
+            "text": "計算されたTMに基づき、4週間のトレーニングサイクル（Week 1: 5s週, Week 2: 3s週, Week 3: 5/3/1週, Week 4: デロード週）の各セットの重量とレップ数が表示されます。BBBやジョーカーセット、補助種目の選択肢も考慮し、効果的な計画を確認しましょう。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "アシスタンスワークの選択",
+            "text": "メインリフトを補完するためのアシスタンスワーク（BBB, Triumvirate, ジョーカーセットなど）について理解し、あなたの目標に合わせて選択します。補助種目の選び方も重要です。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "トレーニングの実行と進捗の追跡",
+            "text": "計画に従ってトレーニングを実行し、各サイクルの終わりにTMを更新して、着実な筋力向上を目指します。スプレッドシートなどを用いて進捗を記録し、失敗を避け、長期的な成長を続けましょう。週3回トレーニングなど、頻度に応じた調整も可能です。"
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- ヘッダーのタイトルに画像を追加 -->
+            <h1 class="text-xl md:text-2xl font-bold text-stone-900 flex items-center">
+                <!-- 画像サイズをh-10 w-10 (40x40px) に変更 -->
+                <!-- srcを相対パス（images/header_logo.png）に変更。onerrorでフォールバック画像を設定 -->
+                <img src="images/header_logo.png" onerror="this.onerror=null;this.src='https://placehold.co/40x40/3D3834/FFFFFF?text=531';" alt="5/3/1プログラムのロゴ。バーベルと数字の531がデザインされている。" class="h-10 w-10 mr-2 rounded-full">
+                5/3/1 Interactive Guide
+            </h1>
+            <div class="hidden md:flex space-x-6">
+                <a href="#overview" class="text-stone-600 hover:text-stone-900 transition">概要</a>
+                <a href="#how-it-works" class="text-stone-600 hover:text-stone-900 transition">仕組み</a>
+                <a href="#calculator" class="text-stone-600 hover:text-stone-900 transition">サイクル計算機</a>
+                <a href="#assistance" class="text-stone-600 hover:text-stone-900 transition">アシスタンス</a>
+                <a href="#supplements" class="text-stone-600 hover:text-stone-900 transition">アイテム紹介</a>
+                <a href="#faq" class="text-stone-600 hover:text-stone-900 transition">FAQ</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-stone-400" aria-label="モバイルメニューを開く">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-white">
+            <a href="#overview" class="block text-stone-600 hover:text-stone-900 transition py-1">概要</a>
+            <a href="#how-it-works" class="block text-stone-600 hover:text-stone-900 transition py-1">仕組み</a>
+            <a href="#calculator" class="block text-stone-600 hover:text-stone-900 transition py-1">サイクル計算機</a>
+            <a href="#assistance" class="block text-stone-600 hover:text-stone-900 transition py-1">アシスタンス</a>
+            <a href="#supplements" class="block text-stone-600 hover:text-stone-900 transition py-1">アイテム紹介</a>
+            <a href="#faq" class="block text-stone-600 hover:text-stone-900 transition py-1">FAQ</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+
+        <section id="hero" class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-stone-900">ジム・ウェンドラーの5/3/1プログラムへようこそ</h2>
+            <p class="max-w-3xl mx-auto text-lg text-stone-600">
+                ジム・ウェンドラーによって考案された、シンプルかつ効果的な筋力向上プログラム。このインタラクティブガイドで5/3/1の全てを理解し、あなた自身のパーソナライズされたトレーニング計画を立て、着実な筋力成長を実現しましょう。
+            </p>
+        </section>
+
+        <section id="overview" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-10">プログラム概要：5/3/1の核心</h3>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-3">核となる哲学：漸進的過負荷と長期的な成長</h4>
+                    <p class="mb-4 text-stone-700">5/3/1は、単なるトレーニングルーティンではなく、「漸進的過負荷（Progressive Overload）」の原則に基づいた哲学です。これは、焦らず、軽い重量から始め、時間をかけて着実に筋力を向上させることを目指すアプローチです。この哲学により、怪我のリスクを最小限に抑え、オーバートレーニングや燃え尽き症候群を防ぎながら、長期的な視点で安定した筋力成長を可能にします。</p>
+                    <div class="space-y-3">
+                        <div class="flex items-start p-3 bg-white rounded-lg shadow-sm">
+                            <span class="text-xl mr-3">🚀</span>
+                            <div><strong class="text-stone-800">着実な進歩:</strong> 短期的な最大挙上重量の追求よりも、数ヶ月、数年単位での長期的な筋力成長と安定性を重視します。</div>
+                        </div>
+                        <div class="flex items-start p-3 bg-white rounded-lg shadow-sm">
+                            <span class="text-xl mr-3">🛡️</span>
+                            <div><strong class="text-stone-800">安全性とフォーム重視:</strong> 常にサブマキシマル（最大未満の）重量でトレーニングを開始するため、正しいフォームの習得と維持に集中でき、怪我のリスクを大幅に軽減します。</div>
+                        </div>
+                            <div class="flex items-start p-3 bg-white rounded-lg shadow-sm">
+                            <span class="text-xl mr-3">💪</span>
+                            <div><strong class="text-stone-800">シンプルさと適用性:</strong> 複雑な計算や頻繁な変更は不要です。明確なルールと構造により、初心者から上級者まで、誰でも迷わずトレーニングを継続できます。</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold mb-4 text-center">プログラムの基盤：４つの主要リフト</h4>
+                    <p class="text-center text-stone-700 mb-6">5/3/1プログラムは、全身の主要な筋肉群を効率的に鍛え、基礎的な筋力を向上させるために、以下の4つの複合関節運動（BIG3とOHP）を中心に構成されます。これらのリフトは、筋力と筋肉量の両方を高める上で非常に効果的です。</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                            <img src="images/squat.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A8A29A/FFFFFF?text=Squat';" alt="バーベルを背負ってスクワットを行う男性。下半身と体幹の強化に効果的な全身運動。" class="mx-auto mb-2 rounded-md w-full h-auto max-w-[100px]">
+                            <h5 class="text-lg font-bold">スクワット</h5>
+                            <p class="text-xs text-stone-600 mt-1">下半身全体と体幹を鍛える「キング・オブ・エクササイズ」。</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                             <img src="images/bench_press.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A8A29A/FFFFFF?text=Bench+Press';" alt="ベンチに仰向けになり、バーベルを胸まで下ろして押し上げる男性。胸、肩、上腕三頭筋を鍛える。" class="mx-auto mb-2 rounded-md w-full h-auto max-w-[100px]">
+                            <h5 class="text-lg font-bold">ベンチプレス</h5>
+                            <p class="text-xs text-stone-600 mt-1">上半身のプッシュ（押す）動作の基本。胸、肩、三頭筋を強化。</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                             <img src="images/deadlift.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A8A29A/FFFFFF?text=Deadlift';" alt="床に置かれたバーベルを持ち上げる男性。背中、脚、臀部、握力など全身の筋力を動員する。" class="mx-auto mb-2 rounded-md w-full h-auto max-w-[100px]">
+                            <h5 class="text-lg font-bold">デッドリフト</h5>
+                            <p class="text-xs text-stone-600 mt-1">全身の筋力を総動員する究極のプル（引く）動作。背中と下半身を鍛える。</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                             <img src="images/ohp.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A8A29A/FFFFFF?text=OHP';" alt="バーベルを頭上まで押し上げる男性。肩と上腕三頭筋を主に鍛える。" class="mx-auto mb-2 rounded-md w-full h-auto max-w-[100px]">
+                            <h5 class="text-lg font-bold">オーバーヘッドプレス (OHP)</h5>
+                            <p class="text-xs text-stone-600 mt-1">肩と上腕三頭筋を鍛える上半身のプッシュ動作。強靭な肩を作る。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-10">プログラムの仕組み：4週間のサイクルとトレーニングマックス</h3>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <p class="text-center text-stone-700 mb-6">5/3/1は、主要リフトごとに4週間のトレーニングサイクルで構成されます。各週で、使用する重量とレップ数が明確に定められています。これらの重量は、あなたの「トレーニングマックス (TM)」に基づいて計算されます。TMは、あなたの1回最大挙上重量 (1RM) の90%に設定され、実際の1RMよりも低く設定することで、オーバートレーニングを防ぎ、長期的な進歩を促します。</p>
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="flex -mb-px" id="cycle-tabs">
+                        <button data-week="1" class="cycle-tab tab-active text-center py-4 px-1 border-b-2 font-medium text-sm flex-1">Week 1: 5s週</button>
+                        <button data-week="2" class="cycle-tab tab-inactive text-center py-4 px-1 border-b-2 font-medium text-sm flex-1">Week 2: 3s週</button>
+                        <button data-week="3" class="cycle-tab tab-inactive text-center py-4 px-1 border-b-2 font-medium text-sm flex-1">Week 3: 5/3/1週</button>
+                        <button data-week="4" class="cycle-tab tab-inactive text-center py-4 px-1 border-b-2 font-1">Week 4: デロード</button>
+                    </nav>
+                </div>
+                <div id="cycle-content" class="fade-in">
+                    <!-- JavaScriptによってコンテンツがここに挿入されます -->
+                </div>
+            </div>
+        </section>
+
+        <section id="calculator" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-2">サイクル計算機：あなただけのトレーニング計画を作成</h3>
+            <p class="text-center text-stone-600 mb-10">あなたの現在の1RM（1回最大挙上重量）を入力するだけで、ジム・ウェンドラーの5/3/1プログラムに基づいたパーソナライズされた4週間のトレーニングサイクル計画を瞬時に生成します。単位をkgまたはlbで選択し、各リフトの1RMを入力して「計画を計算する」ボタンをクリックしてください。</p>
+            
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg h-fit">
+                    <div class="flex justify-between items-center mb-4">
+                        <h4 class="text-xl font-semibold">1RMを入力</h4>
+                        <div class="flex items-center space-x-2 bg-stone-100 p-1 rounded-md">
+                            <button id="unit-kg" class="px-3 py-1 text-sm rounded-md bg-stone-800 text-white" aria-pressed="true">kg</button>
+                            <button id="unit-lb" class="px-3 py-1 text-sm rounded-md" aria-pressed="false">lb</button>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="squat-1rm" class="block text-sm font-medium text-stone-700">スクワット 1RM</label>
+                            <input type="number" id="squat-1rm" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-stone-500 focus:ring-stone-500" placeholder="例: 100">
+                        </div>
+                        <div>
+                            <label for="bench-1rm" class="block text-sm font-medium text-stone-700">ベンチプレス 1RM</label>
+                            <input type="number" id="bench-1rm" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-stone-500 focus:ring-stone-500" placeholder="例: 80">
+                        </div>
+                        <div>
+                            <label for="deadlift-1rm" class="block text-sm font-medium text-stone-700">デッドリフト 1RM</label>
+                            <input type="number" id="deadlift-1rm" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-stone-500 focus:ring-stone-500" placeholder="例: 120">
+                        </div>
+                        <div>
+                            <label for="ohp-1rm" class="block text-sm font-medium text-stone-700">オーバーヘッドプレス 1RM</label>
+                            <input type="number" id="ohp-1rm" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-stone-500 focus:ring-stone-500" placeholder="例: 50">
+                        </div>
+                        <!-- BBBアシスタンスの割合入力フィールドを追加 -->
+                        <div class="pt-4 border-t border-gray-200">
+                            <label for="bbb-percentage" class="block text-sm font-medium text-stone-700">BBBアシスタンス (%)</label>
+                            <input type="number" id="bbb-percentage" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-stone-500 focus:ring-stone-500" value="60" placeholder="60">
+                            <p class="text-xs text-stone-500 mt-1">Boring But Big (BBB) のTMに対する割合（通常50-60%）。空欄の場合は60%で計算されます。</p>
+                        </div>
+                    </div>
+                    <button id="calculate-btn" class="mt-6 w-full bg-stone-800 text-white font-bold py-3 px-4 rounded-lg hover:bg-stone-700 transition duration-300">計画を計算する</button>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <div id="result-output" class="bg-white p-6 rounded-lg shadow-lg min-h-full hidden">
+                        <h4 class="text-xl font-semibold mb-4">あなたのトレーニング計画</h4>
+                        <div class="border-b border-gray-200 mb-4">
+                            <nav class="flex -mb-px" id="lift-tabs">
+                                <button data-lift="squat" class="lift-tab tab-active text-center py-3 px-1 border-b-2 font-medium text-sm flex-1">スクワット</button>
+                                <button data-lift="bench" class="lift-tab tab-inactive text-center py-3 px-1 border-b-2 font-medium text-sm flex-1">ベンチプレス</button>
+                                <button data-lift="deadlift" class="lift-tab tab-inactive text-center py-3 px-1 border-b-2 font-medium text-sm flex-1">デッドリフト</button>
+                                <button data-lift="ohp" class="lift-tab tab-inactive text-center py-3 px-1 border-b-2 font-1">OHP</button>
+                            </nav>
+                        </div>
+                        <div id="lift-tm-display" class="mb-4 text-center p-3 bg-stone-100 rounded-md"></div>
+                        <div id="lift-plan-table" class="fade-in"></div>
+
+                        <!-- BBBアシスタンスの表示セクションを追加 -->
+                        <div id="bbb-plan-section" class="mt-8 pt-4 border-t border-gray-200 hidden">
+                            <h5 class="text-lg font-semibold mb-3">Boring But Big (BBB) アシスタンス</h5>
+                            <div id="bbb-plan-details" class="p-3 bg-stone-100 rounded-md"></div>
+                        </div>
+                    </div>
+                    <div id="result-placeholder" class="bg-white p-6 rounded-lg shadow-lg min-h-full flex items-center justify-center">
+                        <p class="text-stone-500 text-center">左側にあなたの1RMを入力して、<br>パーソナライズされたトレーニング計画を生成してください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="supplements" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-10">サプリメント & ギア：記録更新をサポートするアイテム</h3>
+            <p class="max-w-3xl mx-auto text-center text-stone-700 mb-8">トレーニング効果を最大限に高め、怪我のリスクを減らすために、サプリメントとトレーニングギアの活用は不可欠です。以下に、パワーリフティングのパフォーマンス向上に役立つアイテムとその効果をまとめました。</p>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="flex -mb-px" id="supplements-tabs">
+                        <button data-tab="supplements" class="supplements-tab tab-active text-center py-4 px-1 border-b-2 font-medium text-sm flex-1">サプリメント</button>
+                        <button data-tab="gear" class="supplements-tab tab-inactive text-center py-4 px-1 border-b-2 font-medium text-sm flex-1">トレーニングギア</button>
+                    </nav>
+                </div>
+                <div id="supplements-content" class="fade-in">
+                    <!-- JavaScriptによってコンテンツがここに挿入されます -->
+                </div>
+            </div>
+        </section>
+
+        <section id="progress-example" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-2">期待できる成果：着実な成長の軌跡</h3>
+            <p class="text-center text-stone-600 mb-10">5/3/1プログラムは、短期的な飛躍よりも、長期にわたる着実な筋力向上を重視します。以下は、ある仮想ユーザーが4.5ヶ月間（約4サイクル）5/3/1プログラムを継続した際のトレーニングマックス(TM)の成長事例です。このグラフは、プログラムの有効性と、継続することの重要性を示しています。</p>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="chart-container">
+                    <canvas id="progressChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="assistance" class="mb-16 scroll-mt-20">
+            <h3 class="text-3xl font-bold text-center mb-10">アシスタンスワーク：主要リフトを補完し、弱点を克服</h3>
+            <p class="max-w-3xl mx-auto text-center text-stone-700 mb-8">5/3/1プログラムでは、主要リフトの後に「アシスタンスワーク」と呼ばれる補助的なエクササイズを行います。これにより、主要リフトで鍛えきれない筋肉を強化したり、特定の弱点を克服したり、筋肥大を促進したりすることができます。自分の目標や回復能力に合わせて、最適なアシスタンスワークを選択しましょう。</p>
+            <div id="assistance-accordion" class="max-w-3xl mx-auto space-y-3">
+                <!-- JavaScriptによってコンテンツがここに挿入されます -->
+            </div>
+        </section>
+        
+        <section id="faq" class="scroll-mt-20">
+             <h3 class="text-3xl font-bold text-center mb-10">FAQ & 実践のヒント：5/3/1を最大限に活用するために</h3>
+             <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <h4 class="text-xl font-semibold mb-3">1RMが分からない場合はどうすればいいですか？</h4>
+                     <p class="text-stone-700">正確な1RMが不明な場合でも心配ありません。過去のトレーニング記録から推定するか、あるいは明らかに扱える軽い重量（例えば、10回程度楽に挙げられる重量）から始めてください。5/3/1の最も重要な原則は「軽い重量から始める」ことです。数週間トレーニングを続ければ、自然とあなたの真の1RMが明らかになってきます。</p>
+                     <!-- ここにアプリの宣伝を追加 -->
+                     <div class="mt-4 p-3 bg-stone-100 rounded-md text-sm text-stone-700">
+                         <p class="font-semibold mb-2">💡 1RMの計算には、私の開発したアプリも役立ちます！</p>
+                         <p>「Max RM換算機 for BIG3」は、あなたの挙上重量とレップ数から、簡単に1RMを計算できるツールです。正確なトレーニングマックス設定に役立ちます。</p>
+                         <a href="https://apps.apple.com/jp/app/max-rm%E6%8F%9B%E7%AE%97%E6%A9%9F-for-big3/id6569255164" target="_blank" rel="noopener noreferrer" class="inline-block mt-2 bg-stone-800 text-white px-4 py-2 rounded-lg text-xs font-medium hover:bg-stone-700 transition duration-300">
+                             App Storeでチェックする
+                         </a>
+                     </div>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <h4 class="text-xl font-semibold mb-3">プログラムのカスタマイズは可能ですか？</h4>
+                     <p class="text-stone-700">5/3/1の核となる原則（4週サイクル、トレーニングマックスの90%ルール、デロード週の実施）は厳守することが推奨されます。しかし、アシスタンスワークに関しては、あなたの目標（筋肥大、筋力特化、コンディショニングなど）や回復能力に合わせて柔軟に選択し、調整することができます。様々なテンプレートを試して、自分に最適な組み合わせを見つけましょう。</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <h4 class="text-xl font-semibold mb-3">食事と回復の重要性について教えてください。</h4>
+                     <p class="text-stone-700">トレーニング効果を最大化するためには、十分な栄養摂取（特に筋肉の成長と修復に不可欠なタンパク質）と質の高い睡眠が不可欠です。トレーニングと同じくらい、回復もトレーニングの一部です。デロード週は、身体と神経系の疲労を回復させるための非常に重要な期間なので、決してスキップせず、積極的に回復に努めましょう。</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <h4 class="text-xl font-semibold mb-3">トレーニングの頻度はどれくらいが適切ですか？</h4>
+                     <p class="text-stone-700">一般的には週に3〜4日が推奨されます。主要リフト4種目を1週間（または次のサイクルが始まるまで）で終えるようにスケジュールを組みます。例えば、月曜日にスクワット、水曜日にベンチプレス、金曜日にデッドリフト、土曜日にOHPといった具合です。各トレーニング日の間に適切な休息日を設けることが、回復とパフォーマンス向上に繋がります。</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <h4 class="text-xl font-semibold mb-3">いつトレーニングマックスを増やすべきですか？</h4>
+                     <p class="text-stone-700">通常、1サイクル（4週間）が終了し、デロード週を終えた後にトレーニングマックスを更新します。ジム・ウェンドラーは、上半身のリフトには2.5kg、下半身のリフトには5kgずつ増やすことを推奨しています。これにより、無理なく長期的に筋力を伸ばすことができます。焦らず、着実な進歩を重視しましょう。</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <h4 class="text-xl font-semibold mb-3">AMRAPセット（+セット）の目的は何ですか？</h4>
+                     <p class="text-stone-700">各週の最終セットに表示される「+」は、"As Many Reps As Possible" (AMRAP) を意味します。これは、設定された重量で可能な限り多くのレップを行うことを目的としています。AMRAPセットは、その日の調子を確認し、トレーニングマックスの更新時期を判断するための指標となります。ただし、フォームが崩れるほど無理をするのは避け、安全を最優先してください。</p>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-stone-800 text-white mt-16">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p>このインタラクティブガイドは、ジム・ウェンドラー氏の5/3/1プログラムの原則に基づいています。</p>
+            <p class="text-sm text-stone-400 mt-2">常に安全を第一に、正しいフォームでトレーニングを行ってください。</p>
+            <p class="text-sm text-stone-400 mt-1">&copy; 2024 5/3/1 Interactive Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // サプリメントとギアのデータ
+            const supplementData = [
+                {
+                    title: "クレアチン",
+                    description: "瞬発的なパワーをサポートし、高重量トレーニングのパフォーマンス向上に役立ちます。",
+                    link: "https://www.amazon.co.jp/s?k=クレアチン&tag=mugi0fc9-22"
+                },
+                {
+                    title: "プロテイン",
+                    description: "トレーニングでダメージを受けた筋繊維の回復と新たな筋肉の合成を促す、最も基本的な栄養素です。",
+                    link: "https://www.amazon.co.jp/s?k=プロテイン&tag=mugi0fc9-22"
+                },
+                {
+                    title: "プレワークアウト",
+                    description: "集中力とエネルギーレベルを高め、トレーニングの質を向上させるための補助サプリメント。",
+                    link: "https://www.amazon.co.jp/s?k=プレワークアウト&tag=mugi0fc9-22"
+                },
+                {
+                    title: "BCAA/EAA",
+                    description: "トレーニング中のエネルギー源となり、筋肉の分解を防ぎます。特に空腹時のトレーニングに有効です。",
+                    link: "https://www.amazon.co.jp/s?k=bcaa+eaa&tag=mugi0fc9-22"
+                },
+                {
+                    title: "魚油 (オメガ3)",
+                    description: "筋肉の炎症を抑え、回復を早める効果が期待できます。関節の健康維持にも役立ちます。",
+                    link: "https://www.amazon.co.jp/s?k=魚油+サプリ&tag=mugi0fc9-22"
+                },
+                {
+                    title: "ビタミンD",
+                    description: "骨の健康維持に不可欠であり、テストステロンレベルや筋力向上にも関連があるとされています。",
+                    link: "https://www.amazon.co.jp/s?k=ビタミンd+サプリ&tag=mugi0fc9-22"
+                },
+                {
+                    title: "マグネシウム",
+                    description: "筋肉の収縮や神経機能に関わる重要なミネラル。不足すると、こむら返りや筋肉のけいれんの原因になることがあります。",
+                    link: "https://www.amazon.co.jp/s?k=マグネシウム+サプリ&tag=mugi0fc9-22"
+                }
+            ];
+
+            const gearData = [
+                {
+                    title: "パワーベルト",
+                    description: "腹圧を高めて体幹を安定させ、スクワットやデッドリフトでの腰への負担を軽減します。",
+                    link: "https://www.amazon.co.jp/s?k=パワーベルト&tag=mugi0fc9-22"
+                },
+                {
+                    title: "リストラップ",
+                    description: "ベンチプレスなどのプレス系種目で手首を固定し、怪我を予防し、安定性を高めます。",
+                    link: "https://www.amazon.co.jp/s?k=リストラップ&tag=mugi0fc9-22"
+                },
+                {
+                    title: "パワーグリップ",
+                    description: "握力補助に特化しており、素早く着脱できるため、高重量のデッドリフトや懸垂に最適です。",
+                    link: "https://amzn.to/45rRJMc" // 特定の商品リンク
+                },
+                {
+                    title: "ニースリーブ",
+                    description: "膝関節を温め、安定させ、怪我のリスクを低減します。スクワットなど下半身の種目で特に効果を発揮します。",
+                    link: "https://www.amazon.co.jp/s?k=ニースリーブ&tag=mugi0fc9-22"
+                },
+                {
+                    title: "ウェイトリフティングシューズ",
+                    description: "スクワットやクリーン＆ジャークなどで足元を安定させ、正しいフォームと力の発揮をサポートします。",
+                    link: "https://www.amazon.co.jp/s?k=ウェイトリフティングシューズ&tag=mugi0fc9-22"
+                },
+                {
+                    title: "チョーク (滑り止め粉)",
+                    description: "手の汗を吸収し、バーベルのグリップ力を劇的に向上させます。デッドリフトや懸垂で特に重宝します。",
+                    link: "https://www.amazon.co.jp/s?k=トレーニング+チョーク&tag=mugi0fc9-22"
+                },
+                {
+                    title: "リストストラップ",
+                    description: "デッドリフトやロウイングなど、引く動作で握力をサポートし、ターゲット部位に集中できます。パワーグリップよりもしっかり固定できます。",
+                    link: "https://www.amazon.co.jp/s?k=リストストラップ+筋トレ&tag=mugi0fc9-22"
+                }
+            ];
+
+            // サプリメント＆ギアのタブとコンテンツ表示領域の取得
+            const supplementsTabs = document.getElementById('supplements-tabs');
+            const supplementsContent = document.getElementById('supplements-content');
+
+            // 選択されたタブのコンテンツをレンダリングする関数
+            function renderSupplementsContent(tab) {
+                let items = [];
+                if (tab === 'supplements') {
+                    items = supplementData;
+                } else {
+                    items = gearData;
+                }
+                
+                supplementsContent.innerHTML = `
+                    <div class="space-y-6">
+                        ${items.map(item => `
+                            <div class="bg-stone-100 p-6 rounded-lg shadow-sm fade-in">
+                                <h5 class="text-xl font-semibold mb-2">${item.title}</h5>
+                                <p class="text-sm text-stone-600 mb-4">${item.description}</p>
+                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-stone-800 text-white text-sm font-medium py-2 px-4 rounded-lg hover:bg-stone-700 transition duration-300">
+                                    Amazonでチェック
+                                </a>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                // フェードインアニメーションをリセットして再適用
+                supplementsContent.classList.remove('fade-in');
+                void supplementsContent.offsetWidth; // リフローを強制
+                supplementsContent.classList.add('fade-in');
+            }
+
+            // サプリメント＆ギアのタブのクリックイベントリスナー
+            supplementsTabs.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (button) {
+                    supplementsTabs.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+                    button.classList.add('tab-active');
+                    button.classList.remove('tab-inactive');
+                    button.setAttribute('aria-pressed', 'true');
+                    renderSupplementsContent(button.dataset.tab);
+                }
+            });
+
+
+            // アシスタンスワークのデータ
+            const assistanceData = [
+                {
+                    title: "Boring But Big (BBB)",
+                    content: "最も人気のあるテンプレートの一つで、筋肥大と筋持久力向上に非常に効果的です。メインリフトの後、同じ種目をトレーニングマックス(TM)の50-60%の重量で、5セット10レップ行います。例えば、スクワットのメインワークアウト後に、TMの50%でスクワットを5x10行うといった形です。"
+                },
+                {
+                    title: "The Triumvirate",
+                    content: "シンプルなアプローチを好む人向けのテンプレートです。各トレーニングセッションを主要リフトを含めて3つのエクササイズに限定します。つまり、主要リフトの後にアシスタンスエクササイズを2つだけ選択し、それぞれ3〜5セット、5〜10レップ行います。例えば、スクワットの日にスクワット、レッグプレス、レッグカールといった構成です。"
+                },
+                {
+                    title: "Bodyweight",
+                    content: "すべてのアシスタンスエクササイズを自重トレーニングで行うテンプレートです。各エクササイズで合計75レップ以上を目指すことが推奨されます。（例：懸垂、腕立て伏せ、ディップス、逆立ち腕立て伏せ、腹筋運動など）。器具が限られている場合や、基本的な身体能力を高めたい場合に適しています。"
+                },
+                {
+                    title: "I'm Not Doing Jack Shit (最低限)",
+                    content: "アシスタンスワークを一切行わない選択肢です。時間が非常に限られている場合や、回復を最優先したい場合に適しています。このアプローチは、主要リフトの強度と回復に全力を注ぎたい場合に有効ですが、筋肥大や特定の弱点克服には他のテンプレートが推奨されます。"
+                },
+                {
+                    title: "First Set Last (FSL)",
+                    content: "メインリフトの最初のセットと同じ重量とレップ数で、追加のセットを行うテンプレートです。例えば、Week 1のメインリフトがTMの65%x5、75%x5、85%x5+の場合、アシスタンスとしてTMの65%で5レップを5セット行います。これは、メインリフトのボリュームを増やす効果的な方法です。"
+                },
+                {
+                    title: "Joker Sets (ジョーカーセット)",
+                    content: "メインワークアウトの後に、その日の調子が良い場合にのみ行う追加セットです。トレーニングマックス(TM)の100%以上の重量で、1〜3レップを1〜3セット行います。これは、自己ベストを更新する機会を増やし、筋力向上を加速させるためのオプションですが、疲労度を考慮し、無理のない範囲で行うことが重要です。失敗を避けるため、常にフォームを意識してください。"
+                }
+            ];
+
+            // アシスタンスワークのアコーディオンUIをレンダリングする関数
+            function renderAssistanceAccordion() {
+                const accordionContainer = document.getElementById('assistance-accordion');
+                accordionContainer.innerHTML = ''; // 既存の内容をクリア
+                assistanceData.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.classList.add('bg-white', 'rounded-lg', 'shadow-sm', 'overflow-hidden');
+                    div.innerHTML = `
+                        <button class="w-full text-left p-4 flex justify-between items-center font-semibold hover:bg-stone-100 focus:outline-none" aria-expanded="false" aria-controls="assistance-content-${index}">
+                            <span>${item.title}</span>
+                            <span class="transform transition-transform duration-300">▼</span>
+                        </button>
+                        <div id="assistance-content-${index}" class="px-4 pb-4 text-stone-700 hidden" aria-hidden="true">
+                            <p>${item.content}</p>
+                        </div>
+                    `;
+                    accordionContainer.appendChild(div);
+                });
+
+                // アコーディオンの開閉イベントリスナー
+                accordionContainer.addEventListener('click', (e) => {
+                    const button = e.target.closest('button');
+                    if (button) {
+                        const content = button.nextElementSibling; // 次の要素（コンテンツ）を取得
+                        const arrow = button.querySelector('span:last-child'); // 矢印アイコンを取得
+                        
+                        const isHidden = content.classList.contains('hidden');
+                        content.classList.toggle('hidden'); // コンテンツの表示/非表示を切り替え
+                        button.setAttribute('aria-expanded', isHidden); // aria-expandedを更新
+                        content.setAttribute('aria-hidden', !isHidden); // aria-hiddenを更新
+                        arrow.classList.toggle('rotate-180'); // 矢印を回転させる
+                    }
+                });
+            }
+
+            // サイクル構造のデータ
+            const cycleData = {
+                1: {
+                    title: "Week 1: 5s 週",
+                    description: "この週は、比較的高いレップ数で基礎的な筋力と技術を固めることに重点を置きます。重量はまだ控えめですが、セットごとに重量を増やし、最後のセットは「5+」で可能な限り多くのレップを行います。",
+                    sets: [
+                        { percent: 65, reps: "5" },
+                        { percent: 75, reps: "5" },
+                        { percent: 85, reps: "5+" }
+                    ]
+                },
+                2: {
+                    title: "Week 2: 3s 週",
+                    description: "重量を増やし、より高い強度で筋力に刺激を与えます。レップ数は減少しますが、重量は増加します。最後のセットは「3+」で、可能な限り多くのレップに挑戦し、筋力の伸びを確認します。",
+                    sets: [
+                        { percent: 70, reps: "3" },
+                        { percent: 80, reps: "3" },
+                        { percent: 90, reps: "3+" }
+                    ]
+                },
+                3: {
+                    title: "Week 3: 5/3/1 週",
+                    description: "このサイクルで最も高強度な週です。レップ数はさらに減り、重量は最大に近づきます。最後のセットは「1+」で、あなたの限界に挑戦し、レップPR(自己ベスト)の更新を目指します。このセットでのパフォーマンスが、次のサイクルのTM設定の参考になります。",
+                    sets: [
+                        { percent: 75, reps: "5" },
+                        { percent: 85, reps: "3" },
+                        { percent: 95, reps: "1+" }
+                    ]
+                },
+                4: {
+                    title: "Week 4: デロード週",
+                    description: "強度を大幅に下げ、身体と神経系を回復させます。この週は、疲労を抜き、次のサイクルへの準備期間として非常に重要です。決してスキップせず、積極的に回復に努めましょう。軽い重量でフォームを確認する良い機会でもあります。",
+                    sets: [
+                        { percent: 40, reps: "5" },
+                        { percent: 50, reps: "5" },
+                        { percent: 60, reps: "5" }
+                    ]
+                }
+            };
+            
+            // 主要リフトのIDリスト
+            const lifts = ['squat', 'bench', 'deadlift', 'ohp'];
+            // 現在の単位 (kg または lb)
+            let currentUnit = 'kg';
+            // 現在選択されているリフト
+            let currentLift = 'squat';
+            // 各リフトのトレーニングマックスを格納するオブジェクト
+            let trainingMaxes = {};
+
+            // モバイルメニューボタンの挙動を制御
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // モバイルメニュー内のリンクをクリックするとメニューを閉じる
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+
+
+            // サイクルタブとコンテンツ表示領域の取得
+            const cycleTabs = document.getElementById('cycle-tabs');
+            const cycleContent = document.getElementById('cycle-content');
+            let tm = 0; // tmをグローバルスコープで定義
+
+            // 選択された週のサイクルコンテンツをレンダリングする関数
+            function renderCycleContent(week) {
+                const data = cycleData[week];
+                cycleContent.innerHTML = `
+                    <h5 class="text-xl font-bold mb-2 text-center text-stone-800">${data.title}</h5>
+                    <p class="text-stone-600 mb-6 text-center">${data.description}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                        ${data.sets.map((set, index) => {
+                            const tmForCycleContent = trainingMaxes[currentLift];
+                            return `
+                                <div class="bg-stone-100 p-4 rounded-lg">
+                                    <p class="text-sm text-stone-500">セット ${index + 1}</p>
+                                    <p class="text-2xl font-bold text-stone-800">${(tmForCycleContent * (set.percent / 100)).toFixed(2)} ${currentUnit}</p>
+                                    <br> x ${set.reps} reps
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                    <p class="text-center text-sm text-stone-500 mt-4">最後のセットの「+」は、As Many Reps As Possible (AMRAP) を意味します。これは、設定された重量で可能な限り多くのレップを行うことを指します。</p>
+                `;
+                // フェードインアニメーションをリセットして再適用
+                cycleContent.classList.remove('fade-in');
+                void cycleContent.offsetWidth; // リフローを強制
+                cycleContent.classList.add('fade-in');
+            }
+            
+            // サイクルタブのクリックイベントリスナー
+            cycleTabs.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (button) {
+                    // 全てのタブのアクティブ状態を解除
+                    cycleTabs.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+                    // クリックされたタブをアクティブにする
+                    button.classList.add('tab-active');
+                    button.classList.remove('tab-inactive');
+                    button.setAttribute('aria-pressed', 'true');
+                    renderCycleContent(button.dataset.week); // 選択された週のコンテンツをレンダリング
+                }
+            });
+
+            // 単位切り替えボタンの取得
+            const unitKgBtn = document.getElementById('unit-kg');
+            const unitLbBtn = document.getElementById('unit-lb');
+            
+            // kgボタンクリック時の処理
+            unitKgBtn.addEventListener('click', () => {
+                if (currentUnit === 'lb') {
+                    currentUnit = 'kg';
+                    unitKgBtn.classList.add('bg-stone-800', 'text-white');
+                    unitKgBtn.setAttribute('aria-pressed', 'true');
+                    unitLbBtn.classList.remove('bg-stone-800', 'text-white');
+                    unitLbBtn.setAttribute('aria-pressed', 'false');
+                    updateInputsAndResults('lb_to_kg'); // lbからkgへ変換して更新
+                }
+            });
+
+            // lbボタンクリック時の処理
+            unitLbBtn.addEventListener('click', () => {
+                if (currentUnit === 'kg') {
+                    currentUnit = 'lb';
+                    unitLbBtn.classList.add('bg-stone-800', 'text-white');
+                    unitLbBtn.setAttribute('aria-pressed', 'true');
+                    unitKgBtn.classList.remove('bg-stone-800', 'text-white');
+                    unitKgBtn.setAttribute('aria-pressed', 'false');
+                    updateInputsAndResults('kg_to_lb'); // kgからlbへ変換して更新
+                }
+            });
+
+            // 入力値と結果を単位変換に基づいて更新する関数
+            function updateInputsAndResults(conversionType) {
+                const conversionRate = 2.20462; // 1 kg = 2.20462 lb
+                lifts.forEach(lift => {
+                    const input = document.getElementById(`${lift}-1rm`);
+                    if (input.value) {
+                       const value = parseFloat(input.value);
+                       if (conversionType === 'kg_to_lb') {
+                           input.value = (value * conversionRate).toFixed(1); // kg -> lb
+                       } else {
+                           input.value = (value / conversionRate).toFixed(1); // lb -> kg
+                       }
+                    }
+                });
+                // 計算結果が表示されている場合は再計算して表示を更新
+                if (document.getElementById('result-output').classList.contains('hidden') === false) {
+                    calculateAndDisplayPlan();
+                }
+            }
+
+
+            // 計算ボタンのイベントリスナー
+            document.getElementById('calculate-btn').addEventListener('click', calculateAndDisplayPlan);
+            
+            // トレーニング計画を計算し表示する関数
+            function calculateAndDisplayPlan() {
+                let hasInput = false;
+                lifts.forEach(lift => {
+                    const inputVal = document.getElementById(`${lift}-1rm`).value;
+                    if(inputVal && parseFloat(inputVal) > 0) hasInput = true; // 有効な入力があればフラグを立てる
+                    const oneRepMax = parseFloat(inputVal) || 0; // 入力がない場合は0
+                    trainingMaxes[lift] = oneRepMax * 0.9; // TMを計算 (1RMの90%)
+                });
+                
+                // 入力がない場合はエラーメッセージを表示して終了
+                if (!hasInput) {
+                    document.getElementById('result-output').classList.add('hidden'); // 結果表示エリアを隠す
+                    document.getElementById('result-placeholder').classList.remove('hidden'); // プレースホルダーを表示
+                    document.getElementById('result-placeholder').innerHTML = `<p class="text-red-500 text-center">少なくとも1つのリフトの1RMを0より大きい値で入力してください。</p>`;
+                    return;
+                }
+
+                document.getElementById('result-output').classList.remove('hidden'); // 結果表示エリアを表示
+                document.getElementById('result-placeholder').classList.add('hidden'); // プレースホルダーを非表示
+                document.getElementById('result-placeholder').innerHTML = `<p class="text-stone-500 text-center">左側にあなたの1RMを入力して、<br>パーソナライズされたトレーニング計画を生成してください。</p>`; // エラーメッセージをリセット
+                renderLiftPlan(currentLift); // 現在選択されているリフトの計画をレンダリング
+            }
+            
+            // リフト別タブの取得
+            const liftTabs = document.getElementById('lift-tabs');
+            // リフト別タブのクリックイベントリスナー
+            liftTabs.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (button) {
+                    currentLift = button.dataset.lift; // 選択されたリフトを更新
+                    // 全てのタブのアクティブ状態を解除
+                    liftTabs.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                        btn.setAttribute('aria-pressed', 'false');
+                    });
+                    // クリックされたタブをアクティブにする
+                    button.classList.add('tab-active');
+                    button.classList.remove('tab-inactive');
+                    button.setAttribute('aria-pressed', 'true');
+                    renderLiftPlan(currentLift); // 選択されたリフトの計画をレンダリング
+                }
+            });
+            
+            // 特定のリフトのトレーニング計画を表示する関数
+            function renderLiftPlan(lift) {
+                const tm = trainingMaxes[lift];
+                // TMが計算できない、または0以下の場合はメッセージを表示して終了
+                if (isNaN(tm) || tm <= 0) {
+                    document.getElementById('lift-tm-display').innerHTML = `<p class="text-stone-600">このリフトの1RMが入力されていないか、無効な値です。</p>`;
+                    document.getElementById('lift-plan-table').innerHTML = ''; // テーブルをクリア
+                    document.getElementById('bbb-plan-section').classList.add('hidden'); // BBBセクションも非表示にする
+                    return;
+                }
+
+                // TMの表示を更新
+                document.getElementById('lift-tm-display').innerHTML = `
+                    <p class="font-semibold text-stone-800">トレーニングマックス(TM): ${tm.toFixed(2)} ${currentUnit}</p>
+                    <p class="text-sm text-stone-500">(1RM ${ (tm / 0.9).toFixed(2)} ${currentUnit} の90%)</p>
+                `;
+                
+                // トレーニング計画テーブルをレンダリング
+                const tableContainer = document.getElementById('lift-plan-table');
+                tableContainer.innerHTML = `
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-stone-500">
+                            <thead class="text-xs text-stone-700 uppercase bg-stone-100">
+                                <tr>
+                                    <th scope="col" class="px-4 py-3">週</th>
+                                    <th scope="col" class="px-4 py-3">セット 1</th>
+                                    <th scope="col" class="px-4 py-3">セット 2</th>
+                                    <th scope="col" class="px-4 py-3">セット 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${Object.keys(cycleData).map(week => `
+                                    <tr class="bg-white border-b">
+                                        <th scope="row" class="px-4 py-4 font-medium text-stone-900 whitespace-nowrap">${cycleData[week].title.replace(':','<br>')}</th>
+                                        ${cycleData[week].sets.map(set => `
+                                            <td class="px-4 py-4">
+                                                <span class="font-bold text-base text-stone-800">${(tm * (set.percent / 100)).toFixed(2)} ${currentUnit}</span>
+                                                <br> x ${set.reps} reps
+                                            </td>
+                                        `).join('')}
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                // フェードインアニメーションをリセットして再適用
+                tableContainer.classList.remove('fade-in');
+                void tableContainer.offsetWidth; // リフローを強制
+                tableContainer.classList.add('fade-in');
+
+                // BBBアシスタンスの計算と表示
+                const bbbSection = document.getElementById('bbb-plan-section');
+                const bbbDetails = document.getElementById('bbb-plan-details');
+
+                const bbbPercentageInput = document.getElementById('bbb-percentage');
+                // 入力がない場合はデフォルトで60%を使用
+                const bbbPercentage = parseFloat(bbbPercentageInput.value) || 60; 
+
+                const bbbWeight = tm * (bbbPercentage / 100);
+
+                bbbDetails.innerHTML = `
+                    <p class="text-stone-700">
+                        メインリフト後、<strong class="text-stone-900">${bbbWeight.toFixed(2)} ${currentUnit}</strong> で
+                        <strong class="text-stone-900">5セット x 10レップ</strong> を行います。
+                        <span class="text-sm text-stone-500">（TMの${bbbPercentage}%）</span>
+                    </p>
+                `;
+                bbbSection.classList.remove('hidden'); // BBBセクションを表示
+            }
+
+            // プログレスチャートをレンダリングする関数
+            function renderProgressChart() {
+                const ctx = document.getElementById('progressChart').getContext('2d');
+                const progressData = {
+                    labels: ['スクワット', 'ベンチプレス', 'デッドリフト', 'OHP'],
+                    datasets: [
+                        {
+                            label: '開始時 TM (kg)',
+                            data: [100, 75, 112.5, 40],
+                            backgroundColor: 'rgba(120, 113, 108, 0.5)', /* stone-500 */
+                            borderColor: 'rgba(120, 113, 108, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: '4.5ヶ月後 TM (kg)',
+                            data: [125, 90, 140, 52.5],
+                            backgroundColor: 'rgba(61, 56, 52, 0.7)', /* stone-800 */
+                            borderColor: 'rgba(61, 56, 52, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                };
+                
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: progressData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false, // アスペクト比を維持しないことで、より柔軟なサイズ調整が可能に
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'トレーニングマックス (kg)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'ユーザーのトレーニングマックス(TM)成長事例',
+                                font: { size: 16 }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.y !== null) {
+                                            label += context.parsed.y + ' kg';
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // ページロード時に各セクションを初期化
+            renderAssistanceAccordion(); // アシスタンスアコーディオンの描画
+            renderCycleContent(1); // 最初の週のサイクルコンテンツを描画
+            renderProgressChart(); // プログレスチャートの描画
+            renderSupplementsContent('supplements'); // 最初のサプリメントタブを描画
+        });
+    </script>
+</body>
+</html>
