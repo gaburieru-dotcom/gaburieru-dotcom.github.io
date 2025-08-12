@@ -1,1 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インタラクティブ・プロテインガイド</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals with Soft Green Accent -->
+    <!-- Application Structure Plan: The application is designed as a user-centric guided tool. It starts with a primary question ("What's your goal?") to immediately tailor the experience. This leads to filtered recommendations, which can be explored further in a "Deep Dive" section. This progressive disclosure prevents information overload. A dedicated "Comparison Tool" with a dynamic radar chart allows for at-a-glance analysis for more advanced users. This task-oriented flow is more intuitive than a linear report, guiding users from their personal needs to a specific, informed solution. -->
+    <!-- Visualization & Content Choices: Report Info -> Goal -> Viz/Presentation Method -> Interaction -> Justification. 1. Protein Types -> Guide Selection -> Interactive Buttons -> JS Filtering -> Guides users based on their primary motivation. 2. Comparison Metrics (Absorption, Cost, etc.) -> Compare -> Radar Chart (Chart.js) -> Checkbox selection to update chart -> Radar chart is ideal for multi-attribute comparison. 3. Detailed Info -> Inform -> Modal/Expandable Cards -> Click "Learn More" -> Manages complexity via progressive disclosure. 4. Key Concepts (WPC/WPI) -> Organize -> Accordion (HTML <details>) -> Click to expand -> Standard UI for secondary, detailed information. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF8;
+            color: #4A4A4A;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .btn {
+            transition: all 0.3s ease;
+        }
+        .btn-primary {
+            background-color: #4A6C6F;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #3B565A;
+        }
+        .btn-secondary {
+            background-color: #EAE7E2;
+            color: #4A6C6F;
+            border: 1px solid #DCD8D2;
+        }
+        .btn-secondary:hover {
+            background-color: #DCD8D2;
+        }
+        .btn-selected {
+            background-color: #3B565A;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #EAE7E2;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4A6C6F;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-40 w-full border-b border-gray-200/80">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <h1 class="text-2xl font-bold text-[#3B565A]">
+                    <a href="index.html" class="hover:text-[#4A6C6F]">プロテインガイド</a>
+                </h1>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-[#4A6C6F] font-semibold">ホームへ</a>
+                    <a href="#finder" class="nav-link text-lg font-medium">目的から探す</a>
+                    <a href="#details" class="nav-link text-lg font-medium">種類別解説</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="intro" class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#3B565A] mb-4">あなたに最適なプロテインを見つけよう</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                プロテインは、単なる筋肉増強剤ではありません。美容、ダイエット、健康維持など、あなたの目的をサポートする大切な栄養素です。このガイドで、多種多様なプロテインの中から自分にぴったりの一つを見つけましょう。
+            </p>
+        </section>
+
+        <section id="finder" class="mb-16 p-8 card">
+            <h3 class="text-2xl font-bold text-center mb-2 text-[#3B565A]">ステップ1：あなたの目的は？</h3>
+            <p class="text-center text-gray-500 mb-6">最も重視する目的を1つ選んでください。</p>
+            <div id="goal-selector" class="flex flex-wrap justify-center gap-4 mb-8">
+                <button data-goal="muscle" class="btn btn-primary text-lg px-8 py-3 rounded-full shadow-sm">💪 筋力アップ</button>
+                <button data-goal="diet" class="btn btn-primary text-lg px-8 py-3 rounded-full shadow-sm">✨ ダイエット・減量</button>
+                <button data-goal="health" class="btn btn-primary text-lg px-8 py-3 rounded-full shadow-sm">🌿 美容・健康維持</button>
+            </div>
+
+            <div id="filter-section" class="hidden">
+                 <h3 class="text-2xl font-bold text-center mb-2 text-[#3B565A]">ステップ2：体質や食生活について</h3>
+                <p class="text-center text-gray-500 mb-6">当てはまるものにチェックを入れてください。（複数選択可）</p>
+                <div id="allergy-selector" class="flex flex-wrap justify-center gap-4 mb-8">
+                    <label class="flex items-center space-x-2 btn btn-secondary px-6 py-2 rounded-full cursor-pointer">
+                        <input type="checkbox" data-filter="lactose_free" class="form-checkbox h-5 w-5 text-[#4A6C6F] rounded border-gray-300 focus:ring-[#4A6C6F]">
+                        <span>🥛 牛乳でお腹がゴロゴロする</span>
+                    </label>
+                    <label class="flex items-center space-x-2 btn btn-secondary px-6 py-2 rounded-full cursor-pointer">
+                        <input type="checkbox" data-filter="vegan" class="form-checkbox h-5 w-5 text-[#4A6C6F] rounded border-gray-300 focus:ring-[#4A6C6F]">
+                        <span>🌱 植物性を選びたい</span>
+                    </label>
+                     <label class="flex items-center space-x-2 btn btn-secondary px-6 py-2 rounded-full cursor-pointer">
+                        <input type="checkbox" data-filter="soy_free" class="form-checkbox h-5 w-5 text-[#4A6C6F] rounded border-gray-300 focus:ring-[#4A6C6F]">
+                        <span>🥜 大豆アレルギーがある</span>
+                    </label>
+                </div>
+            </div>
+
+            <div id="recommendation-results" class="mt-8"></div>
+        </section>
+        
+        <section id="details" class="mb-16">
+            <h3 class="text-3xl font-bold text-center mb-4 text-[#3B565A]">プロテイン種類別 詳細解説</h3>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8">各プロテインの原料、特徴、メリット・デメリットを詳しく解説します。あなたのライフスタイルに合ったプロテインを見つけるための参考にしてください。</p>
+            <div id="protein-details-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#EAE7E2] text-[#4A6C6F] py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 インタラクティブ・プロテインガイド. All Rights Reserved.</p>
+            <p class="text-sm mt-2">このアプリケーションは提供されたレポートに基づき、教育目的で作成されました。</p>
+        </div>
+    </footer>
+
+    <script>
+        const proteinData = [
+            { id: 'wpc', name: 'ホエイ (WPC)', type: 'animal', absorption: 'fast', goals: ['muscle'], allergens: ['lactose'], details: '最も一般的でコスパが良いホエイ。乳糖を含むため注意。', pros: ['価格が安い', 'ミネラルが豊富'], cons: ['乳糖不耐症には不向き'], timing: '運動後', amazonKeyword: 'ホエイプロテイン' },
+            { id: 'wpi', name: 'ホエイ (WPI)', type: 'animal', absorption: 'fast', goals: ['muscle', 'diet'], allergens: [], details: '乳糖や脂質を除去した高純度ホエイ。お腹が弱い人でも安心。', pros: ['高タンパク・低脂質', '乳糖がほぼない'], cons: ['価格が比較的高め'], timing: '運動後', amazonKeyword: 'ホエイプロテイン WPI' },
+            { id: 'wph', name: 'ホエイ (WPH)', type: 'animal', absorption: 'very_fast', goals: ['muscle'], allergens: [], details: '吸収速度が最速のホエイ。価格は高いが体に優しい。', pros: ['吸収が最速', '体に優しい'], cons: ['価格が非常に高い', '味が特殊な場合がある'], timing: '運動中・運動後', amazonKeyword: 'ホエイプロテイン WPH' },
+            { id: 'casein', name: 'カゼイン', type: 'animal', absorption: 'slow', goals: ['diet'], allergens: ['lactose'], details: '吸収がゆっくりで腹持ちが良い。就寝前や置き換えに最適。', pros: ['満腹感が持続', '筋肉の分解を抑制'], cons: ['運動直後には不向き', '乳糖を含む'], timing: '就寝前・間食', amazonKeyword: 'カゼインプロテイン' },
+            { id: 'soy', name: 'ソイ', type: 'plant', absorption: 'slow', goals: ['diet', 'health'], allergens: ['soy'], details: '大豆由来の植物性プロテイン。イソフラボンが美容をサポート。', pros: ['腹持ちが良い', 'イソフラボンが豊富', '乳糖フリー'], cons: ['吸収が遅い', '大豆特有の風味'], timing: '就寝前・間食', amazonKeyword: 'ソイプロテイン' },
+            { id: 'egg', name: 'エッグ', type: 'animal', absorption: 'medium', goals: ['muscle'], allergens: [], details: '卵白が原料。乳製品アレルギーの人向けの動物性プロテイン。', pros: ['乳糖フリー', '高品質なタンパク質', '速筋化効果'], cons: ['価格が高め'], timing: '運動後・間食', amazonKeyword: 'エッグプロテイン' },
+            { id: 'pea', name: 'ピー (えんどう豆)', type: 'plant', absorption: 'medium', goals: ['health'], allergens: [], details: 'えんどう豆由来。大豆アレルギーの人の代替に。', pros: ['アレルギーリスクが低い', '鉄分が豊富'], cons: ['メチオニンが少ない'], timing: '間食・食事補助', amazonKeyword: 'ピープロテイン' },
+            { id: 'rice', name: 'ライス (玄米)', type: 'plant', absorption: 'medium', goals: ['health'], allergens: [], details: '玄米由来でアレルギーリスクが低い。他の植物性と混ぜて使うのがおすすめ。', pros: ['アレルギーリスクが非常に低い', '消化が良い'], cons: ['必須アミノ酸が一部不足'], timing: '間食・食事補助', amazonKeyword: 'ライスプロテイン' },
+        ];
+
+        const associateTag = 'mugi0fc9-22';
+
+        let selectedGoal = null;
+        let activeFilters = {
+            lactose_free: false,
+            vegan: false,
+            soy_free: false
+        };
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initGoalSelector();
+            initFilterSelector();
+            populateDetailsGrid();
+            initNavLinks();
+        });
+        
+        function getAmazonLink(keyword) {
+            return `https://www.amazon.co.jp/s?k=${encodeURIComponent(keyword)}&tag=${associateTag}`;
+        }
+
+        function initNavLinks() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+
+            sections.forEach(section => observer.observe(section));
+
+            navLinks.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        function initGoalSelector() {
+            const goalButtons = document.querySelectorAll('#goal-selector button');
+            goalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    selectedGoal = button.dataset.goal;
+                    goalButtons.forEach(btn => btn.classList.remove('btn-selected'));
+                    button.classList.add('btn-selected');
+                    document.getElementById('filter-section').style.display = 'block';
+                    renderRecommendations();
+                });
+            });
+        }
+
+        function initFilterSelector() {
+            const filterCheckboxes = document.querySelectorAll('#allergy-selector input');
+            filterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    activeFilters[e.target.dataset.filter] = e.target.checked;
+                    e.target.parentElement.classList.toggle('btn-selected', e.target.checked);
+                    renderRecommendations();
+                });
+            });
+        }
+
+        function renderRecommendations() {
+            if (!selectedGoal) return;
+
+            let recommendations = proteinData.filter(p => p.goals.includes(selectedGoal));
+            
+            if (activeFilters.lactose_free) {
+                recommendations = recommendations.filter(p => !p.allergens.includes('lactose'));
+            }
+            if (activeFilters.vegan) {
+                recommendations = recommendations.filter(p => p.type === 'plant');
+            }
+            if (activeFilters.soy_free) {
+                recommendations = recommendations.filter(p => !p.allergens.includes('soy'));
+            }
+
+            const resultsContainer = document.getElementById('recommendation-results');
+            if (recommendations.length > 0) {
+                resultsContainer.innerHTML = `
+                    <h3 class="text-2xl font-bold text-center mb-6 text-[#3B565A]">あなたへのおすすめ</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${recommendations.map(p => `
+                            <div class="card p-6 flex flex-col text-center">
+                                <h4 class="text-xl font-bold text-[#4A6C6F] mb-2">${p.name}</h4>
+                                <p class="text-gray-600 flex-grow">${p.details}</p>
+                                <div class="mt-4 flex justify-center space-x-4">
+                                    <a href="#details" onclick="highlightCard('${p.id}')" class="btn btn-secondary px-4 py-2 rounded-full">詳しく見る</a>
+                                    <a href="${getAmazonLink(p.amazonKeyword)}" target="_blank" class="btn btn-primary px-4 py-2 rounded-full">Amazonでチェック</a>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                resultsContainer.innerHTML = `
+                    <div class="text-center p-6 bg-amber-50 border border-amber-200 rounded-lg">
+                        <h4 class="font-bold text-amber-800">条件に合うプロテインが見つかりませんでした。</h4>
+                        <p class="text-amber-700">フィルター条件を変更して、もう一度お試しください。</p>
+                    </div>
+                `;
+            }
+        }
+        
+        function highlightCard(proteinId) {
+            const card = document.getElementById(`card-${proteinId}`);
+            if(card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                card.classList.add('ring-4', 'ring-offset-2', 'ring-[#4A6C6F]');
+                setTimeout(() => {
+                     card.classList.remove('ring-4', 'ring-offset-2', 'ring-[#4A6C6F]');
+                }, 2500);
+            }
+        }
+
+        function populateDetailsGrid() {
+            const gridContainer = document.getElementById('protein-details-grid');
+            const icons = {
+                animal: '🐄',
+                plant: '🌱',
+                fast: '⚡️',
+                medium: '⏳',
+                slow: '🐢',
+                very_fast: '🚀'
+            };
+            const detailsText = {
+                'wpc': `牛乳由来の最もスタンダードなプロテインです。ホエイ（乳清）をろ過し濃縮する製法で、タンパク質含有率は約70〜80%です。乳清由来のビタミンやミネラルが比較的多く残るため、栄養価が高い点が利点です。また、製造工程がシンプルなので、コストパフォーマンスに優れており、初心者の方にも手が出しやすいプロテインと言えます。しかし、乳糖が多く残るため、牛乳でお腹がゴロゴロする乳糖不耐症の方には不向きです。`,
+                'wpi': `WPCをさらに精製し、タンパク質以外の成分（乳糖、脂質、炭水化物）を可能な限り除去した高純度なホエイプロテインです。タンパク質含有率は約90%と非常に高く、低脂質・低糖質であるため、ダイエット中などカロリーを厳密に管理したい場合に適しています。乳糖がほとんど含まれていないため、乳糖不耐症の方でも安心して摂取できるのが最大のメリットです。`,
+                'wph': `WPIをさらに加水分解し、タンパク質をペプチドやアミノ酸の状態にまで分解したプロテインです。ホエイプロテインの中で最も消化吸収速度が速く、体に優しいのが特徴です。この特性から、運動中に摂取するのにも適しているとされます。ただし、製造コストが高く、価格が非常に高額になります。`,
+                'casein': `ホエイと同じ牛乳由来ですが、カゼインプロテインは胃酸に触れるとゲル状に固まる性質を持つため、消化吸収が非常に緩やかです。これにより、長時間にわたってアミノ酸が供給されるため、満腹感が持続しやすいのが特徴です。`,
+                'soy': `大豆由来の植物性プロテインです。動物性プロテインに比べて脂質が低く、食物繊維が豊富な点が特徴です。吸収速度はカゼインプロテインと同様にゆっくりで、満腹感が持続しやすいので、ダイエットや食事の置き換えに最適です。また、大豆イソフラボンは美容と健康維持をサポートするため、特に女性に人気です。`,
+                'egg': `卵白を原料とする動物性プロテインです。乳製品を一切使用していないため、乳糖不耐症や乳製品アレルギーを持つ人にとって非常に有効な代替品となります。吸収速度はホエイとカゼインの中間程度で、幅広いタイミングで活用できます。`,
+                'pea': `えんどう豆を原料とする植物性プロテインで、ソイアレルギーを持つ人にとっての代替品となります。消化が良く、鉄分が豊富ですが、一部の必須アミノ酸が不足しているため、他のプロテインと組み合わせて摂取するのが効果的です。`,
+                'rice': `玄米を原料とする植物性プロテインで、消化が良く、アレルギーのリスクが低い点が特徴です。こちらも一部の必須アミノ酸が不足しているため、ブレンド製品として摂取するのがおすすめです。`
+            };
+            
+            gridContainer.innerHTML = proteinData.map(p => `
+                <div id="card-${p.id}" class="card p-6 flex flex-col">
+                    <h4 class="text-2xl font-bold text-[#3B565A] mb-3">${p.name}</h4>
+                    <div class="flex items-center space-x-4 mb-4 text-gray-600">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">${icons[p.type]} ${p.type === 'animal' ? '動物性' : '植物性'}</span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">${icons[p.absorption]} 吸収${p.absorption === 'fast' ? '速い' : p.absorption === 'medium' ? '普通' : p.absorption === 'slow' ? '遅い' : '最速'}</span>
+                    </div>
+                    <p class="mb-4 text-gray-700">${detailsText[p.id]}</p>
+                    <div class="grid grid-cols-2 gap-4 mb-4 flex-grow">
+                        <div>
+                            <h5 class="font-bold text-green-700 mb-1">メリット</h5>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                ${p.pros.map(pro => `<li>${pro}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-bold text-red-700 mb-1">デメリット</h5>
+                            <ul class="list-disc list-inside text-sm space-y-1">
+                                ${p.cons.map(con => `<li>${con}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-200 flex flex-col items-center">
+                        <p class="font-semibold text-gray-800">最適なタイミング: <span class="font-normal text-[#4A6C6F]">${p.timing}</span></p>
+                        <a href="${getAmazonLink(p.amazonKeyword)}" target="_blank" class="mt-4 w-full btn btn-primary px-4 py-2 rounded-full text-center">Amazonでチェック</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
 
