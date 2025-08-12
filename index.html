@@ -2,10 +2,113 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>私のウェブサイト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strength & Growth | 筋トレ情報サイト</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .hover-scale {
+      transition: transform 0.3s ease-in-out;
+    }
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+  </style>
 </head>
-<body>
-  <h1>ようこそ、私のウェブサイトへ！</h1>
-  <p>これはテスト用のウェブサイトです。ここからコンテンツを追加していきます。</p>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- ヘッダー -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-gray-900">
+        <a href="#" class="hover:text-blue-600">Strength & Growth</a>
+      </div>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="#" class="text-gray-600 hover:text-blue-600 font-semibold">ホーム</a></li>
+          <li><a href="#articles" class="text-gray-600 hover:text-blue-600 font-semibold">記事一覧</a></li>
+          <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-semibold">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="container mx-auto px-4 py-8">
+
+    <!-- ヒーローセクション -->
+    <section class="bg-gray-900 text-white rounded-lg p-12 mb-12 shadow-lg">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">筋トレで理想の自分を手に入れる</h1>
+        <p class="text-lg mb-6 text-gray-300">
+          このサイトでは、初心者から上級者まで役立つ筋トレの知識、効果的なトレーニング方法、栄養のヒントを提供します。
+        </p>
+        <a href="#articles" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors">
+          最初の記事を読む
+        </a>
+      </div>
+    </section>
+
+    <!-- 記事一覧セクション -->
+    <section id="articles" class="mb-12">
+      <h2 class="text-3xl font-bold text-center mb-8">最新のトレーニング情報</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        
+        <!-- サンプル記事カード1 -->
+        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
+          <img src="https://placehold.co/600x400/2563eb/ffffff?text=Deadlift" alt="デッドリフト" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">デッドリフトの正しいフォームと効果</h3>
+            <p class="text-gray-600 text-sm mb-4">全身を鍛えるデッドリフトの基本から応用までを解説します。</p>
+            <a href="#" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
+          </div>
+        </article>
+
+        <!-- サンプル記事カード2 -->
+        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
+          <img src="https://placehold.co/600x400/99f6e4/1f2937?text=Nutrition" alt="栄養" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">筋肥大を最大化する食事ガイド</h3>
+            <p class="text-gray-600 text-sm mb-4">プロテイン摂取のタイミングや食事プランの立て方を紹介します。</p>
+            <a href="#" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
+          </div>
+        </article>
+        
+        <!-- サンプル記事カード3 -->
+        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
+          <img src="https://placehold.co/600x400/fcd34d/1f2937?text=Workout+Plan" alt="ワークアウトプラン" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">1週間で体を変化させるワークアウトプラン</h3>
+            <p class="text-gray-600 text-sm mb-4">初心者向けの具体的なトレーニングスケジュールを提案します。</p>
+            <a href="#" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section id="contact" class="bg-white rounded-lg shadow-md p-8 max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-6">お問い合わせ</h2>
+      <p class="text-center text-gray-600 mb-4">ご質問やご意見はこちらからお気軽にお寄せください。</p>
+      <div class="flex justify-center">
+        <a href="#" class="bg-gray-800 text-white font-bold py-3 px-6 rounded-full hover:bg-gray-700 transition-colors">
+          フォームへ進む
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="bg-gray-800 text-white py-8 mt-12">
+    <div class="container mx-auto text-center px-4">
+      <p>&copy; 2024 Strength & Growth All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
