@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>減量サプリメント効果ガイド｜成分と選び方を科学的根拠で解説</title>
+    <meta name="description" content="減量サプリメントの効果を科学的根拠に基づき解説。成分ごとの作用機序、安全な選び方、目的別のタイプまで網羅したインタラクティブガイドです。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Neutral (Stone background with Teal/Amber accents) -->
+    <!-- Application Structure Plan: A user-centric, tab-based dashboard. Instead of a linear report, the structure is organized around user goals ("Find by Goal"), allowing immediate access to relevant information. This is supported by a detailed "Ingredient Dictionary" and a critical "Safety Checklist". This non-linear approach enhances usability by letting users navigate based on their specific needs (e.g., "I want to boost workout effects" or "I'm worried about safety"), making complex information more digestible and actionable. -->
+    <!-- Visualization & Content Choices: Report Info: Ingredient list with evidence levels. -> Goal: Compare scientific backing. -> Viz: Horizontal Bar Chart (Chart.js). -> Interaction: Tooltips on hover show evidence type. -> Justification: Visually quantifies the abstract concept of "scientific evidence," allowing for quick comparison of ingredient reliability. Report Info: Safety systems (Tokuho, etc.). -> Goal: Clarify differences. -> Presentation: Styled HTML cards in a flexbox layout. -> Interaction: None, direct comparison. -> Justification: Clear, side-by-side visual format is more intuitive than dense text. Report Info: Health risks. -> Goal: Warn effectively without causing alarm. -> Presentation: Interactive "reveal" cards. -> Interaction: Click to show details. -> Justification: Engages the user and presents sensitive information in a controlled manner. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto+Sans+JP', sans-serif;
+        }
+        .tab-active {
+            border-color: #14b8a6;
+            color: #0f766e;
+            background-color: #f0fdfa;
+        }
+        .tab-inactive {
+            border-color: transparent;
+            color: #57534e;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 500px;
+            max-height: 70vh;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-800">減量サプリメントの効果と選び方</h1>
+            <p class="mt-2 text-stone-600">このガイドは、科学的根拠に基づき、あなたのサプリメント選びをサポートするために作成されました。</p>
+        </header>
+
+        <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-800 p-4 rounded-md mb-8" role="alert">
+            <p class="font-bold">はじめに：最も重要なこと</p>
+            <p>減量サプリメントは「魔法の薬」ではありません。**適切な食事と継続的な運動が「主役」であり、サプリメントはその努力をサポートする「補助役」**です。この原則を理解することが、安全で効果的な減量への第一歩となります。</p>
+        </div>
+
+        <div class="mb-8 border-b border-stone-200">
+            <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+                <button class="tab-btn text-lg py-4 px-6 border-b-2 font-medium text-center" data-tab="goal">目的から探す</button>
+                <button class="tab-btn text-lg py-4 px-6 border-b-2 font-medium text-center" data-tab="ingredients">成分辞典</button>
+                <button class="tab-btn text-lg py-4 px-6 border-b-2 font-medium text-center" data-tab="safety">安全性の確認</button>
+                <button class="tab-btn text-lg py-4 px-6 border-b-2 font-medium text-center" data-tab="evidence">科学的根拠の比較</button>
+            </nav>
+        </div>
+
+        <main>
+            <section id="goal" class="content-section">
+                <h2 class="text-2xl font-bold mb-4 text-teal-700">目的から探す：あなたに最適な減量サプリメントを見つけよう</h2>
+                <p class="mb-6 text-stone-600">あなたのライフスタイルや悩みに合わせて、関連する成分を絞り込みます。下のボタンをクリックして、情報を表示してください。各カードには、その成分の主な機能と、どれだけ科学的根拠があるかが表示されています。</p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <button class="goal-filter-btn bg-white hover:bg-teal-50 text-teal-800 font-semibold py-2 px-4 border border-teal-200 rounded-lg shadow-sm" data-filter="all">すべて表示</button>
+                    <button class="goal-filter-btn bg-white hover:bg-teal-50 text-teal-800 font-semibold py-2 px-4 border border-teal-200 rounded-lg shadow-sm" data-filter="absorb">🍔 食事の糖・脂肪が気になる</button>
+                    <button class="goal-filter-btn bg-white hover:bg-teal-50 text-teal-800 font-semibold py-2 px-4 border border-teal-200 rounded-lg shadow-sm" data-filter="burn">🔥 運動効果・代謝を上げたい</button>
+                    <button class="goal-filter-btn bg-white hover:bg-teal-50 text-teal-800 font-semibold py-2 px-4 border border-teal-200 rounded-lg shadow-sm" data-filter="control">🍽️ 食べ過ぎを防ぎたい</button>
+                </div>
+                <div id="goal-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </section>
+
+            <section id="ingredients" class="content-section">
+                <h2 class="text-2xl font-bold mb-4 text-teal-700">減量サプリメント成分辞典：科学的根拠と作用機序を詳しく解説</h2>
+                <p class="mb-6 text-stone-600">このセクションでは、減量サプリメントに広く使われている主要な成分について、その効果と科学的根拠を詳しく解説します。各カードには、その成分の概要が記載されており、クリックするとさらに詳しい作用機序が表示されます。</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="ingredients-list">
+                </div>
+            </section>
+
+            <section id="safety" class="content-section">
+                <h2 class="text-2xl font-bold mb-4 text-teal-700">安全性の確認：信頼できるサプリメントの選び方と危険成分</h2>
+                <p class="mb-6 text-stone-600">減量サプリメントを選ぶ上で最も重要なのは安全性です。このセクションでは、信頼できる製品を見分けるための日本の制度と、個人輸入などで潜む危険性について詳しく説明します。</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-teal-800">信頼性の基準：保健機能食品制度を理解する</h3>
+                    <p class="mb-4 text-stone-700">日本の保健機能食品制度は、国が定める基準に基づき、食品の機能性を表示できる制度です。これにより、消費者は科学的根拠のある製品を選びやすくなります。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border border-stone-200 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-stone-800">特定保健用食品 (トクホ)</h4>
+                            <p class="text-sm text-stone-500 mb-2">✅ 国の厳しい審査をクリア</p>
+                            <ul class="list-disc list-inside text-stone-700 space-y-1 text-sm">
+                                <li>製品ごとに有効性と安全性が**国によって個別に審査**されます。</li>
+                                <li>特定の保健目的（例：お腹の調子を整える）の表示が許可されます。</li>
+                                <li>最も信頼性が高い制度です。</li>
+                            </ul>
+                        </div>
+                        <div class="border border-stone-200 p-4 rounded-lg">
+                            <h4 class="font-bold text-lg text-stone-800">機能性表示食品</h4>
+                            <p class="text-sm text-stone-500 mb-2">📝 事業者の責任で表示</p>
+                            <ul class="list-disc list-inside text-stone-700 space-y-1 text-sm">
+                                <li>有効性と安全性の根拠は**事業者が消費者庁へ届け出**を行います。</li>
+                                <li>国による個別審査はなく、あくまで事業者の責任で表示されます。</li>
+                                <li>消費者は届出情報を自身で確認し、吟味することが求められます。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-red-800">⚠️ 潜在的な危険性：違法成分と健康被害</h3>
+                    <p class="mt-2 mb-4 text-red-700">特に個人輸入で入手した海外製品には、健康を害する医薬品成分が**違法に含まれている**場合があります。過去には**肝機能障害や死亡事例**も報告されており、安易な購入は絶対に避けるべきです。</p>
+                    <details class="cursor-pointer">
+                        <summary class="font-semibold text-red-800">過去に検出された危険な医薬品成分の例を見る</summary>
+                        <div class="mt-4 border-t border-red-200 pt-4">
+                            <p class="font-bold text-stone-800">検出された医薬品成分の例</p>
+                            <p class="mt-2"><strong>シブトラミン:</strong> 国内未承認の肥満症治療薬。心血管系への副作用リスクが高い。</p>
+                            <p><strong>マジンドール:</strong> 向精神薬。依存性があり、医師の厳格な管理が必要。</p>
+                            <p><strong>フェンフルラミン:</strong> 心臓弁膜症など重篤な副作用のため、販売中止。</p>
+                            <p class="mt-2 font-bold text-red-700">これらの成分による健康被害には、肝機能障害、血圧上昇、心拍数増加、薬物依存、そして死亡が含まれます。</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+            <section id="evidence" class="content-section">
+                <h2 class="text-2xl font-bold mb-4 text-teal-700">科学的根拠の比較：効果レベルが一目でわかるチャート</h2>
+                <p class="mb-6 text-stone-600">報告書に記載された各成分の科学的根拠のレベルを可視化しました。根拠レベルが高いほど、その機能性に対する信頼性が高いと考えられます。**「ヒト臨床試験」**が最も信頼性の高い根拠です。</p>
+                <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+                    <div class="chart-container">
+                        <canvas id="evidenceChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 pt-8 border-t border-stone-200">
+            <p class="text-stone-600">最終提言：サプリメントの利用を検討する際は、かかりつけの医師や薬剤師に相談してください。</p>
+            <p class="text-sm text-stone-400 mt-2">このアプリケーションは提供された報告書に基づき作成されたものであり、医学的助言に代わるものではありません。</p>
+        </footer>
+    </div>
+
+<script>
+const supplementData = [
+    {
+        name: '葛の花由来イソフラボン',
+        category: 'burn',
+        effect: 'お腹の脂肪（内臓・皮下脂肪）を減らすのを助ける。',
+        summary: '脂肪の合成を抑制、分解を促進、燃焼をサポートするという3つの複合的なアプローチで体脂肪を減らす効果が期待できます。',
+        mechanism: '脂肪合成に関わる酵素の働きを抑え、一方で脂肪分解を促進する酵素を活性化させます。さらに、体内の脂肪消費を高める褐色脂肪細胞の働きもサポートすると言われています。',
+        evidence: 'ヒト臨床試験',
+        evidenceScore: 3
+    },
+    {
+        name: 'L-カルニチン',
+        category: 'burn',
+        effect: '運動による脂肪燃焼の効率を高める。',
+        summary: '体内の脂肪酸をエネルギーに変換するミトコンドリアへ運ぶ役割を担い、運動時の脂肪燃焼を効率よくサポートします。',
+        mechanism: '脂肪酸は、ミトコンドリアに入らなければ燃焼できません。L-カルニチンは、このミトコンドリア内への脂肪酸の輸送を助ける、唯一の物質です。不足すると脂肪が効率よく使われなくなります。',
+        evidence: 'ヒト臨床試験、動物試験',
+        evidenceScore: 2.5
+    },
+    {
+        name: 'ブラックジンジャー由来ポリメトキシフラボン',
+        category: 'burn',
+        effect: '脂肪の代謝を助け、腹部の脂肪を減らす。',
+        summary: '日常活動時における脂肪の消費を促し、特に腹部の脂肪減少に役立つことが報告されています。代謝を上げ、体温を保つ効果も期待できます。',
+        mechanism: 'ポリメトキシフラボンは、体内の脂肪細胞に働きかけ、脂肪を分解する酵素の働きを促すことで、脂肪の消費を助けます。熱産生を高め、冷え性改善にもつながると考えられています。',
+        evidence: 'ヒト臨床試験',
+        evidenceScore: 3
+    },
+    {
+        name: '難消化性デキストリン',
+        category: 'absorb',
+        effect: '食事の糖や脂肪の吸収を穏やかにする。',
+        summary: 'トウモロコシ由来の水溶性食物繊維で、食事に含まれる糖や脂肪の吸収速度を遅らせ、食後の血糖値や中性脂肪の急激な上昇を抑えます。',
+        mechanism: '消化管内でゲルを形成し、糖や脂肪を包み込むことで、消化酵素の働きを阻害し、吸収を緩やかにします。これにより、インスリンの過剰分泌を防ぎ、脂肪の蓄積を抑える効果が期待できます。',
+        evidence: 'ヒト臨床試験',
+        evidenceScore: 3
+    },
+    {
+        name: '緑茶カテキン',
+        category: 'burn',
+        effect: '体脂肪の低減をサポートする。',
+        summary: '緑茶に含まれるポリフェノールの一種で、脂肪分解酵素を活性化させ、脂肪の燃焼を促します。食事と一緒に摂取することで、その効果がより高まります。',
+        mechanism: 'カテキンは、体内の脂質代謝に関わる酵素に直接作用し、体脂肪をエネルギーとして消費しやすい状態にします。また、食事から摂取したエネルギーの消費量を増加させる働きも報告されています。',
+        evidence: 'ヒト臨床試験、動物試験',
+        evidenceScore: 2.5
+    },
+    {
+        name: 'カプサイシン',
+        category: 'burn',
+        effect: '代謝向上、脂肪燃焼促進をサポート。',
+        summary: '唐辛子の辛味成分であり、中枢神経を刺激してアドレナリン分泌を促し、体温を上げることでエネルギー消費量を増やします。',
+        mechanism: 'カプサイシンは、交感神経を活性化させ、アドレナリンの分泌を促します。これにより、熱産生が活発になり、結果として安静時のカロリー消費量が増加します。',
+        evidence: '動物試験、生体外試験',
+        evidenceScore: 1.5
+    },
+    {
+        name: 'サラシノール',
+        category: 'absorb',
+        effect: '食事の糖の吸収を抑える。',
+        summary: 'インド原産のサラシアという植物由来の成分で、糖の吸収を抑える働きが臨床試験で確認されています。食後の急激な血糖値上昇を穏やかにします。',
+        mechanism: '食事から摂取した糖質は、消化酵素によってブドウ糖に分解され、体内に吸収されます。サラシノールは、この分解酵素の働きを阻害することで、糖質の吸収を緩やかにする機能があります。',
+        evidence: 'ヒト臨床試験',
+        evidenceScore: 3
+    },
+    {
+        name: 'ターミナリアベリリカ由来没食子酸',
+        category: 'absorb',
+        effect: '食事の糖や脂肪の吸収を抑える。',
+        summary: 'インドの伝統医学で使われる植物由来の成分で、糖や脂肪の分解酵素を阻害することで、食後の血糖値や中性脂肪の上昇を抑える効果が期待できます。',
+        mechanism: '食事に含まれる糖や脂肪は、それぞれの分解酵素によって小さな分子になり、体内に吸収されます。没食子酸は、これらの酵素の働きをブロックすることで、吸収を抑える機能があります。',
+        evidence: 'ヒト臨床試験',
+        evidenceScore: 3
+    },
+    {
+        name: 'グルコマンナン',
+        category: 'control',
+        effect: '満腹感を得やすくし、食べ過ぎを防ぐ。',
+        summary: 'こんにゃくの主成分である食物繊維の一種で、胃の中で水分を吸収して大きく膨らむ性質があり、満腹感を持続させることで食事量を自然に抑える手助けをします。',
+        mechanism: 'グルコマンナンは、体内で消化されないまま胃に留まり、水分を吸収して膨張します。この物理的な膨張が満腹中枢を刺激し、少ない食事量でも満腹感を感じやすくなる効果があります。',
+        evidence: 'ヒト臨床試験、生体外試験',
+        evidenceScore: 2
+    }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contentSections = document.querySelectorAll('.content-section');
+    const goalFilterBtns = document.querySelectorAll('.goal-filter-btn');
+    const goalResultsContainer = document.getElementById('goal-results');
+    const ingredientsListContainer = document.getElementById('ingredients-list');
+
+    function switchTab(tab) {
+        tabs.forEach(t => t.classList.remove('tab-active', 'border-teal-500', 'text-teal-700', 'bg-teal-50'));
+        tabs.forEach(t => t.classList.add('tab-inactive', 'hover:bg-stone-100', 'hover:border-stone-300'));
+        tab.classList.add('tab-active', 'border-teal-500', 'text-teal-700', 'bg-teal-50');
+        tab.classList.remove('tab-inactive', 'hover:bg-stone-100', 'hover:border-stone-300');
+
+        contentSections.forEach(section => section.classList.remove('active'));
+        const targetSection = document.getElementById(tab.dataset.tab);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => switchTab(tab));
+    });
+
+    function createIngredientCard(ingredient) {
+        const categoryMap = {
+            absorb: { text: '🍔 吸収抑制', color: 'bg-blue-100 text-blue-800' },
+            burn: { text: '🔥 燃焼促進', color: 'bg-orange-100 text-orange-800' },
+            control: { text: '🍽️ 食欲調整', color: 'bg-green-100 text-green-800' }
+        };
+        const categoryInfo = categoryMap[ingredient.category];
+        const encodedName = encodeURIComponent(ingredient.name);
+
+        return `
+            <div class="goal-card bg-white p-5 rounded-lg shadow-md border border-stone-200" data-category="${ingredient.category}">
+                <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full ${categoryInfo.color} last:mr-0 mr-1">
+                    ${categoryInfo.text}
+                </span>
+                <h3 class="text-xl font-bold mt-3 mb-2 text-stone-800">${ingredient.name}</h3>
+                <p class="text-stone-600">${ingredient.effect}</p>
+                <div class="mt-3 text-xs font-semibold text-stone-500">
+                    科学的根拠: ${ingredient.evidence}
+                </div>
+                <a href="https://www.amazon.co.jp/s?k=${encodedName}&tag=mugi0fc9-22" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-200">
+                    Amazonで探す
+                </a>
+            </div>
+        `;
+    }
+    
+    function createDetailedIngredientCard(ingredient) {
+        const card = document.createElement('div');
+        const encodedName = encodeURIComponent(ingredient.name);
+        card.className = 'bg-white p-5 rounded-lg shadow-md border border-stone-200 transition-all duration-300 hover:shadow-lg hover:border-teal-300';
+        card.innerHTML = `
+            <h3 class="text-xl font-bold mb-2 text-stone-800">${ingredient.name}</h3>
+            <p class="text-stone-600">${ingredient.summary}</p>
+            <div class="mt-4 pt-4 border-t border-stone-200">
+                <span class="text-xs font-semibold text-stone-500">科学的根拠: ${ingredient.evidence}</span>
+            </div>
+            <div class="mechanism-details mt-4 pt-4 border-t border-stone-200 text-sm text-stone-500 cursor-pointer">
+                <p><strong><span class="text-teal-600">▼</span> 詳しい作用機序を見る</strong></p>
+                <div class="mt-2" style="display: none;">
+                    <p>${ingredient.mechanism}</p>
+                </div>
+            </div>
+            <a href="https://www.amazon.co.jp/s?k=${encodedName}&tag=mugi0fc9-22" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-amber-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-200">
+                Amazonで探す
+            </a>
+        `;
+        const detailsToggle = card.querySelector('.mechanism-details p');
+        detailsToggle.addEventListener('click', () => {
+            const detailsContent = card.querySelector('.mechanism-details div');
+            const toggleIcon = card.querySelector('.mechanism-details span');
+            if (detailsContent.style.display === 'none') {
+                detailsContent.style.display = 'block';
+                toggleIcon.textContent = '▲';
+            } else {
+                detailsContent.style.display = 'none';
+                toggleIcon.textContent = '▼';
+            }
+        });
+        return card;
+    }
+
+    function renderGoalResults(filter) {
+        goalResultsContainer.innerHTML = '';
+        const filteredData = filter === 'all' ? supplementData : supplementData.filter(item => item.category === filter);
+        if (filteredData.length > 0) {
+            filteredData.forEach(item => {
+                goalResultsContainer.innerHTML += createIngredientCard(item);
+            });
+        } else {
+            goalResultsContainer.innerHTML = '<p class="col-span-full text-center text-stone-500">この目的には該当する成分が見つかりませんでした。</p>';
+        }
+    }
+
+    goalFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            goalFilterBtns.forEach(b => b.classList.remove('bg-teal-100', 'ring-2', 'ring-teal-300'));
+            btn.classList.add('bg-teal-100', 'ring-2', 'ring-teal-300');
+            renderGoalResults(btn.dataset.filter);
+        });
+    });
+    
+    function renderIngredientsList() {
+        ingredientsListContainer.innerHTML = '';
+        supplementData.forEach(item => {
+            ingredientsListContainer.appendChild(createDetailedIngredientCard(item));
+        });
+    }
+
+    function renderEvidenceChart() {
+        const ctx = document.getElementById('evidenceChart').getContext('2d');
+        const sortedData = [...supplementData].sort((a, b) => b.evidenceScore - a.evidenceScore);
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: sortedData.map(item => item.name.replace(/由来/g, '\n由来')),
+                datasets: [{
+                    label: '科学的根拠レベル (高いほど信頼性が高い)',
+                    data: sortedData.map(item => item.evidenceScore),
+                    backgroundColor: sortedData.map(item => {
+                        if (item.evidenceScore >= 3) return 'rgba(20, 184, 166, 0.7)';
+                        if (item.evidenceScore >= 2) return 'rgba(245, 158, 11, 0.7)';
+                        return 'rgba(239, 68, 68, 0.7)';
+                    }),
+                    borderColor: sortedData.map(item => {
+                        if (item.evidenceScore >= 3) return 'rgba(13, 148, 136, 1)';
+                        if (item.evidenceScore >= 2) return 'rgba(217, 119, 6, 1)';
+                        return 'rgba(185, 28, 28, 1)';
+                    }),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 3.5,
+                        ticks: {
+                            stepSize: 1,
+                            callback: function(value) {
+                                const labels = {0: 'なし', 1: '基礎研究', 2: '動物/限定的', 3: 'ヒト臨床試験'};
+                                return labels[value] || '';
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(200, 200, 200, 0.2)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const index = context.dataIndex;
+                                const data = sortedData[index];
+                                return `根拠: ${data.evidence}`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    switchTab(tabs[0]);
+    renderGoalResults('all');
+    goalFilterBtns[0].classList.add('bg-teal-100', 'ring-2', 'ring-teal-300');
+    renderIngredientsList();
+    renderEvidenceChart();
+});
+</script>
+
+</body>
+</html>
