@@ -1,1 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO対策: 検索エンジン向けのキーワードを含んだ、魅力的なタイトルに変更 -->
+    <title>筋トレ ストラップ・ファインダー | 握力補助ギアの最適な選び方</title>
+    <!-- SEO対策: 検索結果に表示される説明文（ディスクリプション）を追加 -->
+    <meta name="description" content="筋トレの目的別に最適なリストストラップ、パワーグリップ、リストラップを診断。デッドリフトの握力補助やベンチプレスの手首保護まで、あなたにぴったりのギアが見つかります。初心者から上級者まで必見のガイド。">
+    <meta name="keywords" content="筋トレ, ストラップ, パワーグリップ, リストラップ, 握力補助, デッドリフト, ベンチプレス, 選び方, 比較, 初心者, 上級者">
+
+    <!-- SEO対策: ソーシャルメディアでシェアされた際の表示を最適化するOGPタグを追加 -->
+    <meta property="og:title" content="筋トレ ストラップ・ファインダー | 最適なギアの選び方">
+    <meta property="og:description" content="あなたのトレーニングに最適なリストストラップやパワーグリップを見つけるための徹底ガイド。">
+    <meta property="og:url" content="https://your-website-url.com"> <!-- ここに実際のURLを入力してください -->
+    <meta property="og:image" content="https://placehold.co/1200x630/CCCCCC/333333?text=筋トレギアの選び方"> <!-- ここにSNSで表示したい画像URLを入力してください -->
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            /* フォント名を修正 */
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FDFBF8;
+            color: #3a3a3a;
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #008080;
+            border-bottom-color: #008080;
+        }
+        .goal-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .highlight-section {
+            transition: all 0.5s ease-in-out;
+            border: 2px solid transparent;
+            border-radius: 1rem;
+        }
+        .highlight-section.highlight {
+            border-color: #008080;
+            box-shadow: 0 0 25px rgba(0, 128, 128, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg shadow-sm">
+        <nav class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- SEO対策: ブランド名を識別しやすくする -->
+                <h1 class="text-xl font-bold text-gray-800">筋トレ 補助ギア・ファインダー</h1>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">ホームへ</a>
+                    <a href="#goals" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">目的から選ぶ</a>
+                    <a href="#details" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">詳細を見る</a>
+                    <a href="#philosophy" class="nav-link text-gray-600 border-b-2 border-transparent pb-1">使い方の哲学</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+
+        <section id="hero" class="text-center mb-16">
+            <!-- SEO対策: ページ全体の主題を表すh1タグを設置 -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">あなたに最適な握力補助ギアを見つけよう</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">このガイドは、デッドリフトやベンチプレスなど、あなたのトレーニングを次のレベルへ導くために、最適なリストストラップやパワーグリップ、リストラップを見つけるためのものです。</p>
+        </section>
+
+        <section id="goals" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8">あなたの主な目的は？</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="goal-card bg-white p-6 rounded-lg shadow-md cursor-pointer text-center" onclick="selectGoal('general')">
+                    <div class="text-4xl mb-4">💪</div>
+                    <h3 class="text-xl font-bold mb-2">握力を補助したい</h3>
+                    <p class="text-gray-600">プル系種目で、背中を追い込みたい。最も一般的なニーズです。</p>
+                </div>
+                <div class="goal-card bg-white p-6 rounded-lg shadow-md cursor-pointer text-center" onclick="selectGoal('press')">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold mb-2">手首を保護したい</h3>
+                    <p class="text-gray-600">プレス系種目で、手首の安定性を高め、怪我を防ぎたい。</p>
+                </div>
+                <div class="goal-card bg-white p-6 rounded-lg shadow-md cursor-pointer text-center" onclick="selectGoal('heavy')">
+                    <div class="text-4xl mb-4">🏋️</div>
+                    <h3 class="text-xl font-bold mb-2">超高重量に挑戦したい</h3>
+                    <p class="text-gray-600">デッドリフトなどで、握力の限界を超えた重量を扱いたい。</p>
+                </div>
+                 <div class="goal-card bg-white p-6 rounded-lg shadow-md cursor-pointer text-center" onclick="selectGoal('weightlifting')">
+                    <div class="text-4xl mb-4">⚡️</div>
+                    <h3 class="text-xl font-bold mb-2">ウェイトリフティング</h3>
+                    <p class="text-gray-600">競技や練習で安全性を最優先し、正しいフォームでリフティングしたい。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="details" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8">詳細を見る：あなたへのおすすめ</h2>
+            <div id="recommendation-text" class="text-center text-lg text-gray-700 mb-8 bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg hidden">
+                ここに選択に基づいた推薦文が表示されます。
+            </div>
+            <div class="space-y-12">
+                <div id="gear-list-strap" class="gear-card highlight-section p-8 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">リストストラップ</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="mb-4 text-gray-700">最もベーシックな握力補助具。シンプルな帯状の構造で、バーに巻き付けて使用します。高い耐久性と安定性が特徴で、高重量のデッドリフトやロウイングに最適です。</p>
+                            <h4 class="font-bold mb-2">✅ メリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>非常に高いホールド力と安定性</li>
+                                <li>シンプルな構造で耐久性が高い</li>
+                                <li>比較的安価</li>
+                                <li>緊急時に手を離せる（クイックリリース可）</li>
+                            </ul>
+                        </div>
+                        <div>
+                             <h4 class="font-bold mb-2 text-red-700">❌ デメリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>装着に慣れが必要で、時間がかかる</li>
+                                <li>手のひらを保護する機能はない</li>
+                                <li>アンダーグリップでは緩みやすい</li>
+                            </ul>
+                            <h4 class="font-bold mt-4 mb-2">⭐ こんな人に最適</h4>
+                            <p class="text-gray-700">高重量を安定して扱いたい中〜上級者。ウェイトリフティングの補助種目を行う人。</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex flex-col items-center">
+                        <!-- SEO対策: 画像のaltテキストをより具体的に記述 -->
+                        <img id="image-list-strap" src="" alt="デッドリフトやロウイングに最適な、耐久性の高いリストストラップ" class="max-w-xs w-full h-auto rounded-lg shadow-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=リストストラップ';">
+                        <!-- SEO対策: リンクのアンカーテキストを具体的に -->
+                        <a href="https://amzn.to/45sIxqI" target="_blank" class="bg-teal-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-teal-700 transition duration-300 ease-in-out">リストストラップをAmazonで見る</a>
+                    </div>
+                </div>
+
+                <div id="gear-power-grip" class="gear-card highlight-section p-8 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">パワーグリップ</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="mb-4 text-gray-700">手首のバンドとベロ状のパッドが一体化した補助具。握力補助と手のひら保護を両立し、何より着脱が非常に簡単です。</p>
+                            <h4 class="font-bold mb-2">✅ メリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>圧倒的な着脱の容易さ</li>
+                                <li>手のひらを保護し、マメを防ぐ</li>
+                                <li>初心者でも直感的に使える</li>
+                                <li>ドロップセット等で素早く対応可能</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2 text-red-700">❌ デメリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>リストストラップより高価</li>
+                                <li>超高重量では安定感に劣る場合がある</li>
+                                <li>マジックテープ部分が劣化する可能性</li>
+                            </ul>
+                            <h4 class="font-bold mt-4 mb-2">⭐ こんな人に最適</h4>
+                            <p class="text-gray-700">初心者や、着脱の手軽さを重視する人。様々な種目をスピーディーに行いたい人。</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex flex-col items-center">
+                        <!-- SEO対策: 画像のaltテキストをより具体的に記述 -->
+                        <img id="image-power-grip" src="" alt="初心者や着脱を重視する人におすすめのパワーグリップ" class="max-w-xs w-full h-auto rounded-lg shadow-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=パワーグリップ';">
+                         <!-- SEO対策: リンクのアンカーテキストを具体的に -->
+                         <a href="https://amzn.to/4lrMq5h" target="_blank" class="bg-teal-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-teal-700 transition duration-300 ease-in-out">パワーグリップをAmazonで見る</a>
+                    </div>
+                </div>
+                
+                <div id="gear-figure-8" class="gear-card highlight-section p-8 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">フィギュア8ストラップ</h3>
+                     <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="mb-4 text-gray-700">8の字型の特殊な構造で、手とバーを完全にロックします。ストロングマン競技などで使用される、超高重量デッドリフト特化型ギアです。</p>
+                            <h4 class="font-bold mb-2">✅ メリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>絶対に外れない最強のホールド力</li>
+                                <li>握力を完全に無視して引く動作に集中できる</li>
+                                <li>精神的な安心感が大きい</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2 text-red-700">❌ デメリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li class="font-bold">緊急時に手を離せない（最重要注意点）</li>
+                                <li>着脱に手間がかかる</li>
+                                <li>汎用性が極めて低い</li>
+                            </ul>
+                             <h4 class="font-bold mt-4 mb-2">⭐ こんな人に最適</h4>
+                            <p class="text-gray-700">握力の限界を超えたデッドリフトに挑戦するストロングマンや超上級者。</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex flex-col items-center">
+                        <!-- SEO対策: 画像のaltテキストをより具体的に記述 -->
+                        <img id="https://m.media-amazon.com/images/I/51B5Yof0HlL._AC_US40_.jpg" src="" alt="超高重量デッドリフトに特化したフィギュア8ストラップ" class="max-w-xs w-full h-auto rounded-lg shadow-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=フィギュア8ストラップ';">
+                         <!-- SEO対策: リンクのアンカーテキストを具体的に -->
+                         <a href="https://amzn.to/3JaCzmV" target="_blank" class="bg-teal-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-teal-700 transition duration-300 ease-in-out">フィギュア8ストラップをAmazonで見る</a>
+                    </div>
+                </div>
+
+                <div id="gear-wrist-wrap" class="gear-card highlight-section p-8 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">リストラップ</h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <p class="mb-4 text-gray-700">これは握力補助ではなく、手首の関節を固定・保護するためのギアです。伸縮性のある帯を手首に巻き付け、プレス系種目での怪我を予防します。</p>
+                            <h4 class="font-bold mb-2">✅ メリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>手首の過度な反りを防ぎ、関節を安定させる</li>
+                                <li>プレス動作の安定性が向上する</li>
+                                <li>高重量での怪我のリスクを大幅に低減</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2 text-red-700">❌ デメリット</h4>
+                            <ul class="list-disc list-inside space-y-1 text-gray-700">
+                                <li>握力補助の効果はない</li>
+                                <li>過度に頼ると手首本来の強さが育ちにくい</li>
+                            </ul>
+                            <h4 class="font-bold mt-4 mb-2">⭐ こんな人に最適</h4>
+                            <p class="text-gray-700">ベンチプレスやショルダープレスで高重量を扱う全ての人。</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex flex-col items-center">
+                        <!-- SEO対策: 画像のaltテキストをより具体的に記述 -->
+                        <img src="images/header_logo.png"  src="" alt="ベンチプレスやショルダープレス時の手首を保護するリストラップ" class="max-w-xs w-full h-auto rounded-lg shadow-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/333333?text=リストラップ';">
+                         <!-- SEO対策: リンクのアンカーテキストを具体的に -->
+                         <a href="https://amzn.to/4lrMq5h" target="_blank" class="bg-teal-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-teal-700 transition duration-300 ease-in-out">リストラップをAmazonで見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="philosophy" class="mt-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center mb-8">使い方の哲学：補助具との賢い付き合い方</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3">🤔 いつ使うべきか？</h3>
+                    <p class="text-gray-700">ストラップは強力なツールですが、依存は禁物です。握力そのものの発達を妨げないよう、戦略的に使いましょう。</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                        <li>ウォームアップや軽い重量では使わない。</li>
+                        <li>ターゲットの筋肉より先に握力が限界に来そうなセットで使う。</li>
+                        <li>自己ベスト更新を狙う高重量のメインセットで使う。</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-3">✊ 握力も鍛えよう</h3>
+                    <p class="text-gray-700">ストラップへの依存を避け、総合的な筋力を高めるために、握力そのものを鍛えるトレーニングも重要です。</p>
+                     <ul class="list-disc list-inside mt-4 space-y-2 text-gray-600">
+                        <li>ハンドグリッパーで集中的に鍛える。</li>
+                        <li>タオル絞りやリストロールで前腕全体を強化する。</li>
+                        <li>ストラップなしでデッドリフトを行う日を作る。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p>&copy; 2025 筋トレ ストラップ・ファインダー. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">このアプリケーションは情報提供を目的としており、専門的な医学的アドバイスに代わるものではありません。</p>
+        </div>
+    </footer>
+
+    <script>
+        const recommendationTexts = {
+            general: "<strong>握力補助が目的なら、リストストラップかパワーグリップがおすすめです。</strong><br>手軽さを求めるならパワーグリップ、より高いホールド力を求めるならリストストラップを選びましょう。",
+            press: "<strong>プレス系種目での手首保護には、リストラップが必須です。</strong><br>これは握力補助具とは目的が異なります。高重量を扱う際は必ず使用し、怪我を予防しましょう。",
+            heavy: "<strong>超高重量のデッドリフトには、フィギュア8ストラップが最強の選択肢です。</strong><br>ただし、緊急時に手を離せないため、使用は自己責任で、細心の注意を払ってください。",
+            weightlifting: "<strong>ウェイトリフティングでは、安全性を最優先することが絶対条件です。</strong><br>バーを安全にドロップできるクイックリリースが可能な<strong>リストストラップのみ</strong>を使用してください。フィギュア8ストラップは、バーが手から離れなくなるため、ウェイトリフティングでの使用は<strong>極めて危険</strong>です。"
+        };
+
+        const gearHighlightMap = {
+            general: ['gear-list-strap', 'gear-power-grip'],
+            press: ['gear-wrist-wrap'],
+            heavy: ['gear-list-strap', 'gear-figure-8'],
+            weightlifting: ['gear-list-strap', 'gear-wrist-wrap']
+        };
+
+        // 画像URLを管理するための定数
+        // 🚨 Amazonの商品画像を直接表示させることは規約違反や技術的な問題につながります。
+        //    合法的な方法で取得した画像URLを、このオブジェクト内のURLと置き換えてください。
+        //    Amazonアソシエイト（アフィリエイト）プログラムを利用し、
+        //    そこで提供される画像URLを使用するのが正しい方法です。
+        const imageUrls = {
+            'image-list-strap': 'https://placehold.co/600x400/CCCCCC/333333?text=リストストラップの画像', 
+            'image-power-grip': 'https://placehold.co/600x400/CCCCCC/333333?text=パワーグリップの画像',   
+            // Amazonの商品画像URLは、この形式の直接リンクを貼り付けてください
+            'image-figure-8': 'https://m.media-amazon.com/images/I/71Y88fV-g8L._AC_SX679_.jpg', 
+            'image-wrist-wrap': 'https://placehold.co/600x400/CCCCCC/333333?text=リストラップの画像'    
+        };
+
+        function selectGoal(goal) {
+            const recommendationEl = document.getElementById('recommendation-text');
+            const gearCards = document.querySelectorAll('.gear-card');
+            
+            recommendationEl.innerHTML = recommendationTexts[goal];
+            recommendationEl.classList.remove('hidden');
+
+            const highlights = gearHighlightMap[goal];
+            
+            gearCards.forEach(card => {
+                card.classList.remove('highlight');
+                card.style.display = 'none';
+            });
+
+            if (highlights) {
+                highlights.forEach(id => {
+                    const card = document.getElementById(id);
+                    if (card) {
+                        card.classList.add('highlight');
+                        card.style.display = 'block';
+                    }
+                });
+            } else {
+                gearCards.forEach(card => card.style.display = 'block');
+            }
+            
+            const targetElement = document.getElementById('details');
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+             const gearCards = document.querySelectorAll('.gear-card');
+             gearCards.forEach(card => card.style.display = 'block');
+
+             // 画像URLを読み込む
+             for (const [id, url] of Object.entries(imageUrls)) {
+                 const imgElement = document.getElementById(id);
+                 if (imgElement) {
+                     imgElement.src = url;
+                 }
+             }
+        });
+    </script>
+</body>
+</html>
 
