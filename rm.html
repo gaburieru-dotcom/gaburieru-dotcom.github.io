@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【公式】RM換算計算機 | 筋トレBIG3の1RMを簡単算出</title>
+
+    <!-- SEO対策: 検索エンジンにサイトの目的を明確に伝えるためのdescriptionメタタグ -->
+    <meta name="description" content="筋トレBIG3（ベンチプレス、スクワット、デッドリフト）の1RM（最大挙上重量）を簡単に計算できる公式RM換算計算機です。トレーニングの重量と回数を入力するだけで、あなたの限界を算出。トレーニング計画に役立ちます。" />
+    
+    <!-- SEO対策: 関連キーワードを検索エンジンに伝えるためのkeywordsメタタグ -->
+    <meta name="keywords" content="RM換算,RM換算表, RM計算機, 1RM, BIG3, ベンチプレス, スクワット, デッドリフト, 筋トレ, 筋力トレーニング, トレーニング計画" />
+
+    <!-- Open Graph Protocol (SNS共有時の表示最適化) -->
+    <meta property="og:title" content="RM換算計算機 | BIG3の1RMを簡単算出">
+    <meta property="og:description" content="筋トレBIG3（ベンチプレス、スクワット、デッドリフト）の1RM（最大挙上重量）を簡単に計算できる公式RM換算計算機です。" />
+    <meta property="og:image" content="https://placehold.co/1200x630/000000/FFFFFF?text=RM+Calculator" />
+    <meta property="og:url" content="https://yourwebsite.com/rm-calculator" /> <!-- ★公開時に実際のURLに置き換えてください -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Cards (Twitter共有時の表示最適化) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RM換算計算機 | BIG3の1RMを簡単算出" />
+    <meta name="twitter:description" content="筋トレBIG3（ベンチプレス、スクワット、デッドリフト）の1RM（最大挙上重量）を簡単に計算できる公式RM換算計算機です。" />
+    <meta name="twitter:image" content="https://placehold.co/1200x675/000000/FFFFFF?text=RM+Calculator" />
+
+    <!-- ロボットクローラーへの指示 -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Noto Sans JP (日本語フォント) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 日本語フォントの適用 */
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+        .bg-gradient-card {
+            background: linear-gradient(45deg, #f0f4f8 0%, #e2e8f0 100%);
+        }
+        /* FAQセクション用スタイル */
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            font-weight: bold;
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item[open] summary {
+            background-color: #f0f4f8;
+            border-bottom: none;
+        }
+        .faq-item summary .icon {
+            margin-right: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary .icon {
+            transform: rotate(90deg);
+        }
+        .faq-content {
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+
+    <!-- Schema.org 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "RM換算計算機",
+      "description": "筋トレBIG3の1RMを簡単に計算できるRM換算計算機です。",
+      "url": "https://yourwebsite.com/rm-calculator",
+      "mainEntity": {
+        "@type": "HowTo",
+        "name": "RM換算の計算方法",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "重量と回数を入力",
+            "text": "計算したい種目の重量と回数を入力します。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "種目を選択",
+            "text": "ベンチプレス、スクワット、デッドリフトの中から計算したい種目を選びます。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "1RMを計算",
+            "text": "「計算する」ボタンをクリックすると、あなたの1RM（最大挙上重量）が算出されます。"
+          }
+        ]
+      }
+    }
+    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- ヘッダー -->
+    <header class="bg-gradient-hero text-white shadow-lg py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">RM</span>
+                <span class="text-2xl font-bold tracking-wider">計算機</span>
+            </a>
+            <nav>
+                <ul class="flex space-x-6 text-sm font-medium">
+                    <li><a href="#calculator-section" class="hover:text-blue-300 transition-colors duration-200">計算機</a></li>
+                    <li><a href="#about-rm-section" class="hover:text-blue-300 transition-colors duration-200">RMとは</a></li>
+                    <li><a href="#items-section" class="hover:text-blue-300 transition-colors duration-200">サポートアイテム</a></li>
+                    <li><a href="#faq-section" class="hover:text-blue-300 transition-colors duration-200">よくある質問</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 lg:py-16">
+        
+        <!-- RM換算計算機 セクション -->
+        <section id="calculator-section" class="mb-16">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl w-full border border-gray-200">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-2 tracking-tight leading-tight">RM換算計算機</h1>
+                <p class="text-center text-gray-600 mb-8 text-sm md:text-base">筋トレBIG3の1RMを簡単に算出。あなたの次の目標設定をサポートします。</p>
+    
+                <!-- エラーメッセージの表示エリア -->
+                <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-4">
+                    <span id="error-text" class="block sm:inline"></span>
+                </div>
+    
+                <!-- 入力フォーム -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div>
+                        <label for="weight" class="block text-sm font-medium text-gray-700 mb-2">重量 (kg)</label>
+                        <input id="weight" type="number" min="1" class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl shadow-inner focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500 transition-colors duration-200" placeholder="例: 100">
+                    </div>
+                    <div>
+                        <label for="reps" class="block text-sm font-medium text-gray-700 mb-2">回数</label>
+                        <input id="reps" type="number" min="1" class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl shadow-inner focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-500 transition-colors duration-200" placeholder="例: 5">
+                    </div>
+                    <div>
+                        <label for="exercise" class="block text-sm font-medium text-gray-700 mb-2">種目</label>
+                        <select id="exercise" class="mt-1 block w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl shadow-inner focus:ring-blue-500 focus:border-blue-500 text-gray-900 transition-colors duration-200">
+                            <option value="BP">ベンチプレス</option>
+                            <option value="SQ">スクワット</option>
+                            <option value="DL">デッドリフト</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <!-- 計算ボタン -->
+                <button id="calculate-btn" class="w-full px-4 py-4 bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                    <span class="flex items-center justify-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dumbbell" role="img" aria-label="計算する"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3.5 10.5 7.5 7.5"/><path d="m13 19 8-8"/><path d="m16.5 3.5-8 8"/></svg>
+                        <span>計算する</span>
+                    </span>
+                </button>
+    
+                <!-- 計算結果の表示エリア -->
+                <div id="result-output" class="mt-8 text-center bg-gray-200 p-6 rounded-2xl border border-gray-300 hidden">
+                    <h2 class="text-xl font-semibold text-gray-800">換算1RM</h2>
+                    <p id="result-value" class="mt-2 text-6xl font-black text-blue-600"></p>
+                </div>
+            </div>
+        </section>
+        
+        <hr class="border-gray-200 my-16">
+
+        <!-- RMとは？ セクション -->
+        <section id="about-rm-section" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8 leading-tight">RM（最大反復回数）とは？</h2>
+            <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-200">
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0 p-3 bg-blue-100 text-blue-600 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info" role="img" aria-label="情報アイコン"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">RMの基本</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            RM（Repetition Maximum）とは、「最大反復回数」の略称で、その重量で何回反復できるかを示す指標です。例えば、100kgを5回ギリギリ挙げられる場合、その重量での筋力は「5RMが100kg」と表現されます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0 p-3 bg-blue-100 text-blue-600 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart" role="img" aria-label="棒グラフアイコン"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">1RMの重要性</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            特に重要なのが「1RM」です。これは1回だけしか挙げられない最大の重量を指し、あなたの現在の筋力のベンチマークとなります。1RMを把握することで、トレーニングの目標設定やプログラムの計画をより科学的に行うことができます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start mb-6">
+                    <div class="flex-shrink-0 p-3 bg-blue-100 text-blue-600 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator" role="img" aria-label="計算機アイコン"><path d="M21 21v-4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2z"/><path d="m14 10-2-2-2 2"/><path d="M12 8v8"/></svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">計算式について</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            RM換算にはいくつかの計算式がありますが、この計算機ではトレーニング経験者から初心者まで幅広く使われている一般的な換算式を採用しています。実際の1RMとは多少誤差が生じる場合がありますが、あくまでトレーニングの目安として活用しましょう。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 新しい計算式の説明 -->
+                <div class="bg-gray-100 p-6 rounded-2xl shadow-inner border border-gray-200">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">💡 採用している計算式について</h4>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        この計算機では、種目ごとに最も広く利用されている以下の換算式を採用しています。
+                    </p>
+                    <div class="my-4 space-y-2 text-center">
+                        <p class="font-extrabold text-lg text-blue-600">
+                            ベンチプレス：1RM = (重量 × 回数) ÷ 40 + 重量
+                        </p>
+                        <p class="font-extrabold text-lg text-blue-600">
+                            スクワット・デッドリフト：1RM = (重量 × 回数) ÷ 33.3 + 重量
+                        </p>
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        これらの計算式は回数が少ないほど精度が高いとされており、高回数になるにつれて誤差が大きくなる傾向があります。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 my-16">
+
+        <!-- BIG3種目の解説 セクション -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8 leading-tight">BIG3種目の解説</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-card p-6 rounded-2xl shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing text-blue-600" role="img" aria-label="スクワットアイコン"><path d="m8 9 3-3 2 2"/><path d="M12 18v-6l-2-2"/><path d="m9 18 3-6"/><path d="M12 12v-6c0-1.12.88-2 2-2s2 .88 2 2v2"/><circle cx="12" cy="4" r="2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">スクワット</h3>
+                    <p class="text-sm text-gray-700">「キング・オブ・エクササイズ」とも呼ばれ、下半身全体の筋肉を鍛えるのに最も効果的な種目です。大腿四頭筋、ハムストリングス、お尻（大殿筋）を中心に、全身の協調性を高めます。</p>
+                </div>
+                <div class="bg-gradient-card p-6 rounded-2xl shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-lying text-blue-600" role="img" aria-label="ベンチプレスアイコン"><path d="M12.5 19.5 9 18l-3-2c-1-.5-2.5-1.5-2.5-2.5V8c0-1 1-1.5 2-1.5h1.5s1.4-.5 2-.5c1.4-.3 2.8-.7 4.2-1a2.5 2.5 0 0 1 3.8 2.2V11c0 1.2-.8 2-2 2.5l-2.5 1.5c-.8.5-2 .5-2.8 0l-1-1.5c-.6-.6-1.5-.7-2-.7l-.5.2"/><circle cx="15.5" cy="4" r="2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">ベンチプレス</h3>
+                    <p class="text-sm text-gray-700">上半身の筋力アップに欠かせない種目。胸（大胸筋）、肩（三角筋）、腕（上腕三頭筋）を効果的に鍛えることができ、厚い胸板を作るのに最適です。</p>
+                </div>
+                <div class="bg-gradient-card p-6 rounded-2xl shadow-lg border border-gray-200 text-center">
+                    <div class="flex justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing text-blue-600" role="img" aria-label="デッドリフトアイコン"><path d="m8 9 3-3 2 2"/><path d="M12 18v-6l-2-2"/><path d="m9 18 3-6"/><path d="M12 12v-6c0-1.12.88-2 2-2s2 .88 2 2v2"/><circle cx="12" cy="4" r="2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">デッドリフト</h3>
+                    <p class="text-sm text-gray-700">「全身の筋力を測る」と言われるほど、背中、脚、お尻、体幹など多くの筋肉を動員する全身運動です。正しいフォームで行うことで、圧倒的なパワーと筋力アップを期待できます。</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 my-16">
+
+        <!-- 1RMを活かすトレーニング計画 セクション -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8 leading-tight">1RMを活かしたトレーニング計画</h2>
+            <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-200">
+                <p class="text-gray-700 leading-relaxed mb-6">
+                    算出された1RMは、あなたのトレーニング強度を計画するための重要な指標です。目標に応じた適切な重量と回数で効率的にトレーニングを行いましょう。
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-inner border border-blue-200">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">筋力アップ</h4>
+                        <p class="text-sm text-gray-700">
+                            1RMの<span class="font-bold">85%〜95%</span>の重量で、1〜5回の低レップで行う。神経系への刺激が強く、筋力の向上に最適です。
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-inner border border-blue-200">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">筋肥大</h4>
+                        <p class="text-sm text-gray-700">
+                            1RMの<span class="font-bold">60%〜85%</span>の重量で、6〜12回の中レップで行う。筋肉に乳酸を溜め、筋肥大に最も効果的とされています。
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl shadow-inner border border-blue-200">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">筋持久力</h4>
+                        <p class="text-sm text-gray-700">
+                            1RMの<span class="font-bold">60%以下</span>の重量で、15回以上の高レップで行う。長いセット時間で、筋肉の持久力を高めます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 my-16">
+
+        <!-- アプリ紹介と関連サイトのセクション -->
+        <section class="mb-16 text-center">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-8 rounded-3xl shadow-2xl">
+                <h2 class="text-3xl font-extrabold text-white mb-4">RM換算アプリ「Max RM換算機 for BIG3」</h2>
+                <p class="text-white text-lg mb-6">
+                    いつでもどこでもRM換算ができる専用アプリで、あなたのトレーニングをさらに効率化！
+                </p>
+                <a href="https://apps.apple.com/jp/app/max-rm%E6%8F%9B%E7%AE%97%E6%A9%9F-for-big3/id6569255164" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 px-8 py-4 bg-white text-blue-600 font-black rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    App Storeでダウンロード
+                </a>
+            </div>
+            <div class="mt-8 text-gray-600 text-sm">
+                <p class="font-bold text-gray-900 mb-2">💡 5/3/1プログラムに興味がある方へ</p>
+                <p>トレーニングプログラムの組み方や哲学について詳しく知りたい方は、こちらの「5/3/1プログラム インタラクティブガイド」も参考にしてみてください。</p>
+                <a href="https://gaburieru-dotcom.github.io/531-Interactive-Program-Guide/#faq" target="_blank" rel="noopener noreferrer" class="inline-block mt-4 px-6 py-3 bg-gray-800 text-white font-bold rounded-full shadow-lg hover:bg-gray-700 transition duration-300">
+                    ガイドを見る
+                </a>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 my-16">
+
+        <!-- 記録更新をサポートするアイテム セクション -->
+        <section id="items-section" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8 leading-tight">記録更新をサポートするアイテム</h2>
+            <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-200">
+                <div class="flex justify-center mb-6">
+                    <button id="supplements-tab" class="px-6 py-3 rounded-l-full font-bold transition-colors duration-200 bg-blue-600 text-white shadow-md">
+                        サプリメント
+                    </button>
+                    <button id="gear-tab" class="px-6 py-3 rounded-r-full font-bold transition-colors duration-200 bg-gray-300 text-gray-600 shadow-md">
+                        トレーニングギア
+                    </button>
+                </div>
+                <!-- コンテンツ表示エリア -->
+                <div id="tab-content" class="space-y-6"></div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200 my-16">
+        
+        <!-- よくある質問（FAQ）セクション -->
+        <section id="faq-section" class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center text-gray-900 mb-8 leading-tight">よくある質問 (FAQ)</h2>
+            <div class="bg-white p-8 rounded-3xl shadow-2xl border border-gray-200 space-y-4">
+                <details class="faq-item">
+                    <summary>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right text-blue-600 icon" role="img" aria-label="質問を開く"><path d="m9 18 6-6-6-6"/></svg>
+                        <span class="text-lg text-gray-900">換算1RMは実際の1RMと違いますか？</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p class="text-gray-700 text-sm">
+                            はい、換算1RMはあくまで計算式に基づいた推定値であり、**実際の1RMとは多少の誤差が生じる可能性があります。** フォームの乱れやその日のコンディションによっても変動するため、あくまでトレーニングの目安として活用してください。
+                        </p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right text-blue-600 icon" role="img" aria-label="質問を開く"><path d="m9 18 6-6-6-6"/></svg>
+                        <span class="text-lg text-gray-900">なぜ種目によって計算式が違うのですか？</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p class="text-gray-700 text-sm">
+                            BIG3の種目ごとに、動員される筋肉やフォームが異なるため、最適な換算式も異なります。このサイトでは、それぞれの種目の特性に合わせた一般的な換算式を採用することで、より精度の高い1RMを提供しています。
+                        </p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right text-blue-600 icon" role="img" aria-label="質問を開く"><path d="m9 18 6-6-6-6"/></svg>
+                        <span class="text-lg text-gray-900">1RMを計算するメリットは何ですか？</span>
+                    </summary>
+                    <div class="faq-content">
+                        <p class="text-gray-700 text-sm">
+                            1RMを知ることで、**トレーニングの負荷を数値で正確に管理**できるようになります。これにより、筋力アップ、筋肥大、筋持久力といった目的に合わせたトレーニング重量を科学的に設定でき、**オーバートレーニングや怪我のリスクを減らす**ことにもつながります。
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-gray-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 RM Calculator. All Rights Reserved.</p>
+            <p class="text-xs mt-2">
+                当サイトはAmazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // アマゾンアソシエイトIDを定義
+            const associateId = 'mugi0fc9-22';
+            
+            // サプリメントとギアのデータ
+            const supplementsData = [
+                {
+                    title: "クレアチン",
+                    description: "瞬発的なパワーをサポートし、高重量トレーニングのパフォーマンス向上に役立ちます。Max-RM換算機 for BIG3を使って計算した限界重量に挑戦するあなたを、クレアチンが力強く後押しします。",
+                    link: `https://www.amazon.co.jp/s?k=クレアチン&tag=${associateId}`,
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-syringe" role="img" aria-label="クレアチン"><path d="m18 12 4-4"/><path d="m17 13-1-1"/><path d="m3 21 8-8"/><path d="m16 2a2 2 0 0 0-2 2v2H8a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h2v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8z"/></svg>`
+                },
+                {
+                    title: "プロテイン",
+                    description: "トレーニングでダメージを受けた筋繊維の回復と新たな筋肉の合成を促す、最も基本的な栄養素です。Max-RM換算機 for BIG3で設定した目標を達成するための、強靭な身体づくりに欠かせません。",
+                    link: `https://www.amazon.co.jp/s?k=プロテイン&tag=${associateId}`,
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-milk" role="img" aria-label="プロテイン"><path d="M8 2h8a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M12 18v-5"/><path d="M12 13c-2.76 0-5 2.24-5 5h10c0-2.76-2.24-5-5-5z"/><path d="M12 22c-2.76 0-5-1-5-1s2.24-1 5-1 5 1 5 1-2.24 1-5 1z"/></svg>`
+                },
+                {
+                    title: "プレワークアウト",
+                    description: "集中力とエネルギーレベルを高め、トレーニングの質を向上させるための補助サプリメント。最高のパフォーマンスを発揮し、換算機で出した限界を超えるための強力な味方です。",
+                    link: `https://www.amazon.co.jp/s?k=プレワークアウト&tag=${associateId}`,
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-battery-charging" role="img" aria-label="プレワークアウト"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><path d="M8 12h8"/><path d="M12 16V8"/><path d="M2 7v10a2 2 0 0 0 2 2h7"/></svg>`
+                },
+            ];
+
+            const gearData = [
+                {
+                    title: "パワーベルト",
+                    description: "腹圧を高めて体幹を安定させ、スクワットやデッドリフトでの腰への負担を軽減します。Max-RM換算機 for BIG3で目標を立てた高重量リフトに挑戦する際に必須のアイテムです。",
+                    link: `https://www.amazon.co.jp/s?k=パワーベルト&tag=${associateId}`,
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-belt" role="img" aria-label="パワーベルト"><path d="M22 10s-2-2-4-2-4 2-6 2-4-2-6-2-4 2-4 2"/><path d="M22 14s-2 2-4 2-4-2-6-2-4 2-6 2-4-2-4-2"/><path d="M12 10v4"/></svg>`
+                },
+                {
+                    title: "リストラップ",
+                    description: "ベンチプレスなどのプレス系種目で手首を固定し、怪我を予防し、安定性を高めます。Max-RM換算機 for BIG3で計算した限界に挑む際の、手首のブレを防ぎます。",
+                    link: `https://www.amazon.co.jp/s?k=リストラップ&tag=${associateId}`,
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hand-metal" role="img" aria-label="リストラップ"><path d="M18 12.5V10a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v1.5"/><path d="M14 12.5V8a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4.5"/><path d="M10 12.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6.5"/><path d="M6 12.5V2a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10.5"/><path d="M18 12.5H6"/><path d="M2 12.5V10a2 2 0 0 1 2-2h10c1.8 0 2.5.5 3 2l2 3h-10c-.5-2-1-2-1-2"/><path d="M2 12.5v1.5c0 1.25.75 2 2 2h14c1.25 0 2-.75 2-2V12.5"/><path d="M2 14v1c0 1.25.75 2 2 2h14c1.25 0 2-.75 2-2v-1"/></svg>`
+                },
+                {
+                    title: "パワーグリップ",
+                    description: "握力補助に特化しており、素早く着脱できるため、高重量のデッドリフトや懸垂に最適です。握力が先に尽きてしまうのを防ぎ、Max-RM換算機 for BIG3の目標を達成するために。",
+                    link: `https://www.amazon.co.jp/s?k=パワーグリップ&tag=${associateId}`,
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-grip" role="img" aria-label="パワーグリップ"><path d="M4 14v-4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M4 21v-4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M4 7V3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/></svg>`
+                },
+            ];
+
+            // DOM要素の取得
+            const weightInput = document.getElementById('weight');
+            const repsInput = document.getElementById('reps');
+            const exerciseSelect = document.getElementById('exercise');
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resultOutput = document.getElementById('result-output');
+            const resultValue = document.getElementById('result-value');
+            const errorMessage = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+
+            const supplementsTab = document.getElementById('supplements-tab');
+            const gearTab = document.getElementById('gear-tab');
+            const tabContent = document.getElementById('tab-content');
+
+            let activeTab = 'supplements';
+
+            // Lucide Iconsの初期化
+            lucide.createIcons();
+
+            // 1RMを計算する関数
+            const calculateRM = () => {
+                const weight = parseFloat(weightInput.value);
+                const reps = parseInt(repsInput.value, 10);
+                let calculatedMax = 0;
+
+                // 入力値の検証
+                if (isNaN(weight) || isNaN(reps) || weight < 1 || reps < 1) {
+                    errorText.textContent = '有効な重量と回数を入力してください（1以上の整数）。';
+                    errorMessage.classList.remove('hidden');
+                    resultOutput.classList.add('hidden');
+                    return;
+                }
+
+                errorMessage.classList.add('hidden');
+
+                // 選択された種目に基づいて計算式を適用
+                const exercise = exerciseSelect.value;
+                switch (exercise) {
+                    case 'BP':
+                        // ベンチプレス用の計算式
+                        calculatedMax = Math.round((weight * reps) / 40 * 100) / 100 + weight;
+                        break;
+                    case 'SQ':
+                    case 'DL':
+                        // スクワット・デッドリフト用の計算式
+                        calculatedMax = Math.round((weight * reps) / 33.3 * 100) / 100 + weight;
+                        break;
+                    default:
+                        errorText.textContent = '有効な種目を選択してください。';
+                        errorMessage.classList.remove('hidden');
+                        resultOutput.classList.add('hidden');
+                        return;
+                }
+                
+                // 結果の表示
+                resultValue.textContent = calculatedMax.toFixed(2) + ' kg';
+                resultOutput.classList.remove('hidden');
+            };
+
+            // タブコンテンツをレンダリングする関数
+            const renderContent = () => {
+                const data = activeTab === 'supplements' ? supplementsData : gearData;
+                tabContent.innerHTML = data.map((item) => `
+                    <div class="bg-gray-100 p-6 rounded-2xl shadow-inner border border-gray-200">
+                        <div class="flex items-center mb-2">
+                            <span class="p-2 bg-blue-100 text-blue-600 rounded-lg mr-3">${item.icon}</span>
+                            <h5 class="text-xl font-bold text-gray-900">${item.title}</h5>
+                        </div>
+                        <p class="text-sm text-gray-700 mb-4 leading-relaxed">${item.description}</p>
+                        <a 
+                            href="${item.link}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center space-x-2 bg-blue-600 text-white text-sm font-medium py-2.5 px-6 rounded-xl hover:bg-blue-700 transition duration-300 transform hover:scale-105"
+                        >
+                            <span>Amazonでチェック</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link" role="img" aria-label="外部サイトへのリンク"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        </a>
+                    </div>
+                `).join('');
+                lucide.createIcons(); // 新しいコンテンツのアイコンを再描画
+            };
+
+            // イベントリスナーの追加
+            calculateBtn.addEventListener('click', calculateRM);
+            
+            supplementsTab.addEventListener('click', () => {
+                activeTab = 'supplements';
+                supplementsTab.classList.add('bg-blue-600', 'text-white');
+                supplementsTab.classList.remove('bg-gray-300', 'text-gray-600');
+                gearTab.classList.add('bg-gray-300', 'text-gray-600');
+                gearTab.classList.remove('bg-blue-600', 'text-white');
+                renderContent();
+            });
+
+            gearTab.addEventListener('click', () => {
+                activeTab = 'gear';
+                gearTab.classList.add('bg-blue-600', 'text-white');
+                gearTab.classList.remove('bg-gray-300', 'text-gray-600');
+                supplementsTab.classList.add('bg-gray-300', 'text-gray-600');
+                supplementsTab.classList.remove('bg-blue-600', 'text-white');
+                renderContent();
+            });
+
+            // ページロード時の初期レンダリング
+            renderContent();
+        });
+    </script>
+</body>
+</html>
