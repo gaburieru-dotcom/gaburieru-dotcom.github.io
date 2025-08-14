@@ -8,7 +8,7 @@
   <!-- 検索結果に表示される説明文（ディスクリプション）を追加しました -->
   <meta name="description" content="初心者から上級者まで役立つ筋トレ情報サイト。効果的なトレーニング方法、ジム・ウェンドラーの5/3/1プログラム解説、プロテインの選び方、栄養のヒントを提供し、あなたの成長をサポートします。">
   <!-- Google Search Consoleのサイト確認用メタタグを追加しました -->
-  <meta name="google-site-verification" content="uvV8RvuTlFAxxs4Y07ph-xPMdADIE3NP0m2RXdYGsaY" />
+  <meta name="google-site-verification" content="JpNguBMjeo64DaSQ1m09sM6eV-MC2g-qFZ70qCFUMDo" />
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -21,23 +21,68 @@
     .hover-scale:hover {
       transform: scale(1.02);
     }
+    /* モバイルメニュー用のスタイル */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    .mobile-menu.active {
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .mobile-menu {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
   <!-- ヘッダー -->
   <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center relative">
       <div class="text-2xl font-bold text-gray-900">
         <a href="index.html" class="hover:text-blue-600">Strength & Growth</a>
       </div>
-      <nav>
+
+      <!-- デスクトップ用ナビゲーション -->
+      <nav class="hidden md:flex flex-grow justify-end items-center space-x-6">
         <ul class="flex space-x-6">
           <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-semibold">ホーム</a></li>
           <li><a href="#articles" class="text-gray-600 hover:text-blue-600 font-semibold">記事一覧</a></li>
-          <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-semibold">お問い合わせ</a></li>
         </ul>
+        <!-- 検索バーの追加 -->
+        <div class="relative">
+          <input type="text" placeholder="キーワード検索..." class="pl-10 pr-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
       </nav>
+
+      <!-- モバイル用メニューボタン -->
+      <div class="md:hidden">
+        <button id="menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- モバイル用ナビゲーションメニュー -->
+      <div id="mobile-menu" class="mobile-menu md:hidden">
+        <ul class="flex flex-col p-4 space-y-2">
+          <li><a href="index.html" class="block py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-semibold">ホーム</a></li>
+          <li><a href="#articles" class="block py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-semibold">記事一覧</a></li>
+          <!-- モバイル用検索バー -->
+          <li class="mt-4"><input type="text" placeholder="キーワード検索..." class="w-full px-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -67,7 +112,7 @@
         <!-- 5/3/1ガイドへの新しい記事カード -->
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
           <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/531program.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Squat';" alt="筋力向上プログラム「ジム・ウェンドラーの5/3/1」の解説" class="w-full h-48 object-cover">
+          <img src="images2/531program.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=5/3/1 Program';" alt="筋力向上プログラム「ジム・ウェンドラーの5/3/1」の解説" class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">ジム・ウェンドラーの5/3/1プログラム解説</h3>
             <p class="text-gray-600 text-sm mb-4">世界的に有名な筋力向上プログラム「5/3/1」の全てを解説します。</p>
@@ -78,7 +123,7 @@
         <!-- サンプル記事カード2 (必要に応じて記事を増やしてください) -->
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
           <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/protein.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Squat';"alt="筋トレに最適なプロテインの種類と選び方のガイド" class="w-full h-48 object-cover">
+          <img src="images2/protein.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Protein';" alt="筋トレに最適なプロテインの種類と選び方のガイド" class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">プロテインの種類を徹底解説</h3>
             <p class="text-gray-600 text-sm mb-4">あなたに最適なプロテインをみつけましょう！</p>
@@ -89,48 +134,35 @@
         <!-- サンプル記事カード3 (必要に応じて記事を増やしてください) -->
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
           <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/risuto.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Squat';" alt="デッドリフトやベンチプレスに役立つ握力補助ギアの選び方" class="w-full h-48 object-cover">
+          <img src="images2/risuto.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Grip Gear';" alt="デッドリフトやベンチプレスに役立つ握力補助ギアの選び方" class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">あなたに最適な握力補助ギアを見つけよう</h3>
-            <p class="text-gray-600 text-sm mb-4">このガイドは、デッドリフトやベンチプレスなど、あなたのトレーニングを次のレベルへ導くために、最適なリストストラップやパワーグリップ、リストラップを見つけるためのものです。</p>
+            <p class="text-gray-600 text-sm mb-4">デッドリフトやベンチプレスなど、あなたのトレーニングを次のレベルへ導くためのガイドです。</p>
             <a href="akuryokugia.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
           </div>
         </article>
 
+        <!-- 新しい記事カード: RM換算計算機 -->
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/rm1.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Squat';" alt="筋力向上プログラム「ジム・ウェンドラーの5/3/1」の解説" class="w-full h-48 object-cover">
+          <img src="images2/rm1.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=1RM Calculator';" alt="筋トレBIG3の1RMを簡単に計算できるRM換算計算機" class="w-full h-48 object-cover">
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">RM換算計算機 | BIG3の1RMを簡単算出</h3>
-            <p class="text-gray-600 text-sm mb-4">筋トレBIG3（ベンチプレス、スクワット、デッドリフト）の1RM（最大挙上重量）を簡単に計算できる公式RM換算計算機です。</p>
+            <p class="text-gray-600 text-sm mb-4">筋トレBIG3（ベンチプレス、スクワット、デッドリフト）の1RM（最大挙上重量）を簡単に計算できます。</p>
             <a href="rm.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
           </div>
         </article>
         
-      </div>
-    </section>
-
-      <!-- サンプル記事カード3 (必要に応じて記事を増やしてください) -->
+        <!-- 新しい記事カード: 減量サプリメントガイド -->
         <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/genryou.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Squat';" alt="デッドリフトやベンチプレスに役立つ握力補助ギアの選び方" class="w-full h-48 object-cover">
+          <img src="images2/genryou.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Diet Supplements';" alt="減量サプリメントの効果を科学的根拠に基づき解説" class="w-full h-48 object-cover">
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">減量サプリメント効果ガイド｜成分と選び方を科学的根拠で解説</h3>
-            <p class="text-gray-600 text-sm mb-4">減量サプリメントの効果を科学的根拠に基づき解説。成分ごとの作用機序、安全な選び方、目的別のタイプまで網羅したガイドです。</p>
+            <h3 class="text-xl font-semibold mb-2">減量サプリメント効果ガイド</h3>
+            <p class="text-gray-600 text-sm mb-4">減量サプリメントの効果を科学的根拠に基づき解説。成分ごとの作用機序や選び方を網羅したガイドです。</p>
             <a href="genryou.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
           </div>
         </article>
-
-      <!-- サンプル記事カード3 (必要に応じて記事を増やしてください) -->
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/risuto.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Squat';" alt="デッドリフトやベンチプレスに役立つ握力補助ギアの選び方" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">あなたに最適な握力補助ギアを見つけよう</h3>
-            <p class="text-gray-600 text-sm mb-4">このガイドは、デッドリフトやベンチプレスなど、あなたのトレーニングを次のレベルへ導くために、最適なリストストラップやパワーグリップ、リストラップを見つけるためのものです。</p>
-            <a href="akuryokugia.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
-          </div>
-        </article>
+      </div>
+    </section>
 
   </main>
 
@@ -140,6 +172,16 @@
       <p>&copy; 2024 Strength & Growth All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- JavaScript for mobile menu toggle -->
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
