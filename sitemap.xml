@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/531-program-guide.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/protein-guide.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/grip-gear-guide.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/1rm-calculator.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/supplement-review.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<url>
+  <loc>https://gaburieru-dotcom.github.io/</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://gaburieru-dotcom.github.io/index.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://gaburieru-dotcom.github.io/531-guide.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://gaburieru-dotcom.github.io/protein.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://gaburieru-dotcom.github.io/akuryokugia.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://gaburieru-dotcom.github.io/rm.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>https://gaburieru-dotcom.github.io/genryou.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2025-08-15T12:10:45+09:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+
 </urlset>
