@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>減量サプリメント効果ガイド｜成分と選び方を科学的根拠で解説</title>
-    <meta name="description" content="減量サプリメントの効果を科学的根拠に基づき解説。成分ごとの作用機序、安全な選び方、目的別のタイプまで網羅したインタラクティブガイドです。">
+    <title>【最新版】科学的根拠に基づく減量サプリメント効果ガイド｜成分と選び方を徹底解説</title>
+    <meta name="description" content="減量サプリメントの効果を科学的根拠に基づき解説。成分ごとの作用機序、安全な選び方、目的別のタイプまで網羅した、あなたのサプリメント選びをサポートするインタラクティブガイドです。">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Calm Neutral (Stone background with Teal/Amber accents) -->
-    <!-- Application Structure Plan: A user-centric, tab-based dashboard. Instead of a linear report, the structure is organized around user goals ("Find by Goal"), allowing immediate access to relevant information. This is supported by a detailed "Ingredient Dictionary" and a critical "Safety Checklist". This non-linear approach enhances usability by letting users navigate based on their specific needs (e.g., "I want to boost workout effects" or "I'm worried about safety"), making complex information more digestible and actionable. -->
-    <!-- Visualization & Content Choices: Report Info: Ingredient list with evidence levels. -> Goal: Compare scientific backing. -> Viz: Horizontal Bar Chart (Chart.js). -> Interaction: Tooltips on hover show evidence type. -> Justification: Visually quantifies the abstract concept of "scientific evidence," allowing for quick comparison of ingredient reliability. Report Info: Safety systems (Tokuho, etc.). -> Goal: Clarify differences. -> Presentation: Styled HTML cards in a flexbox layout. -> Interaction: None, direct comparison. -> Justification: Clear, side-by-side visual format is more intuitive than dense text. Report Info: Health risks. -> Goal: Warn effectively without causing alarm. -> Presentation: Interactive "reveal" cards. -> Interaction: Click to show details. -> Justification: Engages the user and presents sensitive information in a controlled manner. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Noto+Sans+JP', sans-serif;
@@ -53,13 +49,18 @@
 
     <div class="container mx-auto p-4 md:p-8">
         <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-teal-800">減量サプリメントの効果と選び方</h1>
-            <p class="mt-2 text-stone-600">このガイドは、科学的根拠に基づき、あなたのサプリメント選びをサポートするために作成されました。</p>
+            <!-- <h1>タグをSEO向けに調整 -->
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-800">減量サプリメント効果ガイド：科学的根拠に基づく選び方</h1>
+            <p class="mt-2 text-stone-600">このガイドは、<strong>科学的根拠</strong>に基づき、あなたのサプリメント選びをサポートするために作成されました。</p>
+            <!-- ホームに戻るボタンを追加 -->
+            <a href="https://gaburieru-dotcom.github.io" class="mt-4 inline-block bg-teal-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-teal-600 transition-colors duration-200">
+                ホームに戻る
+            </a>
         </header>
 
         <div class="bg-amber-100 border-l-4 border-amber-500 text-amber-800 p-4 rounded-md mb-8" role="alert">
             <p class="font-bold">はじめに：最も重要なこと</p>
-            <p>減量サプリメントは「魔法の薬」ではありません。**適切な食事と継続的な運動が「主役」であり、サプリメントはその努力をサポートする「補助役」**です。この原則を理解することが、安全で効果的な減量への第一歩となります。</p>
+            <p>減量サプリメントは「魔法の薬」ではありません。<strong>適切な食事と継続的な運動が「主役」であり、サプリメントはその努力をサポートする「補助役」</strong>です。この原則を理解することが、安全で効果的な減量への第一歩となります。</p>
         </div>
 
         <div class="mb-8 border-b border-stone-200">
@@ -72,8 +73,11 @@
         </div>
 
         <main>
+            <!-- h2タグをメインコンテンツのタイトルとして追加 -->
+            <h2 class="text-2xl font-bold mb-6 text-stone-800">あなたの減量目標に合わせた成分を詳しく解説</h2>
+
             <section id="goal" class="content-section">
-                <h2 class="text-2xl font-bold mb-4 text-teal-700">目的から探す：あなたに最適な減量サプリメントを見つけよう</h2>
+                <h3 class="text-2xl font-bold mb-4 text-teal-700">目的から探す：あなたに最適な減量サプリメントを見つけよう</h3>
                 <p class="mb-6 text-stone-600">あなたのライフスタイルや悩みに合わせて、関連する成分を絞り込みます。下のボタンをクリックして、情報を表示してください。各カードには、その成分の主な機能と、どれだけ科学的根拠があるかが表示されています。</p>
                 <div class="flex flex-wrap gap-4 mb-8">
                     <button class="goal-filter-btn bg-white hover:bg-teal-50 text-teal-800 font-semibold py-2 px-4 border border-teal-200 rounded-lg shadow-sm" data-filter="all">すべて表示</button>
@@ -86,34 +90,34 @@
             </section>
 
             <section id="ingredients" class="content-section">
-                <h2 class="text-2xl font-bold mb-4 text-teal-700">減量サプリメント成分辞典：科学的根拠と作用機序を詳しく解説</h2>
+                <h3 class="text-2xl font-bold mb-4 text-teal-700">減量サプリメント成分辞典：科学的根拠と作用機序を詳しく解説</h3>
                 <p class="mb-6 text-stone-600">このセクションでは、減量サプリメントに広く使われている主要な成分について、その効果と科学的根拠を詳しく解説します。各カードには、その成分の概要が記載されており、クリックするとさらに詳しい作用機序が表示されます。</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="ingredients-list">
                 </div>
             </section>
 
             <section id="safety" class="content-section">
-                <h2 class="text-2xl font-bold mb-4 text-teal-700">安全性の確認：信頼できるサプリメントの選び方と危険成分</h2>
-                <p class="mb-6 text-stone-600">減量サプリメントを選ぶ上で最も重要なのは安全性です。このセクションでは、信頼できる製品を見分けるための日本の制度と、個人輸入などで潜む危険性について詳しく説明します。</p>
+                <h3 class="text-2xl font-bold mb-4 text-teal-700">安全性の確認：信頼できるサプリメントの選び方と危険成分</h3>
+                <p class="mb-6 text-stone-600">減量サプリメントを選ぶ上で最も重要なのは<strong>安全性</strong>です。このセクションでは、信頼できる製品を見分けるための日本の制度と、個人輸入などで潜む危険性について詳しく説明します。</p>
                 
                 <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-                    <h3 class="text-xl font-semibold mb-4 text-teal-800">信頼性の基準：保健機能食品制度を理解する</h3>
+                    <h4 class="text-xl font-semibold mb-4 text-teal-800">信頼性の基準：保健機能食品制度を理解する</h4>
                     <p class="mb-4 text-stone-700">日本の保健機能食品制度は、国が定める基準に基づき、食品の機能性を表示できる制度です。これにより、消費者は科学的根拠のある製品を選びやすくなります。</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="border border-stone-200 p-4 rounded-lg">
-                            <h4 class="font-bold text-lg text-stone-800">特定保健用食品 (トクホ)</h4>
+                            <h5 class="font-bold text-lg text-stone-800">特定保健用食品 (トクホ)</h5>
                             <p class="text-sm text-stone-500 mb-2">✅ 国の厳しい審査をクリア</p>
                             <ul class="list-disc list-inside text-stone-700 space-y-1 text-sm">
-                                <li>製品ごとに有効性と安全性が**国によって個別に審査**されます。</li>
+                                <li>製品ごとに有効性と安全性が<strong>国によって個別に審査</strong>されます。</li>
                                 <li>特定の保健目的（例：お腹の調子を整える）の表示が許可されます。</li>
                                 <li>最も信頼性が高い制度です。</li>
                             </ul>
                         </div>
                         <div class="border border-stone-200 p-4 rounded-lg">
-                            <h4 class="font-bold text-lg text-stone-800">機能性表示食品</h4>
+                            <h5 class="font-bold text-lg text-stone-800">機能性表示食品</h5>
                             <p class="text-sm text-stone-500 mb-2">📝 事業者の責任で表示</p>
                             <ul class="list-disc list-inside text-stone-700 space-y-1 text-sm">
-                                <li>有効性と安全性の根拠は**事業者が消費者庁へ届け出**を行います。</li>
+                                <li>有効性と安全性の根拠は<strong>事業者が消費者庁へ届け出</strong>を行います。</li>
                                 <li>国による個別審査はなく、あくまで事業者の責任で表示されます。</li>
                                 <li>消費者は届出情報を自身で確認し、吟味することが求められます。</li>
                             </ul>
@@ -122,8 +126,8 @@
                 </div>
 
                 <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-red-800">⚠️ 潜在的な危険性：違法成分と健康被害</h3>
-                    <p class="mt-2 mb-4 text-red-700">特に個人輸入で入手した海外製品には、健康を害する医薬品成分が**違法に含まれている**場合があります。過去には**肝機能障害や死亡事例**も報告されており、安易な購入は絶対に避けるべきです。</p>
+                    <h4 class="text-xl font-semibold text-red-800">⚠️ 潜在的な危険性：違法成分と健康被害</h4>
+                    <p class="mt-2 mb-4 text-red-700">特に個人輸入で入手した海外製品には、健康を害する医薬品成分が<strong>違法に含まれている</strong>場合があります。過去には<strong>肝機能障害や死亡事例</strong>も報告されており、安易な購入は絶対に避けるべきです。</p>
                     <details class="cursor-pointer">
                         <summary class="font-semibold text-red-800">過去に検出された危険な医薬品成分の例を見る</summary>
                         <div class="mt-4 border-t border-red-200 pt-4">
@@ -138,8 +142,8 @@
             </section>
             
             <section id="evidence" class="content-section">
-                <h2 class="text-2xl font-bold mb-4 text-teal-700">科学的根拠の比較：効果レベルが一目でわかるチャート</h2>
-                <p class="mb-6 text-stone-600">報告書に記載された各成分の科学的根拠のレベルを可視化しました。根拠レベルが高いほど、その機能性に対する信頼性が高いと考えられます。**「ヒト臨床試験」**が最も信頼性の高い根拠です。</p>
+                <h3 class="text-2xl font-bold mb-4 text-teal-700">科学的根拠の比較：効果レベルが一目でわかるチャート</h3>
+                <p class="mb-6 text-stone-600">報告書に記載された各成分の科学的根拠のレベルを可視化しました。根拠レベルが高いほど、その機能性に対する信頼性が高いと考えられます。<strong>「ヒト臨床試験」</strong>が最も信頼性の高い根拠です。</p>
                 <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
                     <div class="chart-container">
                         <canvas id="evidenceChart"></canvas>
@@ -265,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createIngredientCard(ingredient) {
         const categoryMap = {
-            absorb: { text: '🍔 吸収抑制', color: 'bg-blue-100 text-blue-800' },
+            absorb: { text: '� 吸収抑制', color: 'bg-blue-100 text-blue-800' },
             burn: { text: '🔥 燃焼促進', color: 'bg-orange-100 text-orange-800' },
             control: { text: '🍽️ 食欲調整', color: 'bg-green-100 text-green-800' }
         };
@@ -433,3 +437,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+�
