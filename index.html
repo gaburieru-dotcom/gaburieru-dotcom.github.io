@@ -61,28 +61,33 @@
 
   <script>
     (function() {
-      // URLからIDを取得する関数
-      function getTemplateId() {
-        // 1. 通常のクエリパラメータから検索
+      // URLからクエリパラメータを抽出する関数
+      function getQueryParams() {
+        const params = {};
+        // 1. 通常のクエリパラメータ
         const urlParams = new URLSearchParams(window.location.search);
-        let id = urlParams.get('id');
-        if (id) return id;
+        urlParams.forEach((val, key) => { params[key] = val; });
 
-        // 2. ハッシュパラメータ（#/open-menu?id=...）から検索
+        // 2. ハッシュパラメータ（#/open-menu?id=...）
         if (window.location.hash) {
-          const hash = window.location.hash;
-          const match = hash.match(/[?&]id=([^&]+)/);
-          if (match) return decodeURIComponent(match[1]);
+          const hashParts = window.location.hash.split('?');
+          if (hashParts.length > 1) {
+            const hashParams = new URLSearchParams(hashParts[1]);
+            hashParams.forEach((val, key) => { params[key] = val; });
+          }
         }
-        return null;
+        return params;
       }
 
-      const id = getTemplateId();
-      if (id) {
+      const params = getQueryParams();
+      if (params.id) {
         // モバイルデバイス（iOS または Android）の判定
         const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) {
-          const appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(id);
+          let appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(params.id);
+          if (params.data) {
+            appUrl += '&data=' + encodeURIComponent(params.data);
+          }
           
           // DOM構築完了後にオーバーレイの表示とリダイレクト試行
           document.addEventListener('DOMContentLoaded', function() {
