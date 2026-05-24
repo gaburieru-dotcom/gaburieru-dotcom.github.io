@@ -1,191 +1,113 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- タイトルをより具体的でキーワードに富んだものに変更しました -->
-  <title>筋トレ情報サイト｜初心者向けトレーニング、栄養、プログラム解説 - Strength & Growth</title>
-  <!-- 検索結果に表示される説明文（ディスクリプション）を追加しました -->
-  <meta name="description" content="初心者から上級者まで役立つ筋トレ情報サイト。効果的なトレーニング方法、ジム・ウェンドラーの5/3/1プログラム解説、プロテインの選び方、栄養のヒントを提供し、あなたの成長をサポートします。">
-  <!-- Google Search Consoleのサイト確認用メタタグを追加しました -->
-  <meta name="google-site-verification" content="JpNguBMjeo64DaSQ1m09sM6eV-MC2g-qFZ70qCFUMDo" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    .hover-scale {
-      transition: transform 0.3s ease-in-out;
-    }
-    .hover-scale:hover {
-      transform: scale(1.02);
-    }
-    /* モバイルメニュー用のスタイル */
-    .mobile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
-    .mobile-menu.active {
-      display: block;
-    }
-    @media (min-width: 768px) {
-      .mobile-menu {
-        display: none !important;
-      }
-    }
-  </style>
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="gymflow">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>gymflow</title>
+  <link rel="manifest" href="manifest.json">
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-  <!-- ヘッダー -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center relative">
-      <div class="text-2xl font-bold text-gray-900">
-        <a href="index.html" class="hover:text-blue-600">Strength & Growth</a>
+<body>
+  <!-- App Redirect Overlay for Mobile Devices -->
+  <div id="app-redirect-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10, 10, 14, 0.96); z-index:999999; flex-direction:column; align-items:center; justify-content:center; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color:#ffffff; padding:20px; box-sizing:border-box;">
+    <div style="background:rgba(255, 255, 255, 0.03); border:1px solid rgba(255, 255, 255, 0.08); border-radius:24px; padding:40px 30px; text-align:center; max-width:400px; width:100%; box-shadow:0 20px 40px rgba(0,0,0,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-sizing:border-box;">
+      <!-- Icon/Logo wrapper with pulsing glow -->
+      <div style="width:72px; height:72px; background:linear-gradient(135deg, #00ddff, #0077ff); border-radius:22px; margin:0 auto 24px auto; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0, 221, 255, 0.35);">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 9h3v10H4zm13 0h3v10h-3zm-6-3h2v14h-2zm-3 5h8v2H8z" fill="#ffffff" style="fill:#ffffff; stroke:#ffffff; stroke-width:0.5;"/>
+        </svg>
       </div>
-
-      <!-- デスクトップ用ナビゲーション -->
-      <nav class="hidden md:flex flex-grow justify-end items-center space-x-6">
-        <ul class="flex space-x-6">
-          <li><a href="index.html" class="text-gray-600 hover:text-blue-600 font-semibold">ホーム</a></li>
-          <li><a href="#articles" class="text-gray-600 hover:text-blue-600 font-semibold">記事一覧</a></li>
-        </ul>
-        <!-- 検索バーの追加 -->
-        <div class="relative">
-          <input type="text" placeholder="キーワード検索..." class="pl-10 pr-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </div>
-      </nav>
-
-      <!-- モバイル用メニューボタン -->
-      <div class="md:hidden">
-        <button id="menu-button" class="text-gray-600 hover:text-blue-600 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- モバイル用ナビゲーションメニュー -->
-      <div id="mobile-menu" class="mobile-menu md:hidden">
-        <ul class="flex flex-col p-4 space-y-2">
-          <li><a href="index.html" class="block py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-semibold">ホーム</a></li>
-          <li><a href="#articles" class="block py-2 text-gray-600 hover:bg-gray-100 rounded-lg font-semibold">記事一覧</a></li>
-          <!-- モバイル用検索バー -->
-          <li class="mt-4"><input type="text" placeholder="キーワード検索..." class="w-full px-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></li>
-        </ul>
-      </div>
+      
+      <h2 style="margin:0 0 12px 0; font-size:22px; font-weight:700; background:linear-gradient(90deg, #00ddff, #00ffe0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing:-0.5px;">GymFlow アプリで開く</h2>
+      
+      <p style="margin:0 0 32px 0; font-size:14px; color:#a0aec0; line-height:1.6;">
+        アプリがインストールされている場合、自動的に起動します。起動しない場合は下のボタンをタップしてください。
+      </p>
+      
+      <a id="btn-open-app" href="#" style="display:block; text-decoration:none; background:linear-gradient(90deg, #00ddff, #00bfff); color:#0a0a0e; font-weight:700; font-size:16px; padding:16px 24px; border-radius:14px; margin-bottom:20px; box-shadow:0 8px 20px rgba(0, 221, 255, 0.25); text-align:center; box-sizing:border-box;">
+        アプリを起動する
+      </a>
+      
+      <button id="btn-continue-web" style="background:none; border:none; color:#a0aec0; font-size:14px; text-decoration:underline; cursor:pointer; padding:8px 16px; font-family:inherit;">
+        Web版でそのまま続ける
+      </button>
     </div>
-  </header>
+  </div>
 
-  <!-- メインコンテンツ -->
-  <main class="container mx-auto px-4 py-8">
-
-    <!-- ヒーローセクション -->
-    <section class="bg-gray-900 text-white rounded-lg p-12 mb-12 shadow-lg">
-      <div class="max-w-7xl mx-auto">
-        <!-- h1タグをよりキーワードにフォーカスした内容にしました -->
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">筋トレ初心者のための効果的なトレーニングと栄養の知識</h1>
-        <p class="text-lg mb-6 text-gray-300">
-          このサイトでは、筋力向上を目指す初心者から経験者まで、誰もが理想の体を手に入れるための具体的な知識を提供します。
-        </p>
-        <a href="#articles" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-colors">
-          最新記事を読む
-        </a>
-      </div>
-    </section>
-
-    <!-- 記事一覧セクション -->
-    <section id="articles" class="mb-12">
-      <!-- h2タグもキーワードを含めて変更しました -->
-      <h2 class="text-3xl font-bold text-center mb-8">最新のトレーニング記事一覧</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        
-        <!-- 5/3/1ガイドへの新しい記事カード -->
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/531program.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=5/3/1 Program';" alt="筋力向上プログラム「ジム・ウェンドラーの5/3/1」の解説" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">ジム・ウェンドラーの5/3/1プログラム解説</h3>
-            <p class="text-gray-600 text-sm mb-4">世界的に有名な筋力向上プログラム「5/3/1」の全てを解説します。</p>
-            <a href="531-guide.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
-          </div>
-        </article>
-
-        <!-- サンプル記事カード2 (必要に応じて記事を増やしてください) -->
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/protein.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Protein';" alt="筋トレに最適なプロテインの種類と選び方のガイド" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">プロテインの種類を徹底解説</h3>
-            <p class="text-gray-600 text-sm mb-4">あなたに最適なプロテインをみつけましょう！</p>
-            <a href="protein.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
-          </div>
-        </article>
-        
-        <!-- サンプル記事カード3 (必要に応じて記事を増やしてください) -->
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <!-- alt属性をより具体的に変更しました -->
-          <img src="images2/risuto.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Grip Gear';" alt="デッドリフトやベンチプレスに役立つ握力補助ギアの選び方" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">あなたに最適な握力補助ギアを見つけよう</h3>
-            <p class="text-gray-600 text-sm mb-4">デッドリフトやベンチプレスなど、あなたのトレーニングを次のレベルへ導くためのガイドです。</p>
-            <a href="akuryokugia.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
-          </div>
-        </article>
-
-        <!-- 新しい記事カード: RM換算計算機 -->
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <img src="images2/rm1.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=1RM Calculator';" alt="筋トレBIG3の1RMを簡単に計算できるRM換算計算機" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">RM換算計算機 | BIG3の1RMを簡単算出</h3>
-            <p class="text-gray-600 text-sm mb-4">筋トレBIG3（ベンチプレス、スクワット、デッドリフト）の1RM（最大挙上重量）を簡単に計算できます。</p>
-            <a href="rm.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
-          </div>
-        </article>
-        
-        <!-- 新しい記事カード: 減量サプリメントガイド -->
-        <article class="bg-white rounded-lg shadow-md overflow-hidden hover-scale">
-          <img src="images2/genryou.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/A8A29A/FFFFFF?text=Diet Supplements';" alt="減量サプリメントの効果を科学的根拠に基づき解説" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">減量サプリメント効果ガイド</h3>
-            <p class="text-gray-600 text-sm mb-4">減量サプリメントの効果を科学的根拠に基づき解説。成分ごとの作用機序や選び方を網羅したガイドです。</p>
-            <a href="genryou.html" class="text-blue-600 font-semibold hover:underline">続きを読む &rarr;</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- admax -->
-    <script src="https://adm.shinobi.jp/s/ead9bc19ad78775a828018ab7f2eb1ef"></script>
-    <!-- admax -->
-
-  </main>
-
-  <!-- フッター -->
-  <footer class="bg-gray-800 text-white py-8 mt-12">
-    <div class="container mx-auto text-center px-4">
-      <p>&copy; 2024 Strength & Growth All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript for mobile menu toggle -->
   <script>
-    const menuButton = document.getElementById('menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    (function() {
+      // URLからIDを取得する関数
+      function getTemplateId() {
+        // 1. 通常のクエリパラメータから検索
+        const urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get('id');
+        if (id) return id;
 
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-    });
+        // 2. ハッシュパラメータ（#/open-menu?id=...）から検索
+        if (window.location.hash) {
+          const hash = window.location.hash;
+          const match = hash.match(/[?&]id=([^&]+)/);
+          if (match) return decodeURIComponent(match[1]);
+        }
+        return null;
+      }
+
+      const id = getTemplateId();
+      if (id) {
+        // モバイルデバイス（iOS または Android）の判定
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) {
+          const appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(id);
+          
+          // DOM構築完了後にオーバーレイの表示とリダイレクト試行
+          document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('app-redirect-overlay');
+            const btnOpenApp = document.getElementById('btn-open-app');
+            const btnContinueWeb = document.getElementById('btn-continue-web');
+
+            if (overlay && btnOpenApp && btnContinueWeb) {
+              overlay.style.display = 'flex';
+              btnOpenApp.href = appUrl;
+
+              // アプリの起動を試みる
+              window.location.href = appUrl;
+
+              // Web版で続けるボタンの動作
+              btnContinueWeb.addEventListener('click', function() {
+                overlay.style.display = 'none';
+              });
+            }
+          });
+        }
+      }
+    })();
   </script>
 
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
