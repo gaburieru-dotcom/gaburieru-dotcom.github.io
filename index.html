@@ -1,74 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="gymflow">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>gymflow</title>
-  <link rel="manifest" href="manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トレリンク で開く</title>
 </head>
-<body>
-  <!-- App Redirect Overlay for Mobile Devices -->
-  <div id="app-redirect-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(10, 10, 14, 0.96); z-index:999999; flex-direction:column; align-items:center; justify-content:center; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color:#ffffff; padding:20px; box-sizing:border-box;">
-    <div style="background:rgba(255, 255, 255, 0.03); border:1px solid rgba(255, 255, 255, 0.08); border-radius:24px; padding:40px 30px; text-align:center; max-width:400px; width:100%; box-shadow:0 20px 40px rgba(0,0,0,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); box-sizing:border-box;">
-      <!-- Icon/Logo wrapper with pulsing glow -->
-      <div style="width:72px; height:72px; background:linear-gradient(135deg, #00ddff, #0077ff); border-radius:22px; margin:0 auto 24px auto; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0, 221, 255, 0.35);">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 9h3v10H4zm13 0h3v10h-3zm-6-3h2v14h-2zm-3 5h8v2H8z" fill="#ffffff" style="fill:#ffffff; stroke:#ffffff; stroke-width:0.5;"/>
-        </svg>
-      </div>
-      
-      <h2 style="margin:0 0 12px 0; font-size:22px; font-weight:700; background:linear-gradient(90deg, #00ddff, #00ffe0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing:-0.5px;">GymFlow アプリで開く</h2>
-      
-      <p style="margin:0 0 32px 0; font-size:14px; color:#a0aec0; line-height:1.6;">
-        アプリがインストールされている場合、自動的に起動します。起動しない場合は下のボタンをタップしてください。
-      </p>
-      
-      <a id="btn-open-app" href="#" style="display:block; text-decoration:none; background:linear-gradient(90deg, #00ddff, #00bfff); color:#0a0a0e; font-weight:700; font-size:16px; padding:16px 24px; border-radius:14px; margin-bottom:20px; box-shadow:0 8px 20px rgba(0, 221, 255, 0.25); text-align:center; box-sizing:border-box;">
-        アプリを起動する
-      </a>
-      
-      <button id="btn-continue-web" style="background:none; border:none; color:#a0aec0; font-size:14px; text-decoration:underline; cursor:pointer; padding:8px 16px; font-family:inherit;">
-        Web版でそのまま続ける
-      </button>
+<body style="background:#0a0a0e; color:#fff; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; padding:20px; box-sizing:border-box;">
+  <div style="text-align:center; max-width:400px; background:rgba(255, 255, 255, 0.03); border:1px solid rgba(255, 255, 255, 0.08); border-radius:24px; padding:40px 30px; box-shadow:0 20px 40px rgba(0,0,0,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);">
+    <!-- Pulse icon -->
+    <div style="width:72px; height:72px; background:linear-gradient(135deg, #00ddff, #0077ff); border-radius:22px; margin:0 auto 24px auto; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0, 221, 255, 0.35);">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 9h3v10H4zm13 0h3v10h-3zm-6-3h2v14h-2zm-3 5h8v2H8z" fill="#ffffff" style="fill:#ffffff; stroke:#ffffff; stroke-width:0.5;"/>
+      </svg>
     </div>
+    <h2 style="margin:0 0 12px 0; font-size:22px; font-weight:700; background:linear-gradient(90deg, #00ddff, #00ffe0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; letter-spacing:-0.5px;">トレリンク を起動しています</h2>
+    <p style="margin:0 0 32px 0; font-size:14px; color:#a0aec0; line-height:1.6;">
+      アプリが自動的に起動しない、またはインストールされていない場合は、下のボタンを押してください。
+    </p>
+    <a id="btn-open-app" href="#" style="display:block; text-decoration:none; background:linear-gradient(90deg, #00ddff, #00bfff); color:#0a0a0e; font-weight:700; font-size:16px; padding:16px 24px; border-radius:14px; margin-bottom:16px; box-shadow:0 8px 20px rgba(0, 221, 255, 0.25); text-align:center;">
+      アプリを起動 / ダウンロード
+    </a>
   </div>
 
   <script>
     (function() {
-      // URLからクエリパラメータを抽出する関数
+      // 1. URLパラメータの取得
       function getQueryParams() {
         const params = {};
-        // 1. 通常のクエリパラメータ
         const urlParams = new URLSearchParams(window.location.search);
         urlParams.forEach((val, key) => { params[key] = val; });
-
-        // 2. ハッシュパラメータ（#/open-menu?id=...）
         if (window.location.hash) {
           const hashParts = window.location.hash.split('?');
           if (hashParts.length > 1) {
@@ -79,40 +39,39 @@
         return params;
       }
 
+      // App StoreのURL
+      const APP_STORE_URL = 'https://apps.apple.com/app/id6776552419';
+
       const params = getQueryParams();
       if (params.id) {
-        // モバイルデバイス（iOS または Android）の判定
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-          let appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(params.id);
-          if (params.data) {
-            appUrl += '&data=' + encodeURIComponent(params.data);
-          }
-          
-          // DOM構築完了後にオーバーレイの表示とリダイレクト試行
-          document.addEventListener('DOMContentLoaded', function() {
-            const overlay = document.getElementById('app-redirect-overlay');
-            const btnOpenApp = document.getElementById('btn-open-app');
-            const btnContinueWeb = document.getElementById('btn-continue-web');
-
-            if (overlay && btnOpenApp && btnContinueWeb) {
-              overlay.style.display = 'flex';
-              btnOpenApp.href = appUrl;
-
-              // アプリの起動を試みる
-              window.location.href = appUrl;
-
-              // Web版で続けるボタンの動作
-              btnContinueWeb.addEventListener('click', function() {
-                overlay.style.display = 'none';
-              });
-            }
-          });
+        let appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(params.id);
+        if (params.data) {
+          appUrl += '&data=' + encodeURIComponent(params.data);
         }
+
+        const btn = document.getElementById('btn-open-app');
+        btn.href = appUrl;
+
+        // アプリ起動試行
+        window.location.href = appUrl;
+
+        // タイマー判定：2.5秒経っても画面が表示されたままの場合、App Storeへリダイレクト
+        const start = Date.now();
+        setTimeout(function() {
+          // アプリが起動してブラウザがバックグラウンドになった場合は処理を中断
+          if (document.hidden || document.webkitHidden) {
+            return;
+          }
+          // 時間計測でバックグラウンド一時停止を検知し、まだフォアグラウンドにいる場合のみ実行
+          if (Date.now() - start < 3500) {
+            window.location.href = APP_STORE_URL;
+          }
+        }, 2500);
+      } else {
+        // IDがない場合はApp Storeのトップに誘導
+        document.getElementById('btn-open-app').href = APP_STORE_URL;
       }
     })();
   </script>
-
-  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
