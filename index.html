@@ -64,7 +64,9 @@
           }
           // 時間計測でバックグラウンド一時停止を検知し、まだフォアグラウンドにいる場合のみ実行
           if (Date.now() - start < 3500) {
-            window.location.href = APP_STORE_URL;
+            if (confirm('アプリを起動できませんでした。App Storeを開いて「トレリンク」をダウンロードしますか？')) {
+              window.location.href = APP_STORE_URL;
+            }
           }
         }, 2500);
       } else {
