@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KPworksのテックブログ・記事一覧。アプリ個人開発の知見、ゲームデザイン設計、フィットネス論などを発信しています。">
+  <title>記事一覧 | KPworks</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">K</div>
+        <span>KPworks</span>
+      </a>
+      
+      <div class="hamburger" id="hamburger" aria-label="メニュー開閉">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="apps.html">アプリ紹介</a></li>
+        <li><a href="menus.html">メニュー一覧</a></li>
+        <li><a href="articles.html" class="active">記事一覧</a></li>
+        <li><a href="about.html">スタジオについて</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container text-center max-w-600">
+      <h1 class="text-gradient" style="margin-bottom: 16px;">Articles</h1>
+      <p>個人開発の知見、ゲームデザイン、筋トレ継続のコツなど、開発者が執筆したさまざまな記事を掲載しています。</p>
+    </div>
+  </section>
+
+  <!-- Search and Articles Section -->
+  <section class="section" style="padding-top: 20px;">
+    <div class="container">
+      
+      <!-- Search Input -->
+      <div class="search-container reveal">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="article-search" class="search-input" placeholder="タイトルやタグで検索...">
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs reveal">
+        <button class="filter-tab active" data-article-filter="all">すべて</button>
+        <button class="filter-tab" data-article-filter="fitness">フィットネス</button>
+        <button class="filter-tab" data-article-filter="game-dev">ゲームデザイン</button>
+        <button class="filter-tab" data-article-filter="tech">開発・生産性</button>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid grid-3" style="margin-top: 40px;">
+        
+        <!-- Article 1 -->
+        <div class="article-card-item reveal" data-category="fitness">
+          <article class="card article-card">
+            <div class="article-card-img">
+              <img src="assets/images/kinntore.png" alt="トレリンク">
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.06.01</span>
+                <span>•</span>
+                <span>5分で読める</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="article-detail.html?id=workout-logging">自己ベストを更新し続ける！筋トレを可視化することの心理的効果</a>
+              </h3>
+              <p class="article-excerpt">
+                「筋トレがなかなか継続しない…」そんな悩みはありませんか？本記事では、トレーニング重量や回数を克明に記録し可視化することが、脳の報酬系に与えるプラスの影響について解説します。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">フィットネス</span>
+                <span class="tag tag-sec">モチベーション</span>
+              </div>
+              <a href="article-detail.html?id=workout-logging" class="read-more" style="margin-top: 20px;">記事を読む
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card-item reveal" data-category="game-dev">
+          <article class="card article-card">
+            <div class="article-card-img">
+              <img src="assets/images/tower_defense.png" alt="タワーディフェンス">
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.05.20</span>
+                <span>•</span>
+                <span>8分で読める</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="article-detail.html?id=td-pathfinding">なぜ面白いのか？タワーディフェンスの経路設計における「迷路化」の魅力</a>
+              </h3>
+              <p class="article-excerpt">
+                敵の移動ルートをプレイヤーが自由に制御できる「オープンフィールド型タワーディフェンス」。ゲームをよりスリリングにするための、最適な迷路構築メカニクスとAIの経路探索アルゴリズムについて。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">ゲームデザイン</span>
+                <span class="tag tag-sec">Unity</span>
+              </div>
+              <a href="article-detail.html?id=td-pathfinding" class="read-more" style="margin-top: 20px;">記事を読む
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card-item reveal" data-category="tech">
+          <article class="card article-card">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+              <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.05.10</span>
+                <span>•</span>
+                <span>6分で読める</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="article-detail.html?id=finish-products">個人開発における「完成させる技術」とモチベーションの保ち方</a>
+              </h3>
+              <p class="article-excerpt">
+                数多くのプロジェクトを着手するものの、途中で挫折して「未完のままで放置」になっていませんか？最後までプロダクトを作りきり、リリースするためのマインドセットと具体的なタスク管理手法を共有します。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">個人開発</span>
+                <span class="tag tag-sec">生産性</span>
+              </div>
+              <a href="article-detail.html?id=finish-products" class="read-more" style="margin-top: 20px;">記事を読む
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">K</div>
+            <span>KPworks</span>
+          </a>
+          <p>洗練されたUI/UXを誇る個人開発アプリ・ゲームを届けるデジタルスタジオ。</p>
+        </div>
+        <div>
+          <h4 class="footer-title">コンテンツ</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="apps.html">アプリ紹介</a></li>
+            <li><a href="menus.html">メニュー一覧</a></li>
+            <li><a href="articles.html">記事一覧</a></li>
+            <li><a href="about.html">スタジオについて</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">お問い合わせ</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">コンタクトフォーム</a></li>
+            <li><span style="color: var(--text-secondary);">info@kpworks.example.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KPworks. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

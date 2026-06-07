@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KPworksが提供するトレーニングメニュー紹介。BIG3 5x5やアーノルドのゴールデン6など、実績のある有名筋トレメニューの一覧と、トレリンクへのインポートリンクを掲載。">
+  <title>有名メニュー一覧 | KPworks</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* Menus page specific layout and custom styles */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    .menu-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .menu-header-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--border-radius-full);
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .badge-purple {
+      background: rgba(139, 92, 246, 0.12);
+      color: #a78bfa;
+      border: 1px solid rgba(139, 92, 246, 0.25);
+    }
+    
+    .badge-orange {
+      background: rgba(249, 115, 22, 0.12);
+      color: #fb923c;
+      border: 1px solid rgba(249, 115, 22, 0.25);
+    }
+    
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+    
+    .menu-meta-list {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    
+    .menu-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .menu-meta-item svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+    
+    .exercise-list-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      flex-grow: 1;
+    }
+    
+    .exercise-list-table th {
+      text-align: left;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 8px 4px;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .exercise-list-table td {
+      padding: 10px 4px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+    }
+    
+    .exercise-list-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .exercise-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .exercise-scheme {
+      text-align: right;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    .exercise-intensity {
+      text-align: right;
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">K</div>
+        <span>KPworks</span>
+      </a>
+      
+      <div class="hamburger" id="hamburger" aria-label="メニュー開閉">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="apps.html">アプリ紹介</a></li>
+        <li><a href="menus.html" class="active">メニュー一覧</a></li>
+        <li><a href="articles.html">記事一覧</a></li>
+        <li><a href="about.html">スタジオについて</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 20px;">
+    <div class="container text-center max-w-600">
+      <h1 class="text-gradient" style="margin-bottom: 16px;">Workout Menus</h1>
+      <p>世界中のトレーニーに愛用されている実績のある有名筋トレメニューをラインナップ。ボタンをタップするだけで、直接「トレリンク」にインポートしてトレーニングを開始できます。</p>
+    </div>
+  </section>
+
+  <!-- Programs Grid Container -->
+  <main class="container" style="padding-bottom: 80px;">
+    <div class="menu-grid">
+      
+      <!-- Menu 1: BIG3 5x5 -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-purple">筋力向上 & バルクアップ</span>
+        <h3 style="margin-bottom: 8px;">BIG3 5x5 プログラム</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          全身の筋肉を稼働する基本種目（BIG3）を5セット×5レップ行う、王道の筋肥大・筋力強化プログラム。シンプルながら非常に強度の高い定番メニューです。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 60分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>初級者〜中級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">バーベルスクワット</span></td>
+              <td class="exercise-scheme">5set × 5reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ベンチプレス</span></td>
+              <td class="exercise-scheme">5set × 5reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ベントオーバーロウ</span></td>
+              <td class="exercise-scheme">5set × 5reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=big3_5x5&data=H4sIACydJWoC%2F4tWSspMN443rTBV0lFy8nQ3VgAy3%2B%2FpeL62%2B2nX7MfNux83T3jcvPpx0%2FrHTYseNzc%2Fbp7%2Bfk%2Bnkk50tFJKalpiaU5JvKEhUCtY2Z7HzTPBineC1DevB6vvACnOK83J0THVAVPmpnoGsTpUFIoFCiJcA3YM0BmbHzc3Al37uHkN0D30dYMlkhs6HjetAocMJHzWPm5ahuEYA0wzKRICAQCPURoB2QEAAA%3D%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 2: Arnold Golden Six -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-orange">クラシック全身筋肥大</span>
+        <h3 style="margin-bottom: 8px;">アーノルド・ゴールデン６</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          アーノルド・シュワルツェネッガーが若き日に実践していたことで知られる、全身の主要筋肉をまとめて鍛え上げる週3回用のクラシックなプログラム。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 75分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>全レベル向け</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">バーベルスクワット</span></td>
+              <td class="exercise-scheme">4set × 10reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ベンチプレス</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">懸垂 (チンニング)</span></td>
+              <td class="exercise-scheme">3set × 限界まで</td>
+              <td class="exercise-intensity">自重</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
+              <td class="exercise-scheme">4set × 10reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">バーベルカール</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">65% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">プランク</span></td>
+              <td class="exercise-scheme">3set × 60秒</td>
+              <td class="exercise-intensity">自重</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=golden_six&data=H4sIACydJWoC%2F4tWSs%2FPSUnNiy%2FOrFDSUXrctOhx857HzX2Pm1c%2Bu583Lz7cdMWsAiQ2%2F64efP7PdOUdKKjlVJS0xJLc0riDQ1BupongNXMBClr2vm4af3jZiBqftzcAVKcV5qTo2NooAOmzQ30DGJ1KBCLBYoirAfbDrR38%2BPmxsfN0x83rwE6ANNSUyyG4RJDscAcaMGz9h1P5zUpaICtAFrUDSKbNmjCrUElYIYSJYrqG3NwFKwCByYkSGeAg7ETj9eoGp5GmNG5GhL9GBabYQk%2FnGIolhgbgC0B%2BmglOCTXowakmQFmgOETAwEAeNRgGscCAAA%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 3: PPL - Push -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-blue">PPL分割法：Push</span>
+        <h3 style="margin-bottom: 8px;">PPL：Push (上半身・押し)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          上半身の「押す」動作に関わる筋肉（胸・肩前中部・上腕三頭筋）を一括で刺激。大胸筋の厚みと立体的な肩のメロンを作るためのコアメニューです。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 50分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>中級者〜上級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">ベンチプレス</span></td>
+              <td class="exercise-scheme">3set × 8reps</td>
+              <td class="exercise-intensity">80% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
+              <td class="exercise-scheme">3set × 8reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">インクラインダンベルプレス</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">サイドレイズ</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">10 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">トライセプスプレスダウン</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">25 kg (固定)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=ppl_push&data=H4sIACydJWoC%2F42RuwrCQBBF%2F2XrRZKg6EdYpA8igopFkICm153GBAQ7H7UIPsBCBB%2F7N6Nil19wZxPUEMSkmGwuO/dwiMM8z617fq/DOLPtaiQXtvqI5Oh2Cu/j8HnZIlwfocThNJIB447Dmq12w3f7dVOtIMwRDghDhCnCDsWZrnR91%2BUVHr%2BMglHjuaKaCj/tZaoXGwSJMNFzhgAIwU9UuZTp/RWlUJYmLUlE7BHWyRkGeirBbRZpGknbl8vfLC1Y0dijpgW6foniQgRTXeamFW/SUHv5srRXUf%2BhUaIkrqQhzm8ZMhQrJUlMq5Ttz5fR8wLuswHaSAIAAA%3D%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 4: PPL - Pull -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-blue">PPL分割法：Pull</span>
+        <h3 style="margin-bottom: 8px;">PPL：Pull (上半身・引き)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          上半身の「引く」動作に関わる筋肉（背中・上腕二頭筋・前腕）を徹底攻略。広いVシェイプの背中と太い腕を効率的につくり出すプログラムです。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 50分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>中級者〜上級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">デッドリフト</span></td>
+              <td class="exercise-scheme">3set × 5reps</td>
+              <td class="exercise-intensity">80% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ラットプルダウン</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">60 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">シーテッドプーリーロウ</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">50 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">バーベルカール</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">30 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ハンマーカール</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">12 kg (固定)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=ppl_pull&data=H4sIACydJWoC%2F42QMQrCQBBF77L1IklE8RAW6YOIoFZBUmivGdAYEG1EtLAUNFhZKLq3GQW7XMGZEcWAxabYZD%2F738tsoKIobEaDMFRa%2BX49NxufNrlJ7pf0MUuf1wzh9jBLHM1yM1U6CFS7020Nwn6zShWECQIgTBEOCEuEhI/0CKErWl41p%2BQ0tFXUoPBLrwl9L/QEYYVAfzLEeIdwYkeVGtp13nVeqGyXFTSuw574jGAQxp9ZVrI9yHokJwsrf%2BB2WUHouTLYQthrnirO5DtjSfkP0C4rSjyRzOmuELaM/5W4Hpe9AtAu4%2BcFQ2cQzDMCAAA%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 5: PPL - Legs -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-blue">PPL分割法：Legs</span>
+        <h3 style="margin-bottom: 8px;">PPL：Legs (下半身の鍛錬)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          人体最大の筋肉群である下半身（大腿四頭筋、ハムストリングス、臀部、ふくらはぎ）を総合的に鍛えるハードな分割メニュー。代謝向上や成長ホルモン分泌にも劇的効果があります。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 55分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>中級者〜上級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">バーベルスクワット</span></td>
+              <td class="exercise-scheme">3set × 8reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">レッグプレス</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">120 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">レッグエクステンション</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">50 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">レッグカール</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">40 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">カーフレイズ</span></td>
+              <td class="exercise-scheme">3set × 15reps</td>
+              <td class="exercise-intensity">60 kg (固定)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=ppl_legs&data=H4sIACydJWoC%2F42QSwrCMBCG75J1KGlt1UO4cF9EBB%2BbIAX1AhmQqghuRHQtKFRQcOGD3mYU3PUKZqIgARcJITP5mfk%2ZmKWJLIpO70B46xerxX5pqY/RZ4%2BrrPnfPq6Z0U%2BYTyOWbvTbY3ksOn7uhRhgZAjrBEyVDdURwR9ASGl4v5ISl7lJlQiTzS4k9TQ4o8TGM6BXNUJYUW5upG9HwhPcF98WunRja6iDSlZELWnSfQ8MEY4o7og7HRCzMgYBZa7m2YDQxuYmTVmRAj/uLlpNiEiwtd4aZa2RXUnQtl0Rpabm0bnDalBZ%2BEsAgAA" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">K</div>
+            <span>KPworks</span>
+          </a>
+          <p>洗練されたUI/UXを誇る個人開発アプリ・ゲームを届けるデジタルスタジオ。</p>
+        </div>
+        <div>
+          <h4 class="footer-title">コンテンツ</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="apps.html">アプリ紹介</a></li>
+            <li><a href="menus.html">メニュー一覧</a></li>
+            <li><a href="articles.html">記事一覧</a></li>
+            <li><a href="about.html">スタジオについて</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">お問い合わせ</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">コンタクトフォーム</a></li>
+            <li><span style="color: var(--text-secondary);">info@kpworks.example.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KPworks. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

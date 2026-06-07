@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KPworksテックブログ。アプリ開発、ゲームデザイン、日々のTipsなど詳細情報をお届けします。">
+  <title>記事詳細 | KPworks</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    /* Detail page specific adjustments */
+    .article-not-found {
+      padding: 100px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">K</div>
+        <span>KPworks</span>
+      </a>
+      
+      <div class="hamburger" id="hamburger" aria-label="メニュー開閉">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="apps.html">アプリ紹介</a></li>
+        <li><a href="menus.html">メニュー一覧</a></li>
+        <li><a href="articles.html" class="active">記事一覧</a></li>
+        <li><a href="about.html">スタジオについて</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dynamic Article Container -->
+  <main id="article-container" class="container" style="padding-bottom: 80px;">
+    <!-- Loading placeholder -->
+    <div style="padding: 150px 0; text-align: center; color: var(--text-muted);">
+      記事を読み込んでいます...
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">K</div>
+            <span>KPworks</span>
+          </a>
+          <p>洗練されたUI/UXを誇る個人開発アプリ・ゲームを届けるデジタルスタジオ。</p>
+        </div>
+        <div>
+          <h4 class="footer-title">コンテンツ</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="apps.html">アプリ紹介</a></li>
+            <li><a href="menus.html">メニュー一覧</a></li>
+            <li><a href="articles.html">記事一覧</a></li>
+            <li><a href="about.html">スタジオについて</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">お問い合わせ</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">コンタクトフォーム</a></li>
+            <li><span style="color: var(--text-secondary);">info@kpworks.example.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KPworks. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+  
+  <script>
+    // Articles database
+    const articlesData = {
+      'workout-logging': {
+        title: '自己ベストを更新し続ける！筋トレを可視化することの心理的効果',
+        date: '2026.06.01',
+        category: 'フィットネス',
+        image: 'assets/images/kinntore.png',
+        body: `
+          <p>筋トレを始めようと決意したものの、なかなか続かない。あるいはジムに通っているけれど、最近成長が感じられない。そんな時、もっともシンプルで効果的な対策は「トレーニングの内容を克明に記録すること」です。</p>
+          
+          <p>KPworksが開発しているアプリ<strong>「トレリンク」</strong>は、まさにこの「記録の可視化」によるモチベーション向上をコアバリューとして設計されています。本記事では、トレーニングの記録が脳の報酬系や心理面に与えるポジティブな効果について深掘りします。</p>
+          
+          <h2>1. 脳が喜びを感じる「進行状況の可視化」</h2>
+          <p>人間は何かを行っているとき、「進歩している」と実感できるとやる気が湧くようにできています。心理学ではこれを「進行効果」や「自己効力感」と呼びます。</p>
+          <p>ただなんとなくジムに行って、なんとなく重りを挙げるだけでは、先週の自分と比べて強くなったのかどうかが非常に曖昧になります。しかし、セット数や挙上重量を毎回数値として記録し、それがグラフとして蓄積されていくのを見ることで、脳は「進歩」を直接認知し、やる気を刺激する脳内物質「ドーパミン」を分泌します。これが「次のトレーニングも頑張ろう」というポジティブなループを生み出します。</p>
+
+          <blockquote>
+            <p>「測定できないものは、改善できない。」 — ピーター・ドラッカー</p>
+          </blockquote>
+
+          <h2>2. 総ボリューム（Total Volume）の重要性</h2>
+          <p>筋力向上や筋肥大を促す重要な指標に「総ボリューム（重量 × 回数 × セット数）」があります。たとえ自己ベストの最大重量が更新できなくても、セット数を増やしたり、少し回数を増やしたりすることで、この「総ボリューム」は増加します。</p>
+          <p>トレリンクでは、この総ボリュームを自動計算して部位別グラフで可視化します。最大挙上重量（1RM）の更新だけを目標にすると成長の踊り場でモチベーションが崩れがちですが、ボリュームという全体量で前週を上回っていることを確認することで、自信を保ちながら堅実にトレーニングを重ねていくことが可能です。</p>
+
+          <h2>3. 「記録すること」そのものが習慣のアンカーになる</h2>
+          <p>筋トレアプリを開き、インターバルタイマーの音を聴きながら数値を記録する。この一連のルーティンが、脳内で「筋トレという特別な時間」のスイッチになります。記録というアウトプットを行うことで、「自分はトレーニングに主体的に取り組んでいる」というセルフイメージ（自己認識）が強化され、習慣化のハードルが大きく下がります。</p>
+
+          <h2>まとめ：成長をその手に</h2>
+          <p>筋トレの敵は、退屈とマンネリ、そして変化の実感のなさです。日々のデータを可視化することで、あなたの地道な努力が数値として輝き始めます。ぜひ今日から「記録すること」の心地よさを味わってみてください。</p>
+        `
+      },
+      'td-pathfinding': {
+        title: 'なぜ面白いのか？タワーディフェンスの経路設計における「迷路化」の魅力',
+        date: '2026.05.20',
+        category: 'ゲームデザイン',
+        image: 'assets/images/tower_defense.png',
+        body: `
+          <p>タワーディフェンス（TD）ゲームには大きく分けて二つの潮流があります。一つは、敵が決まった経路を歩き、その道沿いに防衛設備を建てる「固定ルート型」。もう一つは、何もないオープンなマップにプレイヤーがタワーを建てることで障害物を作り、敵の歩くルートを誘導する「オープンフィールド型（迷路構築型）」です。</p>
+          
+          <p>KPworksの<strong>「Tower Defense Epic」</strong>では、後者の「迷路構築」の面白さを最大限に活かせるようゲームバランスを調整しています。今回は、このオープンフィールド型タワーディフェンスがなぜプレイヤーをこれほど熱中させるのか、ゲームデザインと経路探索アルゴリズムの観点から解説します。</p>
+
+          <h2>1. プレイヤーに与えられる「圧倒的な主導権」</h2>
+          <p>固定ルート型の面白さは「どのタワーをどこに配置して火力を最大化するか」というパズル的な要素にあります。それに対して迷路構築型は、敵の進行ルートそのものを自分がデザインできるという「創造性」が加わります。</p>
+          <p>一本道を進んでくる敵に対して、S字に曲がるくねくねした長いルートを作れば、それだけ敵がフィールド内に滞在する時間を引き延ばせます。この「敵の動きを自分の意志で完全にコントロールできている」という感覚が、プレイヤーに高い知的な満足感をもたらします。</p>
+
+          <h2>2. 迷路構築の裏で動く「A* (エースター) 探索アルゴリズム」</h2>
+          <p>プレイヤーがタワーを置くたびに、敵の人工知能（AI）はスタート地点からゴール（防衛拠点）までの新しい最短経路を計算し直す必要があります。この時に用いられるのが、古典的かつ現在も広く使われている<strong>A*（A-star）経路探索アルゴリズム</strong>です。</p>
+          <p>ゲーム開発者は、プレイヤーがタワーを置く行為をグラフ（マップのグリッド）の「通行不可能ノード」としてリアルタイムに更新し、敵キャラクターが迷うことなく（かつ最速で）新しいルートを再構築するようにコードを最適化する必要があります。この「タワー配置 → 経路更新 → 敵のルート変化」というレスポンスの滑らかさが、ゲームの気持ちよさを左右します。</p>
+
+          <blockquote>
+            <p>※ただし、ゴールへの道筋を完全に塞ぐ（Block）配置はルール違反として扱われるのが一般的です。経路が存在しなくなるようなタワーの配置を検知した場合、システム側で配置を無効にするか、あるいはタワー自体が破壊されるなどのペナルティシステムを組み込む必要があります。</p>
+          </blockquote>
+
+          <h2>3. リスクとリターンのジレンマ</h2>
+          <p>理想的な迷路を作るにはコスト（タワー購入費）がかかります。強力な範囲攻撃攻撃を持つタワーを1基建てるか、あるいは敵を遠回りさせるために安価な壁役タワーを数基並べるべきか。プレイヤーは常に限られたリソースの中で決断を迫られます。</p>
+          <p>また、ステージによっては「空中飛行型」の敵が登場し、地上にどれだけ美しい迷路を築いても、それを無視して直線的にゴールへ進んできます。この変化球が、迷路作りに慢心したプレイヤーに適度な緊張感と戦略の再考を促します。</p>
+
+          <h2>まとめ：創造と防衛の融合</h2>
+          <p>タワーディフェンスにおける経路設計は、プレイヤーの創造力と、ゲームシステムの冷徹なアルゴリズムがせめぎ合う非常に面白い領域です。次にTDゲームを遊ぶ時は、敵キャラクターをあちこちに歩き回らせるための「最高の迷路」をどう描くか、エンジニア目線で楽しんでみてください。</p>
+        `
+      },
+      'finish-products': {
+        title: '個人開発における「完成させる技術」とモチベーションの保ち方',
+        date: '2026.05.10',
+        category: '個人開発',
+        image: 'assets/images/tower_defense.png',
+        body: `
+          <p>素晴らしいWebサービスや革新的なスマホアプリのアイデアを思いつき、勢いよくコードを書き始めたものの、数週間後にはデスクトップの片隅でフォルダがホコリを被っている…開発に携わる人間なら、誰もが一度や二度は経験したことのある「未完の悲劇」です。</p>
+          
+          <p>特に個人開発では、締め切りがなく、自分がすべてを決定できるため、途中で飽きたり難易度の高い壁にぶつかったりすると非常に挫折しやすい環境にあります。今回は、KPworksとしてのアプリ開発経験から得た、プロジェクトを最後まで「作りきり、リリースする」ための思考法とテクニックを共有します。</p>
+
+          <h2>1. 「完成」の定義を限りなく小さくする (MVPの鉄則)</h2>
+          <p>開発が頓挫する最大の原因は、最初から「機能てんこ盛りの完璧な製品」を作ろうとすることです。やりたいことをリストアップしていくとキリがありませんが、実装にかかる時間に比例して、モチベーションの寿命は確実に削られていきます。</p>
+          <p>まずは「これがないとアプリとして成立しない」という唯一無二のコア機能だけを定義し、それ以外（お気に入り機能、共有機能、細かいアニメーション、アカウント設定など）はすべて第2フェーズ以降に回します。この最小限の動く製品を<strong>MVP (Minimum Viable Product)</strong>と呼びます。1週間〜2週間以内に手元で動くものを作ることが重要です。</p>
+
+          <h2>2. モチベーションに依存しない仕組み作り</h2>
+          <p>「モチベーションが高い時に作業する」というスタイルは個人開発では機能しません。人間のやる気には必ずバイオリズムがあるからです。プロジェクトを完遂するためには、モチベーションを排除し、タスクを機械的なルーティンに落とし込む必要があります。</p>
+          <ul>
+            <li><strong>タスクの分解:</strong> 「ログイン機能を実装する」ではなく、「ログインボタンのUIパーツを置く」「FirebaseのAuth設定をする」といった、15分以内で確実に完了できる最小粒度のチェックリストを作ります。</li>
+            <li><strong>コードを書かない日を作らない:</strong> 1日に1行コードを書く、あるいはドキュメントを1箇所修正するだけでも構いません。毎日プロジェクトに関わり続けることで、脳のバックグラウンドプロセスで課題解決が継続します。</li>
+          </ul>
+
+          <blockquote>
+            <p>「アイデアに価値はない。実行することにこそ価値がある。」 — 多くの起業家の名言</p>
+          </blockquote>
+
+          <h2>3. 「9割の壁」を乗り越える方法</h2>
+          <p>開発におけるよく知られた法則に「90-90の法則」があります。<em>「プロジェクトの最初の90%の開発には、予定されていた開発時間の90%が費やされる。残りの10%の開発にも、予定されていた開発時間の90%が費やされる」</em>という皮肉混じりの法則です。</p>
+          <p>バグの修正、アイコンの作成、App StoreやGoogle Playに提出するためのストア記述や画像撮影、ライセンスの整理など、終盤の地味な作業は知的興奮が少なく挫折しやすいポイントです。この段階に入ったら、あらかじめ「リリース日」をSNSや友人に宣言してしまう、あるいは完璧さを捨てて「多少の粗があってもとにかく公開する」というマインドを持つことが効果的です。リリースして得られるフィードバックこそが、次のステップに進むための最強の燃料となります。</p>
+
+          <h2>まとめ：リリースはスタートライン</h2>
+          <p>完成したプロダクトが世界に放たれ、誰かがそれを使って「便利だ」「楽しい」と言ってくれる瞬間。これ以上の喜びは個人開発者にはありません。あなたの素晴らしいアイデアを形にするために、ぜひ「小さく始めて、作りきる」アプローチを試してみてください。</p>
+        `
+      }
+    };
+
+    // Load article based on URL search parameters
+    const renderArticle = () => {
+      const container = document.getElementById('article-container');
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleId = urlParams.get('id');
+
+      if (!articleId || !articlesData[articleId]) {
+        // Render Article Not Found State
+        container.innerHTML = `
+          <div class="article-not-found reveal revealed">
+            <h2 class="text-gradient" style="margin-bottom: 16px;">記事が見つかりません</h2>
+            <p style="margin-bottom: 32px;">お探しの記事は削除されたか、URLが変更された可能性があります。</p>
+            <a href="articles.html" class="btn btn-primary">記事一覧へ戻る</a>
+          </div>
+        `;
+        document.title = "記事が見つかりません | KPworks";
+        return;
+      }
+
+      const article = articlesData[articleId];
+      document.title = `${article.title} | KPworks`;
+
+      // Update Meta Tags if desired (handled client-side, helpful for visual continuity)
+      container.innerHTML = `
+        <article class="reveal revealed">
+          <header class="article-detail-header">
+            <div class="app-tags flex-center" style="margin-bottom: 16px;">
+              <span class="tag">${article.category}</span>
+            </div>
+            <h1 class="text-gradient" style="max-width: 900px; margin: 0 auto; line-height: 1.3;">${article.title}</h1>
+            <div class="article-detail-meta">
+              <span>投稿日: ${article.date}</span>
+              <span>•</span>
+              <span>著者: KPworks 開発チーム</span>
+            </div>
+          </header>
+          
+          <img src="${article.image}" alt="${article.title} メインビジュアル" class="article-detail-img">
+          
+          <div class="article-body">
+            ${article.body}
+            
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+              <a href="articles.html" class="btn btn-secondary btn-sm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transform: scaleX(-1);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                記事一覧へ戻る
+              </a>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">この記事をシェア:</span>
+                <a href="https://twitter.com/share?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}" target="_blank" rel="noopener noreferrer" class="theme-toggle" aria-label="Xでシェア" style="width: 32px; height: 32px;">
+                  <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; fill: currentColor;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    };
+
+    renderArticle();
+  </script>
+</body>
+</html>

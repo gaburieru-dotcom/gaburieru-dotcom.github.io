@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KPworksが提供するアプリとゲームの紹介ページ。筋トレ共有・記録アプリ「トレリンク」や「タワーディフェンス」ゲームの機能・ダウンロードリンクを掲載。">
+  <title>アプリ紹介 | KPworks</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">K</div>
+        <span>KPworks</span>
+      </a>
+      
+      <div class="hamburger" id="hamburger" aria-label="メニュー開閉">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="apps.html" class="active">アプリ紹介</a></li>
+        <li><a href="menus.html">メニュー一覧</a></li>
+        <li><a href="articles.html">記事一覧</a></li>
+        <li><a href="about.html">スタジオについて</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 30px;">
+    <div class="container text-center max-w-600">
+      <h1 class="text-gradient" style="margin-bottom: 16px;">Our Apps</h1>
+      <p>KPworksが手がけたプロダクト一覧です。スクロールまたはリンクから各アプリの詳細をご覧いただけます。</p>
+    </div>
+  </section>
+
+  <!-- Jump Navigation (Sticky Bar) -->
+  <div class="jump-nav-container">
+    <div class="container">
+      <ul class="jump-links">
+        <li>
+          <a href="#app-tower-defense" class="jump-link">
+            <span class="jump-link-icon">TD</span>
+            <span>Tower Defense Epic</span>
+          </a>
+        </li>
+        <li>
+          <a href="#app-trelink" class="jump-link">
+            <span class="jump-link-icon">TL</span>
+            <span>トレリンク</span>
+          </a>
+        </li>
+        <li>
+          <a href="#app-vertical-jump" class="jump-link">
+            <span class="jump-link-icon">VJ</span>
+            <span>タイム測定＆垂直跳び測定</span>
+          </a>
+        </li>
+        <li>
+          <a href="#app-focus-timer" class="jump-link">
+            <span class="jump-link-icon">FT</span>
+            <span>FocusTimer</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Apps Showcase Container -->
+  <main style="padding-bottom: 60px;">
+    
+    <!-- Showcase 1: Tower Defense Epic -->
+    <section id="app-tower-defense" class="app-showcase-section">
+      <div class="container showcase-grid">
+        <div class="showcase-text-col reveal">
+          <div class="app-tags">
+            <span class="tag">Game</span>
+            <span class="tag tag-sec">Strategy</span>
+          </div>
+          <h2 class="text-gradient" style="font-size: 2.4rem; margin-bottom: 16px;">Tower Defense Epic</h2>
+          <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">
+            サイバー空間を舞台にした王道タワーディフェンス！迫りくる無数の敵ロボットに対し、多様な属性とスキルツリーを備えた防衛タワーをグリッドマップに戦略的に配置。敵の進行経路をプレイヤーが自らデザインする「迷路構築」が勝利の鍵を握る本格ゲームです。
+          </p>
+
+          <h3 style="font-size: 1.15rem; margin-bottom: 12px; color: var(--text-primary);">主な特徴：</h3>
+          <ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
+            <li><strong>自由な迷路設計</strong>: 敵の移動ルートを引き延ばし、火力を集中させる最適な迷路を構築。</li>
+            <li><strong>深いシナジー効果</strong>: 減速、火炎、範囲雷、高威力レーザーなどタワー同士のシナジーを発揮。</li>
+            <li><strong>リアルタイム進行</strong>: 刻一刻と変化する戦況に合わせ、タワーのアップグレードや売却を即座に決断。</li>
+          </ul>
+
+          <ul class="spec-list">
+            <li class="spec-item">
+              <span class="spec-label">対応プラットフォーム</span>
+              <span class="spec-value">iOS / Android</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">開発エンジン / 言語</span>
+              <span class="spec-value">Unity / C#</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">価格</span>
+              <span class="spec-value">無料 (一部アプリ内課金あり)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">最新バージョン</span>
+              <span class="spec-value">v1.2.4 (2026.04)</span>
+            </li>
+          </ul>
+
+          <div class="app-links" style="border-top: none; padding-top: 8px;">
+            <div style="display: flex; gap: 16px;">
+              <a href="#" class="btn btn-primary">App Storeで入手</a>
+              <a href="#" class="btn btn-secondary">Google Playで入手</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-visual-col reveal">
+          <div class="showcase-visual-wrapper">
+            <img src="assets/images/tower_defense.png" alt="Tower Defense Epic Gameplay preview screen">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase 2: トレリンク (TreLink) -->
+    <section id="app-trelink" class="app-showcase-section" style="background: rgba(15, 17, 26, 0.15);">
+      <div class="container showcase-grid">
+        <div class="showcase-text-col reveal">
+          <div class="app-tags">
+            <span class="tag">Utility</span>
+            <span class="tag tag-sec">Fitness</span>
+          </div>
+          <h2 class="text-gradient" style="font-size: 2.4rem; margin-bottom: 16px;">トレリンク (TreLink)</h2>
+          <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">
+            「リンクで共有できる筋トレ記録アプリ」をコンセプトにした、トレーニーのためのログ管理アプリ。作成したトレーニングメニューや履歴をURLリンク経由で友達と簡単に共有・インポート可能。重量やレップ数の入力手順を極限までシンプルにし、ジムでのインターバル中に片手でサッと入力可能です。
+          </p>
+
+          <h3 style="font-size: 1.15rem; margin-bottom: 12px; color: var(--text-primary);">主な特徴：</h3>
+          <ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
+            <li><strong>URLリンク共有</strong>: 自作メニューやトレーニング履歴を簡単なリンクで友達にシェア・インポート可能。</li>
+            <li><strong>極小タップUI</strong>: テンキー入力と履歴コピー機能により、数秒でセット完了を素早く記録。</li>
+            <li><strong>多機能分析＆グラフ</strong>: 部位別の総負荷量グラフや1RM推移などを視覚的にフィードバック。</li>
+            <li><strong>HIITタイマー内蔵</strong>: カスタムBGM設定や音声ガイダンス付きの高機能HIIT/タバタタイマーを搭載。</li>
+          </ul>
+
+          <ul class="spec-list">
+            <li class="spec-item">
+              <span class="spec-label">対応プラットフォーム</span>
+              <span class="spec-value">iOS (Android版 開発中)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">開発言語 / 技術</span>
+              <span class="spec-value">Flutter (Dart)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">価格</span>
+              <span class="spec-value">無料 (一部アプリ内課金・広告あり)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">最新バージョン</span>
+              <span class="spec-value">v1.0.1</span>
+            </li>
+          </ul>
+
+          <div class="app-links" style="border-top: none; padding-top: 8px;">
+            <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+              <a href="https://apps.apple.com/jp/app/%E3%83%88%E3%83%AC%E3%83%AA%E3%83%B3%E3%82%AF-%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%A7%E5%85%B1%E6%9C%89%E3%81%A7%E3%81%8D%E3%82%8B%E7%AD%8B%E3%83%88%E3%83%ACmemo%E3%82%A2%E3%83%97%E3%83%AA/id6776552419" target="_blank" rel="noopener noreferrer" class="btn btn-primary">App Storeで入手</a>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Android版は現在開発中です。公開までお待ちください。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-visual-col reveal">
+          <div class="showcase-visual-wrapper">
+            <img src="assets/images/kinntore.png" alt="KinntoreMemo App preview screen">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase 3: タイム測定＆垂直跳び測定 -->
+    <section id="app-vertical-jump" class="app-showcase-section">
+      <div class="container showcase-grid">
+        <div class="showcase-text-col reveal">
+          <div class="app-tags">
+            <span class="tag">Utility</span>
+            <span class="tag tag-sec">Sports</span>
+            <span class="tag" style="background: rgba(6, 182, 212, 0.1); color: var(--accent-color); border: 1px solid rgba(6, 182, 212, 0.2);">Swift / iOS</span>
+          </div>
+          <h2 class="text-gradient" style="font-size: 2.4rem; margin-bottom: 24px;">タイム測定＆垂直跳び測定</h2>
+          
+          <div style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary); display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px;">
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px;">超精密タイム計測</h3>
+              <p style="margin-bottom: 0;">240fpsのスロー動画なら、0.004秒単位の分析が可能。スプリントのタイムや格闘技の動作速度など、あらゆるパフォーマンスを数値化。</p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px;">垂直跳び解析</h3>
+              <p style="margin-bottom: 0;">滞空時間を計測するだけで、物理演算に基づいたジャンプ高を自動算出。「空中を飛んでいた時間」という確固たる証拠から、真の跳躍力を導き出します。</p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px;">動画へのデータ焼き付け</h3>
+              <p style="margin-bottom: 0;">計測結果（タイムやジャンプ高）を動画上に合成してエクスポート。プロの分析映像のような仕上がりで、あなたの成果を記録に残せます。</p>
+            </div>
+            <div>
+              <h3 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 8px;">拡大シーク機能</h3>
+              <p style="margin-bottom: 0;">足元やゴールラインをズームしながら1コマずつ送り・戻しができるため、離地や着地の瞬間を1フレームも逃しません。</p>
+            </div>
+          </div>
+
+          <ul class="spec-list">
+            <li class="spec-item">
+              <span class="spec-label">対応プラットフォーム</span>
+              <span class="spec-value">iOS 17.6以降 (iPhone / iPad)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">開発言語 / 技術</span>
+              <span class="spec-value">Swift (SwiftUI / AVFoundation)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">価格</span>
+              <span class="spec-value">無料 (一部App内課金あり)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">最新バージョン</span>
+              <span class="spec-value">v1.0.0</span>
+            </li>
+          </ul>
+
+          <div class="app-links" style="border-top: none; padding-top: 8px;">
+            <div style="display: flex; gap: 16px;">
+              <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" target="_blank" rel="noopener noreferrer" class="btn btn-primary">App Storeで入手</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-visual-col reveal">
+          <div class="showcase-visual-wrapper flex-center" style="aspect-ratio: 1; background: #0c1015; border-radius: var(--border-radius-lg); padding: 48px; border: 1px solid var(--card-border);">
+            <img src="assets/images/vertical_jump_icon.png" alt="タイム測定＆垂直跳び測定 アイコン" style="width: 240px; height: 240px; border-radius: 54px; box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase 4: FocusTimer -->
+    <section id="app-focus-timer" class="app-showcase-section" style="background: rgba(15, 17, 26, 0.15);">
+      <div class="container showcase-grid">
+        <div class="showcase-text-col reveal">
+          <div class="app-tags">
+            <span class="tag">Utility</span>
+            <span class="tag tag-sec">Productivity</span>
+          </div>
+          <h2 class="text-gradient" style="font-size: 2.4rem; margin-bottom: 16px;">FocusTimer</h2>
+          <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">
+            ポモドーロテクニックを活用し、仕事や勉強への集中力を高めるミニマルなWebタイマー。25分の作業と5分の休憩を1サイクルとし、画面を閉じずに音とアニメーションで切り替えを知らせます。ダークテーマとの親和性が高く、環境音再生機能があなたの「ゾーン入り」を優しくサポート。
+          </p>
+
+          <h3 style="font-size: 1.15rem; margin-bottom: 12px; color: var(--text-primary);">主な特徴：</h3>
+          <ul style="padding-left: 20px; font-size: 0.95rem; color: var(--text-secondary); display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;">
+            <li><strong>インストール不要</strong>: Webブラウザがあれば、PCでもスマートフォンでも即座に起動可能。</li>
+            <li><strong>環境アンビエント音</strong>: 「雨の音」「静かなカフェ」「ホワイトノイズ」など集中を助ける背景音をミックス可能。</li>
+            <li><strong>データ分析</strong>: その日こなしたポモドーロ数と累計集中時間をローカルストレージに自動蓄積。</li>
+          </ul>
+
+          <ul class="spec-list">
+            <li class="spec-item">
+              <span class="spec-label">対応プラットフォーム</span>
+              <span class="spec-value">Web (iOS / Android / PCブラウザ)</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">開発言語 / 技術</span>
+              <span class="spec-value">HTML5 / Vanilla CSS / ES6 Javascript</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">価格</span>
+              <span class="spec-value">完全無料</span>
+            </li>
+            <li class="spec-item">
+              <span class="spec-label">最新バージョン</span>
+              <span class="spec-value">v1.0.2</span>
+            </li>
+          </ul>
+
+          <div class="app-links" style="border-top: none; padding-top: 8px;">
+            <div style="display: flex; gap: 16px;">
+              <a href="#" class="btn btn-primary">Webアプリを開く</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-visual-col reveal">
+          <div class="showcase-visual-wrapper flex-center" style="aspect-ratio: 16/10; background: linear-gradient(135deg, #1e1b4b, #311042); width: 100%;">
+            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="animate-float">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+              <line x1="12" y1="2" x2="12" y2="4"></line>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">K</div>
+            <span>KPworks</span>
+          </a>
+          <p>洗練されたUI/UXを誇る個人開発アプリ・ゲームを届けるデジタルスタジオ。</p>
+        </div>
+        <div>
+          <h4 class="footer-title">コンテンツ</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="apps.html">アプリ紹介</a></li>
+            <li><a href="menus.html">メニュー一覧</a></li>
+            <li><a href="articles.html">記事一覧</a></li>
+            <li><a href="about.html">スタジオについて</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">お問い合わせ</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">コンタクトフォーム</a></li>
+            <li><span style="color: var(--text-secondary);">info@kpworks.example.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KPworks. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
