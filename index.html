@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KPworks - 筋トレ共有・記録アプリ「トレリンク」や「タワーディフェンス」ゲームなど、シンプルで洗練されたデジタル体験を提供する個人開発スタジオ。">
-  <meta name="keywords" content="KPworks, トレリンク, 筋トレメモ, タワーディフェンス, アプリ開発, 個人開発, 個人アプリ, ホームページ">
-  <title>KPworks | クリエイティブアプリ・ゲームスタジオ</title>
-  
-  <!-- CSS Stylesheet -->
+  <meta name="description" content="リンクで共有できる筋トレ記録アプリ「トレリンク（TreLink）」の有名トレーニングメニュー紹介。BIG3 5x5やアーノルドのゴールデン6などのメニューを、ボタンをタップするだけでアプリに直接インポートしてトレーニングを開始できます。">
+  <title>有名メニュー一覧 | トレリンク (TreLink)</title>
   <link rel="stylesheet" href="assets/css/styles.css">
   
   <!-- Deep Link Redirection Script -->
@@ -85,6 +82,123 @@
       }
     })();
   </script>
+  <style>
+    /* Menus page specific layout and custom styles */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    
+    .menu-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .menu-header-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--border-radius-full);
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .badge-purple {
+      background: rgba(139, 92, 246, 0.12);
+      color: #a78bfa;
+      border: 1px solid rgba(139, 92, 246, 0.25);
+    }
+    
+    .badge-orange {
+      background: rgba(249, 115, 22, 0.12);
+      color: #fb923c;
+      border: 1px solid rgba(249, 115, 22, 0.25);
+    }
+    
+    .badge-blue {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+    
+    .menu-meta-list {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    
+    .menu-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .menu-meta-item svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+    
+    .exercise-list-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      flex-grow: 1;
+    }
+    
+    .exercise-list-table th {
+      text-align: left;
+      color: var(--text-muted);
+      font-weight: 600;
+      padding: 8px 4px;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .exercise-list-table td {
+      padding: 10px 4px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+    }
+    
+    .exercise-list-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .exercise-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .exercise-scheme {
+      text-align: right;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    .exercise-intensity {
+      text-align: right;
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -104,8 +218,7 @@
         アプリを起動 / ダウンロード
       </a>
       <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px; font-size: 14px;">
-        <a href="#" id="btn-close-overlay" style="color: #a0aec0; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; transition: all 0.2s; background: rgba(255,255,255,0.02);">ホームページを見る</a>
-        <a href="menus.html" style="color: #00ddff; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(0,221,255,0.2); border-radius: 10px; transition: all 0.2s; background: rgba(0,221,255,0.05);">メニュー一覧を見る</a>
+        <a href="#" id="btn-close-overlay" style="color: #a0aec0; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; transition: all 0.2s; background: rgba(255,255,255,0.02);">このページを見る</a>
       </div>
     </div>
   </div>
@@ -114,31 +227,16 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <div class="logo-icon">K</div>
-        <span>KPworks</span>
+        <div class="logo-icon" style="background: linear-gradient(135deg, #00ddff, #0077ff); font-family: 'Outfit', sans-serif; font-weight: 800;">T</div>
+        <span>トレリンク (TreLink)</span>
       </a>
-      
-      <!-- Hamburger Menu for Mobile -->
-      <div class="hamburger" id="hamburger" aria-label="メニュー開閉">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
 
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">ホーム</a></li>
-        <li><a href="apps.html">アプリ紹介</a></li>
-        <li><a href="menus.html">メニュー一覧</a></li>
-        <li><a href="articles.html">記事一覧</a></li>
-        <li><a href="about.html">スタジオについて</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-      </ul>
-
-      <!-- Theme Controls -->
       <div class="header-actions">
+        <a href="https://apps.apple.com/app/id6776552419" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 18px; border-radius: var(--border-radius-full); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+          App Store
+        </a>
         <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
-          <!-- Sun Icon for Light Mode -->
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -150,7 +248,6 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <!-- Moon Icon for Dark Mode -->
           <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -159,291 +256,320 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content reveal">
-        <div class="hero-subtitle">KPworks Studio</div>
-        <h1 class="hero-title">Create. Play.<br><span class="text-gradient">Improve.</span></h1>
-        <p class="hero-description">
-          日々の生活を少し便利にするユーティリティから、時間を忘れて没頭できる戦略ゲームまで。
-          KPworksは「洗練されたUI」と「心地よいUX」を追求し、独自のデジタル体験を創り出しています。
-        </p>
-        <div class="hero-ctas">
-          <a href="apps.html" class="btn btn-primary">アプリを探索する</a>
-          <a href="about.html" class="btn btn-secondary">スタジオについて</a>
-        </div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="hero-blob"></div>
-        <div class="hero-image-wrapper animate-float">
-          <img src="assets/images/tower_defense.png" alt="Tower Defense Epic Gameplay Preview">
-        </div>
-      </div>
+  <!-- Page Header -->
+  <section class="section" style="padding-top: 140px; padding-bottom: 20px;">
+    <div class="container text-center max-w-600">
+      <h1 class="text-gradient" style="margin-bottom: 16px;">Workout Menus</h1>
+      <p>世界中のトレーニーに愛用されている実績のある有名筋トレメニューをラインナップ。ボタンをタップするだけで、直接「トレリンク」にインポートしてトレーニングを開始できます。</p>
     </div>
   </section>
 
-  <!-- Featured Apps Section -->
-  <section class="section" id="featured-apps">
-    <div class="container">
-      <div class="text-center max-w-600 reveal">
-        <h2 class="text-gradient">Featured Apps</h2>
-        <p>KPworksが開発している代表的なアプリとゲームです。それぞれの楽しさと利便性をぜひ体験してください。</p>
-      </div>
+  <!-- Programs Grid Container -->
+  <main class="container" style="padding-bottom: 80px;">
+    <div class="menu-grid">
       
-      <div class="grid grid-3 reveal" style="margin-top: 48px;">
-        <!-- App 1: Tower Defense -->
-        <article class="card app-card">
-          <div class="app-card-img">
-            <img src="assets/images/tower_defense.png" alt="Tower Defense Epic">
-          </div>
-          <div class="app-card-content">
-            <div class="app-tags">
-              <span class="tag">Game</span>
-              <span class="tag tag-sec">Strategy</span>
-            </div>
-            <h3 class="app-title">Tower Defense Epic</h3>
-            <p class="app-description">
-              迫りくるサイバーロボットから拠点を守り抜け！グリッドマップ上に様々な能力を持つ防衛タワーを配置し、アップグレードを重ねていく本格的な戦略3Dタワーディフェンスゲーム。
-            </p>
-            <div class="app-links">
-              <a href="apps.html#app-tower-defense" class="read-more">詳細を見る
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <div class="app-badge-group">
-                <!-- Apple Icon -->
-                <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-                <!-- Android Icon -->
-                <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.63,3.61L18.12,1L19.5,1.75L18,4.39C20.62,5.88 22.38,8.59 22.5,11.75H1.5C1.62,8.59 3.38,5.88 6,4.39L4.5,1.75L5.88,1L7.37,3.61C9.64,2.56 12.23,2.56 14.5,3.61M7.25,8.25A1.25,1.25 0 0,0 6,9.5A1.25,1.25 0 0,0 7.25,10.75A1.25,1.25 0 0,0 8.5,9.5A1.25,1.25 0 0,0 7.25,8.25M16.75,8.25A1.25,1.25 0 0,0 15.5,9.5A1.25,1.25 0 0,0 16.75,10.75A1.25,1.25 0 0,0 18,9.5A1.25,1.25 0 0,0 16.75,8.25M1.5,13H22.5V19A3,3 0 0,1 19.5,22H4.5A3,3 0 0,1 1.5,19V13Z"/></svg>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- App 2: TreLink -->
-        <article class="card app-card">
-          <div class="app-card-img">
-            <img src="assets/images/kinntore.png" alt="TreLink App Preview">
-          </div>
-          <div class="app-card-content">
-            <div class="app-tags">
-              <span class="tag">Utility</span>
-              <span class="tag tag-sec">Fitness</span>
-            </div>
-            <h3 class="app-title">トレリンク (TreLink)</h3>
-            <p class="app-description">
-              リンクで共有できる筋トレ記録アプリ！日々のワークアウトメニュー作成やセット重量・回数の記録、ボリューム自動算出グラフに加え、メニューをURLリンク経由で友達と簡単に共有可能。
-            </p>
-            <div class="app-links">
-              <div style="display: flex; gap: 16px; align-items: center;">
-                <a href="apps.html#app-trelink" class="read-more">詳細を見る
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-                <a href="menus.html" class="read-more" style="color: var(--secondary-color);">メニュー一覧
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              </div>
-              <div class="app-badge-group">
-                <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1.07C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-                <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.63,3.61L18.12,1L19.5,1.75L18,4.39C20.62,5.88 22.38,8.59 22.5,11.75H1.5C1.62,8.59 3.38,5.88 6,4.39L4.5,1.75L5.88,1L7.37,3.61C9.64,2.56 12.23,2.56 14.5,3.61M7.25,8.25A1.25,1.25 0 0,0 6,9.5A1.25,1.25 0 0,0 7.25,10.75A1.25,1.25 0 0,0 8.5,9.5A1.25,1.25 0 0,0 7.25,8.25M16.75,8.25A1.25,1.25 0 0,0 15.5,9.5A1.25,1.25 0 0,0 16.75,10.75A1.25,1.25 0 0,0 18,9.5A1.25,1.25 0 0,0 16.75,8.25M1.5,13H22.5V19A3,3 0 0,1 19.5,22H4.5A3,3 0 0,1 1.5,19V13Z"/></svg>
-              </div>
-            </div>
-          </div>
-        </article>
-
-                <!-- App 3: タイム測定＆垂直跳び測定 -->
-        <article class="card app-card">
-          <div class="app-card-img flex-center" style="background: #131921; padding: 24px;">
-            <img src="assets/images/vertical_jump_icon.png" alt="タイム測定＆垂直跳び測定 アイコン" style="width: 110px; height: 110px; border-radius: 24px; box-shadow: var(--shadow-md); transition: transform var(--transition-fast);">
-          </div>
-          <div class="app-card-content">
-            <div class="app-tags">
-              <span class="tag">Utility</span>
-              <span class="tag tag-sec">Sports</span>
-            </div>
-            <h3 class="app-title">タイム測定＆垂直跳び測定</h3>
-            <p class="app-description">
-              動画（240fpsスロー）を活用した0.004秒単位の超精密タイム計測と、滞空時間から物理演算を用いてジャンプ高を算出する垂直跳び分析アプリ。結果を動画上に重ねてエクスポート可能。
-            </p>
-            <div class="app-links">
-              <a href="apps.html#app-vertical-jump" class="read-more">詳細を見る
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <div class="app-badge-group">
-                <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1.07C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- App 4: Focus Timer -->
-        <article class="card app-card">
-          <!-- Placeholder SVG mockup -->
-          <div class="app-card-img flex-center" style="background: linear-gradient(135deg, #1e1b4b, #311042);">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-              <line x1="12" y1="2" x2="12" y2="4"></line>
-            </svg>
-          </div>
-          <div class="app-card-content">
-            <div class="app-tags">
-              <span class="tag">Utility</span>
-              <span class="tag tag-sec">Productivity</span>
-            </div>
-            <h3 class="app-title">FocusTimer</h3>
-            <p class="app-description">
-              無駄な時間を減らし、集中力を最大化するポモドーロ・タイマー。美しいアンビエント音とダークモードに配慮した設計で、あなたの仕事や勉強のゾーン入りをスマートにアシスト。
-            </p>
-            <div class="app-links">
-              <a href="apps.html#app-focus-timer" class="read-more">詳細を見る
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <div class="app-badge-group">
-                <span class="tag" style="padding: 2px 8px; font-size: 0.7rem; border-color: transparent; background: rgba(255,255,255,0.08); color: var(--text-secondary);">Web</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Recent Articles Section -->
-  <section class="section" style="background: rgba(15, 17, 26, 0.2);">
-    <div class="container">
-      <div class="text-center max-w-600 reveal">
-        <h2 class="text-gradient">Recent Articles</h2>
-        <p>アプリ開発の裏側、デザイン設計の思想、日常に活かせるライフハックなど、様々なトピックを発信しています。</p>
-      </div>
-
-      <div class="grid grid-2 reveal" style="margin-top: 48px;">
-        <!-- Article 1 -->
-        <article class="card article-card">
-          <div class="article-card-img">
-            <img src="assets/images/kinntore.png" alt="筋トレの画像">
-          </div>
-          <div class="article-card-content">
-            <div class="article-meta">
-              <span>2026.06.01</span>
-              <span>•</span>
-              <span>フィットネス</span>
-            </div>
-            <h3 class="article-card-title">
-              <a href="article-detail.html?id=workout-logging">自己ベストを更新し続ける！筋トレを可視化することの心理的効果</a>
-            </h3>
-            <p class="article-excerpt">
-              「筋トレがなかなか継続しない…」そんな悩みはありませんか？本記事では、トレーニング重量や回数を克明に記録し可視化することが、脳の報酬系に与えるプラスの影響について解説します。
-            </p>
-            <a href="article-detail.html?id=workout-logging" class="read-more">記事を読む
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <!-- Article 2 -->
-        <article class="card article-card">
-          <div class="article-card-img">
-            <img src="assets/images/tower_defense.png" alt="ゲームの画像">
-          </div>
-          <div class="article-card-content">
-            <div class="article-meta">
-              <span>2026.05.20</span>
-              <span>•</span>
-              <span>ゲームデザイン</span>
-            </div>
-            <h3 class="article-card-title">
-              <a href="article-detail.html?id=td-pathfinding">なぜ面白いのか？タワーディフェンスの経路設計における「迷路化」の魅力</a>
-            </h3>
-            <p class="article-excerpt">
-              敵の移動ルートをプレイヤーが自由に制御できる「オープンフィールド型タワーディフェンス」。ゲームをよりスリリングにするための、最適な迷路構築メカニクスとAIの経路探索アルゴリズムについて。
-            </p>
-            <a href="article-detail.html?id=td-pathfinding" class="read-more">記事を読む
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </article>
-      </div>
-
-      <div class="text-center reveal" style="margin-top: 48px;">
-        <a href="articles.html" class="btn btn-secondary">すべての記事を見る</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section">
-    <div class="container reveal">
-      <div class="card text-center" style="padding: 60px 40px; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);">
-        <h2 class="text-gradient" style="margin-bottom: 16px;">Let's Build Together</h2>
-        <p class="max-w-600" style="margin-bottom: 32px;">
-          KPworksでは、新しいアプリのアイデアや、デザイン・開発に関するコラボレーションをいつでもお待ちしております。お気軽にお問い合わせください。
+      <!-- Menu 1: BIG3 5x5 -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-purple">筋力向上 & バルクアップ</span>
+        <h3 style="margin-bottom: 8px;">BIG3 5x5 プログラム</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          全身の筋肉を稼働する基本種目（BIG3）を5セット×5レップ行う、王道の筋肥大・筋力強化プログラム。シンプルながら非常に強度の高い定番メニューです。
         </p>
-        <a href="contact.html" class="btn btn-primary">お問い合わせはこちら</a>
-      </div>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 60分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>初級者〜中級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">バーベルスクワット</span></td>
+              <td class="exercise-scheme">5set × 5reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ベンチプレス</span></td>
+              <td class="exercise-scheme">5set × 5reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ベントオーバーロウ</span></td>
+              <td class="exercise-scheme">5set × 5reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=big3_5x5&data=H4sIACydJWoC%2F4tWSspMN443rTBV0lFy8nQ3VgAy3%2B%2FpeL62%2B2nX7MfNux83T3jcvPpx0%2FrHTYseNzc%2Fbp7%2Bfk%2Bnkk50tFJKalpiaU5JvKEhUCtY2Z7HzTPBineC1DevB6vvACnOK83J0THVAVPmpnoGsTpUFIoFCiJcA3YM0BmbHzc3Al37uHkN0D30dYMlkhs6HjetAocMJHzWPm5ahuEYA0wzKRICAQCPURoB2QEAAA%3D%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 2: Arnold Golden Six -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-orange">クラシック全身筋肥大</span>
+        <h3 style="margin-bottom: 8px;">アーノルド・ゴールデン６</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          アーノルド・シュワルツェネッガーが若き日に実践していたことで知られる、全身の主要筋肉をまとめて鍛え上げる週3回用のクラシックなプログラム。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 75分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>全レベル向け</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">バーベルスクワット</span></td>
+              <td class="exercise-scheme">4set × 10reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ベンチプレス</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">懸垂 (チンニング)</span></td>
+              <td class="exercise-scheme">3set × 限界まで</td>
+              <td class="exercise-intensity">自重</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
+              <td class="exercise-scheme">4set × 10reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">バーベルカール</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">65% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">プランク</span></td>
+              <td class="exercise-scheme">3set × 60秒</td>
+              <td class="exercise-intensity">自重</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=golden_six&data=H4sIACydJWoC%2F4tWSs%2FPSUnNiy%2FOrFDSUXrctOhx857HzX2Pm1c%2Bu583Lz7cdMWsAiQ2%2F64efP7PdOUdKKjlVJS0xJLc0riDQ1BupongNXMBClr2vm4af3jZiBqftzcAVKcV5qTo2NooAOmzQ30DGJ1KBCLBYoirAfbDrR38%2BPmxsfN0x83rwE6ANNSUyyG4RJDscAcaMGz9h1P5zUpaICtAFrUDSKbNmjCrUElYIYSJYrqG3NwFKwCByYkSGeAg7ETj9eoGp5GmNG5GhL9GBabYQk%2FnGIolhgbgC0B%2BmglOCTXowakmQFmgOETAwEAeNRgGscCAAA%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 3: PPL - Push -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-blue">PPL分割法：Push</span>
+        <h3 style="margin-bottom: 8px;">PPL：Push (上半身・押し)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          上半身の「押す」動作に関わる筋肉（胸・肩前中部・上腕三頭筋）を一括で刺激。大胸筋の厚みと立体的な肩のメロンを作るためのコアメニューです。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 50分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>中級者〜上級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">ベンチプレス</span></td>
+              <td class="exercise-scheme">3set × 8reps</td>
+              <td class="exercise-intensity">80% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
+              <td class="exercise-scheme">3set × 8reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">インクラインダンベルプレス</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">70% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">サイドレイズ</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">10 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">トライセプスプレスダウン</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">25 kg (固定)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=ppl_push&data=H4sIACydJWoC%2F42RuwrCQBBF%2F2XrRZKg6EdYpA8igopFkICm153GBAQ7H7UIPsBCBB%2F7N6Nil19wZxPUEMSkmGwuO/dwiMM8z617fq/DOLPtaiQXtvqI5Oh2Cu/j8HnZIlwfocThNJIB447Dmq12w3f7dVOtIMwRDghDhCnCDsWZrnR91%2BUVHr%2BMglHjuaKaCj/tZaoXGwSJMNFzhgAIwU9UuZTp/RWlUJYmLUlE7BHWyRkGeirBbRZpGknbl8vfLC1Y0dijpgW6foniQgRTXeamFW/SUHv5srRXUf%2BhUaIkrqQhzm8ZMhQrJUlMq5Ttz5fR8wLuswHaSAIAAA%3D%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 4: PPL - Pull -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-blue">PPL分割法：Pull</span>
+        <h3 style="margin-bottom: 8px;">PPL：Pull (上半身・引き)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          上半身の「引く」動作に関わる筋肉（背中・上腕二頭筋・前腕）を徹底攻略。広いVシェイプの背中と太い腕を効率的につくり出すプログラムです。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 50分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>中級者〜上級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">デッドリフト</span></td>
+              <td class="exercise-scheme">3set × 5reps</td>
+              <td class="exercise-intensity">80% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ラットプルダウン</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">60 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">シーテッドプーリーロウ</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">50 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">バーベルカール</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">30 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">ハンマーカール</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">12 kg (固定)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=ppl_pull&data=H4sIACydJWoC%2F42QMQrCQBBF77L1IklE8RAW6YOIoFZBUmivGdAYEG1EtLAUNFhZKLq3GQW7XMGZEcWAxabYZD%2F738tsoKIobEaDMFRa%2BX49NxufNrlJ7pf0MUuf1wzh9jBLHM1yM1U6CFS7020Nwn6zShWECQIgTBEOCEuEhI/0CKErWl41p%2BQ0tFXUoPBLrwl9L/QEYYVAfzLEeIdwYkeVGtp13nVeqGyXFTSuw574jGAQxp9ZVrI9yHokJwsrf%2BB2WUHouTLYQthrnirO5DtjSfkP0C4rSjyRzOmuELaM/5W4Hpe9AtAu4%2BcFQ2cQzDMCAAA%3D" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
+      <!-- Menu 5: PPL - Legs -->
+      <article class="card menu-card reveal">
+        <span class="menu-header-badge badge-blue">PPL分割法：Legs</span>
+        <h3 style="margin-bottom: 8px;">PPL：Legs (下半身の鍛錬)</h3>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
+          人体最大の筋肉群である下半身（大腿四頭筋、ハムストリングス、臀部、ふくらはぎ）を総合的に鍛えるハードな分割メニュー。代謝向上や成長ホルモン分泌にも劇的効果があります。
+        </p>
+        <div class="menu-meta-list">
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            <span>約 55分</span>
+          </div>
+          <div class="menu-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>中級者〜上級者</span>
+          </div>
+        </div>
+        
+        <table class="exercise-list-table">
+          <thead>
+            <tr>
+              <th>実施種目</th>
+              <th style="text-align: right;">セット×回数</th>
+              <th style="text-align: right;">強度設定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="exercise-name">バーベルスクワット</span></td>
+              <td class="exercise-scheme">3set × 8reps</td>
+              <td class="exercise-intensity">75% 1RM</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">レッグプレス</span></td>
+              <td class="exercise-scheme">3set × 10reps</td>
+              <td class="exercise-intensity">120 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">レッグエクステンション</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">50 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">レッグカール</span></td>
+              <td class="exercise-scheme">3set × 12reps</td>
+              <td class="exercise-intensity">40 kg (固定)</td>
+            </tr>
+            <tr>
+              <td><span class="exercise-name">カーフレイズ</span></td>
+              <td class="exercise-scheme">3set × 15reps</td>
+              <td class="exercise-intensity">60 kg (固定)</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <a href="https://gaburieru-dotcom.github.io/?id=ppl_legs&data=H4sIACydJWoC%2F42QSwrCMBCG75J1KGlt1UO4cF9EBB%2BbIAX1AhmQqghuRHQtKFRQcOGD3mYU3PUKZqIgARcJITP5mfk%2ZmKWJLIpO70B46xerxX5pqY/RZ4%2BrrPnfPq6Z0U%2BYTyOWbvTbY3ksOn7uhRhgZAjrBEyVDdURwR9ASGl4v5ISl7lJlQiTzS4k9TQ4o8TGM6BXNUJYUW5upG9HwhPcF98WunRja6iDSlZELWnSfQ8MEY4o7og7HRCzMgYBZa7m2YDQxuYmTVmRAj/uLlpNiEiwtd4aZa2RXUnQtl0Rpabm0bnDalBZ%2BEsAgAA" class="btn btn-primary" style="justify-content: center; width: 100%;">トレリンクにインポート</a>
+      </article>
+
     </div>
-  </section>
+  </main>
 
   <!-- Footer Section -->
   <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <div class="logo-icon">K</div>
-            <span>KPworks</span>
-          </a>
-          <p>洗練されたUI/UXを誇る個人開発アプリ・ゲームを届けるデジタルスタジオ。</p>
-        </div>
-        <div>
-          <h4 class="footer-title">コンテンツ</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="apps.html">アプリ紹介</a></li>
-            <li><a href="menus.html">メニュー一覧</a></li>
-            <li><a href="articles.html">記事一覧</a></li>
-            <li><a href="about.html">スタジオについて</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer-title">お問い合わせ</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html">コンタクトフォーム</a></li>
-            <li><span style="color: var(--text-secondary);">info@kpworks.example.com</span></li>
-          </ul>
-        </div>
+    <div class="container" style="text-align: center;">
+      <div class="footer-brand" style="align-items: center; margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px;">
+        <a href="index.html" class="logo" style="justify-content: center;">
+          <div class="logo-icon" style="background: linear-gradient(135deg, #00ddff, #0077ff); font-family: 'Outfit', sans-serif; font-weight: 800;">T</div>
+          <span>トレリンク (TreLink)</span>
+        </a>
+        <p style="max-width: 400px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+          リンクで共有できる筋トレ記録アプリ「トレリンク」の有名トレーニングメニュー紹介・インポート用の中継サイトです。
+        </p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 KPworks. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#" aria-label="X (Twitter)">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="#" aria-label="GitHub">
-            <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </a>
-        </div>
+      <div class="footer-bottom" style="justify-content: center; border-top: 1px solid var(--card-border); padding-top: 24px;">
+        <p>&copy; 2026 TreLink. All rights reserved.</p>
       </div>
     </div>
   </footer>
