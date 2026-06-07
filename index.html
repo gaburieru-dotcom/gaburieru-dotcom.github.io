@@ -46,6 +46,20 @@
         function setupButton() {
           const btn = document.getElementById('btn-open-app');
           if (btn) btn.href = appUrl;
+
+          const closeBtn = document.getElementById('btn-close-overlay');
+          if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+              e.preventDefault();
+              const overlay = document.getElementById('redirect-overlay');
+              if (overlay) {
+                overlay.style.display = 'none';
+              }
+              // Remove query parameters from URL so reloading doesn't trigger it again
+              const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+              window.history.replaceState({path: cleanUrl}, '', cleanUrl);
+            });
+          }
         }
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', setupButton);
@@ -86,9 +100,13 @@
       <p style="margin: 0 0 32px 0; font-size: 14px; color: #a0aec0; line-height: 1.6;">
         アプリが自動的に起動しない、またはインストールされていない場合は、下のボタンを押してください。
       </p>
-      <a id="btn-open-app" href="#" style="display: block; text-decoration: none; background: linear-gradient(90deg, #00ddff, #00bfff); color: #0a0a0e; font-weight: 700; font-size: 16px; padding: 16px 24px; border-radius: 14px; margin-bottom: 16px; box-shadow: 0 8px 20px rgba(0, 221, 255, 0.25); text-align: center;">
+      <a id="btn-open-app" href="#" style="display: block; text-decoration: none; background: linear-gradient(90deg, #00ddff, #00bfff); color: #0a0a0e; font-weight: 700; font-size: 16px; padding: 16px 24px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0, 221, 255, 0.25); text-align: center;">
         アプリを起動 / ダウンロード
       </a>
+      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px; font-size: 14px;">
+        <a href="#" id="btn-close-overlay" style="color: #a0aec0; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; transition: all 0.2s; background: rgba(255,255,255,0.02);">ホームページを見る</a>
+        <a href="menus.html" style="color: #00ddff; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(0,221,255,0.2); border-radius: 10px; transition: all 0.2s; background: rgba(0,221,255,0.05);">メニュー一覧を見る</a>
+      </div>
     </div>
   </div>
 
@@ -220,12 +238,20 @@
               リンクで共有できる筋トレ記録アプリ！日々のワークアウトメニュー作成やセット重量・回数の記録、ボリューム自動算出グラフに加え、メニューをURLリンク経由で友達と簡単に共有可能。
             </p>
             <div class="app-links">
-              <a href="apps.html#app-trelink" class="read-more">詳細を見る
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
+              <div style="display: flex; gap: 16px; align-items: center;">
+                <a href="apps.html#app-trelink" class="read-more">詳細を見る
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="menus.html" class="read-more" style="color: var(--secondary-color);">メニュー一覧
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
               <div class="app-badge-group">
                 <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1.07C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
                 <svg class="app-badge-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16.63,3.61L18.12,1L19.5,1.75L18,4.39C20.62,5.88 22.38,8.59 22.5,11.75H1.5C1.62,8.59 3.38,5.88 6,4.39L4.5,1.75L5.88,1L7.37,3.61C9.64,2.56 12.23,2.56 14.5,3.61M7.25,8.25A1.25,1.25 0 0,0 6,9.5A1.25,1.25 0 0,0 7.25,10.75A1.25,1.25 0 0,0 8.5,9.5A1.25,1.25 0 0,0 7.25,8.25M16.75,8.25A1.25,1.25 0 0,0 15.5,9.5A1.25,1.25 0 0,0 16.75,10.75A1.25,1.25 0 0,0 18,9.5A1.25,1.25 0 0,0 16.75,8.25M1.5,13H22.5V19A3,3 0 0,1 19.5,22H4.5A3,3 0 0,1 1.5,19V13Z"/></svg>
