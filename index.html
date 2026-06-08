@@ -1393,8 +1393,10 @@ header.scrolled + .jump-nav-container {
             });
           }
 
-          // 3. Try opening the app (executed after DOM overlay is shown)
-          window.location.href = appUrl;
+          // 3. Try opening the app (deferred slightly to ensure browser paints the overlay first)
+          setTimeout(function() {
+            window.location.href = appUrl;
+          }, 150);
 
           // 4. Timeout for App Store fallback
           const start = Date.now();
