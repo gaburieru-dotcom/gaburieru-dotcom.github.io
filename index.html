@@ -1363,21 +1363,20 @@ header.scrolled + .jump-nav-container {
 
       const params = getQueryParams();
       if (params.id) {
-        // Show redirect overlay as soon as DOM is ready
-        document.addEventListener("DOMContentLoaded", function() {
-          const overlay = document.getElementById('redirect-overlay');
-          if (overlay) {
-            overlay.style.display = 'flex';
-          }
-        });
-
         const APP_STORE_URL = 'https://apps.apple.com/app/id6776552419';
         let appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(params.id);
         if (params.data) {
           appUrl += '&data=' + encodeURIComponent(params.data);
         }
 
-        function setupButton() {
+        function startRedirect() {
+          // 1. Show redirect overlay
+          const overlay = document.getElementById('redirect-overlay');
+          if (overlay) {
+            overlay.style.display = 'flex';
+          }
+
+          // 2. Set button action
           const btn = document.getElementById('btn-open-app');
           if (btn) btn.href = appUrl;
 
@@ -1385,7 +1384,6 @@ header.scrolled + .jump-nav-container {
           if (closeBtn) {
             closeBtn.addEventListener('click', function(e) {
               e.preventDefault();
-              const overlay = document.getElementById('redirect-overlay');
               if (overlay) {
                 overlay.style.display = 'none';
               }
@@ -1394,28 +1392,30 @@ header.scrolled + .jump-nav-container {
               window.history.replaceState({path: cleanUrl}, '', cleanUrl);
             });
           }
-        }
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', setupButton);
-        } else {
-          setupButton();
-        }
 
-        // Try opening the app
-        window.location.href = appUrl;
+          // 3. Try opening the app (executed after DOM overlay is shown)
+          window.location.href = appUrl;
 
-        // Timeout for App Store fallback
-        const start = Date.now();
-        setTimeout(function() {
-          if (document.hidden || document.webkitHidden) {
-            return;
-          }
-          if (Date.now() - start < 3500) {
-            if (confirm('アプリを起動できませんでした。App Storeを開いて「トレリンク」をダウンロードしますか？')) {
-              window.location.href = APP_STORE_URL;
+          // 4. Timeout for App Store fallback
+          const start = Date.now();
+          setTimeout(function() {
+            if (document.hidden || document.webkitHidden) {
+              return;
             }
-          }
-        }, 2500);
+            if (Date.now() - start < 3500) {
+              if (confirm('アプリを起動できませんでした。App Storeを開いて「トレリンク」をダウンロードしますか？')) {
+                window.location.href = APP_STORE_URL;
+              }
+            }
+          }, 2500);
+        }
+
+        // Wait for DOM to be fully ready before starting any redirection actions
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', startRedirect);
+        } else {
+          startRedirect();
+        }
       }
     })();
   </script>
