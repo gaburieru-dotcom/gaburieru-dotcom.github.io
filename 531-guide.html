@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="筋力向上の王道トレーニング「Wendler 5/3/1」プログラムの完全ガイド。週ごとの強度計算やインポート用リンク付き。ベンチプレス・スクワット・デッドリフト・オーバーヘッドプレスの各メニューを直接アプリに登録できます。">
+  <meta name="keywords" content="5/3/1, 531プログラム, Wendler, 筋トレ, ストレングス, スクワット, ベンチプレス, デッドリフト, オーバーヘッドプレス, トレリンク, インポート">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gaburieru-dotcom.github.io/531-guide.html">
+  <title>5/3/1プログラム完全ガイド | トレリンク (TreLink)</title>
+  
+  <!-- JSON-LD Structured Data for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "5/3/1プログラム完全ガイド | トレリンク (TreLink)",
+    "description": "筋力向上の王道トレーニング「Wendler 5/3/1」プログラムの完全ガイド。週ごとの強度計算やインポート用リンク付き。ベンチプレス・スクワット・デッドリフト・オーバーヘッドプレスの各メニューを直接アプリに登録できます。",
+    "image": "https://gaburieru-dotcom.github.io/app_icon.png",
+    "author": {
+      "@type": "Organization",
+      "name": "TreLink"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TreLink",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gaburieru-dotcom.github.io/app_icon.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://gaburieru-dotcom.github.io/531-guide.html"
+    },
+    "inLanguage": "ja",
+    "datePublished": "2026-06-09",
+    "dateModified": "2026-06-09"
+  }
+  </script>
+  
+  <!-- OGP Meta Tags -->
+  <meta property="og:title" content="5/3/1プログラム完全ガイド | トレリンク (TreLink)">
+  <meta property="og:description" content="筋力向上の王道トレーニング「Wendler 5/3/1」プログラムの完全ガイド。アプリに直接インポートできるメニューリンク付き。">
+  <meta property="og:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+  <meta property="og:url" content="https://gaburieru-dotcom.github.io/531-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="トレリンク (TreLink)">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="5/3/1プログラム完全ガイド | トレリンク (TreLink)">
+  <meta name="twitter:description" content="筋力向上の王道トレーニング「Wendler 5/3/1」プログラムの完全ガイド。アプリに直接インポートできるメニューリンク付き。">
+  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --bg-color: #08090d;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #15162a 0%, #08090d 60%);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      
+      --primary-color: #6366f1; /* Indigo */
+      --primary-rgb: 99, 102, 241;
+      --secondary-color: #ec4899; /* Pink */
+      --secondary-rgb: 236, 72, 153;
+      --accent-color: #06b6d4; /* Cyan */
+      --accent-rgb: 6, 182, 212;
+
+      --card-bg: rgba(15, 17, 26, 0.6);
+      --card-border: rgba(255, 255, 255, 0.06);
+      --card-border-hover: rgba(99, 102, 241, 0.4);
+      
+      --header-bg: rgba(8, 9, 13, 0.7);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
+      
+      --border-radius-sm: 8px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 24px;
+      --border-radius-full: 9999px;
+
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html.light-mode {
+      --bg-color: #f8fafc;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #eef2ff 0%, #f8fafc 80%);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+
+      --primary-color: #4f46e5;
+      --primary-rgb: 79, 70, 229;
+      --secondary-color: #db2777;
+      --secondary-rgb: 219, 39, 119;
+      --accent-color: #0891b2;
+      --accent-rgb: 8, 145, 178;
+
+      --card-bg: rgba(255, 255, 255, 0.8);
+      --card-border: rgba(0, 0, 0, 0.06);
+      --card-border-hover: rgba(79, 70, 229, 0.3);
+
+      --header-bg: rgba(248, 250, 252, 0.8);
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+      --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Navigation Header --- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 1000;
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background-color var(--transition-normal), border-color var(--transition-normal), height var(--transition-normal);
+    }
+
+    header.scrolled {
+      height: 70px;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--border-radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4), var(--shadow-glow);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: border var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+    }
+
+    .theme-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .theme-toggle .sun-icon {
+      display: none;
+    }
+
+    html.light-mode .theme-toggle .moon-icon {
+      display: none;
+    }
+
+    html.light-mode .theme-toggle .sun-icon {
+      display: block;
+    }
+
+    /* --- Content Sections --- */
+    .hero-section {
+      padding-top: 140px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--card-border);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .guide-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .highlight-box {
+      border-left: 4px solid var(--primary-color);
+      background: rgba(var(--primary-rgb), 0.05);
+      padding: 16px;
+      border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+      margin: 20px 0;
+    }
+
+    /* --- Tabs --- */
+    .tab-container {
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      border-radius: var(--border-radius-full);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .tab-button.active, .tab-button:hover {
+      background: var(--primary-color);
+      color: #ffffff;
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Link Grid --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .workout-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .workout-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+
+    .exercise-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: var(--border-radius-full);
+      margin-bottom: 16px;
+    }
+
+    .badge-ohp { background: rgba(236, 72, 153, 0.15); color: var(--secondary-color); }
+    .badge-dl { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+    .badge-bp { background: rgba(99, 102, 241, 0.15); color: var(--primary-color); }
+    .badge-sq { background: rgba(6, 182, 212, 0.15); color: var(--accent-color); }
+
+    .set-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 6px 0;
+      font-size: 0.9rem;
+    }
+
+    html.light-mode .set-row {
+      border-bottom-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .set-num {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .set-details {
+      font-weight: bold;
+      color: var(--text-primary);
+    }
+
+    .set-rep-plus {
+      color: var(--secondary-color);
+      font-weight: 800;
+    }
+
+    .workout-footer {
+      margin-top: 24px;
+    }
+
+    /* --- List Styling --- */
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* --- Footer --- */
+    footer {
+      margin-top: 80px;
+      padding: 40px 0;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <span>トレリンク (TreLink)</span>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 18px; border-radius: var(--border-radius-full); text-decoration: none;">
+          メニュー一覧へ戻る
+        </a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section container">
+    <h1 class="text-gradient">Wendler 5/3/1 完全ガイド</h1>
+    <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+      「急がば回れ」を体現する、シンプルにして最強のストレングス向上プログラム。<br>
+      計算式から進め方まで、詳細なガイドとスマホ直通インポートリンクを用意しました。
+    </p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Explanation Card -->
+    <article class="guide-card">
+      <h2>5/3/1 プログラムとは？</h2>
+      <p>
+        ジム・ウェンドラー（Jim Wendler）氏によって考案された「5/3/1プログラム」は、パワーリフティングやウェイトトレーニングにおける基本的な4大種目（オーバーヘッドプレス、デッドリフト、ベンチプレス、バックスクワット）の最大挙上重量（1RM）を長期的に、安全かつ確実に向上させるためのプログラムです。
+      </p>
+      <p>
+        最大の特徴は、毎回のトレーニングで「潰れるギリギリの限界重量」を扱うのではなく、あえてコントロール可能なサブマキシマル（最大未満）の重量を扱い、最終セットで「行える限界のレップ数」に挑戦して自己記録（PR）を積み重ねていく点にあります。
+      </p>
+      
+      <h3>3大コア・原則</h3>
+      <ol>
+        <li><strong>トレーニングマックス（TM）基準の計算:</strong> 自分の実測1RMの「90%」を「トレーニングマックス（TM）」として設定し、すべてのセットの計算はこのTMを基準に行います。これによりオーバートレーニングを防ぎます。</li>
+        <li><strong>AMRAPセット（+セット）:</strong> 各トレーニング日の第3セット（最終セット）は「5+」「3+」「1+」のように表示され、「最低規定レップをクリアした上で、フォームが崩れない限界の回数まで」挙上します。</li>
+        <li><strong>段階的過負荷:</strong> 4週間の1サイクルが終了したら、TMの基準値を「上半身種目は +2.5kg」「下半身種目は +5.0kg」増やして次のサイクルに入ります。</li>
+      </ol>
+      
+      <div class="highlight-box">
+        <strong>💡 アプリ内での自動計算について：</strong><br>
+        このページで配布しているインポートリンクは、アプリが皆さんの設定した「1RM」から自動的に正しい負荷を算出できるよう、<strong>あらかじめTM（1RMの90%）を反映させたパーセンテージに調整してあります。</strong><br>
+        そのため、アプリの「種目設定」でご自身の正確な1RM（最大重量）を入力しておくだけで、自動的に適切な挙上重量が算出されます。
+      </div>
+    </article>
+
+    <!-- Detailed Weekly Structure -->
+    <article class="guide-card">
+      <h2>サイクル（週）ごとの設定内容</h2>
+      <p>5/3/1は4週間で1サイクルとなっており、週ごとに強度（％）とレップ数が以下のように推移します。</p>
+      <div style="overflow-x: auto; margin-bottom: 20px;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--card-border);">
+              <th style="padding: 10px;">週</th>
+              <th style="padding: 10px;">通称</th>
+              <th style="padding: 10px;">第1セット</th>
+              <th style="padding: 10px;">第2セット</th>
+              <th style="padding: 10px;">第3セット（AMRAP）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 10px; font-weight: bold;">第1週</td>
+              <td style="padding: 10px;">5s Week</td>
+              <td style="padding: 10px;">65% of TM (58.5% 1RM) × 5</td>
+              <td style="padding: 10px;">75% of TM (67.5% 1RM) × 5</td>
+              <td style="padding: 10px; color: var(--secondary-color); font-weight: bold;">85% of TM (76.5% 1RM) × 5+</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 10px; font-weight: bold;">第2週</td>
+              <td style="padding: 10px;">3s Week</td>
+              <td style="padding: 10px;">70% of TM (63% 1RM) × 3</td>
+              <td style="padding: 10px;">80% of TM (72% 1RM) × 3</td>
+              <td style="padding: 10px; color: var(--secondary-color); font-weight: bold;">90% of TM (81% 1RM) × 3+</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 10px; font-weight: bold;">第3週</td>
+              <td style="padding: 10px;">5/3/1 Week</td>
+              <td style="padding: 10px;">75% of TM (67.5% 1RM) × 5</td>
+              <td style="padding: 10px;">85% of TM (76.5% 1RM) × 3</td>
+              <td style="padding: 10px; color: var(--secondary-color); font-weight: bold;">95% of TM (85.5% 1RM) × 1+</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 10px; font-weight: bold;">第4週</td>
+              <td style="padding: 10px;">Deload</td>
+              <td style="padding: 10px;">40% of TM (36% 1RM) × 5</td>
+              <td style="padding: 10px;">50% of TM (45% 1RM) × 5</td>
+              <td style="padding: 10px;">60% of TM (54% 1RM) × 5 (AMRAPなし)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <!-- Workout Links Area -->
+    <section class="tab-container">
+      <h2 style="margin-top: 0; display: block; text-align: center; border-bottom: none;">メニューのインポートリンク</h2>
+      <p style="text-align: center; margin-bottom: 24px;">現在の週に対応するタブを選択し、行いたい種目の「トレリンクにインポート」を押してください。</p>
+
+      <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('w1')">第1週 (5s)</button>
+        <button class="tab-button" onclick="switchTab('w2')">第2週 (3s)</button>
+        <button class="tab-button" onclick="switchTab('w3')">第3週 (5/3/1)</button>
+        <button class="tab-button" onclick="switchTab('w4')">第4週 (Deload)</button>
+      </div>
+
+      <!-- WEEK 1 -->
+      <div id="w1" class="tab-content active">
+        <div class="grid">
+          <!-- OHP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-ohp">肩</span>
+              <h3>5/3/1 W1 - OHP</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">オーバーヘッドプレス単体の本番セットです。補助種目を追加してアレンジしてください。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">58.5% (TM 65%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">76.5% (TM 85%) × <span class="set-rep-plus">5 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w1_ohp&data=H4sIAHAmKGoC/4tWMjU2jC83jM/PKFDSUTLVN9Y3VIgpNU8ySjaMKbU0MDZU0DAt1lTQBQoaGyQmgsi0ZBCZYoDEtgCRycZg0hIsYg4iU8GySZZKOtHRSimpaYmlOSXxhmZAiyg1La80J0fHVAdCWeiZxuqgCJmZYwiZmwGFQAAA/4KcLfMAAAA%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- DL -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-dl">背中・体幹</span>
+              <h3>5/3/1 W1 - デッドリフト</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">デッドリフトの本番セットです。腰の疲労に注意して行いましょう。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">58.5% (TM 65%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">76.5% (TM 85%) × <span class="set-rep-plus">5 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w1_dl&data=H4sIAHAmKGoC/4tWMjU2jC83jE/JUdJRMtU31jdUiCk1TzJKNowptTQwNlTQMC3WVNAFChobJJuDSWMwaQkiUxNBZIopWMRCSSc6WiklNS2xNKck3gxoHrGa8kpzcnRMdSCUhZ5prA6KkJk5hpC5GVAIBADxIglzwQAAAA%3D%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- BP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-bp">胸</span>
+              <h3>5/3/1 W1 - ベンチプレス</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">ベンチプレスの本番セットです。代表的な上半身プレスパワー種目です。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">58.5% (TM 65%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">76.5% (TM 85%) × <span class="set-rep-plus">5 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w1_bp&data=H4sIAHAmKGoC/4tWMjU2jC83jE8qUNJRMtU31jdUiCk1TzJKNowptTQwNlTQMC3WVNAFChobpFiCyDRjEAmSB4qYg8jUZBCZZKmkEx2tlJKalliaUxJvCDSPWE15pTk5OqY6EMpCzzRWB0XIzBxDyNwMKAQCAGtq8LnBAAAA" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- SQ -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-sq">脚</span>
+              <h3>5/3/1 W1 - スクワット</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">バーベルスクワットの本番セットです。下半身を極める王道種目です。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">58.5% (TM 65%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">76.5% (TM 85%) × <span class="set-rep-plus">5 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w1_sq&data=H4sIAHAmKGoC/4tWMjU2jC83jC8uVNJRMtU31jdUiCk1TzJKNowptTQwNlTQMC3WVNAFChobpBiAyLRkMNsSRKYmgcgkMDsxDSwCJpONwaSFkk50tFJKalpiaU5JvKEh0AryzckrzcnRMdWBUBZ6prE6KEJm5hhC5mZAIRAAABtmtx7mAAAA" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div id="w2" class="tab-content">
+        <div class="grid">
+          <!-- OHP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-ohp">肩</span>
+              <h3>5/3/1 W2 - OHP</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第2週（3s Week）の本番セット。レップ数が減り、少し重量がアップします。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">63.0% (TM 70%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">72.0% (TM 80%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">81.0% (TM 90%) × <span class="set-rep-plus">3 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w2_ohp&data=H4sIAHAmKGoC/4tWMjU2jC83is/PKFDSUTLVN9Y3VIgpNU8ySjaKKbU0MDZU0DAu1lTQBQoaGyQmgsi0ZBCZYoDEtgCRycZg0hIsYg4iU8GySZZKOtHRSimpaYmlOSXxhmZAiyg1La80J0fHWAdMmRnrGcTqoAiZG2EIWRgChUAAAAJOBoXzAAAA" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- DL -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-dl">背中・体幹</span>
+              <h3>5/3/1 W2 - デッドリフト</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第2週デッドリフト。3レップずつ丁寧に力を溜めて引くことを意識します。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">63.0% (TM 70%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">72.0% (TM 80%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">81.0% (TM 90%) × <span class="set-rep-plus">3 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w2_dl&data=H4sIAHAmKGoC/43MwQqAIAyA4VeRnQpWqcO0Z7GQyjpJl5JeP/UWXdrhH3ywWVAk3C2dD4CgOuoEG6Ne5CrHOHASrKKzZk1C4qsupdIhd5tzvSpiAK0Fv%2B1zDJfr07%2B/R0cMAQnL6qnlE75Iyw8ZkSjPA5jiDELBAAAA" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- BP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-bp">胸</span>
+              <h3>5/3/1 W2 - ベンチプレス</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第2週ベンチプレス。しっかりとしたラックアウトからコントロールします。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">63.0% (TM 70%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">72.0% (TM 80%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">81.0% (TM 90%) × <span class="set-rep-plus">3 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w2_bp&data=H4sIAHAmKGoC/4tWMjU2jC83ik8qUNJRMtU31jdUiCk1TzJKNooptTQwNlTQMC7WVNAFChobpFiCyDRjEJlsCBYxB5GpySAyyVJJJzpaKSU1LbE0pyTeEGgesZrySnNydIx1wJSZsZ5BrA6KkLkRhpCFIVAIBAACqvWIwQAAAA%3D%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- SQ -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-sq">脚</span>
+              <h3>5/3/1 W2 - スクワット</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第2週スクワット。しゃがみの深さと背中のテンションを崩さない範囲で。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">63.0% (TM 70%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">72.0% (TM 80%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">81.0% (TM 90%) × <span class="set-rep-plus">3 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w2_sq&data=H4sIAHAmKGoC/52NSwrDMAxEr2K0akBpLIv8zuIUEzvxygRCanr92tqV7KrFm%2BEtRhZ6Jvcx7joBoe%2B4I7Xk0ZtgljxrJvXgq1Ftkaw3XRmD9Lly95Ve%2BhrFCAMLJ0BrYdvjmtPbEZUX/%2B8cOSVklBj4qV/4o0ZzUxMVVe8Lvn79auYAAAA%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div id="w3" class="tab-content">
+        <div class="grid">
+          <!-- OHP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-ohp">肩</span>
+              <h3>5/3/1 W3 - OHP</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第3週（5/3/1 Week）。強度が最も高くなるピーク週です。PRを目指しましょう！</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">76.5% (TM 85%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">85.5% (TM 95%) × <span class="set-rep-plus" style="color:#ec4899;">1 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w3_ohp&data=H4sIAHAmKGoC/6XNOw4CIRCA4auQqTQZXcYJsJyFNYR9xYKohcTry0ChvRQ/5CMwAQxTfHN83J6AYAYeSE3FzZeFp%2BI1kzo0PKpTddYpSfdFuuqf8yiVR7W%2BiZNu7Xb2gCHAuu2p5FckW2f9%2B9u95IwG22bd2VyxE3dy9kvUaTSVZH0AynmwqPYAAAA%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- DL -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-dl">背中・体幹</span>
+              <h3>5/3/1 W3 - デッドリフト</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第3週デッドリフト。本気の一発、またはそれを超える限界レップに挑みます。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">76.5% (TM 85%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">85.5% (TM 95%) × <span class="set-rep-plus" style="color:#ec4899;">1 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w3_dl&data=H4sIAHAmKGoC/43MsQ6EIAyA4Vchnc6knmJT0GdBQ1R0Ik6Se/2DMrja4W/yJa0DJu1/5EMEBO6o02pOdht2mtPUk1YfwUa12anfrZSkU%2BmxlgYWGQGdg3Cca4q3N/nl26MrxYiMsoz98oKVqJI1D%2BlKI2cq8wdIf1hfxAAAAA%3D%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- BP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-bp">胸</span>
+              <h3>5/3/1 W3 - ベンチプレス</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第3週ベンチプレス。セーフティバーをしっかりセットして最大強度に臨みます。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">76.5% (TM 85%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">85.5% (TM 95%) × <span class="set-rep-plus" style="color:#ec4899;">1 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w3_bp&data=H4sIAHAmKGoC/43MwQrCMAyA4VcpOSlEtxiy2mfpRrHddiriwbLXt2kPXpfDH/gg8SBM4eAQP4AgAw9k5mLjI/Fc3MhkLg2v5ladx9Vpd9YmamK1W9JGB%2Bg9rNv%2BKvkbqL48e/QuOaNgW5O9y4KduJOd/kSdnlJJ5wdQiqrFxAAAAA%3D%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- SQ -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-sq">脚</span>
+              <h3>5/3/1 W3 - スクワット</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第3週スクワット。最大のスクワット強度に集中し、自己最高記録に挑戦しましょう。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">67.5% (TM 75%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">76.5% (TM 85%) × 3 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">85.5% (TM 95%) × <span class="set-rep-plus" style="color:#ec4899;">1 回以上</span></span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w3_sq&data=H4sIAHAmKGoC/53NwQ7CIAyA4VchnDSpjtp0bM/CDBnbOBETo8TXl5aDdzn8bb5DCZYJ44fi62nB8kADmqX6dNtoqbMjNCfFs7k0J7c7ad50n6VHkibd16yilQOtk4UQ7H7ktZZ3RGy//H/nUUsBBh2jv/IdOlEnP/4IO03cSN4XJp/Bv%2BkAAAA%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WEEK 4 -->
+      <div id="w4" class="tab-content">
+        <div class="grid">
+          <!-- OHP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-ohp">肩</span>
+              <h3>5/3/1 W4 - OHP (Deload)</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">第4週（デロード）。疲労を回復させ、次のサイクルの土台を作る積極的休養週です。AMRAP（限界）は行いません。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">36.0% (TM 40%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">45.0% (TM 50%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">54.0% (TM 60%) × 5 回</span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w4_ohp&data=H4sIAHAmKGoC/4tWMjU2jC83ic/PKFDSUTLVN9Y3VIgpNU8ySjaJKbU0MDZU0HBJzclPTNFU0AVKGBskJoLItGQQmWKAxLYAkcnGYNISLGIOIlPBskmWSjrR0UopqWmJpTkl8YZmQMsoNS2vNCdHx1QHTBmb6RnE6qAImZhiCJmaAIVAAADNgPi09wAAAA%3D%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- DL -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-dl">背中・体幹</span>
+              <h3>5/3/1 W4 - DL (Deload)</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">デロード週のデッドリフト。軽い重量でフォームの細部を確認します。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">36.0% (TM 40%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">45.0% (TM 50%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">54.0% (TM 60%) × 5 回</span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w4_dl&data=H4sIAHAmKGoC/4tWMjU2jC83iU/JUdJRMtU31jdUiCk1TzJKNokptTQwNlTQcEnNyU9M0VTQBUoYGySbg0ljMGkJIlMTQWSKKVjEQkknOlopJTUtsTSnJN4MaCaxmvJKc3J0THXAlLGZnkGsDoqQiSmGkKkJUAgEAB%2BG82jFAAAA" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- BP -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-bp">胸</span>
+              <h3>5/3/1 W4 - BP (Deload)</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">デロード週のベンチプレス。関節の疲労を抜き、ストレッチと軌道の調整を行います。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">36.0% (TM 40%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">45.0% (TM 50%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">54.0% (TM 60%) × 5 回</span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w4_bp&data=H4sIAHAmKGoC/4tWMjU2jC83iU8qUNJRMtU31jdUiCk1TzJKNokptTQwNlTQcEnNyU9M0VTQBUoYG6RYgsg0YxCZbAgWMQeRqckgMslSSSc6WiklNS2xNKck3hBoJrGa8kpzcnRMdcCUsZmeQawOipCJKYaQqQlQCAQAGAZwtsUAAAA%3D" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+
+          <!-- SQ -->
+          <div class="workout-card">
+            <div>
+              <span class="exercise-badge badge-sq">脚</span>
+              <h3>5/3/1 W4 - SQ (Deload)</h3>
+              <p style="font-size: 0.85rem; margin-bottom: 16px;">デロード週のスクワット。膝や腰の疲労を取り除き、リフレッシュを図ります。</p>
+              
+              <div class="set-row">
+                <span class="set-num">Set 1</span>
+                <span class="set-details">36.0% (TM 40%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 2</span>
+                <span class="set-details">45.0% (TM 50%) × 5 回</span>
+              </div>
+              <div class="set-row">
+                <span class="set-num">Set 3</span>
+                <span class="set-details">54.0% (TM 60%) × 5 回</span>
+              </div>
+            </div>
+            <div class="workout-footer">
+              <a href="https://gaburieru-dotcom.github.io/?id=531_w4_sq&data=H4sIAHAmKGoC/52NywoCMQxFf6VkpVCdxrQ6s/cvOlL6XBVFnOLv22Yn7szi5HICuRYMoXtr93qCBDPRhGJtl3CKem2LIhS7a64Pn/bi0A%2BkkhoskfMymMNg4OwLG2Yk5gzSWki5%2BFY3h9hr/v9zb7VKI3nR%2Bahu8ktp86OM7mrMB/SrSjHqAAAA" class="btn btn-primary" style="width: 100%; justify-content: center;">トレリンクにインポート</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tips and Setup Guide -->
+    <article class="guide-card" style="margin-top: 40px;">
+      <h2>実際に始める際の流れ</h2>
+      <ol>
+        <li>各メイン種目で限界（1RM）に挑戦するか、重い重量から逆算して「現在の正確な1RM値」を把握します。</li>
+        <li>アプリ「トレリンク」の「種目」タブから、対象の4大種目の「設定1RM（または推定1RM）」欄にその数値を設定します。</li>
+        <li>このページのリンクから現在の週に応じたメニューをインポートします。</li>
+        <li>アプリ上でメニューを起動すると、自動的にあなたの1RMを基準にした適切な重量（2.5kg刻みで丸められたもの）が表示されます！</li>
+        <li><strong>次のサイクルへの進め方:</strong> 4週間（1サイクル）が終わったら、1RM設定欄の数値を「スクワットとデッドリフトは +5kg」「ベンチプレスとオーバーヘッドプレスは +2.5kg」手動で増やし、再び第1週のメニューからスタートします。</li>
+      </ol>
+    </article>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TreLink. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Tab switching logic
+    function switchTab(tabId) {
+      // Hide all content
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Deactivate all buttons
+      const buttons = document.querySelectorAll('.tab-button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Show selected content and activate button
+      document.getElementById(tabId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // === Theme Toggle (Light / Dark Mode) ===
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+
+      // Apply initial theme
+      if (currentTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          document.documentElement.classList.toggle('light-mode');
+          const theme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
+          localStorage.setItem('theme', theme);
+        });
+      }
+
+      // === Sticky Header on Scroll ===
+      const header = document.querySelector('header');
+      const checkScroll = () => {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', checkScroll);
+      checkScroll();
+    });
+  </script>
+</body>
+</html>
