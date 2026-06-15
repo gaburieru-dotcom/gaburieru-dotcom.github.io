@@ -1,1615 +1,717 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="リンクで共有できる筋トレ記録アプリ「トレリンク（TreLink）」の有名トレーニングメニュー紹介。BIG3 5x5やアーノルドのゴールデン6などのメニューを、ボタンをタップするだけでアプリに直接インポートしてトレーニングを開始できます。">
-  <meta name="keywords" content="トレリンク, TreLink, 筋トレ, 筋トレ記録, アプリ, トレーニングメニュー, BIG3, 5x5, Smolov, 531プログラム, インポート">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://gaburieru-dotcom.github.io/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-  <link rel="manifest" href="manifest.json">
-  <title>有名メニュー一覧 | トレリンク (TreLink)</title>
-  
-  <!-- JSON-LD Structured Data for Rich Snippets -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "トレリンク (TreLink) | 有名筋トレメニュー一覧",
-    "url": "https://gaburieru-dotcom.github.io/",
-    "description": "リンクで共有できる筋トレ記録アプリ「トレリンク（TreLink）」の有名トレーニングメニュー紹介。BIG3 5x5やアーノルドのゴールデン6などのメニューを、ボタンをタップするだけでアプリに直接インポートしてトレーニングを開始できます。",
-    "publisher": {
-      "@type": "Organization",
-      "name": "TreLink",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://gaburieru-dotcom.github.io/app_icon.png"
-      }
-    }
-  }
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KWG97NY59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2KWG97NY59');
   </script>
   
-  <!-- OGP Meta Tags -->
-  <meta property="og:title" content="トレリンク (TreLink)">
-  <meta property="og:description" content="リンクで共有できる筋トレ記録アプリ「トレリンク（TreLink）」の有名トレーニングメニュー紹介。ボタンをタップするだけで、直接アプリにメニューをインポートできます。">
-  <meta property="og:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
-  <meta property="og:url" content="https://gaburieru-dotcom.github.io/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="トレリンク (TreLink)">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="トレリンク (TreLink)">
-  <meta name="twitter:description" content="リンクで共有できる筋トレ記録アプリ「トレリンク（TreLink）」の有名トレーニングメニュー紹介。">
-  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
-  <style>
-/* --- Inlined styles.css --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
-
-/* --- Design Tokens & Variables --- */
-:root {
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-
-  /* Theme: Dark (Default) */
-  --bg-color: #08090d;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #15162a 0%, #08090d 60%);
-  --text-primary: #f3f4f6;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
-  
-  --primary-color: #6366f1; /* Indigo */
-  --primary-rgb: 99, 102, 241;
-  --secondary-color: #ec4899; /* Pink */
-  --secondary-rgb: 236, 72, 153;
-  --accent-color: #06b6d4; /* Cyan */
-  --accent-rgb: 6, 182, 212;
-
-  --card-bg: rgba(15, 17, 26, 0.6);
-  --card-border: rgba(255, 255, 255, 0.06);
-  --card-border-hover: rgba(99, 102, 241, 0.4);
-  
-  --input-bg: rgba(15, 17, 26, 0.8);
-  --input-border: rgba(255, 255, 255, 0.1);
-  --input-focus: rgba(99, 102, 241, 0.5);
-
-  --header-bg: rgba(8, 9, 13, 0.7);
-  --nav-link-hover: #ffffff;
-  
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
-  
-  --border-radius-sm: 8px;
-  --border-radius-md: 16px;
-  --border-radius-lg: 24px;
-  --border-radius-full: 9999px;
-
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Theme: Light Mode Overrides */
-html.light-mode {
-  --bg-color: #f8fafc;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #eef2ff 0%, #f8fafc 80%);
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-
-  --primary-color: #4f46e5;
-  --primary-rgb: 79, 70, 229;
-  --secondary-color: #db2777;
-  --secondary-rgb: 219, 39, 119;
-  --accent-color: #0891b2;
-  --accent-rgb: 8, 145, 178;
-
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --card-border: rgba(0, 0, 0, 0.06);
-  --card-border-hover: rgba(79, 70, 229, 0.3);
-
-  --input-bg: #ffffff;
-  --input-border: rgba(0, 0, 0, 0.12);
-  --input-focus: rgba(79, 70, 229, 0.4);
-
-  --header-bg: rgba(248, 250, 252, 0.8);
-  --nav-link-hover: #000000;
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.08);
-}
-
-/* --- CSS Reset --- */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  background-color: var(--bg-color);
-  background-image: var(--bg-gradient);
-  background-attachment: fixed;
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
-}
-
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-button, input, textarea, select {
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background: none;
-  border: none;
-  outline: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-/* --- Layout Containers --- */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-.section {
-  padding: 80px 0;
-}
-
-.grid {
-  display: grid;
-  gap: 32px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  letter-spacing: -0.03em;
-}
-
-h2 {
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  position: relative;
-}
-
-h3 {
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  letter-spacing: -0.01em;
-}
-
-p {
-  color: var(--text-secondary);
-  font-weight: 400;
-  margin-bottom: 16px;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.max-w-600 {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* --- Navigation Header --- */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  z-index: 1000;
-  background-color: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background-color var(--transition-normal), border-color var(--transition-normal), height var(--transition-normal);
-}
-
-header.scrolled {
-  height: 70px;
-  background-color: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--card-border);
-  box-shadow: var(--shadow-sm);
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-}
-
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 900;
-  font-size: 1.1rem;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 32px;
-}
-
-.nav-links a {
-  font-weight: 500;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  position: relative;
-  padding: 8px 0;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  transition: width var(--transition-normal);
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--nav-link-hover);
-}
-
-.nav-links a.active::after,
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
-  transition: background var(--transition-fast), border var(--transition-fast), transform var(--transition-fast);
-}
-
-.theme-toggle:hover {
-  border-color: var(--primary-color);
-  transform: scale(1.05);
-}
-
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-}
-
-.theme-toggle .sun-icon {
-  display: none;
-}
-
-html.light-mode .theme-toggle .moon-icon {
-  display: none;
-}
-
-html.light-mode .theme-toggle .sun-icon {
-  display: block;
-}
-
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.hamburger span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background-color: var(--text-primary);
-  border-radius: 2px;
-  transition: transform var(--transition-normal), opacity var(--transition-normal);
-}
-
-/* --- Hero Section --- */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 100px;
-  overflow: hidden;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: 48px;
-}
-
-.hero-subtitle {
-  font-family: var(--font-display);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.9rem;
-  color: var(--primary-color);
-  margin-bottom: 16px;
-}
-
-.hero-title {
-  margin-bottom: 24px;
-}
-
-.hero-description {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin-bottom: 36px;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.hero-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-blob {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.3) 0%, rgba(var(--secondary-rgb), 0.1) 70%);
-  border-radius: 50%;
-  filter: blur(50px);
-  z-index: -1;
-  animation: float-slow 10s infinite alternate;
-}
-
-.hero-image-wrapper {
-  position: relative;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  border: 1px solid var(--card-border);
-  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-  transition: transform var(--transition-slow);
-}
-
-.hero-image-wrapper:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-}
-
-.hero-image-wrapper img {
-  width: 100%;
-  max-width: 500px;
-  transition: transform var(--transition-slow);
-}
-
-.hero-image-wrapper:hover img {
-  scale: 1.03;
-}
-
-/* --- Buttons --- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: var(--border-radius-full);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4), var(--shadow-glow);
-}
-
-.btn-secondary {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-secondary:hover {
-  border-color: var(--primary-color);
-  background: rgba(var(--primary-rgb), 0.05);
-  transform: translateY(-2px);
-}
-
-.btn-sm {
-  padding: 8px 16px;
-  font-size: 0.85rem;
-}
-
-/* --- Cards / Glassmorphism --- */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-md);
-  padding: 32px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
-}
-
-.card:hover {
-  border-color: var(--card-border-hover);
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-}
-
-/* --- App Cards (Grid / Showcase) --- */
-.app-card {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  height: 100%;
-}
-
-.app-card-img {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 1.1;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid var(--card-border);
-}
-
-.app-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.app-card:hover .app-card-img img {
-  transform: scale(1.05);
-}
-
-.app-card-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.app-tags {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: var(--border-radius-full);
-  background: rgba(var(--primary-rgb), 0.1);
-  color: var(--primary-color);
-  border: 1px solid rgba(var(--primary-rgb), 0.2);
-}
-
-.tag-sec {
-  background: rgba(var(--secondary-rgb), 0.1);
-  color: var(--secondary-color);
-  border: 1px solid rgba(var(--secondary-rgb), 0.2);
-}
-
-.app-title {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
-
-.app-description {
-  font-size: 0.95rem;
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-
-.app-links {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--card-border);
-  padding-top: 16px;
-  margin-top: auto;
-}
-
-.app-badge-group {
-  display: flex;
-  gap: 8px;
-}
-
-.app-badge-icon {
-  width: 18px;
-  height: 18px;
-  fill: var(--text-muted);
-}
-
-/* --- Filter Tab Controls --- */
-.filter-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-}
-
-.filter-tab {
-  padding: 8px 20px;
-  border-radius: var(--border-radius-full);
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.filter-tab:hover,
-.filter-tab.active {
-  background: var(--primary-color);
-  color: #fff;
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.2);
-}
-
-/* --- Articles & Blogs --- */
-.article-card {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  height: 100%;
-}
-
-.article-card-img {
-  width: 100%;
-  aspect-ratio: 1.6;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid var(--card-border);
-  position: relative;
-}
-
-.article-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-
-.article-card:hover .article-card-img img {
-  transform: scale(1.05);
-}
-
-.article-meta {
-  display: flex;
-  gap: 16px;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.article-card-content {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.article-card-title {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.article-card-title a:hover {
-  color: var(--primary-color);
-}
-
-.article-excerpt {
-  font-size: 0.9rem;
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--primary-color);
-  margin-top: auto;
-}
-
-.read-more svg {
-  width: 14px;
-  height: 14px;
-  transition: transform var(--transition-fast);
-}
-
-.article-card:hover .read-more svg {
-  transform: translateX(4px);
-}
-
-/* --- Search Controls --- */
-.search-container {
-  display: flex;
-  max-width: 500px;
-  margin: 0 auto 40px auto;
-  position: relative;
-}
-
-.search-input {
-  width: 100%;
-  background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: var(--border-radius-full);
-  padding: 14px 24px 14px 48px;
-  font-size: 0.95rem;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.search-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px var(--input-focus);
-}
-
-.search-icon {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  color: var(--text-muted);
-}
-
-/* --- Article Detail Styling --- */
-.article-detail-header {
-  padding: 120px 0 60px 0;
-  text-align: center;
-}
-
-.article-detail-meta {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.article-detail-img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: var(--border-radius-lg);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--shadow-md);
-  margin-bottom: 48px;
-}
-
-.article-body {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.article-body p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 28px;
-}
-
-.article-body h2 {
-  margin-top: 48px;
-  margin-bottom: 20px;
-}
-
-.article-body h3 {
-  margin-top: 32px;
-  margin-bottom: 16px;
-}
-
-.article-body blockquote {
-  border-left: 4px solid var(--primary-color);
-  background: var(--card-bg);
-  padding: 24px 32px;
-  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
-  margin: 32px 0;
-  font-style: italic;
-}
-
-.article-body blockquote p {
-  margin-bottom: 0;
-  color: var(--text-primary);
-}
-
-.article-body ul, .article-body ol {
-  margin-bottom: 28px;
-  padding-left: 24px;
-}
-
-.article-body li {
-  margin-bottom: 8px;
-  color: var(--text-secondary);
-}
-
-.article-body code {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  padding: 2px 6px;
-  border-radius: var(--border-radius-sm);
-  font-family: monospace;
-  font-size: 0.9em;
-}
-
-/* --- About page (Timeline) --- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 48px;
-  align-items: center;
-  margin-bottom: 80px;
-}
-
-.timeline {
-  position: relative;
-  max-width: 800px;
-  margin: 60px auto 0 auto;
-  padding: 20px 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 20px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-}
-
-.timeline-item {
-  position: relative;
-  padding-left: 60px;
-  margin-bottom: 48px;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: 11px;
-  top: 6px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--bg-color);
-  border: 4px solid var(--primary-color);
-  box-shadow: var(--shadow-glow);
-  z-index: 1;
-  transition: background var(--transition-fast), border-color var(--transition-fast);
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-  border-color: var(--secondary-color);
-}
-
-.timeline-date {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--primary-color);
-  margin-bottom: 4px;
-}
-
-.timeline-item:nth-child(even) .timeline-date {
-  color: var(--secondary-color);
-}
-
-.timeline-content {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-md);
-  padding: 24px;
-  box-shadow: var(--shadow-sm);
-}
-
-.timeline-content h3 {
-  margin-bottom: 8px;
-}
-
-.timeline-content p {
-  margin-bottom: 0;
-  font-size: 0.95rem;
-}
-
-/* --- Contact Page (Form) --- */
-.contact-container {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 48px;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.contact-method {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-
-.contact-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(var(--primary-rgb), 0.1);
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  border: 1px solid rgba(var(--primary-rgb), 0.2);
-}
-
-.contact-icon-wrapper svg {
-  width: 22px;
-  height: 22px;
-}
-
-.contact-method-text h3 {
-  font-size: 1.05rem;
-  margin-bottom: 4px;
-}
-
-.contact-method-text p {
-  margin-bottom: 0;
-  font-size: 0.95rem;
-}
-
-.contact-form {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-md);
-}
-
-.form-group {
-  margin-bottom: 24px;
-}
-
-.form-label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-}
-
-.form-input {
-  width: 100%;
-  background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: var(--border-radius-md);
-  padding: 12px 18px;
-  font-size: 0.95rem;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.form-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px var(--input-focus);
-}
-
-textarea.form-input {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.form-status {
-  margin-top: 16px;
-  padding: 12px;
-  border-radius: var(--border-radius-sm);
-  display: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.form-status.success {
-  display: block;
-  background: rgba(16, 185, 129, 0.1);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.form-status.error {
-  display: block;
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.2);
-}
-
-/* --- Footer --- */
-footer {
-  border-top: 1px solid var(--card-border);
-  background-color: rgba(8, 9, 13, 0.3);
-  padding: 60px 0 30px 0;
-  font-size: 0.95rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 40px;
-}
-
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footer-brand p {
-  max-width: 300px;
-}
-
-.footer-title {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  font-family: var(--font-display);
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links a {
-  color: var(--text-secondary);
-}
-
-.footer-links a:hover {
-  color: var(--primary-color);
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid var(--card-border);
-  padding-top: 30px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.social-links {
-  display: flex;
-  gap: 16px;
-}
-
-.social-links svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--text-muted);
-  transition: fill var(--transition-fast), transform var(--transition-fast);
-}
-
-.social-links a:hover svg {
-  fill: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-/* --- Mobile Navigation & Overlays --- */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-  
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background: var(--header-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-lg);
-    border-left: 1px solid var(--card-border);
-    flex-direction: column;
-    padding: 100px 40px;
-    gap: 24px;
-    transition: right var(--transition-normal);
-    z-index: 1000;
-  }
-  
-  .nav-links.active {
-    right: 0;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .hero-grid, .about-grid, .contact-container, .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .hero-visual {
-    order: -1;
-  }
-
-  .hero {
-    padding-top: 120px;
-    min-height: auto;
-    padding-bottom: 60px;
-  }
-
-  .hero-image-wrapper {
-    transform: none;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-  
-  .hero-image-wrapper:hover {
-    transform: none;
-  }
-  
-  .timeline::before {
-    left: 10px;
-  }
-  .timeline-dot {
-    left: 1px;
-  }
-  .timeline-item {
-    padding-left: 30px;
-  }
-}
-
-/* --- Animations & Utilities --- */
-@keyframes float-slow {
-  0% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-15px) scale(1.05); }
-  100% { transform: translateY(0) scale(1); }
-}
-
-.animate-float {
-  animation: float-slow 6s infinite ease-in-out;
-}
-
-/* Scroll Animation classes (rendered visible by default) */
-.reveal {
-  opacity: 1;
-  transform: none;
-}
-
-/* --- Jump Nav (App Page) --- */
-.jump-nav-container {
-  position: sticky;
-  top: 80px;
-  z-index: 90;
-  background: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--card-border);
-  padding: 12px 0;
-  margin-bottom: 40px;
-  transition: top var(--transition-normal);
-}
-header.scrolled + main .jump-nav-container,
-header.scrolled ~ .jump-nav-container,
-header.scrolled + .jump-nav-container {
-  top: 70px;
-}
-.jump-links {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-.jump-link {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 8px 18px;
-  border-radius: var(--border-radius-full);
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  transition: all var(--transition-fast);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.jump-link:hover {
-  border-color: var(--primary-color);
-  background: rgba(var(--primary-rgb), 0.05);
-  transform: translateY(-1px);
-  color: var(--primary-color);
-}
-.jump-link-icon {
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 0.65rem;
-  font-weight: 900;
-}
-
-/* --- Immersive App Showcase Sections --- */
-.app-showcase-section {
-  padding: 100px 0;
-  border-bottom: 1px solid var(--card-border);
-  position: relative;
-}
-.app-showcase-section:last-child {
-  border-bottom: none;
-}
-.showcase-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 64px;
-}
-.app-showcase-section:nth-child(even) .showcase-grid {
-  grid-template-columns: 0.85fr 1.15fr;
-}
-.app-showcase-section:nth-child(even) .showcase-text-col {
-  grid-column: 2;
-}
-.app-showcase-section:nth-child(even) .showcase-visual-col {
-  grid-column: 1;
-  grid-row: 1;
-}
-.showcase-visual-col {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.showcase-visual-wrapper {
-  position: relative;
-  width: 100%;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
-  border: 1px solid var(--card-border);
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-slow);
-}
-.showcase-visual-wrapper img {
-  width: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-}
-.app-showcase-section:hover .showcase-visual-wrapper {
-  border-color: var(--card-border-hover);
-  box-shadow: var(--shadow-lg), 0 0 30px rgba(var(--primary-rgb), 0.2);
-}
-.app-showcase-section:hover .showcase-visual-wrapper img {
-  transform: scale(1.02);
-}
-.spec-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin: 24px 0;
-  padding: 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--border-radius-md);
-}
-.spec-item {
-  font-size: 0.9rem;
-}
-.spec-label {
-  font-weight: 600;
-  color: var(--text-muted);
-  display: block;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
-}
-.spec-value {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-/* Responsive showcase adjustments */
-@media (max-width: 768px) {
-  .jump-nav-container {
-    top: 70px;
-  }
-  .showcase-grid,
-  .app-showcase-section:nth-child(even) .showcase-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px;
-  }
-  .app-showcase-section:nth-child(even) .showcase-text-col {
-    grid-column: auto;
-  }
-  .app-showcase-section:nth-child(even) .showcase-visual-col {
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .app-showcase-section {
-    padding: 60px 0;
-  }
-  .spec-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-</style>
-  
-  <!-- Deep Link Redirection Script -->
   <script>
+    // 既存のTreLinkインポートリンク（パラメータ付き）へのアクセスをmenus.htmlへリダイレクト
     (function() {
-      function getQueryParams() {
-        const params = {};
-        const urlParams = new URLSearchParams(window.location.search);
-        urlParams.forEach((val, key) => { params[key] = val; });
-        if (window.location.hash) {
-          const hashParts = window.location.hash.split('?');
-          if (hashParts.length > 1) {
-            const hashParams = new URLSearchParams(hashParts[1]);
-            hashParams.forEach((val, key) => { params[key] = val; });
-          }
-        }
-        return params;
-      }
-
-      const params = getQueryParams();
-      if (params.id) {
-        const APP_STORE_URL = 'https://apps.apple.com/app/id6776552419';
-        let appUrl = 'gymflow://open-menu?id=' + encodeURIComponent(params.id);
-        if (params.data) {
-          appUrl += '&data=' + encodeURIComponent(params.data);
-        }
-
-        function startRedirect() {
-          // 1. Show redirect overlay
-          const overlay = document.getElementById('redirect-overlay');
-          if (overlay) {
-            overlay.style.display = 'flex';
-          }
-
-          // 2. Set button action
-          const btn = document.getElementById('btn-open-app');
-          if (btn) btn.href = appUrl;
-
-          const closeBtn = document.getElementById('btn-close-overlay');
-          if (closeBtn) {
-            closeBtn.addEventListener('click', function(e) {
-              e.preventDefault();
-              if (overlay) {
-                overlay.style.display = 'none';
-              }
-              // Remove query parameters from URL so reloading doesn't trigger it again
-              const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-              window.history.replaceState({path: cleanUrl}, '', cleanUrl);
-            });
-          }
-
-          // 3. Try opening the app (deferred slightly to ensure browser paints the overlay first)
-          setTimeout(function() {
-            window.location.href = appUrl;
-          }, 150);
-
-          // 4. Timeout for App Store fallback
-          const start = Date.now();
-          setTimeout(function() {
-            if (document.hidden || document.webkitHidden) {
-              return;
-            }
-            if (Date.now() - start < 3500) {
-              if (confirm('アプリを起動できませんでした。App Storeを開いて「トレリンク」をダウンロードしますか？')) {
-                window.location.href = APP_STORE_URL;
-              }
-            }
-          }, 2500);
-        }
-
-        // Wait for DOM to be fully ready before starting any redirection actions
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', startRedirect);
-        } else {
-          startRedirect();
-        }
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.has('id') || urlParams.has('data')) {
+        window.location.href = 'menus.html' + window.location.search + window.location.hash;
       }
     })();
   </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="kpworks - 日常を豊かにし、目標達成をサポートする美しく実用的なアプリケーションを開発しています。筋トレ記録アプリ「トレリンク（TreLink）」などを紹介。">
+  <meta name="keywords" content="kpworks, ケーピーワークス, アプリ開発, トレリンク, TreLink, 個人開発, ポートフォリオ">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <title>kpworks | 美しく実用的なアプリケーションを</title>
+
+  <!-- OGP Meta Tags -->
+  <meta property="og:title" content="kpworks | 美しく実用的なアプリケーションを">
+  <meta property="og:description" content="日常をより豊かに、スマートに。kpworksが手掛ける洗練されたデザインと実用性を兼ね備えたアプリケーションのご紹介。">
+  <meta property="og:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+  <meta property="og:url" content="https://gaburieru-dotcom.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="kpworks">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="kpworks">
+  <meta name="twitter:description" content="日常をより豊かに、スマートに。kpworksが手掛ける洗練されたデザインと実用性を兼ね備えたアプリケーションのご紹介。">
+  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+
   <style>
-    /* Menus page specific layout and custom styles */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* Theme: Dark (Default) */
+      --bg-color: #08090d;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #15162a 0%, #08090d 60%);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      
+      --primary-color: #6366f1; /* Indigo */
+      --primary-rgb: 99, 102, 241;
+      --secondary-color: #ec4899; /* Pink */
+      --secondary-rgb: 236, 72, 153;
+      --accent-color: #06b6d4; /* Cyan */
+      --accent-rgb: 6, 182, 212;
+
+      --card-bg: rgba(15, 17, 26, 0.6);
+      --card-border: rgba(255, 255, 255, 0.06);
+      --card-border-hover: rgba(99, 102, 241, 0.4);
+
+      --header-bg: rgba(8, 9, 13, 0.7);
+      --nav-link-hover: #ffffff;
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.15);
+      
+      --border-radius-sm: 8px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 24px;
+      --border-radius-full: 9999px;
+
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Theme: Light Mode Overrides */
+    html.light-mode {
+      --bg-color: #f8fafc;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #eef2ff 0%, #f8fafc 80%);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+
+      --primary-color: #4f46e5;
+      --primary-rgb: 79, 70, 229;
+      --secondary-color: #db2777;
+      --secondary-rgb: 219, 39, 119;
+      --accent-color: #0891b2;
+      --accent-rgb: 8, 145, 178;
+
+      --card-bg: rgba(255, 255, 255, 0.8);
+      --card-border: rgba(0, 0, 0, 0.06);
+      --card-border-hover: rgba(79, 70, 229, 0.3);
+
+      --header-bg: rgba(248, 250, 252, 0.8);
+      --nav-link-hover: #000000;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+      --shadow-glow: 0 0 25px rgba(79, 70, 229, 0.08);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 1000;
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background-color var(--transition-normal), border-color var(--transition-normal), height var(--transition-normal);
+    }
+
+    header.scrolled {
+      height: 70px;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .logo-symbol {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-symbol::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .logo:hover .logo-symbol::after {
+      left: 100%;
+      transition: all 0.6s ease-in-out;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
       gap: 32px;
-      margin-top: 48px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      position: relative;
+      padding: 8px 0;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      transition: width var(--transition-normal);
+    }
+
+    .nav-links a:hover {
+      color: var(--nav-link-hover);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background var(--transition-fast), border var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+    }
+
+    .theme-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .theme-toggle .sun-icon {
+      display: none;
+    }
+
+    html.light-mode .theme-toggle .moon-icon {
+      display: none;
+    }
+
+    html.light-mode .theme-toggle .sun-icon {
+      display: block;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      padding-top: 120px;
+      padding-bottom: 80px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.95rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--border-radius-full);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4), var(--shadow-glow);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-color);
+      background: rgba(var(--primary-rgb), 0.05);
+      transform: translateY(-2px);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-blob {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(var(--primary-rgb), 0.25) 0%, rgba(var(--secondary-rgb), 0.08) 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: -1;
+      animation: pulse-slow 8s infinite alternate ease-in-out;
+    }
+
+    .brand-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+      border-color: var(--card-border-hover);
+      text-align: center;
+      max-width: 360px;
+      transition: transform var(--transition-slow);
+    }
+
+    .brand-card:hover {
+      transform: translateY(-5px) rotate(1deg);
+    }
+
+    .brand-card-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      margin: 0 auto 24px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 900;
+      box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.3);
+    }
+
+    /* --- Apps Section --- */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .app-showcase {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .app-showcase:hover {
+      border-color: var(--card-border-hover);
+      box-shadow: var(--shadow-lg), 0 0 30px rgba(var(--primary-rgb), 0.15);
+      transform: translateY(-4px);
+    }
+
+    .app-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .app-tagline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+    }
+
+    .app-description {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .app-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .app-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .app-features svg {
+      color: var(--accent-color);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .app-preview-wrapper {
+      position: relative;
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4 / 3;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-preview-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .app-showcase:hover .app-preview-wrapper img {
+      transform: scale(1.03);
+    }
+
+    /* --- Footer --- */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 60px 0 40px 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    /* --- Animations --- */
+    @keyframes pulse-slow {
+      0% { transform: scale(1) translate(0, 0); }
+      50% { transform: scale(1.1) translate(10px, -10px); }
+      100% { transform: scale(1) translate(0, 0); }
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 992px) {
+      .app-showcase {
+        grid-template-columns: 1fr;
+        padding: 36px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        text-align: center;
+      }
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-ctas {
+        justify-content: center;
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .brand-card {
+        margin: 0 auto;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* --- Articles Grid Section --- */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
     }
     
-    .menu-card {
+    .article-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 32px;
       display: flex;
       flex-direction: column;
       height: 100%;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
     }
     
-    .menu-header-badge {
+    .article-card:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg), var(--shadow-glow);
+    }
+    
+    .article-badge {
       display: inline-block;
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 12px;
+      padding: 4px 10px;
       border-radius: var(--border-radius-full);
       margin-bottom: 16px;
       align-self: flex-start;
-    }
-
-    .badge-purple {
-      background: rgba(139, 92, 246, 0.12);
-      color: #a78bfa;
-      border: 1px solid rgba(139, 92, 246, 0.25);
+      background: rgba(var(--primary-rgb), 0.1);
+      color: var(--primary-color);
+      border: 1px solid rgba(var(--primary-rgb), 0.2);
     }
     
-    .badge-orange {
-      background: rgba(249, 115, 22, 0.12);
-      color: #fb923c;
-      border: 1px solid rgba(249, 115, 22, 0.25);
+    .article-card-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
     }
     
-    .badge-blue {
-      background: rgba(59, 130, 246, 0.12);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.25);
-    }
-    
-    .menu-meta-list {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 20px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 12px;
-    }
-    
-    .menu-meta-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .menu-meta-item svg {
-      width: 14px;
-      height: 14px;
-      fill: currentColor;
-    }
-    
-    .exercise-list-table {
-      width: 100%;
-      border-collapse: collapse;
+    .article-card-description {
+      color: var(--text-secondary);
+      font-size: 0.925rem;
+      line-height: 1.6;
       margin-bottom: 24px;
-      font-size: 0.9rem;
       flex-grow: 1;
     }
     
-    .exercise-list-table th {
-      text-align: left;
-      color: var(--text-muted);
+    .article-card-link {
       font-weight: 600;
-      padding: 8px 4px;
-      border-bottom: 1px solid var(--card-border);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      color: var(--primary-color);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      margin-top: auto;
     }
     
-    .exercise-list-table td {
-      padding: 10px 4px;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
-      color: var(--text-secondary);
-    }
-    
-    .exercise-list-table tr:last-child td {
-      border-bottom: none;
-    }
-    
-    .exercise-name {
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    
-    .exercise-scheme {
-      text-align: right;
-      font-family: monospace;
-      font-size: 0.85rem;
-    }
-    
-    .exercise-intensity {
-      text-align: right;
-      color: var(--accent-color);
-      font-weight: 500;
-    }
-
-    @media (max-width: 480px) {
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
+    .article-card-link:hover {
+      color: var(--secondary-color);
     }
   </style>
 </head>
 <body>
 
-  <!-- Deep Link Redirection Overlay -->
-  <div id="redirect-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #08090d; color: #fff; z-index: 99999; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; padding: 20px;">
-    <div style="text-align: center; max-width: 400px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 40px 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
-      <img src="app_icon.png" alt="トレリンク アイコン" style="width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 24px auto; display: block; box-shadow: 0 8px 24px rgba(0, 221, 255, 0.25);">
-      <h2 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; background: linear-gradient(90deg, #00ddff, #00ffe0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px;">トレリンク を起動しています</h2>
-      <p style="margin: 0 0 32px 0; font-size: 14px; color: #a0aec0; line-height: 1.6;">
-        アプリが自動的に起動しない、またはインストールされていない場合は、下のボタンを押してください。
-      </p>
-      <a id="btn-open-app" href="#" style="display: block; text-decoration: none; background: linear-gradient(90deg, #00ddff, #00bfff); color: #0a0a0e; font-weight: 700; font-size: 16px; padding: 16px 24px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0, 221, 255, 0.25); text-align: center;">
-        アプリを起動 / ダウンロード
-      </a>
-      <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px; font-size: 14px;">
-        <a href="#" id="btn-close-overlay" style="color: #a0aec0; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; transition: all 0.2s; background: rgba(255,255,255,0.02);">このページを見る</a>
-      </div>
-    </div>
-  </div>
-
   <!-- Header Section -->
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
-        <span>トレリンク (TreLink)</span>
+        <div class="logo-symbol">k</div>
+        <span>kpworks</span>
       </a>
 
       <div class="header-actions">
-        <a href="https://apps.apple.com/app/id6776552419" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 18px; border-radius: var(--border-radius-full); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-          App Store
-        </a>
         <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -1630,423 +732,178 @@ header.scrolled + .jump-nav-container {
     </div>
   </header>
 
-  <!-- Page Header -->
-  <section class="section" style="padding-top: 140px; padding-bottom: 20px;">
-    <div class="container text-center max-w-600">
-      <h1 class="text-gradient" style="margin-bottom: 16px;">Workout Menus</h1>
-      <p>世界中のトレーニーに愛用されている実績のある有名筋トレメニューをラインナップ。ボタンをタップするだけで、直接「トレリンク」にインポートしてトレーニングを開始できます。</p>
+  <!-- Hero Section -->
+  <section class="hero container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tagline">Application Developer</div>
+        <h1 class="hero-title">美しく、実用的で、<br><span class="text-gradient">日常に寄り添うアプリを</span></h1>
+        <p class="hero-description">
+          kpworks は、洗練されたデザインと使いやすさを追求したソフトウェア開発を行っています。日々のタスクや趣味、目標達成をスマートにサポートするツールをお届けします。
+        </p>
+        <div class="hero-ctas">
+          <a href="#apps" class="btn btn-primary">プロダクトを見る</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <div class="brand-card">
+          <div class="brand-card-icon">k</div>
+          <h2 style="font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 12px;">kpworks</h2>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0;">
+            洗練されたデザイン・高品質なマイクロインタラクション。
+            日常を豊かにするデジタルツールを開発します。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Programs Grid Container -->
-  <main class="container" style="padding-bottom: 80px;">
-    <div class="menu-grid">
-      
-      <!-- Menu 1: BIG3 5x5 -->
-      <article class="card menu-card reveal">
-        <span class="menu-header-badge badge-purple">筋力向上 & バルクアップ</span>
-        <h3 style="margin-bottom: 8px;">BIG3 5x5 プログラム</h3>
-        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
-          全身の筋肉を稼働する基本種目（BIG3）を5セット×5レップ行う、王道の筋肥大・筋力強化プログラム。シンプルながら非常に強度の高い定番メニューです。
-        </p>
-        <div class="menu-meta-list">
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>約 60分</span>
-          </div>
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>初級者〜中級者</span>
-          </div>
-        </div>
-        
-        <table class="exercise-list-table">
-          <thead>
-            <tr>
-              <th>実施種目</th>
-              <th style="text-align: right;">セット×回数</th>
-              <th style="text-align: right;">強度設定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="exercise-name">バーベルスクワット</span></td>
-              <td class="exercise-scheme">5set × 5reps</td>
-              <td class="exercise-intensity">75% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">ベンチプレス</span></td>
-              <td class="exercise-scheme">5set × 5reps</td>
-              <td class="exercise-intensity">75% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">ベントオーバーロウ</span></td>
-              <td class="exercise-scheme">5set × 5reps</td>
-              <td class="exercise-intensity">70% 1RM</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <a href="big3-5x5-guide.html" class="btn btn-primary" style="justify-content: center; width: 100%;">解説・メニューを見る</a>
-      </article>
-
-      <!-- Menu 2: Arnold Golden Six -->
-      <article class="card menu-card reveal">
-        <span class="menu-header-badge badge-orange">クラシック全身筋肥大</span>
-        <h3 style="margin-bottom: 8px;">アーノルド・ゴールデン６</h3>
-        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
-          アーノルド・シュワルツェネッガーが若き日に実践していたことで知られる、全身の主要筋肉をまとめて鍛え上げる週3回用のクラシックなプログラム。
-        </p>
-        <div class="menu-meta-list">
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>約 75分</span>
-          </div>
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>全レベル向け</span>
-          </div>
-        </div>
-        
-        <table class="exercise-list-table">
-          <thead>
-            <tr>
-              <th>実施種目</th>
-              <th style="text-align: right;">セット×回数</th>
-              <th style="text-align: right;">強度設定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="exercise-name">バーベルスクワット</span></td>
-              <td class="exercise-scheme">4set × 10reps</td>
-              <td class="exercise-intensity">70% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">ベンチプレス</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">75% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">懸垂 (チンニング)</span></td>
-              <td class="exercise-scheme">3set × 限界まで</td>
-              <td class="exercise-intensity">自重</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
-              <td class="exercise-scheme">4set × 10reps</td>
-              <td class="exercise-intensity">70% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">バーベルカール</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">65% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">プランク</span></td>
-              <td class="exercise-scheme">3set × 60秒</td>
-              <td class="exercise-intensity">自重</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <a href="arnold-golden6-guide.html" class="btn btn-primary" style="justify-content: center; width: 100%;">解説・メニューを見る</a>
-      </article>
-
-      <!-- Menu 3: PPL - Push -->
-      <article class="card menu-card reveal">
-        <span class="menu-header-badge badge-blue">PPL分割法：Push</span>
-        <h3 style="margin-bottom: 8px;">PPL：Push (上半身・押し)</h3>
-        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
-          上半身の「押す」動作に関わる筋肉（胸・肩前中部・上腕三頭筋）を一括で刺激。大胸筋の厚みと立体的な肩のメロンを作るためのコアメニューです。
-        </p>
-        <div class="menu-meta-list">
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>約 50分</span>
-          </div>
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>中級者〜上級者</span>
-          </div>
-        </div>
-        
-        <table class="exercise-list-table">
-          <thead>
-            <tr>
-              <th>実施種目</th>
-              <th style="text-align: right;">セット×回数</th>
-              <th style="text-align: right;">強度設定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="exercise-name">ベンチプレス</span></td>
-              <td class="exercise-scheme">3set × 8reps</td>
-              <td class="exercise-intensity">80% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
-              <td class="exercise-scheme">3set × 8reps</td>
-              <td class="exercise-intensity">75% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">インクラインダンベルプレス</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">70% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">サイドレイズ</span></td>
-              <td class="exercise-scheme">3set × 12reps</td>
-              <td class="exercise-intensity">10 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">トライセプスプレスダウン</span></td>
-              <td class="exercise-scheme">3set × 12reps</td>
-              <td class="exercise-intensity">25 kg (固定)</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <a href="ppl-guide.html#push" class="btn btn-primary" style="justify-content: center; width: 100%;">解説・メニューを見る</a>
-      </article>
-
-      <!-- Menu 4: PPL - Pull -->
-      <article class="card menu-card reveal">
-        <span class="menu-header-badge badge-blue">PPL分割法：Pull</span>
-        <h3 style="margin-bottom: 8px;">PPL：Pull (上半身・引き)</h3>
-        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
-          上半身の「引く」動作に関わる筋肉（背中・上腕二頭筋・前腕）を徹底攻略。広いVシェイプの背中と太い腕を効率的につくり出すプログラムです。
-        </p>
-        <div class="menu-meta-list">
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>約 50分</span>
-          </div>
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>中級者〜上級者</span>
-          </div>
-        </div>
-        
-        <table class="exercise-list-table">
-          <thead>
-            <tr>
-              <th>実施種目</th>
-              <th style="text-align: right;">セット×回数</th>
-              <th style="text-align: right;">強度設定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="exercise-name">デッドリフト</span></td>
-              <td class="exercise-scheme">3set × 5reps</td>
-              <td class="exercise-intensity">80% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">ラットプルダウン</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">60 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">シーテッドプーリーロウ</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">50 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">バーベルカール</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">30 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">ハンマーカール</span></td>
-              <td class="exercise-scheme">3set × 12reps</td>
-              <td class="exercise-intensity">12 kg (固定)</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <a href="ppl-guide.html#pull" class="btn btn-primary" style="justify-content: center; width: 100%;">解説・メニューを見る</a>
-      </article>
-
-      <!-- Menu 5: PPL - Legs -->
-      <article class="card menu-card reveal">
-        <span class="menu-header-badge badge-blue">PPL分割法：Legs</span>
-        <h3 style="margin-bottom: 8px;">PPL：Legs (下半身の鍛錬)</h3>
-        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
-          人体最大の筋肉群である下半身（大腿四頭筋、ハムストリングス、臀部、ふくらはぎ）を総合的に鍛えるハードな分割メニュー。代謝向上や成長ホルモン分泌にも劇的効果があります。
-        </p>
-        <div class="menu-meta-list">
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>約 55分</span>
-          </div>
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>中級者〜上級者</span>
-          </div>
-        </div>
-        
-        <table class="exercise-list-table">
-          <thead>
-            <tr>
-              <th>実施種目</th>
-              <th style="text-align: right;">セット×回数</th>
-              <th style="text-align: right;">強度設定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="exercise-name">バーベルスクワット</span></td>
-              <td class="exercise-scheme">3set × 8reps</td>
-              <td class="exercise-intensity">75% 1RM</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">レッグプレス</span></td>
-              <td class="exercise-scheme">3set × 10reps</td>
-              <td class="exercise-intensity">120 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">レッグエクステンション</span></td>
-              <td class="exercise-scheme">3set × 12reps</td>
-              <td class="exercise-intensity">50 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">レッグカール</span></td>
-              <td class="exercise-scheme">3set × 12reps</td>
-              <td class="exercise-intensity">40 kg (固定)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">カーフレイズ</span></td>
-              <td class="exercise-scheme">3set × 15reps</td>
-              <td class="exercise-intensity">60 kg (固定)</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <a href="ppl-guide.html#legs" class="btn btn-primary" style="justify-content: center; width: 100%;">解説・メニューを見る</a>
-      </article>
-
-      <!-- Menu 6: Wendler 5/3/1 Guide -->
-      <article class="card menu-card reveal">
-        <span class="menu-header-badge badge-purple" style="background: rgba(99, 102, 241, 0.15); color: var(--primary-color);">筋力向上 & パワー</span>
-        <h3 style="margin-bottom: 8px;">Wendler 5/3/1 プログラム</h3>
-        <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px;">
-          「急がば回れ」をコンセプトに、長期的に安全かつ確実に重量を伸ばすための王道のストレングス向上プログラム。週ごとに強度や回数が変化するため、詳細な解説と専用メニューへのリンクを用意しました。
-        </p>
-        <div class="menu-meta-list">
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-            <span>約 45分 (メイン)</span>
-          </div>
-          <div class="menu-meta-item">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <span>初級者〜上級者</span>
-          </div>
-        </div>
-        
-        <table class="exercise-list-table">
-          <thead>
-            <tr>
-              <th>対象4大種目</th>
-              <th style="text-align: right;">サイクル構成</th>
-              <th style="text-align: right;">強度設定</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="exercise-name">バーベルスクワット</span></td>
-              <td class="exercise-scheme" rowspan="4" style="vertical-align: middle; border-bottom: none; text-align: right;">4週間サイクル<br>(Week1〜4)</td>
-              <td class="exercise-intensity" rowspan="4" style="vertical-align: middle; border-bottom: none; text-align: right;">65% 〜 95%<br>(TM基準)</td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">デッドリフト</span></td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">ベンチプレス</span></td>
-            </tr>
-            <tr>
-              <td><span class="exercise-name">オーバーヘッドプレス</span></td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <a href="531-guide.html" class="btn btn-primary" style="justify-content: center; width: 100%;">解説・メニューを見る</a>
-      </article>
-
+  <!-- Apps Section -->
+  <section id="apps" class="section container">
+    <div class="section-header">
+      <h2 class="section-title">Created Apps</h2>
+      <p class="section-description">私たちが開発したアプリケーションのご紹介です。</p>
     </div>
-  </main>
+
+    <div class="app-showcase">
+      <div>
+        <img src="app_icon.png" alt="トレリンク アイコン" class="app-logo">
+        <h3 class="app-title">トレリンク (TreLink)</h3>
+        <div class="app-tagline">リンクで共有・インポートできる筋トレ記録アプリ</div>
+        <p class="app-description">
+          「トレリンク」は、日々のウェイトトレーニング記録をシンプルかつ直感的に管理できるモバイルアプリです。自分だけのトレーニングメニューを作成し、リンク（URL）を共有するだけで簡単に他のユーザーや自分の別端末にメニューをインポートできます。
+        </p>
+        <ul class="app-features">
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+            <span>URLをタップするだけでメニューを簡単インポート</span>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+            <span>自分の1RMから最適な挙上重量を自動計算</span>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+            <span>有名メニュー（BIG3 5x5, 5/3/1等）の解説と連携</span>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path></svg>
+            <span>HIITタイマーでデバイス内の音楽・動画ファイルをカスタムBGMとして再生</span>
+          </li>
+        </ul>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="menus.html" class="btn btn-primary">有名メニュー・解説を見る</a>
+          <a href="https://apps.apple.com/app/id6776552419" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+            App Store
+          </a>
+        </div>
+      </div>
+      <div class="app-preview-col">
+        <div class="app-preview-wrapper">
+          <img src="app_icon.png" alt="トレリンク プレビュー" style="object-fit: contain; width: 60%; height: auto;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section id="articles" class="section container">
+    <div class="section-header">
+      <h2 class="section-title">Guides & Columns</h2>
+      <p class="section-description">効果的で科学的な筋トレのための知識コラム・解説記事です。</p>
+    </div>
+
+    <div class="articles-grid">
+      <!-- Article 1: HIIT -->
+      <article class="article-card">
+        <span class="article-badge">解説・ダイエット</span>
+        <h3 class="article-card-title">HIITの効果とやり方完全ガイド</h3>
+        <p class="article-card-description">わずか4分で絶大な脂肪燃焼効果。タバタ式のルールや自宅メニュー、心肺強化のメカニズムを詳しく解説します。</p>
+        <a href="hiit-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article 2: 1RM -->
+      <article class="article-card">
+        <span class="article-badge">計算・重量設定</span>
+        <h3 class="article-card-title">1RM最大挙上重量の計算と換算表</h3>
+        <p class="article-card-description">筋トレで適切な負荷重量を求める基準となる1RM。EpleyやO'Connerなどの代表的な計算方法と比率目安表を掲載。</p>
+        <a href="rm-calculator-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article 3: RIR/RPE -->
+      <article class="article-card">
+        <span class="article-badge">トレーニング強度</span>
+        <h3 class="article-card-title">RIR・RPE余力レップ強度管理法</h3>
+        <p class="article-card-description">限界まで追い込む以外の成長へのアプローチ。怪我を防ぎ、セット毎のボリュームを最大化する余力RIRの極め方。</p>
+        <a href="rir-rpe-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article 4: Progressive Overload -->
+      <article class="article-card">
+        <span class="article-badge">筋肥大の原則</span>
+        <h3 class="article-card-title">漸進性過負荷の原則と伸ばし方</h3>
+        <p class="article-card-description">筋肉を成長させ続けるための絶対の基本原則。重量・回数・頻度の高め方と、プラトー（停滞）を打破するポイント。</p>
+        <a href="progressive-overload-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+    </div>
+  </section>
 
   <!-- Footer Section -->
   <footer>
-    <div class="container" style="text-align: center;">
-      <div class="footer-brand" style="align-items: center; margin-bottom: 24px; display: flex; flex-direction: column; gap: 12px;">
-        <a href="index.html" class="logo" style="justify-content: center;">
-          <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
-          <span>トレリンク (TreLink)</span>
-        </a>
-        <p style="max-width: 400px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-          リンクで共有できる筋トレ記録アプリ「トレリンク」の有名トレーニングメニュー紹介・インポート用の中継サイトです。
-        </p>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">k</div>
+        <span style="font-family: var(--font-display); font-weight: 700; color: var(--text-primary);">kpworks</span>
       </div>
-      <div class="footer-bottom" style="justify-content: center; border-top: 1px solid var(--card-border); padding-top: 24px;">
-        <p>&copy; 2026 TreLink. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 kpworks. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script>
-/* --- Inlined app.js --- */
-document.addEventListener('DOMContentLoaded', () => {
-  // === Theme Toggle (Light / Dark Mode) ===
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme') || 'dark';
+    document.addEventListener('DOMContentLoaded', () => {
+      // === Theme Toggle ===
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const currentTheme = localStorage.getItem('theme') || 'dark';
 
-  // Apply initial theme
-  if (currentTheme === 'light') {
-    document.documentElement.classList.add('light-mode');
-  }
+      if (currentTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('light-mode');
-      const theme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
-      localStorage.setItem('theme', theme);
-    });
-  }
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+          document.documentElement.classList.toggle('light-mode');
+          const theme = document.documentElement.classList.contains('light-mode') ? 'light' : 'dark';
+          localStorage.setItem('theme', theme);
+        });
+      }
 
-  // === Sticky Header on Scroll ===
-  const header = document.querySelector('header');
-  const checkScroll = () => {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  };
-  window.addEventListener('scroll', checkScroll);
-  checkScroll(); // Check immediately in case page was reloaded scrolled down
-
-  // === Scroll Reveal Animation ===
-  const revealElements = document.querySelectorAll('.reveal');
-  if (revealElements.length > 0) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target); // Reveal only once
+      // === Sticky Header ===
+      const header = document.querySelector('header');
+      const checkScroll = () => {
+        if (window.scrollY > 20) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
         }
-      });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      };
+      window.addEventListener('scroll', checkScroll);
+      checkScroll();
     });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-  }
-});
-
-</script>
+  </script>
 </body>
 </html>
