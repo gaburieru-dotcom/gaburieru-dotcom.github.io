@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KWG97NY59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2KWG97NY59');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Google/YouTubeのサジェストから関連キーワードを一括取得し、推定人気スコア（★）でランキング表示する無料SEOツール。Googleトレンド連携、リアルタイム除外フィルター、CSV/TXTエクスポート対応。">
+  <meta name="keywords" content="キーワードツール, サジェストキーワード, 関連キーワード, SEO, 無料ツール, キーワード一括取得, 検索ボリューム, 人気ランキング">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <title>推定人気ランキング付サジェストキーワード一括取得ツール | 無料SEOツール</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --bg-color: #08090d;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #111827 0%, #08090d 70%);
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      
+      --primary-color: #6366f1; /* Indigo */
+      --primary-rgb: 99, 102, 241;
+      --accent-color: #06b6d4; /* Cyan */
+      --accent-rgb: 6, 182, 212;
+
+      --card-bg: rgba(17, 24, 39, 0.6);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(99, 102, 241, 0.4);
+      
+      --input-bg: rgba(17, 24, 39, 0.8);
+      --input-border: rgba(255, 255, 255, 0.12);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+      
+      --border-radius-md: 12px;
+      --border-radius-lg: 20px;
+      --border-radius-full: 9999px;
+      --transition-fast: 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--card-border);
+      backdrop-filter: blur(12px);
+      background: rgba(8, 9, 13, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo span {
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition-fast);
+    }
+
+    .back-link:hover {
+      color: white;
+    }
+
+    main {
+      flex: 1;
+      padding: 60px 0;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* Tool UI */
+    .tool-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 40px;
+    }
+
+    .search-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 200px;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .select-field, .input-field {
+      background: var(--input-bg);
+      border: 1px solid var(--input-border);
+      border-radius: var(--border-radius-md);
+      padding: 16px 20px;
+      color: white;
+      font-size: 1.05rem;
+      outline: none;
+      transition: var(--transition-fast);
+      width: 100%;
+    }
+
+    .select-field {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 18px;
+      padding-right: 40px;
+    }
+
+    .select-field option {
+      background-color: var(--bg-color);
+      color: white;
+    }
+
+    .input-field:focus, .select-field:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+    }
+
+    .btn {
+      padding: 16px 32px;
+      border-radius: var(--border-radius-md);
+      font-weight: 600;
+      font-size: 1.05rem;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      color: white;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+    }
+
+    .options-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Filters & Tabs */
+    .filter-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .tabs-group {
+      display: flex;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .tab-btn.active {
+      background: var(--primary-color);
+      color: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .controls-right {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .sort-select {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      outline: none;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .sort-select:focus {
+      border-color: var(--primary-color);
+    }
+
+    .filter-input-wrapper {
+      position: relative;
+      width: 250px;
+    }
+
+    .filter-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 10px 16px 10px 36px;
+      color: white;
+      outline: none;
+      font-size: 0.9rem;
+      transition: var(--transition-fast);
+    }
+
+    .filter-input:focus {
+      border-color: var(--primary-color);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .filter-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Results layout */
+    .results-container {
+      display: none;
+    }
+
+    .status-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 12px 20px;
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--card-border);
+    }
+
+    .actions-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-sm:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 24px;
+    }
+
+    @media (max-width: 992px) {
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+      .search-row {
+        grid-template-columns: 1fr;
+      }
+      .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .controls-right {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-input-wrapper {
+        width: 100%;
+      }
+    }
+
+    .result-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .result-card h3 {
+      font-family: var(--font-display);
+      margin-bottom: 16px;
+      color: white;
+      font-size: 1.15rem;
+    }
+
+    .keyword-list {
+      list-style: none;
+      max-height: 520px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .keyword-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .keyword-list::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+    }
+
+    .keyword-item {
+      padding: 11px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition-fast);
+      border-radius: 6px;
+    }
+
+    .keyword-item:hover {
+      background: rgba(255, 255, 255, 0.02);
+      color: white;
+    }
+
+    .keyword-left-side {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .keyword-rank-num {
+      font-size: 0.8rem;
+      font-family: var(--font-display);
+      color: var(--text-muted);
+      width: 24px;
+      text-align: right;
+    }
+
+    .stars-indicator {
+      color: var(--secondary-color);
+      font-size: 0.8rem;
+      letter-spacing: -1px;
+      white-space: nowrap;
+    }
+
+    .keyword-badge {
+      font-size: 0.7rem;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: rgba(99, 102, 241, 0.1);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .item-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .trend-link {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 0.85rem;
+      opacity: 0.5;
+      transition: var(--transition-fast);
+      padding: 4px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+    }
+
+    .trend-link:hover {
+      opacity: 1;
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    .copy-icon {
+      cursor: pointer;
+      opacity: 0.5;
+      transition: var(--transition-fast);
+      padding: 4px;
+      border-radius: 4px;
+    }
+
+    .copy-icon:hover {
+      opacity: 1;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .textarea-box {
+      width: 100%;
+      height: 520px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--input-border);
+      border-radius: var(--border-radius-md);
+      padding: 16px;
+      color: var(--text-primary);
+      font-family: monospace;
+      font-size: 0.95rem;
+      resize: none;
+      outline: none;
+      line-height: 1.5;
+    }
+
+    /* Loader */
+    .loader {
+      display: none;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border-left-color: var(--primary-color);
+      animation: spin 1s linear infinite;
+      margin: 0 auto 16px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span>Keyword</span>Finder Pro
+      </a>
+      <a href="index.html" class="back-link">ホームへ戻る</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>サジェストキーワード人気度ランキングツール</h1>
+      <p>サジェスト順位と出現頻度から「推定人気度」を★5段階でスコア化。競合分析のためのGoogleトレンド連携も搭載。</p>
+    </div>
+
+    <section class="tool-box">
+      <div class="search-row">
+        <select id="searchEngine" class="select-field">
+          <option value="google">Google サジェスト</option>
+          <option value="youtube">YouTube サジェスト</option>
+        </select>
+        
+        <input type="text" id="keywordInput" class="input-field" placeholder="調べたいメインキーワードを入力（例: 筋トレ）" autofocus>
+        
+        <button id="searchBtn" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          一括取得スタート
+        </button>
+      </div>
+
+      <div class="options-row">
+        <label class="checkbox-label">
+          <input type="checkbox" id="optHiragana" checked> ひらがな（あ〜ん）掛け合わせ
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="optAlphabet" checked> アルファベット（a〜z）掛け合わせ
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="optNumbers" checked> 数字（0〜9）掛け合わせ
+        </label>
+      </div>
+    </section>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+      <div class="spinner"></div>
+      <div id="progressText">サジェストワードを解析中...</div>
+    </div>
+
+    <!-- Results Section -->
+    <section class="results-container" id="resultsContainer">
+      
+      <!-- フィルター・並び順・検索 -->
+      <div class="filter-section">
+        <!-- タブ -->
+        <div class="tabs-group" id="tabsGroup">
+          <button class="tab-btn active" data-tab="all">すべて</button>
+          <button class="tab-btn" data-tab="main">メイン</button>
+          <button class="tab-btn" data-tab="hiragana">ひらがな</button>
+          <button class="tab-btn" data-tab="alphabet">アルファベット</button>
+          <button class="tab-btn" data-tab="number">数字</button>
+        </div>
+
+        <div class="controls-right">
+          <!-- 並び順の選択 -->
+          <select id="sortOrder" class="sort-select">
+            <option value="score">推定人気順（高い順）</option>
+            <option value="alpha">五十音・アルファベット順</option>
+          </select>
+
+          <!-- 検索フィルター -->
+          <div class="filter-input-wrapper">
+            <svg class="filter-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="filterInput" class="filter-input" placeholder="結果から絞り込み（除外は -付き）">
+          </div>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <div>表示件数: <strong id="visibleCount" style="color: var(--accent-color);">0</strong> / <span id="totalCount">0</span> 件</div>
+        <div class="actions-group">
+          <button class="btn-sm" id="copyAllBtn">📋 全てコピー</button>
+          <button class="btn-sm" id="downloadCsvBtn">📄 CSV保存</button>
+          <button class="btn-sm" id="downloadTxtBtn">📝 TXT保存</button>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <!-- Visual List -->
+        <div class="result-card">
+          <h3>キーワード一覧</h3>
+          <ul class="keyword-list" id="keywordList">
+            <!-- Dynamic items -->
+          </ul>
+        </div>
+
+        <!-- Textarea output -->
+        <div class="result-card">
+          <h3>テキスト出力 (コピペ用)</h3>
+          <textarea class="textarea-box" id="rawTextarea" readonly></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 KeywordFinder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const searchBtn = document.getElementById('searchBtn');
+    const keywordInput = document.getElementById('keywordInput');
+    const loader = document.getElementById('loader');
+    const progressText = document.getElementById('progressText');
+    const resultsContainer = document.getElementById('resultsContainer');
+    const totalCount = document.getElementById('totalCount');
+    const visibleCount = document.getElementById('visibleCount');
+    const keywordList = document.getElementById('keywordList');
+    const rawTextarea = document.getElementById('rawTextarea');
+    
+    const filterInput = document.getElementById('filterInput');
+    const tabsGroup = document.getElementById('tabsGroup');
+    const sortOrder = document.getElementById('sortOrder');
+    const searchEngine = document.getElementById('searchEngine');
+    
+    const copyAllBtn = document.getElementById('copyAllBtn');
+    const downloadCsvBtn = document.getElementById('downloadCsvBtn');
+    const downloadTxtBtn = document.getElementById('downloadTxtBtn');
+
+    let allKeywords = []; // キーワードオブジェクト { text, type, score, count, stars }
+    let activeTab = 'all';
+
+    // JSONPサジェスト取得
+    function fetchSuggest(query, engine) {
+      return new Promise((resolve) => {
+        const callbackName = 'jsonp_' + Math.round(100000 * Math.random());
+        window[callbackName] = function(data) {
+          delete window[callbackName];
+          document.body.removeChild(script);
+          
+          if (data && data[1]) {
+            resolve(data[1]);
+          } else {
+            resolve([]);
+          }
+        };
+
+        const script = document.createElement('script');
+        const client = (engine === 'youtube') ? 'youtube' : 'firefox';
+        script.src = `https://suggestqueries.google.com/complete/search?client=${client}&hl=ja&gl=jp&jsonp=${callbackName}&q=${encodeURIComponent(query)}`;
+        document.body.appendChild(script);
+      });
+    }
+
+    // クエリ一覧生成
+    function generateQueries(baseKeyword) {
+      const queries = [{ text: baseKeyword, type: 'main' }];
+
+      if (document.getElementById('optHiragana').checked) {
+        const hiraganas = 'あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん';
+        for (let char of hiraganas) {
+          queries.push({ text: `${baseKeyword} ${char}`, type: 'hiragana' });
+        }
+      }
+
+      if (document.getElementById('optAlphabet').checked) {
+        const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+        for (let char of alphabets) {
+          queries.push({ text: `${baseKeyword} ${char}`, type: 'alphabet' });
+        }
+      }
+
+      if (document.getElementById('optNumbers').checked) {
+        const numbers = '0123456789';
+        for (let char of numbers) {
+          queries.push({ text: `${baseKeyword} ${char}`, type: 'number' });
+        }
+      }
+
+      return queries;
+    }
+
+    // 検索処理
+    searchBtn.addEventListener('click', async () => {
+      const baseKeyword = keywordInput.value.trim();
+      if (!baseKeyword) {
+        alert('キーワードを入力してください。');
+        return;
+      }
+
+      resultsContainer.style.display = 'none';
+      loader.style.display = 'block';
+      keywordList.innerHTML = '';
+      rawTextarea.value = '';
+      filterInput.value = '';
+      allKeywords = [];
+      
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector('[data-tab="all"]').classList.add('active');
+      activeTab = 'all';
+
+      const queries = generateQueries(baseKeyword);
+      const uniqueKeywords = {}; // スコア集計用連想配列
+      const engine = searchEngine.value;
+      let completed = 0;
+
+      const batchSize = 6;
+      for (let i = 0; i < queries.length; i += batchSize) {
+        const batch = queries.slice(i, i + batchSize);
+        const promises = batch.map(async (qObj) => {
+          const results = await fetchSuggest(qObj.text, engine);
+          
+          results.forEach((kw, index) => {
+            let cleanKw = '';
+            if (Array.isArray(kw)) {
+              cleanKw = kw[0];
+            } else if (typeof kw === 'string') {
+              cleanKw = kw;
+            }
+
+            if (cleanKw) {
+              // 関連度スコア計算: 順位が上（インデックス0）ほど高い基礎点(10〜1点)
+              const points = Math.max(1, 10 - index);
+
+              if (!uniqueKeywords[cleanKw]) {
+                uniqueKeywords[cleanKw] = {
+                  text: cleanKw,
+                  type: qObj.type,
+                  score: points,
+                  count: 1
+                };
+              } else {
+                uniqueKeywords[cleanKw].score += points;
+                uniqueKeywords[cleanKw].count += 1;
+                // 重複時はメインカテゴリ優先
+                if (qObj.type === 'main') {
+                  uniqueKeywords[cleanKw].type = 'main';
+                }
+              }
+            }
+          });
+          completed++;
+        });
+
+        await Promise.all(promises);
+        progressText.innerText = `サジェストワードを解析中... (${completed} / ${queries.length})`;
+      }
+
+      // 相対的なスコアをもとに星の数を算出
+      const rawList = Object.values(uniqueKeywords);
+      if (rawList.length > 0) {
+        const maxScore = Math.max(...rawList.map(k => k.score), 1);
+        
+        allKeywords = rawList.map(k => {
+          const ratio = k.score / maxScore;
+          let stars = 1;
+          if (ratio > 0.8) stars = 5;
+          else if (ratio > 0.5) stars = 4;
+          else if (ratio > 0.25) stars = 3;
+          else if (ratio > 0.1) stars = 2;
+          
+          return {
+            ...k,
+            stars: stars
+          };
+        });
+      }
+
+      loader.style.display = 'none';
+      resultsContainer.style.display = 'block';
+      totalCount.innerText = allKeywords.length;
+
+      renderResults();
+    });
+
+    // 描画とソート
+    function renderResults() {
+      keywordList.innerHTML = '';
+      const filterText = filterInput.value.trim().toLowerCase();
+      const order = sortOrder.value;
+      
+      let filtered = [...allKeywords];
+
+      // 1. タブで絞り込み
+      if (activeTab !== 'all') {
+        filtered = filtered.filter(item => item.type === activeTab);
+      }
+
+      // 2. 検索文字で絞り込み (除外対応)
+      if (filterText) {
+        if (filterText.startsWith('-') && filterText.length > 1) {
+          const excludeTerm = filterText.substring(1);
+          filtered = filtered.filter(item => !item.text.toLowerCase().includes(excludeTerm));
+        } else {
+          filtered = filtered.filter(item => item.text.toLowerCase().includes(filterText));
+        }
+      }
+
+      // 3. ソート順
+      if (order === 'score') {
+        filtered.sort((a, b) => b.score - a.score);
+      } else {
+        filtered.sort((a, b) => a.text.localeCompare(b.text, 'ja'));
+      }
+
+      visibleCount.innerText = filtered.length;
+
+      const textArray = [];
+      filtered.forEach((item, index) => {
+        textArray.push(item.text);
+
+        const li = document.createElement('li');
+        li.className = 'keyword-item';
+
+        // 左側（ランキング、キーワード名、星、タグ）
+        const leftSide = document.createElement('div');
+        leftSide.className = 'keyword-left-side';
+
+        const rankNum = document.createElement('span');
+        rankNum.className = 'keyword-rank-num';
+        rankNum.textContent = (order === 'score') ? `${index + 1}` : '';
+
+        const textSpan = document.createElement('span');
+        textSpan.textContent = item.text;
+
+        const starsSpan = document.createElement('span');
+        starsSpan.className = 'stars-indicator';
+        starsSpan.textContent = '★'.repeat(item.stars) + '☆'.repeat(5 - item.stars);
+
+        const badge = document.createElement('span');
+        badge.className = 'keyword-badge';
+        badge.textContent = getTypeLabel(item.type);
+
+        leftSide.appendChild(rankNum);
+        leftSide.appendChild(textSpan);
+        leftSide.appendChild(starsSpan);
+        leftSide.appendChild(badge);
+
+        // 右側アクション（トレンド、コピー）
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'item-actions';
+
+        const trendLink = document.createElement('a');
+        trendLink.className = 'trend-link';
+        trendLink.href = `https://trends.google.co.jp/trends/explore?geo=JP&q=${encodeURIComponent(item.text)}`;
+        trendLink.target = '_blank';
+        trendLink.title = 'Googleトレンドで検索数推移を比較';
+        trendLink.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`;
+
+        const copySpan = document.createElement('span');
+        copySpan.className = 'copy-icon';
+        copySpan.textContent = '📋';
+        copySpan.title = 'コピー';
+        copySpan.addEventListener('click', () => {
+          copySingle(item.text);
+        });
+
+        actionsDiv.appendChild(trendLink);
+        actionsDiv.appendChild(copySpan);
+
+        li.appendChild(leftSide);
+        li.appendChild(actionsDiv);
+        keywordList.appendChild(li);
+      });
+
+      rawTextarea.value = textArray.join('\n');
+    }
+
+    function getTypeLabel(type) {
+      switch (type) {
+        case 'main': return 'メイン';
+        case 'hiragana': return 'ひらがな';
+        case 'alphabet': return 'アルファベット';
+        case 'number': return '数字';
+        default: return '';
+      }
+    }
+
+    // 各種変更イベントリスナー
+    filterInput.addEventListener('input', renderResults);
+    sortOrder.addEventListener('change', renderResults);
+
+    tabsGroup.addEventListener('click', (e) => {
+      if (e.target.classList.contains('tab-btn')) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        activeTab = e.target.getAttribute('data-tab');
+        renderResults();
+      }
+    });
+
+    // コピー
+    function copySingle(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const alertBox = document.createElement('div');
+        alertBox.style.position = 'fixed';
+        alertBox.style.bottom = '24px';
+        alertBox.style.right = '24px';
+        alertBox.style.background = 'var(--primary-color)';
+        alertBox.style.color = 'white';
+        alertBox.style.padding = '10px 20px';
+        alertBox.style.borderRadius = '8px';
+        alertBox.style.boxShadow = 'var(--shadow-md)';
+        alertBox.style.zIndex = '1000';
+        alertBox.innerText = `コピー完了: ${text}`;
+        document.body.appendChild(alertBox);
+        setTimeout(() => document.body.removeChild(alertBox), 1500);
+      });
+    }
+
+    // すべてコピー
+    copyAllBtn.addEventListener('click', () => {
+      if (!rawTextarea.value) return;
+      rawTextarea.select();
+      navigator.clipboard.writeText(rawTextarea.value).then(() => {
+        alert('表示中の関連キーワードをすべてコピーしました！');
+      });
+    });
+
+    // CSVダウンロード
+    downloadCsvBtn.addEventListener('click', () => {
+      const text = rawTextarea.value;
+      if (!text) return;
+      const lines = text.split('\n');
+      
+      let csvContent = "\uFEFF"; // BOM
+      csvContent += "順位,キーワード,推定人気度,カテゴリ\n";
+      
+      lines.forEach((line, index) => {
+        const item = allKeywords.find(k => k.text === line);
+        const typeLabel = item ? getTypeLabel(item.type) : '';
+        const starsNum = item ? item.stars : 1;
+        csvContent += `"${index + 1}","${line.replace(/"/g, '""')}","★${starsNum}","${typeLabel}"\n`;
+      });
+
+      downloadFile(csvContent, `keywords_ranking_${keywordInput.value.trim()}.csv`, 'text/csv');
+    });
+
+    // TXTダウンロード
+    downloadTxtBtn.addEventListener('click', () => {
+      const text = rawTextarea.value;
+      if (!text) return;
+      downloadFile(text, `keywords_${keywordInput.value.trim()}.txt`, 'text/plain');
+    });
+
+    function downloadFile(content, fileName, contentType) {
+      const blob = new Blob([content], { type: `${contentType};charset=utf-8;` });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.setAttribute("href", url);
+      link.setAttribute("download", fileName);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    keywordInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        searchBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
