@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaburieru-dotcom.github.io/sitemap.xml
