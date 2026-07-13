@@ -391,10 +391,59 @@
       font-size: 0.9rem;
     }
   </style>
-  <meta name="twitter:title" content="【筋トレ必須】1RM最大挙上重量の計算方法とRM換算表 | トレリンク">
-  <meta name="twitter:description" content="筋トレの挙上重量設定に欠かせない1RM（最大挙上重量）の計算方法と換算式を徹底解説。ベンチプレスやスクワットの重量設定に役立つRM換算表や、アプリでの自動計算機能を活用した目標設計について解説。">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "1RM計算・推定ガイド",
+      "item": "https://gaburieru-dotcom.github.io/rm-calculator-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1RMとは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1RM（One Repetition Maximum）とは、正しいフォームで1回だけ持ち上げることができる最大重量のことです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "間接的に1RMを計算するメリットは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "実際に限界重量に挑戦する怪我のリスクを避けることができ、低〜中重量（2〜10回挙上できる重さ）の結果から安全かつ高精度に自身の最大筋力を推定できる点です。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -402,7 +451,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -443,7 +492,19 @@
   <main class="container">
     
     <article class="guide-card">
-      <h2>1RM（最大挙上重量）とは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">1RM（最大挙上重量）とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">種目によって異なる？ 1RMの計算式</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">【目安】RM換算比率表（パーセンテージ）</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">1RM（最大挙上重量）とは？</h2>
       <p>
         1RM（One Repetition Maximum：最大挙上重量）とは、<strong>「正しいフォームでギリギリ1回だけ持ち上げることができる最大重量」</strong>のことです。
       </p>
@@ -458,7 +519,7 @@
     </article>
 
     <article class="guide-card">
-      <h2>種目によって異なる？ 1RMの計算式</h2>
+      <h2 id="section-2">種目によって異なる？ 1RMの計算式</h2>
       <p>
         1RMの計算式にはいくつかの種類がありますが、実は種目の特性（使用する筋肉群の大きさなど）によって使い分けることで、より正確な最大挙上重量を算出できます。<strong>「トレリンク」アプリ内でも、この種目別の計算式が自動適用されています。</strong>
       </p>
@@ -495,7 +556,7 @@
     </article>
 
     <article class="guide-card">
-      <h2>【目安】RM換算比率表（パーセンテージ）</h2>
+      <h2 id="section-3">【目安】RM換算比率表（パーセンテージ）</h2>
       <p>
         以下は、1RMを100%としたとき、持ち上げる回数（レップ数）に応じた負荷強度（%）の一般的な目安表です。
       </p>
@@ -555,6 +616,33 @@
         <a href="menus.html" class="btn btn-secondary">メニューインポートを試す</a>
       </div>
     </div>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rir-rpe-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【限界突破】RIR・RPEによる強度管理方法</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="531-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋肥大＆ストレングス】5/3/1プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

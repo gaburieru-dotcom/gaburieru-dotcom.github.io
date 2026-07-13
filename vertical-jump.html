@@ -20,6 +20,25 @@
   <link rel="manifest" href="manifest.json">
   <title>タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ</title>
   
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "タイム測定 - 垂直跳び測定",
+    "url": "https://gaburieru-dotcom.github.io/vertical-jump.html",
+    "image": "https://gaburieru-dotcom.github.io/vertical_jump_icon.png",
+    "description": "スローモーション動画から垂直跳びの高さ・ジャンプ力・滞空時間（エアタイム）をミリ秒単位で正確に測定するアプリ。",
+    "applicationCategory": "SportsApplication",
+    "operatingSystem": "iOS",
+    "offers": {
+      "@type": "Offer",
+      "price": "0.00",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
+  
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ">
   <meta property="og:description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力をミリ秒単位で正確に測定。バスケ、バレー、陸上などのトレーニング効果測定に。">
@@ -315,25 +334,66 @@
       }
     }
   </style>
-  <!-- JSON-LD -->
+  <!-- Breadcrumb & FAQ Schema -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ",
-    "url": "https://gaburieru-dotcom.github.io/vertical-jump.html",
-    "description": "スローモーション動画から垂直跳びの高さ・ジャンプ力・滞空時間（エアタイム）をミリ秒単位で正確に測定するアプリ「タイム測定 - 垂直跳び測定」。バスケ、バレー、陸上、その他スポーツや筋トレの効果測定に最適。",
-    "applicationCategory": "HealthAndFitnessApplication",
-    "operatingSystem": "All"
-  }
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "垂直跳びタイム測定アプリ",
+      "item": "https://gaburieru-dotcom.github.io/vertical-jump.html"
+    }
+  ]
+}
   </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "動画からどうやって垂直跳びの高さを測定するのですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ジャンプ時に足が地面を離れた瞬間（テイクオフ）と、再び地面に着地した瞬間（ランディング）のフレームを選択し、その間の時間（滞空時間）から物理公式を用いて算出します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スローモーション動画での測定に対応していますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。アプリ「タイム測定」はスローモーション動画のフレーム分析に対応しており、ミリ秒単位でテイクオフとランディングを精密に特定できます。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo-link">
-        <img src="vertical_jump_icon.png" alt="タイム測定 ロゴ" class="logo-img">
+        <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 ロゴ" class="logo-img">
         <span>タイム測定 - 垂直跳び測定</span>
       </a>
       <a href="index.html" class="back-btn">
@@ -346,7 +406,7 @@
   <main class="container">
     <!-- Hero Section -->
     <section class="hero">
-      <img src="vertical_jump_icon.png" alt="タイム測定 アイコン" class="app-icon-large">
+      <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 アイコン" class="app-icon-large">
       <h1 class="hero-title">動画からジャンプ力を精密測定<br><span class="text-gradient">タイム測定 - 垂直跳び測定</span></h1>
       <p class="hero-subtitle">
         スローモーションビデオ等を活用し、ジャンプの滞空時間（エアタイム）から、あなたの垂直跳びの高さ（ジャンプ力）をミリ秒単位で正確に算出する測定アプリ。
@@ -393,6 +453,33 @@
         <p style="margin-top: 16px;">バスケットボールのダンク練習、バレーボールのアタック力強化、陸上競技の瞬発力測定など、あなたの限界突破を数値でサポートします。</p>
       </div>
     </section>
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="vertical-jump-average.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">垂直跳びの平均値とジャンプ力を伸ばす方法</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
+
   </main>
 
   <footer>

@@ -459,6 +459,59 @@
       font-size: 0.9rem;
     }
   </style>
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "PPLトレーニングガイド",
+      "item": "https://gaburieru-dotcom.github.io/ppl-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PPLプログラムは週に何日行うのが最適ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "週3日（Push/Pull/Legsを週1回ずつ）から、週6日（2サイクル回す）まで個人のライフスタイルや回復力に合わせて柔軟に調整可能です。中級者以上には週5〜6日が人気です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "PPLのセット間の休憩時間はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ベンチプレスやスクワットなどの高重量コンパウンド種目は3〜5分、後半のレイズ系やアームカールなどのアイソレーション種目は1〜2分を目安にします。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -466,7 +519,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -508,7 +561,18 @@
     
     <!-- Explanation Card -->
     <article class="guide-card">
-      <h2>PPL分割法とは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">PPL分割法とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">PPLを成功させるサイクル・管理のコツ</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">PPL分割法とは？</h2>
       <p>
         「PPL（Push, Pull, Legs）プログラム」は、全身の動作パターンに応じて筋肉を **「プッシュ（押し系）」「プル（引き系）」「レッグス（脚・下半身）」** の3つに分割して鍛える、最も合理的で現代のフィットネス界において非常に人気の高い分割法です。
       </p>
@@ -679,13 +743,40 @@
 
     <!-- Progression Tips -->
     <article class="guide-card" style="margin-top: 40px;">
-      <h2>PPLを成功させるサイクル・管理のコツ</h2>
+      <h2 id="section-2">PPLを成功させるサイクル・管理のコツ</h2>
       <ol>
         <li><strong>頻度の調整:</strong> 初めは週3回（中1日休み）からスタートし、トレーニングに慣れて回復力が高まってきたら「Push ➔ Pull ➔ Legs ➔ 休み ➔ Push...」のようにサイクルを回して頻度を上げることができます。</li>
         <li><strong>主働筋と協働筋の連動:</strong> プッシュ日には三頭筋がベンチプレスやオーバーヘッドプレスで既にかなり動員されています。そのため、最後のプレスダウンを行う際はすでに疲労していることを考慮し、重量よりもフォームと「最後まで絞り切る収縮」を重視します。</li>
         <li><strong>回復を最優先に:</strong> 3分割法はそれぞれの部位への刺激強度が大きいため、特にデッドリフトを行うプル日やスクワットを行うレッグス日の後は十分な栄養補給と睡眠をとってください。関節や腱に違和感がある場合は無理をせず、休みの日（レストデイ）を追加しましょう。</li>
       </ol>
     </article>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="531-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋肥大＆ストレングス】5/3/1プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="big3-5x5-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【初心者〜中級者向け】BIG3 5x5プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

@@ -476,6 +476,59 @@
       font-size: 0.9rem;
     }
   </style>
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "5/3/1 プログラムガイド",
+      "item": "https://gaburieru-dotcom.github.io/531-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "5/3/1プログラムは初心者でも効果がありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、効果はありますが、重量の伸ばし方が月単位と緩やかなため、重量が急成長しやすい完全な初心者よりも、中級者（スクワットやデッドリフトの頭打ちを感じ始めた方）に最も適しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "サイクル途中で設定重量が上がらなくなったらどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "サイクル中に目標レップ数に届かなかった場合は、1RMの推定値をリセットし、トレーニングマックス（TM）を数サイクル前の重量（例：90%から80〜85%）に下げてやり直す（ディロード/リセットする）ことが公式に推奨されています。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -483,7 +536,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -525,7 +578,19 @@
     
     <!-- Explanation Card -->
     <article class="guide-card">
-      <h2>5/3/1 プログラムとは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">5/3/1 プログラムとは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">サイクル（週）ごとの設定内容</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">実際に始める際の流れ</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">5/3/1 プログラムとは？</h2>
       <p>
         ジム・ウェンドラー（Jim Wendler）氏によって考案された「5/3/1プログラム」は、パワーリフティングやウェイトトレーニングにおける基本的な4大種目（オーバーヘッドプレス、デッドリフト、ベンチプレス、バックスクワット）の最大挙上重量（1RM）を長期的に、安全かつ確実に向上させるためのプログラムです。
       </p>
@@ -549,7 +614,7 @@
 
     <!-- Detailed Weekly Structure -->
     <article class="guide-card">
-      <h2>サイクル（週）ごとの設定内容</h2>
+      <h2 id="section-2">サイクル（週）ごとの設定内容</h2>
       <p>5/3/1は4週間で1サイクルとなっており、週ごとに強度（％）とレップ数が以下のように推移します。</p>
       <div style="overflow-x: auto; margin-bottom: 20px;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem;">
@@ -1031,7 +1096,7 @@
 
     <!-- Tips and Setup Guide -->
     <article class="guide-card" style="margin-top: 40px;">
-      <h2>実際に始める際の流れ</h2>
+      <h2 id="section-3">実際に始める際の流れ</h2>
       <ol>
         <li>各メイン種目で限界（1RM）に挑戦するか、重い重量から逆算して「現在の正確な1RM値」を把握します。</li>
         <li>アプリ「トレリンク」の「種目」タブから、対象の4大種目の「設定1RM（または推定1RM）」欄にその数値を設定します。</li>
@@ -1040,6 +1105,33 @@
         <li><strong>次のサイクルへの進め方:</strong> 4週間（1サイクル）が終わったら、1RM設定欄の数値を「スクワットとデッドリフトは +5kg」「ベンチプレスとオーバーヘッドプレスは +2.5kg」手動で増やし、再び第1週のメニューからスタートします。</li>
       </ol>
     </article>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="big3-5x5-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【初心者〜中級者向け】BIG3 5x5プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="ppl-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【効率的分割法】PPL（プッシュ・プル・レッグ）</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

@@ -1,60 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gaburieru-dotcom.github.io/rir-rpe-guide.html</loc>
+    <loc>https://gaburieru-dotcom.github.io/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gaburieru-dotcom.github.io/vertical-jump-average.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/rm-calculator-guide.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/discover.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/articles.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/about.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/apps.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/531-guide.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/ppl-guide.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/article-detail.html</loc>
-  </url>
-  <url>
-    <loc>https://gaburieru-dotcom.github.io/big3-5x5-guide.html</loc>
+    <loc>https://gaburieru-dotcom.github.io/index.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://gaburieru-dotcom.github.io/menus.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gaburieru-dotcom.github.io/</loc>
+    <loc>https://gaburieru-dotcom.github.io/discover.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gaburieru-dotcom.github.io/vertical-jump.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gaburieru-dotcom.github.io/hiit-guide.html</loc>
+    <loc>https://gaburieru-dotcom.github.io/vertical-jump-average.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gaburieru-dotcom.github.io/keyword-tool.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gaburieru-dotcom.github.io/arnold-golden6-guide.html</loc>
+    <loc>https://gaburieru-dotcom.github.io/hiit-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaburieru-dotcom.github.io/rm-calculator-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://gaburieru-dotcom.github.io/progressive-overload-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaburieru-dotcom.github.io/ppl-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaburieru-dotcom.github.io/rir-rpe-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaburieru-dotcom.github.io/arnold-golden6-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaburieru-dotcom.github.io/531-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaburieru-dotcom.github.io/big3-5x5-guide.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

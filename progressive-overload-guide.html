@@ -360,10 +360,59 @@
       font-size: 0.9rem;
     }
   </style>
-  <meta name="twitter:title" content="【筋肥大の絶対法則】漸進性過負荷の原則と重量の伸ばし方 | トレリンク">
-  <meta name="twitter:description" content="筋肥大と筋力向上を成功させるための大原則「漸進性過負荷（プログレッシブ・オーバーロード）の原則」を徹底解説。重量、回数、セット数、インターバルを段階的に増やす具体的なアプローチと、筋トレ記録アプリ「トレリンク」を用いた成長の可視化について紹介。">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "漸進性過負荷の原則ガイド",
+      "item": "https://gaburieru-dotcom.github.io/progressive-overload-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "過負荷の原則（プログレッシブ・オーバーロード）とは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "筋肉を発達させるために、筋肉がすでに適応している負荷よりも強い刺激（重量、レップ数、セット数など）を段階的に与え続けるトレーニング原則のことです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "重量を増やす以外に過負荷をかける方法はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "重量変更のほかに、レップ数を増やす、セット数を増やす、インターバルを短くする、フォームの正確性を高め可動域を広げる、テンポを遅くするなどの方法があります。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -371,7 +420,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -412,7 +461,18 @@
   <main class="container">
     
     <article class="guide-card">
-      <h2>漸進性過負荷（プログレッシブ・オーバーロード）の原則とは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">漸進性過負荷（プログレッシブ・オーバーロード）の原則とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">過負荷（オーバーロード）をかける5つの具体的なアプローチ</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">漸進性過負荷（プログレッシブ・オーバーロード）の原則とは？</h2>
       <p>
         漸進性過負荷の原則とは、<strong>「筋肉を成長させ続けるためには、その筋肉がすでに慣れてしまっている以上の負荷（ストレス）を、段階的（漸進的）に与え続けなければならない」</strong>というトレーニングの基本原則です。
       </p>
@@ -422,7 +482,7 @@
     </article>
 
     <article class="guide-card">
-      <h2>過負荷（オーバーロード）をかける5つの具体的なアプローチ</h2>
+      <h2 id="section-2">過負荷（オーバーロード）をかける5つの具体的なアプローチ</h2>
       <p>
         多くの人は「重量を増やすことだけ」が過負荷だと考えがちですが、実際にはさまざまな方法で過負荷をかけることができます。
       </p>
@@ -461,6 +521,33 @@
         <a href="menus.html" class="btn btn-secondary">メニューインポート</a>
       </div>
     </div>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rir-rpe-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【限界突破】RIR・RPEによる強度管理方法</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="big3-5x5-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【初心者〜中級者向け】BIG3 5x5プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

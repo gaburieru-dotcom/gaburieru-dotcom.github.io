@@ -360,10 +360,59 @@
       font-size: 0.9rem;
     }
   </style>
-  <meta name="twitter:title" content="【劇的脂肪燃焼】HIITトレーニング効果とやり方完全ガイド | トレリンク">
-  <meta name="twitter:description" content="短時間で劇的に脂肪燃焼＆心肺機能を強化するHIIT（高強度インターバルトレーニング）の効果とやり方を完全解説。初心者向けの自宅メニューやタバタプロトコルの設定方法、筋トレ記録アプリ「トレリンク（TreLink）」での効果的な管理方法まで紹介。">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "HIIT効果とやり方ガイド",
+      "item": "https://gaburieru-dotcom.github.io/hiit-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "HIITは毎日行っても大丈夫ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ、HIITは非常に高強度で心肺や筋肉への負担が大きいため、毎日行うことは避けてください。週に2〜3回、中2日程度の間隔を空けて行うのが最適です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "HIITと筋トレは同じ日に行うべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可能であれば別の日に行うのが理想的ですが、同じ日に行う場合は「筋トレを先」に行い、その後に「HIIT」を行うことで、筋力発揮と安全性を両立させやすくなります。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -371,7 +420,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -412,7 +461,19 @@
   <main class="container">
     
     <article class="guide-card">
-      <h2>HIIT（ヒート）とは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">HIIT（ヒート）とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">自宅でできる初心者向け「4分間HIIT（タバタ式）」</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">HIITを安全かつ効果的に行うための注意点</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">HIIT（ヒート）とは？</h2>
       <p>
         HIIT（High-Intensity Interval Training：高強度インターバルトレーニング）とは、短い時間（例：20秒）の**「限界に近い強度の運動」**と、さらに短い時間（例：10秒）の**「不完全回復（休息または軽い運動）」**を交互に繰り返すトレーニング方法です。
       </p>
@@ -429,7 +490,7 @@
     </article>
 
     <article class="guide-card">
-      <h2>自宅でできる初心者向け「4分間HIIT（タバタ式）」</h2>
+      <h2 id="section-2">自宅でできる初心者向け「4分間HIIT（タバタ式）」</h2>
       <p>
         世界的に有名な「タバタプロトコル（田畑教授が考案）」に則った、自宅で器具を使わずにできる基本的な全身HIITメニューです。
       </p>
@@ -468,13 +529,40 @@
     </div>
 
     <article class="guide-card">
-      <h2>HIITを安全かつ効果的に行うための注意点</h2>
+      <h2 id="section-3">HIITを安全かつ効果的に行うための注意点</h2>
       <ol>
         <li><strong>「全力」で行うこと：</strong> HIITの効果の源泉は高負荷です。心拍数を最大心拍数の80%〜90%（息が非常に弾むレベル）まで引き上げるために、運動中の20秒間は全力で動きましょう。</li>
         <li><strong>事前の入念なストレッチ：</strong> 急激に心拍数が上がり筋肉や関節に大きな負荷がかかるため、ウォーミングアップを行わずにHIITを始めると怪我のリスクが高まります。軽く動的ストレッチをしてから行ってください。</li>
         <li><strong>頻度は週2〜3回：</strong> 非常に疲労が大きいため、毎日行う必要はありません。筋肉と心肺機能をしっかり回復させるため、中2日ほど開けて週に2〜3回行うのが最も効果的です。</li>
       </ol>
     </article>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rir-rpe-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【限界突破】RIR・RPEによる強度管理方法</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

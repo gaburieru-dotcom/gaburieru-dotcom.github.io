@@ -391,10 +391,59 @@
       font-size: 0.9rem;
     }
   </style>
-  <meta name="twitter:title" content="【新常識】RIR・RPEを極めて筋肥大を最大化する強度管理法 | トレリンク">
-  <meta name="twitter:description" content="筋肥大効果を高める新基準「RIR（Reps in Reserve：余力レップ）」と「RPE（自覚的運動強度）」の使い方と重要性を徹底解説。オーバートレーニングを防ぎ、限界ギリギリの正しい強度を設定する基準と、筋トレ記録アプリ「トレリンク」での管理方法を紹介。">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "RIR・RPE設定ガイド",
+      "item": "https://gaburieru-dotcom.github.io/rir-rpe-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "RIRとRPEの違いは何ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RIR（Reps in Reserve）は「あと何レップできたか（余力）」を指し、RPE（Rate of Perceived Exertion）は「主観的運動強度（10段階）」を指します。例えば、余力があと2回（RIR 2）のとき、RPEは8に相当します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "毎セット限界（RIR 0）まで追い込むべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "毎回すべてのセットでRIR 0まで追い込むと神経系が疲弊し、オーバーワークや怪我のリスクが高まります。メインセットはRIR 1〜3（余力1〜3回）に留め、最終セットのみ限界まで追い込む方法が効果的です。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -402,7 +451,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -443,7 +492,19 @@
   <main class="container">
     
     <article class="guide-card">
-      <h2>なぜセット毎の「余力」管理が重要なのか？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">なぜセット毎の「余力」管理が重要なのか？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">RIR（Reps in Reserve）とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">RPE（Rate of Perceived Exertion）基準表</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">なぜセット毎の「余力」管理が重要なのか？</h2>
       <p>
         多くのトレーニーは「毎セット、持ち上がらなくなる限界（潰れる）まで行う」のがベストだと信じています。しかし最新の運動科学では、毎セット限界まで行うと以下のデメリットがあることが分かっています。
       </p>
@@ -457,7 +518,7 @@
     </article>
 
     <article class="guide-card">
-      <h2>RIR（Reps in Reserve）とは？</h2>
+      <h2 id="section-2">RIR（Reps in Reserve）とは？</h2>
       <p>
         RIRは**「あと何回挙上できたか（余力回数）」**を示す指標です。
       </p>
@@ -476,7 +537,7 @@
     </article>
 
     <article class="guide-card">
-      <h2>RPE（Rate of Perceived Exertion）基準表</h2>
+      <h2 id="section-3">RPE（Rate of Perceived Exertion）基準表</h2>
       <p>
         RPEは**「本人の主観的なきつさ」**を1〜10の段階で評価したものです。ウエイトトレーニングにおいては、RIRと逆転した関係になります。
       </p>
@@ -544,6 +605,33 @@
         <a href="menus.html" class="btn btn-secondary">トレーニングメニュー一覧</a>
       </div>
     </div>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="531-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋肥大＆ストレングス】5/3/1プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

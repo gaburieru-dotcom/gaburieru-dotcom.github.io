@@ -410,6 +410,59 @@
       font-size: 0.9rem;
     }
   </style>
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "BIG3 5x5 プログラムガイド",
+      "item": "https://gaburieru-dotcom.github.io/big3-5x5-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "5x5プログラムで重量はどのペースで増やせばいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "毎回のセッションで、その種目が成功するたびに2.5kgずつ（デッドリフトは5kg）重量を増やしていくのが基本ルールです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "セット間にどのくらいのインターバルを取るべきですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "セットが比較的楽に感じられた場合は90秒〜2分、限界に近い重さの場合は3分〜最大5分程度の休息を取って、毎セット全力で5レップ上げきれる状態を作ります。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -417,7 +470,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -459,7 +512,19 @@
     
     <!-- Explanation Card -->
     <article class="guide-card">
-      <h2>BIG3 5x5 とは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">BIG3 5x5 とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">ワークアウトメニューの詳細</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">プログラムを伸ばすコツ</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">BIG3 5x5 とは？</h2>
       <p>
         「5x5プログラム」は、ボディビルの黄金期を支えたレグ・パーク（Reg Park）氏によって普及し、現代でも「StrongLifts 5x5」などの名で世界的に愛用されている高強度・多関節種目を中心としたトレーニング法です。
       </p>
@@ -482,7 +547,7 @@
 
     <!-- Workout Link Details -->
     <article class="guide-card">
-      <h2>ワークアウトメニューの詳細</h2>
+      <h2 id="section-2">ワークアウトメニューの詳細</h2>
       <p>
         このメニューは、全身の骨格・筋肉を一気に刺激する3つの基本コンパウンド種目で構成されています。
         アプリ内では、設定したご自身の1RMから **75%の重量** が自動計算されてセットされます。
@@ -519,13 +584,40 @@
 
     <!-- Progression Tips -->
     <article class="guide-card">
-      <h2>プログラムを伸ばすコツ</h2>
+      <h2 id="section-3">プログラムを伸ばすコツ</h2>
       <ol>
         <li><strong>ウォームアップを十分に行う:</strong> 本番セットの前に、シャフトのみ、または軽い重量で数セット低レップ（5回など）行い、関節と筋肉の軌道を十分に温めてください。</li>
         <li><strong>重量追加の判断:</strong> すべての種目で「5セット5レップ（合計25レップ）」を完璧なフォームで完了できたら、次回その種目の1RM設定値を **+2.5kg** 増やしてチャレンジします。</li>
         <li><strong>停滞（プラトー）した場合:</strong> 3回連続して同じ重量で5x5をクリアできなかった場合は、設定重量を一度 **10%減らし**、そこから再度毎週重量を上乗せしていきます（ディロード）。これで神経系と筋肉が回復し、以前の限界を突破しやすくなります。</li>
       </ol>
     </article>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="531-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋肥大＆ストレングス】5/3/1プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="arnold-golden6-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">アーノルド・シュワルツェネッガーの「ゴールデン6」</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 

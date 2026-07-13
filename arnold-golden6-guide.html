@@ -411,6 +411,59 @@
       font-size: 0.9rem;
     }
   </style>
+  <!-- Breadcrumb & FAQ Schema -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://gaburieru-dotcom.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "メニュー一覧",
+      "item": "https://gaburieru-dotcom.github.io/menus.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "アーノルド・ゴールデン6ガイド",
+      "item": "https://gaburieru-dotcom.github.io/arnold-golden6-guide.html"
+    }
+  ]
+}
+  </script>
+  
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ゴールデン６は週に何回行うのが理想ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "週に3回（例：月・水・金）行い、セット間または日々の間に少なくとも1日の完全休息日を設けることが推奨されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "このプログラムで有酸素運動を組み合わせても良いですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ただし、筋肉の回復を優先するため、高強度の有酸素運動は避け、中強度のウォーキングや軽いサイクリングを休息日に行うのが理想的です。"
+      }
+    }
+  ]
+}
+  </script>
+  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
@@ -418,7 +471,7 @@
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo">
-        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
+        <img loading="lazy" decoding="async" src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);">
         <span>トレリンク (TreLink)</span>
       </a>
 
@@ -460,7 +513,19 @@
     
     <!-- Explanation Card -->
     <article class="guide-card">
-      <h2>アーノルド・ゴールデン6 とは？</h2>
+      
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">アーノルド・ゴールデン6 とは？</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">ワークアウトメニューの詳細</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">王者の教えとアドバイス</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    <h2 id="section-1">アーノルド・ゴールデン6 とは？</h2>
       <p>
         「ゴールデン6」は、ボディビル界の伝説であり、ミスター・オリンピアを7度制したアーノルド・シュワルツェネッガー（Arnold Schwarzenegger）氏が、キャリアの初期段階（ドイツ・ミュンヘン時代）に実践していたことで有名なクラシックなフルボディ（全身）トレーニングプログラムです。
       </p>
@@ -483,7 +548,7 @@
 
     <!-- Workout Link Details -->
     <article class="guide-card">
-      <h2>ワークアウトメニューの詳細</h2>
+      <h2 id="section-2">ワークアウトメニューの詳細</h2>
       <p>
         このプログラムは、合計6種目で構成されています。アプリ「トレリンク」にインポートすると、
         ご自身で設定した1RMの **70%の重量** が本番セットとして自動でセットされます。
@@ -538,13 +603,40 @@
 
     <!-- Arnold's Advice -->
     <article class="guide-card">
-      <h2>王者の教えとアドバイス</h2>
+      <h2 id="section-3">王者の教えとアドバイス</h2>
       <ol>
         <li><strong>スクワットは絶対に省略しない:</strong> アーノルドは「スクワットは単に脚を太くするだけでなく、全身の代謝を高めて他の上半身の筋肉の成長も促す」と語っており、毎回のトレーニングの最初に重視していました。</li>
         <li><strong>チンニングはワイドグリップで:</strong> 背中の広がり（Vテーパー）を作るため、肩幅より広めの幅でバーを握り、胸をバーに引き寄せるようなフォームで全力で行ってください。自重で10回以上できない場合は、アシストバンドを使用しても構いません。</li>
         <li><strong>マインド・マッスル・コネクション（意図的収縮）:</strong> 重量だけを追うのではなく、バーベルカールやクランチを行う際に対象筋肉（二頭筋や腹筋）が引きちぎれるような強い収縮感を頭の中で強くイメージしながら行ってください。</li>
       </ol>
     </article>
+
+  
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="big3-5x5-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【初心者〜中級者向け】BIG3 5x5プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- /Related Articles Section -->
 
   </main>
 
