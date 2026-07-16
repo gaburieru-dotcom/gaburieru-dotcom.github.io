@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KWG97NY59"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2KWG97NY59');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ベンチプレスのMAX重量を効率的に伸ばすための科学的トレーニングプログラムとフォーム修正、補助種目（アクセサリー種目）の選定方法を徹底解説します。">
+  <meta name="keywords" content="ベンチプレス 伸ばし方, ベンチプレス 100kg, プリレピン表, 重量アップ, トレリンク">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://gaburieru-dotcom.github.io/benchpress-increase-guide.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <title>【限界突破】ベンチプレスの重量を効果的に伸ばす方法とプログラム設計 | トレリンク</title>
+
+  <!-- CSS System -->
+  <style>
+  
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      /* High Readability Theme */
+      --bg-color: #0f111a;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #1c1e30 0%, #0f111a 70%);
+      --text-primary: #ffffff;
+      --text-secondary: #e2e8f0; /* Muted but much brighter for readability */
+      --text-muted: #94a3b8;
+      
+      --primary-color: #6366f1;
+      --primary-rgb: 99, 102, 241;
+      --secondary-color: #ec4899;
+      --secondary-rgb: 236, 72, 153;
+      --accent-color: #06b6d4;
+      --accent-rgb: 6, 182, 212;
+
+      --card-bg: rgba(22, 25, 41, 0.75); /* Higher contrast container */
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(99, 102, 241, 0.4);
+      --header-bg: rgba(15, 17, 26, 0.85);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.2);
+      
+      --border-radius-sm: 8px;
+      --border-radius-md: 16px;
+      --border-radius-lg: 24px;
+      --border-radius-full: 9999px;
+      --transition-fast: 0.2s ease;
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      line-height: 1.85; /* Increased for readability */
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 75px;
+      z-index: 1000;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.35rem;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: var(--border-radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4), var(--shadow-glow);
+    }
+
+    .btn-secondary {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    .hero-section {
+      padding-top: 130px;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text-primary);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+      margin-top: 35px;
+      margin-bottom: 18px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--card-border);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 24px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      margin-bottom: 18px;
+    }
+
+    .guide-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 30px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .highlight-box {
+      border-left: 4px solid var(--primary-color);
+      background: rgba(var(--primary-rgb), 0.08);
+      padding: 18px;
+      border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+      margin: 20px 0;
+      color: var(--text-primary);
+    }
+
+    /* Ad Banner Style */
+    .ad-banner {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%);
+      border: 1px solid var(--primary-color);
+      border-radius: var(--border-radius-md);
+      padding: 30px;
+      text-align: center;
+      margin: 35px 0;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .ad-banner h3 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background-color: rgba(var(--primary-rgb), 0.15);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 35px 0;
+      border-top: 1px solid var(--card-border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+  </style>
+
+  <!-- JSON-LD Structured Data -->
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://gaburieru-dotcom.github.io/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "メニュー一覧", "item": "https://gaburieru-dotcom.github.io/menus.html" },
+      { "@type": "ListItem", "position": 3, "name": "ベンチプレス重量アップガイド", "item": "https://gaburieru-dotcom.github.io/benchpress-increase-guide.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ベンチプレスのマックス重量を伸ばすために最も効果的な頻度はどれくらいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "研究および実践において、週2〜3回の中頻度でのトレーニングが筋力と技術の習得において最も効率が良いとされています。各セッションで過度な疲労を残さないようにボリュームを適切に管理することが重要です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "挙上重量が長期間停滞している場合の対処法は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "筋力の出力レベルの頭打ち（プラトー）を打破するためには、一定期間の「ディロード」を挟むことや、1RMの70-80%前後の重量を最大速度で挙上するスピードトレーニングを取り入れて爆発的パワー（神経系）を再活性化することが有効です。"
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <img src="app_icon.png" alt="トレリンク アイコン" style="width: 32px; height: 32px; border-radius: 8px; box-shadow: var(--shadow-sm);" loading="lazy" decoding="async">
+        <span>トレリンク (TreLink)</span>
+      </a>
+      <div class="header-actions">
+        <a href="menus.html" class="btn btn-secondary">メニュー一覧へ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section container">
+    <h1 class="text-gradient">【限界突破】ベンチプレスの重量を効果的に伸ばす方法とプログラム設計</h1>
+    <p style="font-size: 1.05rem; max-width: 750px; margin: 0 auto; color: var(--text-primary);">
+      ベンチプレスのMAX重量を効率的に伸ばすための科学的トレーニングプログラムとフォーム修正、補助種目（アクセサリー種目）の選定方法を徹底解説します。
+    </p>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    
+    <!-- Table of Contents -->
+    <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
+      <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
+      <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">ベンチプレスの重量を伸ばすための科学的アプローチ</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">神経系を開発する「プリレピン表」の活用</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">弱点を克服するアクセサリー種目の選定</a></li>
+      </ul>
+    </div>
+    <!-- /Table of Contents -->
+
+    
+    <article class="guide-card">
+      <h2 id="section-1">ベンチプレスの重量を伸ばすための科学的アプローチ</h2>
+      <p>
+        ベンチプレスで100kgの壁を突破したり、自身の限界重量（1RM）を高めるためには、単に毎回限界まで重いウエイトを挙げるだけでは不十分です。筋力を効率的に高めるためには、<strong>「神経系の発達」</strong>と<strong>「筋肉量の増加（横断面積の拡大）」</strong>を両立するプログラムが不可欠です。
+      </p>
+      <p>
+        筋力向上には古典物理学の「F = m × a（力 ＝ 質量 × 加速度）」の公式がそのまま当てはまります。重量（質量）を伸ばすためには、バーベルを可能な限り「爆発的に速く挙上する（加速度を高める）」トレーニングを意識する必要があります。
+      </p>
+    </article>
+
+    <article class="guide-card">
+      <h2 id="section-2">神経系を開発する「プリレピン表」の活用</h2>
+      <p>
+        旧ソ連の重量挙げ研究から生まれた「プリレピン表（Prilepin's Chart）」は、目標パーセンテージに応じた最適なレップ数とセット数を定義しており、怪我を避けながら最大筋力を強化するためのバイブルとなっています。
+      </p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>強度 (% of 1RM)</th>
+            <th>1セットのレップ数</th>
+            <th>最適な総レップ数（推奨値）</th>
+            <th>総レップ数許容範囲</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>70% - 80% (中強度)</td>
+            <td>3 - 6 回</td>
+            <td>18 回 (例: 3回×6セット)</td>
+            <td>12 - 24 回</td>
+          </tr>
+          <tr>
+            <td>80% - 90% (高強度)</td>
+            <td>2 - 4 回</td>
+            <td>15 回 (例: 3回×5セット)</td>
+            <td>10 - 20 回</td>
+          </tr>
+          <tr>
+            <td>90%+ (超高強度)</td>
+            <td>1 - 2 回</td>
+            <td>7 回 (例: 2回×3セット)</td>
+            <td>4 - 10 回</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="highlight-box">
+        <strong>💡 実践のコツ：</strong><br>
+        毎回限界（RIR 0）まで追い込むのではなく、毎レップ「バーベルが最も速く動く速度」を維持できるレップ数（余力を2〜3レップ残す RIR 2-3）でセットを終え、神経系の出力を高めます。
+      </div>
+    </article>
+
+    <!-- App Promo Ad Banner -->
+    <div class="ad-banner">
+      <h3 class="text-gradient">ベンチプレスの％ベース重量を自動計算！</h3>
+      <p style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 16px;">
+        プリレピン表に基づく 70%・80%・90% の目標重量計算には<br>
+        <strong>筋トレ記録アプリ「トレリンク（TreLink）」</strong>が最適です。
+      </p>
+      <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-secondary);">
+        トレリンクなら、現在の1RMを1度登録しておけば、<strong>「メニュー全体を自動で%指定に切り替えて計算」</strong>が可能！<br>
+        ジムのプレートの計算に迷う時間を1秒に短縮し、トレーニングに極限まで集中できます。
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://apps.apple.com/app/id6776552419" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+          このメニューをアプリに1秒で取り込む
+        </a>
+      </div>
+    </div>
+
+    <article class="guide-card">
+      <h2 id="section-3">弱点を克服するアクセサリー種目の選定</h2>
+      <p>
+        ベンチプレスの動作において「どこでバーベルが止まるか（スティッキングポイント）」によって、追加すべき補助種目が決定します。
+      </p>
+      <ul>
+        <li><strong>ボトム（胸の直上）で潰れる場合：</strong> 原因は大胸筋の筋力不足、または肩甲骨の寄せが甘いことです。ボトムでの一時停止を挟む「ポーズ・ベンチプレス」や「ダンベルプレス」が効果的です。</li>
+        <li><strong>ミドル（挙上動作の中間）で止まる場合：</strong> 原因は三角筋前部および大胸筋上部の不足です。バーベルの軌道を最適化し、「インクラインベンチプレス」を取り入れます。</li>
+        <li><strong>ロックアウト（押し切り手前）で伸びない場合：</strong> 主な原因は上腕三頭筋の出力不足です。可動域を狭めて超高重量を扱う「ボード・プレス」や「ナローベンチプレス」でロックアウト筋力を直接鍛えます。</li>
+      </ul>
+    </article>
+
+
+    <!-- Related Articles Section -->
+    
+    <!-- Related Articles Section -->
+    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="big3-5x5-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【初心者〜中級者向け】BIG3 5x5プログラム</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
+          <a href="deload-guide.html" style="text-decoration: none; color: inherit;">
+            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【回復と成長】ディロード（積極的休養）の正しいやり方とタイミング</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TreLink. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
