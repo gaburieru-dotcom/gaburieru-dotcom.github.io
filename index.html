@@ -28,7 +28,24 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-  <title>kpworks | 美しく実用的なアプリケーションを</title>
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "kpworks",
+    "url": "https://gaburieru-dotcom.github.io/",
+    "description": "日常を豊かにし、目標達成をサポートする美しく実用的なアプリケーションを開発しています。筋トレ記録アプリ「トレリンク」などの紹介。",
+    "publisher": {
+      "@type": "Organization",
+      "name": "kpworks",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gaburieru-dotcom.github.io/icons/Icon-192.png"
+      }
+    }
+  }
+  </script>
 
   <!-- OGP Meta Tags -->
   <meta property="og:title" content="kpworks | 美しく実用的なアプリケーションを">
@@ -700,16 +717,6 @@
       color: var(--secondary-color);
     }
   </style>
-  <link rel="canonical" href="https://gaburieru-dotcom.github.io/">
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "kpworks",
-    "url": "https://gaburieru-dotcom.github.io/"
-  }
-  </script>
 </head>
 <body>
 
@@ -776,29 +783,6 @@
       <p class="section-description">私たちが開発したアプリケーションのご紹介です。</p>
     </div>
 
-    <!-- Vocab Buster Showcase -->
-    <div class="app-showcase" style="margin-bottom: 40px;">
-      <div>
-        <img src="vocab_buster.png" alt="英単語バスター アイコン" class="app-logo" style="width: 64px; height: 64px; border-radius: 14px; margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-        <h3 class="app-title">英単語バスター</h3>
-        <div class="app-tagline">遊んでいるだけでTOEIC重要英単語約3,000語が自然と身につく！</div>
-        <p class="app-description">
-          「英単語バスター」は、迫りくる魔物を英語クイズで撃退する、新感覚の爽快英単語学習タワーディフェンスゲームです。ゲームで遊んでいるだけで、TOEIC重要英単語約3,000語が自然と身につきます。
-        </p>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-          <a href="https://apps.apple.com/jp/app/%E8%8B%B1%E5%8D%98%E8%AA%9E%E3%83%90%E3%82%B9%E3%82%BF%E3%83%BC/id6781968325" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-            App Store
-          </a>
-        </div>
-      </div>
-      <div class="app-preview-col">
-        <div class="app-preview-wrapper" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(99, 102, 241, 0.2));">
-          <img src="vocab_buster.png" alt="英単語バスター プレビュー" style="object-fit: contain; width: 60%; height: auto; border-radius: 24px; box-shadow: var(--shadow-lg);">
-        </div>
-      </div>
-    </div>
-
     <div class="app-showcase" style="margin-bottom: 40px;">
       <div>
         <img src="app_icon.png" alt="トレリンク アイコン" class="app-logo">
@@ -827,9 +811,13 @@
         </ul>
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
           <a href="menus.html" class="btn btn-primary">有名メニュー・解説を見る</a>
-          <a href="https://apps.apple.com/app/id6776552419" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-            App Store
+          <a href="https://apps.apple.com/app/id6776552419" style="text-decoration: none; display: inline-block; vertical-align: middle;">
+            <svg viewBox="0 0 135 40" style="border-radius: 6px; overflow: hidden; height: 40px; display: inline-block; vertical-align: middle; box-shadow: var(--shadow-sm);" xmlns="http://www.w3.org/2000/svg">
+        <rect width="135" height="40" rx="6" fill="#000000"/>
+        <path d="M21.28 17.5a2.53 2.53 0 011.23-2.12 2.65 2.65 0 00-2.08-1.12c-.88-.09-1.72.52-2.17.52-.45 0-1.14-.5-1.87-.49a2.9 2.9 0 00-2.45 1.48c-1.05 1.83-.27 4.54.75 6.02.5.72 1.1 1.52 1.88 1.49s1.08-.5 1.97-.5c.88 0 1.16.5 1.97.48.82-.01 1.34-.73 1.84-1.46a6.3 6.3 0 00.83-1.7 2.4 2.4 0 01-1.97-2.6m-1.73-4.82a2.49 2.49 0 00.58-1.78 2.54 2.54 0 00-1.66.86 2.37 2.37 0 00-.6 1.76 2.12 2.12 0 001.68-.84" fill="#ffffff"/>
+        <text x="35" y="15" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="5.5" font-weight="600" letter-spacing="0.2">Download on the</text>
+        <text x="35" y="29" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="-0.2">App Store</text>
+      </svg>
           </a>
         </div>
       </div>
@@ -865,9 +853,13 @@
         </ul>
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
           <a href="discover.html" class="btn btn-primary">おすすめ学習素材・詳細を見る</a>
-          <a href="https://apps.apple.com/app/id6776552419" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 6px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-            App Store
+          <a href="https://apps.apple.com/app/id6776552419" style="text-decoration: none; display: inline-block; vertical-align: middle;">
+            <svg viewBox="0 0 135 40" style="border-radius: 6px; overflow: hidden; height: 40px; display: inline-block; vertical-align: middle; box-shadow: var(--shadow-sm);" xmlns="http://www.w3.org/2000/svg">
+        <rect width="135" height="40" rx="6" fill="#000000"/>
+        <path d="M21.28 17.5a2.53 2.53 0 011.23-2.12 2.65 2.65 0 00-2.08-1.12c-.88-.09-1.72.52-2.17.52-.45 0-1.14-.5-1.87-.49a2.9 2.9 0 00-2.45 1.48c-1.05 1.83-.27 4.54.75 6.02.5.72 1.1 1.52 1.88 1.49s1.08-.5 1.97-.5c.88 0 1.16.5 1.97.48.82-.01 1.34-.73 1.84-1.46a6.3 6.3 0 00.83-1.7 2.4 2.4 0 01-1.97-2.6m-1.73-4.82a2.49 2.49 0 00.58-1.78 2.54 2.54 0 00-1.66.86 2.37 2.37 0 00-.6 1.76 2.12 2.12 0 001.68-.84" fill="#ffffff"/>
+        <text x="35" y="15" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="5.5" font-weight="600" letter-spacing="0.2">Download on the</text>
+        <text x="35" y="29" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="-0.2">App Store</text>
+      </svg>
           </a>
         </div>
       </div>
@@ -964,6 +956,85 @@
         <h3 class="article-card-title">漸進性過負荷の原則と伸ばし方</h3>
         <p class="article-card-description">筋肉を成長させ続けるための絶対の基本原則。重量・回数・頻度の高め方と、プラトー（停滞）を打破するポイント。</p>
         <a href="progressive-overload-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article: Beginner Gym Guide -->
+      <article class="article-card">
+        <span class="article-badge">初心者向け</span>
+        <h3 class="article-card-title">ジムの筋トレ初心者向け完全メニュー</h3>
+        <p class="article-card-description">何から始めればいい？週1から全身を効率よく鍛える順番とマシンの使い方、挫折しない継続のコツを解説。</p>
+        <a href="beginner-gym-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+
+      <!-- Article: Bench Press -->
+      <article class="article-card">
+        <span class="article-badge">筋力・重量アップ</span>
+        <h3 class="article-card-title">ベンチプレス重量アップ完全ガイド</h3>
+        <p class="article-card-description">限界停滞期を突破する。プリレピン表に基づいた科学的なセット・レップ設計と弱点克服の補助種目を解説します。</p>
+        <a href="benchpress-increase-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article: Hypertrophy -->
+      <article class="article-card">
+        <span class="article-badge">科学的筋肥大</span>
+        <h3 class="article-card-title">科学的アプローチによる筋肥大決定版</h3>
+        <p class="article-card-description">最新スポーツ科学が導き出す。効率最大化のための週あたりセット数・頻度・RIR強度設定を網羅。</p>
+        <a href="hypertrophy-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+
+      <!-- Article: Squat -->
+      <article class="article-card">
+        <span class="article-badge">下半身・重量アップ</span>
+        <h3 class="article-card-title">スクワット重量アップ完全ガイド</h3>
+        <p class="article-card-description">ボトムでの立ち上がり強度を極める。バイオメカニクス的フォーム、腹圧呼吸法、ハイバー・ローバーの使い分けを徹底解説。</p>
+        <a href="squat-increase-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article: Diet -->
+      <article class="article-card">
+        <span class="article-badge">減量・筋肉維持</span>
+        <h3 class="article-card-title">減量期に筋肉を残し脂肪を削る科学</h3>
+        <p class="article-card-description">カタボリック（分解）を徹底ブロック。アンダーカロリー下におけるタンパク質基準、セット数のカット率とタイミング戦略。</p>
+        <a href="diet-muscle-maintenance.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article: Creatine -->
+      <article class="article-card">
+        <span class="article-badge">サプリメントの科学</span>
+        <h3 class="article-card-title">クレアチン効果最大化の飲み方</h3>
+        <p class="article-card-description">ATP（エネルギー）の急速チャージ。瞬発力を高めるローディング・メンテナンス量とインスリン吸収タイミングの極め方。</p>
+        <a href="creatine-supplement-guide.html" class="article-card-link">
+          記事を読む
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+
+      <!-- Article: Deload -->
+      <article class="article-card">
+        <span class="article-badge">疲労回復・ケガ予防</span>
+        <h3 class="article-card-title">ディロードの正しいやり方とタイミング</h3>
+        <p class="article-card-description">身体レベルを落とさずに疲労だけを取り除く積極的休養期間「ディロード」の具体的な減らし方ガイド。</p>
+        <a href="deload-guide.html" class="article-card-link">
           記事を読む
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
