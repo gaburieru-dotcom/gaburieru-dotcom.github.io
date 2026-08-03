@@ -35,7 +35,7 @@
     gtag('config', 'G-2KWG97NY59');
   </script>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD Structured Data for Rich Snippets -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -170,7 +170,6 @@
       padding: 0 24px;
     }
 
-    /* Header */
     header {
       padding: 18px 0;
       border-bottom: 1px solid var(--card-border);
@@ -226,7 +225,6 @@
       border-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       padding: 70px 0 50px;
@@ -295,7 +293,6 @@
       box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
     }
 
-    /* Interactive Simulator Card */
     .simulator-card {
       background: linear-gradient(145deg, rgba(30, 27, 42, 0.9), rgba(18, 16, 25, 0.9));
       border: 1px solid rgba(249, 115, 22, 0.3);
@@ -431,7 +428,6 @@
       color: var(--text-secondary);
     }
 
-    /* Content Cards and Grids */
     .section-heading {
       font-family: var(--font-display);
       font-size: 2rem;
@@ -492,7 +488,6 @@
       line-height: 1.7;
     }
 
-    /* Explanation & Physics Section */
     .explanation {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -549,7 +544,6 @@
       margin-top: 10px;
     }
 
-    /* Conversion Table Section */
     .table-container {
       overflow-x: auto;
       margin: 30px 0;
@@ -596,7 +590,6 @@
     .badge-pro { background: rgba(249, 115, 22, 0.2); color: var(--primary-color); border: 1px solid var(--primary-color); }
     .badge-avg { background: rgba(59, 130, 246, 0.2); color: var(--accent-color); border: 1px solid var(--accent-color); }
 
-    /* Measurement Tips Rules */
     .rule-card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -629,7 +622,6 @@
       color: white;
     }
 
-    /* Training Guide Cards */
     .training-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
@@ -679,7 +671,6 @@
       margin-bottom: 6px;
     }
 
-    /* FAQ Section */
     .faq-grid {
       display: flex;
       flex-direction: column;
@@ -726,7 +717,6 @@
       padding-left: 40px;
     }
 
-    /* Social Share Buttons */
     .social-share-container {
       display: flex;
       gap: 12px;
@@ -755,7 +745,6 @@
     .share-line { background: #06C755; }
     .share-line:hover { background: #05b34c; }
 
-    /* Related Articles */
     .related-articles-section {
       margin-top: 60px;
       padding-top: 40px;
@@ -798,7 +787,6 @@
       font-weight: 600;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 50px 0;
@@ -835,12 +823,12 @@
 
   <header>
     <div class="container header-container">
-      <a href="index.html" class="logo-link">
-        <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 ロゴ" class="logo-img" onerror="this.src='https://placehold.co/80x80/f97316/ffffff?text=VJ'">
+      <a href="index.html" class="logo-link" aria-label="ホームへ戻る">
+        <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 アプリロゴ" class="logo-img" onerror="this.src='https://placehold.co/80x80/f97316/ffffff?text=VJ'">
         <span>タイム測定 - 垂直跳び</span>
       </a>
       <a href="index.html" class="back-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
         ホームへ戻る
       </a>
     </div>
@@ -848,28 +836,28 @@
 
   <main class="container">
     <section class="hero">
-      <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 アイコン" class="app-icon-large" onerror="this.src='https://placehold.co/240x240/f97316/ffffff?text=Jump'">
+      <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="垂直跳びタイム測定アプリのアイコン" class="app-icon-large" onerror="this.src='https://placehold.co/240x240/f97316/ffffff?text=Jump'">
       <h1 class="hero-title">動画からジャンプ力を精密測定<br><span class="text-gradient">タイム測定 - 垂直跳び測定</span></h1>
       <p class="hero-subtitle">
         スローモーション動画から「離地（テイクオフ）」と「着地（ランディング）」のコマを特定。エアタイム（滞空時間）から物理公式に基づき、垂直跳びの高さをミリ秒単位で正確に自動算出します。
       </p>
-      <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+      <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="App Storeからタイム測定アプリを無料でダウンロード">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
         App Storeで無料ダウンロード
       </a>
     </section>
 
     <!-- Interactive Jump Calculator Widget -->
-    <section class="simulator-card">
+    <section class="simulator-card" aria-labelledby="sim-title-heading">
       <div class="sim-header">
-        <h2 class="sim-title">⚡ 滞空時間から瞬時に跳躍高を計算シミュレート</h2>
+        <h2 id="sim-title-heading" class="sim-title">⚡ 滞空時間から瞬時に跳躍高を計算シミュレート</h2>
         <p class="sim-desc">お持ちの動画の「空中浮遊時間（秒）」を入力して、垂直跳びのセンチメートルを計算してみましょう</p>
       </div>
       <div class="sim-body">
         <div class="input-group">
           <label for="airtimeInput">滞空時間 (エアタイム):</label>
           <div class="input-wrapper">
-            <input type="number" id="airtimeInput" class="sim-input" value="0.62" step="0.01" min="0.1" max="1.5">
+            <input type="number" id="airtimeInput" class="sim-input" value="0.62" step="0.01" min="0.1" max="1.5" aria-label="滞空時間を秒単位で入力">
             <span class="unit-tag">秒 (sec)</span>
           </div>
         </div>
@@ -888,19 +876,19 @@
 
     <section class="features-grid">
       <div class="feature-card">
-        <span class="feature-icon">⏱️</span>
+        <span class="feature-icon" role="img" aria-label="タイマーアイコン">⏱️</span>
         <h3 class="feature-title">スローコマ送りの超精密特定</h3>
         <p class="feature-desc">120fpsや240fpsのハイフレームレート動画に対応。足裏が離地した完璧な瞬間と着地した瞬間を指一本でスワイプ調整し、0.001秒（ミリ秒）単位で正確に決定できます。</p>
       </div>
       
       <div class="feature-card">
-        <span class="feature-icon">📐</span>
+        <span class="feature-icon" role="img" aria-label="三角定規アイコン">📐</span>
         <h3 class="feature-title">物理公式による自動計算</h3>
         <p class="feature-desc">重力加速度（g = 9.81 m/s²）に基づく古典力学公式を内部エンジンに適用。手作業でのスケール合わせやマーカー設置なしで、物理的に狂いのない跳躍高を瞬時に算出します。</p>
       </div>
 
       <div class="feature-card">
-        <span class="feature-icon">🎥</span>
+        <span class="feature-icon" role="img" aria-label="ビデオカメラアイコン">🎥</span>
         <h3 class="feature-title">結果テロップ付き動画の保存</h3>
         <p class="feature-desc">計測された「滞空時間」と「垂直跳び（cm）」のオーバーレイテロップを、元のスロー動画上に合成（転写）。SNS投稿やチームメイト・指導者との共有に最適な動画を作成できます。</p>
       </div>
@@ -910,7 +898,7 @@
     <section class="explanation">
       <h2 class="explanation-title">どうやって動画から正確な高さを割り出すのか？</h2>
       <div class="explanation-text">
-        <p>空中での体の動きは、外力が「重力」のみとなる自由落下（および投げ上げ）運動に従います。ジャンプの頂点から着地までの落下距離は物理学の公式により決定されるため、足が空中に浮いている全時間（滞空時間 $t$ ）が判明すれば、跳躍高 $h$ は数学的に一意に定まります。</p>
+        <p>空中での体の動きは、外力が「重力」のみとなる自由落下（および投げ上げ）運動に従います。ジャンプの頂点から着地までの落下距離は物理学の公式により決定されるため、足が空中に浮いている全時間（滞空時間 <i>t</i>）が判明すれば、跳躍高 <i>h</i> は数学的に一意に定まります。</p>
         
         <div class="physics-formula">
           <div class="formula-title">垂直跳び（ジャンプ高）の計算式</div>
@@ -933,9 +921,9 @@
         <table class="data-table">
           <thead>
             <tr>
-              <th>滞空時間 (秒)</th>
-              <th>ジャンプ高 (cm)</th>
-              <th>レベル・到達度イメージ</th>
+              <th scope="col">滞空時間 (秒)</th>
+              <th scope="col">ジャンプ高 (cm)</th>
+              <th scope="col">レベル・到達度イメージ</th>
             </tr>
           </thead>
           <tbody>
@@ -1081,17 +1069,17 @@
     <!-- Social Share Buttons -->
     <div class="social-share-container">
       <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">この記事・ツールをシェア:</span>
-      <a href="https://twitter.com/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html&text=%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A%20-%20%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A%20%7C%20%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97%E5%8A%9B%E3%83%BB%E6%BB%9E%E7%A9%BA%E6%99%82%E9%96%93%E6%B8%AC%E5%AE%9A%E3%82%A2%E3%83%97%E3%83%AA%20%23%E3%83%88%E3%83%AC%E3%83%AA%E3%83%B3%E3%82%AF" target="_blank" rel="noopener" class="share-btn share-x">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <a href="https://twitter.com/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html&text=%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A%20-%20%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A%20%7C%20%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97%E5%8A%9B%E3%83%BB%E6%BB%9E%E7%A9%BA%E6%99%82%E9%96%93%E6%B8%AC%E5%AE%9A%E3%82%A2%E3%83%97%E3%83%AA%20%23%E3%83%88%E3%83%AC%E3%83%AA%E3%83%B3%E3%82%AF" target="_blank" rel="noopener" class="share-btn share-x" aria-label="Xでシェア">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         X (Twitter) で投稿
       </a>
-      <a href="https://social-plugins.line.me/lineit/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html" target="_blank" rel="noopener" class="share-btn share-line">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738S0 4.935 0 10.304c0 4.81 3.999 8.847 9.4 9.596.365.078.862.24 1.072.552.195.289.128.742.062 1.034l-.271 1.624c-.082.495-.382 1.938.165 2.115.548.177 1.573-.979 2.204-1.637l2.548-2.658c.846-.777 1.256-1.21 1.705-1.921C21.6 18.91 24 14.927 24 10.304zm-14.733 2.18c0 .248-.201.449-.449.449H6.467c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v1.564h1.868c.248 0 .449.201.449.449v1.551zm2.983-.449c0 .248-.201.449-.449.449s-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v3.564zm4.868 0c0 .248-.201.449-.449.449h-2.247c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449h.449c.248 0 .449.201.449.449v2.217h1.35c.248 0 .449.201.449.449v.898zm3.868-1.782c0 .248-.201.449-.449.449h-1.35V10.22h1.35c.248 0 .449.201.449.449v.897zm0-1.782c0 .248-.201.449-.449.449h-1.35V8.47h1.35c.248 0 .449.201.449.449v.897z"/></svg>
+      <a href="https://social-plugins.line.me/lineit/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html" target="_blank" rel="noopener" class="share-btn share-line" aria-label="LINEでシェア">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738S0 4.935 0 10.304c0 4.81 3.999 8.847 9.4 9.596.365.078.862.24 1.072.552.195.289.128.742.062 1.034l-.271 1.624c-.082.495-.382 1.938.165 2.115.548.177 1.573-.979 2.204-1.637l2.548-2.658c.846-.777 1.256-1.21 1.705-1.921C21.6 18.91 24 14.927 24 10.304zm-14.733 2.18c0 .248-.201.449-.449.449H6.467c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v1.564h1.868c.248 0 .449.201.449.449v1.551zm2.983-.449c0 .248-.201.449-.449.449s-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v3.564zm4.868 0c0 .248-.201.449-.449.449h-2.247c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449h.449c.248 0 .449.201.449.449v2.217h1.35c.248 0 .449.201.449.449v.898zm3.868-1.782c0 .248-.201.449-.449.449h-1.35V10.22h1.35c.248 0 .449.201.449.449v.897zm0-1.782c0 .248-.201.449-.449.449h-1.35V8.47h1.35c.248 0 .449.201.449.449v.897z"/></svg>
         LINEで送る
       </a>
     </div>
 
-    <!-- Related Articles Section -->
+    <!-- Related Articles Section (Internal Links) -->
     <section class="related-articles-section">
       <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">おすすめの関連トレーニング記事</h3>
       <div class="related-grid">
@@ -1155,7 +1143,7 @@
       }
 
       airtimeInput.addEventListener('input', updateCalculator);
-      // initial call
+      // Initial calculation call
       updateCalculator();
     });
   </script>
