@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【精密】垂直跳びの高さ・滞空時間を動画で測定 | タイム測定アプリ</title>
+  <meta name="description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力・滞空時間（エアタイム）をミリ秒単位で正確に測定するアプリ「タイム測定」。物理公式による計算、換算早見表、ジャンプ力を伸ばすトレーニング法まで徹底解説。">
+  <meta name="keywords" content="垂直跳び, ジャンプ力, タイム測定, エアタイム, 滞空時間, 筋トレ, バスケ, バレー, 陸上, プライオメトリクス, 垂直跳び計算">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://gaburieru-dotcom.github.io/vertical-jump.html">
+  
+  <!-- OGP & Twitter Cards -->
+  <meta property="og:title" content="タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ">
+  <meta property="og:description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力をミリ秒単位で正確に測定。バスケ、バレー、陸上などのトレーニング効果測定に。">
+  <meta property="og:image" content="https://gaburieru-dotcom.github.io/vertical_jump_icon.png">
+  <meta property="og:url" content="https://gaburieru-dotcom.github.io/vertical-jump.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="タイム測定 - 垂直跳び測定">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ | トレリンク">
-  <meta name="twitter:description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力・滞空時間（エアタイム）をミリ秒単位で正確に測定するアプリ「タイム測定 - 垂直跳び測定」。バスケ、バレー、陸上、その他スポーツや筋トレの効果測定に最適。">
+  <meta name="twitter:title" content="タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ">
+  <meta name="twitter:description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力・滞空時間をミリ秒単位で正確に測定。">
   <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
-  <meta property="og:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="vertical_jump_icon.png">
+  <link rel="manifest" href="manifest.json">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2KWG97NY59"></script>
   <script>
@@ -15,17 +34,7 @@
     gtag('js', new Date());
     gtag('config', 'G-2KWG97NY59');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力・滞空時間（エアタイム）をミリ秒単位で正確に測定するアプリ「タイム測定 - 垂直跳び測定」。バスケ、バレー、陸上、その他スポーツや筋トレの効果測定に最適。">
-  <meta name="keywords" content="垂直跳び, ジャンプ力, タイム測定, エアタイム, 滞空時間, 筋トレ, バスケ, バレー, 陸上, アプリ">
-  <meta name="robots" content="index, follow">
-  
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="vertical_jump_icon.png">
-  <link rel="manifest" href="manifest.json">
-  <title>タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ</title>
-  
+
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -44,21 +53,65 @@
     }
   }
   </script>
-  
-  <!-- OGP Meta Tags -->
-  <meta property="og:title" content="タイム測定 - 垂直跳び測定 | ジャンプ力・滞空時間測定アプリ">
-  <meta property="og:description" content="スローモーション動画から垂直跳びの高さ・ジャンプ力をミリ秒単位で正確に測定。バスケ、バレー、陸上などのトレーニング効果測定に。">
-  <meta property="og:image" content="https://gaburieru-dotcom.github.io/vertical_jump_icon.png">
-  <meta property="og:url" content="https://gaburieru-dotcom.github.io/vertical-jump.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="タイム測定 - 垂直跳び測定">
-  
-  <!-- Twitter Card Meta Tags -->
-  
-  
-  
-  
-  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://gaburieru-dotcom.github.io/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "メニュー一覧",
+        "item": "https://gaburieru-dotcom.github.io/menus.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "垂直跳びタイム測定アプリ",
+        "item": "https://gaburieru-dotcom.github.io/vertical-jump.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "動画からどうやって垂直跳びの高さを測定するのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ジャンプ時に足が地面を離れた瞬間（テイクオフ）と、再び地面に着地した瞬間（ランディング）のフレームを選択し、その間の時間（滞空時間）から物理公式を用いて算出します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "スローモーション動画での測定に対応していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。アプリ「タイム測定」は120fps/240fpsなどの高フレームレートなスローモーション動画の分析に対応しており、ミリ秒単位で正確に特定できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "助走付きジャンプ（ダンクジャンプなど）も測定できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "測定可能です。足が完全に空中に浮いてから再び着地するまでの時間が滞空時間となるため、助走の有無にかかわらず滞空時間をもとに跳躍高を正確に算出できます。"
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
@@ -67,7 +120,7 @@
       --font-body: 'Inter', sans-serif;
 
       --bg-color: #08090d;
-      --bg-gradient: radial-gradient(circle at 50% 0%, #1a1625 0%, #08090d 60%);
+      --bg-gradient: radial-gradient(circle at 50% 0%, #1c182b 0%, #08090d 70%);
       --text-primary: #f3f4f6;
       --text-secondary: #9ca3af;
       --text-muted: #6b7280;
@@ -78,19 +131,21 @@
       --secondary-rgb: 251, 191, 36;
       --accent-color: #3b82f6; /* Blue */
       --accent-rgb: 59, 130, 246;
+      --success-color: #10b981;
 
-      --card-bg: rgba(20, 18, 25, 0.6);
-      --card-border: rgba(255, 255, 255, 0.06);
-      --card-border-hover: rgba(249, 115, 22, 0.4);
+      --card-bg: rgba(22, 20, 29, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-hover: rgba(249, 115, 22, 0.5);
       
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
       
+      --border-radius-sm: 8px;
       --border-radius-md: 16px;
       --border-radius-lg: 24px;
       --border-radius-full: 9999px;
-      --transition-fast: 0.2s ease;
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * {
@@ -104,7 +159,7 @@
       background-color: var(--bg-color);
       background-image: var(--bg-gradient);
       color: var(--text-primary);
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
       min-height: 100vh;
     }
@@ -117,13 +172,13 @@
 
     /* Header */
     header {
-      padding: 20px 0;
+      padding: 18px 0;
       border-bottom: 1px solid var(--card-border);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(8, 9, 13, 0.7);
+      background: rgba(8, 9, 13, 0.85);
     }
 
     .header-container {
@@ -140,13 +195,13 @@
       color: white;
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
     }
 
     .logo-img {
       width: 40px;
       height: 40px;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: var(--shadow-sm);
     }
 
@@ -159,33 +214,44 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--border-radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
     }
 
     .back-btn:hover {
       color: white;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 80px 0 60px;
+      padding: 70px 0 50px;
     }
 
     .app-icon-large {
       width: 120px;
       height: 120px;
       border-radius: 28px;
-      box-shadow: var(--shadow-lg), 0 0 30px rgba(249, 115, 22, 0.2);
+      box-shadow: var(--shadow-lg), 0 0 35px rgba(249, 115, 22, 0.25);
       margin-bottom: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon-large:hover {
+      transform: scale(1.04) rotate(-2deg);
     }
 
     .hero-title {
       font-family: var(--font-display);
       font-size: 2.8rem;
       font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 16px;
+      line-height: 1.25;
+      margin-bottom: 18px;
       letter-spacing: -0.02em;
     }
 
@@ -196,43 +262,198 @@
     }
 
     .hero-subtitle {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 32px;
+      max-width: 680px;
+      margin: 0 auto 36px;
       font-weight: 400;
+      line-height: 1.8;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
+      gap: 10px;
+      padding: 16px 32px;
       border-radius: var(--border-radius-full);
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.05rem;
       transition: all var(--transition-fast);
       cursor: pointer;
+      border: none;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: #000;
-      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+      color: #0b0c10;
+      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(249, 115, 22, 0.5);
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
     }
 
-    /* Main Content */
+    /* Interactive Simulator Card */
+    .simulator-card {
+      background: linear-gradient(145deg, rgba(30, 27, 42, 0.9), rgba(18, 16, 25, 0.9));
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      border-radius: var(--border-radius-lg);
+      padding: 36px;
+      margin: 40px 0 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .simulator-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .sim-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .sim-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .sim-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+    }
+
+    .sim-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .input-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .input-group label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .input-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .sim-input {
+      width: 100%;
+      padding: 16px 50px 16px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 2px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      outline: none;
+      transition: var(--transition-fast);
+      font-family: var(--font-display);
+    }
+
+    .sim-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 15px rgba(249, 115, 22, 0.25);
+    }
+
+    .unit-tag {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .sim-result-box {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .res-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .res-value {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--secondary-color);
+      line-height: 1.1;
+      margin: 8px 0;
+    }
+
+    .res-unit {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-left: 4px;
+    }
+
+    .res-subtext {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Content Cards and Grids */
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      text-align: center;
+      color: white;
+    }
+
+    .section-subheading {
+      text-align: center;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto 40px;
+      font-size: 0.95rem;
+    }
+
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
-      margin-bottom: 80px;
+      margin-bottom: 70px;
     }
 
     .feature-card {
@@ -241,11 +462,13 @@
       border-radius: var(--border-radius-lg);
       padding: 32px;
       transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
     }
 
     .feature-card:hover {
       border-color: var(--card-border-hover);
-      transform: translateY(-2px);
+      transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
 
@@ -257,7 +480,7 @@
 
     .feature-title {
       font-family: var(--font-display);
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 700;
       margin-bottom: 12px;
       color: white;
@@ -266,141 +489,355 @@
     .feature-desc {
       color: var(--text-secondary);
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* Explanation Section */
+    /* Explanation & Physics Section */
     .explanation {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--border-radius-lg);
       padding: 48px;
-      margin-bottom: 80px;
+      margin-bottom: 70px;
     }
 
     .explanation-title {
       font-family: var(--font-display);
       font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       text-align: center;
     }
 
     .explanation-text {
       color: var(--text-secondary);
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.8;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
     }
 
     .physics-formula {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.4);
       border-radius: var(--border-radius-md);
-      padding: 20px;
-      margin: 24px auto;
+      padding: 24px;
+      margin: 28px auto;
       text-align: center;
-      max-width: 500px;
-      border: 1px dashed rgba(249, 115, 22, 0.3);
+      max-width: 520px;
+      border: 1px dashed rgba(249, 115, 22, 0.4);
     }
 
     .formula-title {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-bottom: 8px;
+      font-weight: 600;
     }
 
     .formula-math {
       font-family: 'Courier New', Courier, monospace;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: var(--secondary-color);
       font-weight: bold;
+    }
+
+    .formula-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+    }
+
+    /* Conversion Table Section */
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+      border-radius: var(--border-radius-md);
+      border: 1px solid var(--card-border);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .data-table th, .data-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .data-table th {
+      background: rgba(249, 115, 22, 0.15);
+      color: white;
+      font-weight: 700;
+      font-family: var(--font-display);
+    }
+
+    .data-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .data-table tr:hover {
+      background: rgba(249, 115, 22, 0.05);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: var(--border-radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-pro { background: rgba(249, 115, 22, 0.2); color: var(--primary-color); border: 1px solid var(--primary-color); }
+    .badge-avg { background: rgba(59, 130, 246, 0.2); color: var(--accent-color); border: 1px solid var(--accent-color); }
+
+    /* Measurement Tips Rules */
+    .rule-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .rule-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      position: relative;
+    }
+
+    .rule-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      opacity: 0.8;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .rule-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    /* Training Guide Cards */
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin: 30px 0;
+    }
+
+    .training-card {
+      background: var(--card-bg);
+      border-left: 4px solid var(--primary-color);
+      border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+      padding: 24px;
+      border-top: 1px solid var(--card-border);
+      border-right: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .training-tag {
+      font-size: 0.75rem;
+      color: var(--primary-color);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .training-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 6px 0 12px;
+      color: white;
+    }
+
+    .training-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .exercise-list {
+      margin-top: 12px;
+      padding-left: 18px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+    }
+
+    .exercise-list li {
+      margin-bottom: 6px;
+    }
+
+    /* FAQ Section */
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .faq-question::before {
+      content: 'Q';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--primary-color);
+      color: #000;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      padding-left: 40px;
+    }
+
+    /* Social Share Buttons */
+    .social-share-container {
+      display: flex;
+      gap: 12px;
+      margin: 40px 0 24px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--border-radius-full);
+      text-decoration: none;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition-fast);
+      border: 1px solid var(--card-border);
+    }
+
+    .share-x { background: #000000; }
+    .share-x:hover { background: #1a1a1a; border-color: #444; }
+    .share-line { background: #06C755; }
+    .share-line:hover { background: #05b34c; }
+
+    /* Related Articles */
+    .related-articles-section {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .related-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      transition: var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      display: block;
+    }
+
+    .related-card:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+
+    .related-card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .related-card-link {
+      font-size: 0.85rem;
+      color: var(--primary-color);
+      font-weight: 600;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 40px 0;
+      padding: 50px 0;
       border-top: 1px solid var(--card-border);
       color: var(--text-muted);
       font-size: 0.9rem;
+      margin-top: 80px;
     }
 
     @media (max-width: 768px) {
       .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.1rem;
       }
       .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       .explanation {
-        padding: 32px 20px;
+        padding: 28px 20px;
+      }
+      .simulator-card {
+        padding: 24px 18px;
+      }
+      .res-value {
+        font-size: 2.5rem;
+      }
+      .faq-answer {
+        padding-left: 0;
+        margin-top: 8px;
       }
     }
   </style>
-  <!-- Breadcrumb & FAQ Schema -->
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "ホーム",
-      "item": "https://gaburieru-dotcom.github.io/index.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "メニュー一覧",
-      "item": "https://gaburieru-dotcom.github.io/menus.html"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "垂直跳びタイム測定アプリ",
-      "item": "https://gaburieru-dotcom.github.io/vertical-jump.html"
-    }
-  ]
-}
-  </script>
-  
-  <script type="application/ld+json">
-  {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "動画からどうやって垂直跳びの高さを測定するのですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ジャンプ時に足が地面を離れた瞬間（テイクオフ）と、再び地面に着地した瞬間（ランディング）のフレームを選択し、その間の時間（滞空時間）から物理公式を用いて算出します。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "スローモーション動画での測定に対応していますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "はい。アプリ「タイム測定」はスローモーション動画のフレーム分析に対応しており、ミリ秒単位でテイクオフとランディングを精密に特定できます。"
-      }
-    }
-  ]
-}
-  </script>
-  <!-- /Breadcrumb & FAQ Schema -->
 </head>
 <body>
 
   <header>
     <div class="container header-container">
       <a href="index.html" class="logo-link">
-        <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 ロゴ" class="logo-img">
-        <span>タイム測定 - 垂直跳び測定</span>
+        <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 ロゴ" class="logo-img" onerror="this.src='https://placehold.co/80x80/f97316/ffffff?text=VJ'">
+        <span>タイム測定 - 垂直跳び</span>
       </a>
       <a href="index.html" class="back-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
@@ -410,95 +847,268 @@
   </header>
 
   <main class="container">
-    <!-- Hero Section -->
     <section class="hero">
-      <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 アイコン" class="app-icon-large">
+      <img loading="lazy" decoding="async" src="vertical_jump_icon.png" alt="タイム測定 アイコン" class="app-icon-large" onerror="this.src='https://placehold.co/240x240/f97316/ffffff?text=Jump'">
       <h1 class="hero-title">動画からジャンプ力を精密測定<br><span class="text-gradient">タイム測定 - 垂直跳び測定</span></h1>
       <p class="hero-subtitle">
-        スローモーションビデオ等を活用し、ジャンプの滞空時間（エアタイム）から、あなたの垂直跳びの高さ（ジャンプ力）をミリ秒単位で正確に算出する測定アプリ。
+        スローモーション動画から「離地（テイクオフ）」と「着地（ランディング）」のコマを特定。エアタイム（滞空時間）から物理公式に基づき、垂直跳びの高さをミリ秒単位で正確に自動算出します。
       </p>
       <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
-        App Storeでダウンロード
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+        App Storeで無料ダウンロード
       </a>
     </section>
 
-    <!-- Features Section -->
+    <!-- Interactive Jump Calculator Widget -->
+    <section class="simulator-card">
+      <div class="sim-header">
+        <h2 class="sim-title">⚡ 滞空時間から瞬時に跳躍高を計算シミュレート</h2>
+        <p class="sim-desc">お持ちの動画の「空中浮遊時間（秒）」を入力して、垂直跳びのセンチメートルを計算してみましょう</p>
+      </div>
+      <div class="sim-body">
+        <div class="input-group">
+          <label for="airtimeInput">滞空時間 (エアタイム):</label>
+          <div class="input-wrapper">
+            <input type="number" id="airtimeInput" class="sim-input" value="0.62" step="0.01" min="0.1" max="1.5">
+            <span class="unit-tag">秒 (sec)</span>
+          </div>
+        </div>
+        
+        <div class="sim-result-box">
+          <div class="res-label">推定ジャンプ高 (推定垂直跳び)</div>
+          <div class="res-value" id="jumpResult">47.1<span class="res-unit">cm</span></div>
+          <div class="res-subtext" id="jumpEvaluation">🏀 高校生バスケ選手の上位レベル / 一般標準以上</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <h2 class="section-heading">「タイム測定」アプリの3大機能</h2>
+    <p class="section-subheading">目測や壁のタップ測定では得られない、科学的かつ客観的な数値分析を手元に</p>
+
     <section class="features-grid">
       <div class="feature-card">
         <span class="feature-icon">⏱️</span>
-        <h3 class="feature-title">フレーム単位の超精密測定</h3>
-        <p class="feature-desc">撮影したビデオのスローモーション再生から、地面を離れた瞬間（テイクオフ）と着地した瞬間（ランディング）のフレームをタップするだけで、ミリ秒単位のエアタイムを検出します。</p>
+        <h3 class="feature-title">スローコマ送りの超精密特定</h3>
+        <p class="feature-desc">120fpsや240fpsのハイフレームレート動画に対応。足裏が離地した完璧な瞬間と着地した瞬間を指一本でスワイプ調整し、0.001秒（ミリ秒）単位で正確に決定できます。</p>
       </div>
       
       <div class="feature-card">
         <span class="feature-icon">📐</span>
-        <h3 class="feature-title">物理公式による正確な逆算</h3>
-        <p class="feature-desc">滞空時間から重力加速度（g = 9.81m/s²）を元にした古典物理学の公式を用いて、人間の目測や推測ではない「正確な跳躍高」を自動で計算します。</p>
+        <h3 class="feature-title">物理公式による自動計算</h3>
+        <p class="feature-desc">重力加速度（g = 9.81 m/s²）に基づく古典力学公式を内部エンジンに適用。手作業でのスケール合わせやマーカー設置なしで、物理的に狂いのない跳躍高を瞬時に算出します。</p>
       </div>
 
       <div class="feature-card">
         <span class="feature-icon">🎥</span>
-        <h3 class="feature-title">記録を動画へ転写・保存</h3>
-        <p class="feature-desc">測定したジャンプ高や滞空時間のデータを元の動画上に重ね合わせて（転写）、測定結果付きの動画として端末に保存したりSNSで簡単にシェアできます。</p>
+        <h3 class="feature-title">結果テロップ付き動画の保存</h3>
+        <p class="feature-desc">計測された「滞空時間」と「垂直跳び（cm）」のオーバーレイテロップを、元のスロー動画上に合成（転写）。SNS投稿やチームメイト・指導者との共有に最適な動画を作成できます。</p>
       </div>
     </section>
 
-    <!-- Explanation Area -->
+    <!-- Physics Explanation Area -->
     <section class="explanation">
-      <h2 class="explanation-title">どうやってジャンプ力を測るの？</h2>
+      <h2 class="explanation-title">どうやって動画から正確な高さを割り出すのか？</h2>
       <div class="explanation-text">
-        <p>垂直跳びの高さ（h）は、滞空時間（t）と重力加速度（g）の物理的関係から、以下の公式を用いて厳密に算出されます。</p>
+        <p>空中での体の動きは、外力が「重力」のみとなる自由落下（および投げ上げ）運動に従います。ジャンプの頂点から着地までの落下距離は物理学の公式により決定されるため、足が空中に浮いている全時間（滞空時間 $t$ ）が判明すれば、跳躍高 $h$ は数学的に一意に定まります。</p>
         
         <div class="physics-formula">
-          <div class="formula-title">垂直跳び（ジャンプ高）計算式</div>
+          <div class="formula-title">垂直跳び（ジャンプ高）の計算式</div>
           <div class="formula-math">h = 1/8 × g × t²</div>
+          <div class="formula-note">（※ h: 跳躍高(m), g: 重力加速度 9.80665 m/s², t: 滞空時間(秒)）</div>
         </div>
 
-        <p>例えば、滞空時間（エアタイム）が 0.60秒の場合、高さは約 44.1cm になります。本アプリ「タイム測定」はこの測定プロセスをビデオ分析を通じて誰でも簡単かつ正確に行えるように開発されました。</p>
-        <p style="margin-top: 16px;">バスケットボールのダンク練習、バレーボールのアタック力強化、陸上競技の瞬発力測定など、あなたの限界突破を数値でサポートします。</p>
+        <p>例えば、滞空時間が <strong>0.60秒</strong> であった場合：<br>
+        <code>h = 0.125 × 9.80665 × (0.60)² ≒ 0.441m（44.1cm）</code> となります。<br>
+        アプリ「タイム測定」は、この計算を自動処理するため、動画から正確な数値を導き出せます。</p>
       </div>
     </section>
-  
-    
+
+    <!-- Airtime vs Jump Height Reference Table -->
+    <section class="explanation">
+      <h2 class="explanation-title">📊 滞空時間（エアタイム）↔ 跳躍高 換算早見表</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 24px;">スロー動画で測った滞空時間から、自分のジャンプ力の目安を確認してみましょう。</p>
+      
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>滞空時間 (秒)</th>
+              <th>ジャンプ高 (cm)</th>
+              <th>レベル・到達度イメージ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0.40 秒</td>
+              <td>約 19.6 cm</td>
+              <td>一般平均（運動不足時）</td>
+            </tr>
+            <tr>
+              <td>0.50 秒</td>
+              <td>約 30.6 cm</td>
+              <td>一般成人男性 平均レベル</td>
+            </tr>
+            <tr>
+              <td>0.60 秒</td>
+              <td>約 44.1 cm</td>
+              <td><span class="badge badge-avg">部活生レベル</span> バスケ・バレー経験者標準</td>
+            </tr>
+            <tr>
+              <td>0.65 秒</td>
+              <td>約 51.8 cm</td>
+              <td>高校・大学アスリート平均</td>
+            </tr>
+            <tr>
+              <td>0.70 秒</td>
+              <td>約 60.1 cm</td>
+              <td><span class="badge badge-pro">競技特化レベル</span> 大学トップ級 / 運動神経抜群</td>
+            </tr>
+            <tr>
+              <td>0.75 秒</td>
+              <td>約 69.0 cm</td>
+              <td>Bリーグ/Vリーグ一般選手級</td>
+            </tr>
+            <tr>
+              <td>0.80 秒</td>
+              <td>約 78.5 cm</td>
+              <td>ダンク可能領域 / プロ上位アスリート</td>
+            </tr>
+            <tr>
+              <td>0.85 秒</td>
+              <td>約 88.6 cm</td>
+              <td>NBA・世界的トップアスリート領域</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Measurement Tips Section -->
+    <section class="explanation">
+      <h2 class="explanation-title">🎯 測定精度を最大化する3つの黄金ルール</h2>
+      <div class="explanation-text">
+        <p>アプリでの測定誤差を数ミリメートル単位に抑えるために、撮影時に以下の3点を意識してください。</p>
+        
+        <div class="rule-card-grid">
+          <div class="rule-card">
+            <div class="rule-number">01</div>
+            <div class="rule-title">真横・足元と同じ高さで固定</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">斜め上や見下ろす角度からの撮影は、遠近感により離地・着地瞬間の判定を難しくします。三脚を使用し、腰〜足元の高さから水平に撮影するのがベストです。</p>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-number">02</div>
+            <div class="rule-title">120fps / 240fpsで撮影</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">通常の30fps動画だと1コマあたり約33ミリ秒の誤差が生じます。iPhoneの「スロー」モード（120fpsまたは240fps）で撮影することで、コマ間の時間を4〜8ミリ秒まで精密化できます。</p>
+          </div>
+
+          <div class="rule-card">
+            <div class="rule-number">03</div>
+            <div class="rule-title">つま先を曲げて着地しない</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">物理計算の前提は「離地時の身体の中心位置と、着地時の中心位置が等しいこと」です。空中や着地時に足を極端に折り曲げると滞空時間が長く見えてしまい、誤差の原因になります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Training Section -->
+    <section class="explanation">
+      <h2 class="explanation-title">🚀 垂直跳び（ジャンプ高）を伸ばす科学的トレーニング</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 24px;">ただ跳ぶだけでは限界があります。ジャンプ力を飛躍的に向上させる3つの柱を紹介します。</p>
+
+      <div class="training-grid">
+        <div class="training-card">
+          <div class="training-tag">STRENGTH</div>
+          <h3 class="training-title">1. 最大筋力の向上（土台作り）</h3>
+          <p class="training-desc">床を蹴る出力の天井を高めます。体重の1.5〜2倍のバーベルスクワットを目指すことが世界規格の基準です。</p>
+          <ul class="exercise-list">
+            <li><strong>バーベル・バックスクワット:</strong> 3-5回 × 4セット</li>
+            <li><strong>トラップバー・デッドリフト:</strong> 4-6回 × 3セット</li>
+          </ul>
+        </div>
+
+        <div class="training-card">
+          <div class="training-tag">PLYOMETRICS</div>
+          <h3 class="training-title">2. プライオメトリクス（SSCの強化）</h3>
+          <p class="training-desc">筋肉が引き伸ばされてから縮む「伸張-短縮サイクル（SSC）」を高速化し、短時間で爆発的な力を発揮させます。</p>
+          <ul class="exercise-list">
+            <li><strong>デプスジャンプ (Depth Jump):</strong> 30~45cm台から落下の反射で跳ぶ</li>
+            <li><strong>バウンディング:</strong> 1本脚での連続前方ジャンプ</li>
+          </ul>
+        </div>
+
+        <div class="training-card">
+          <div class="training-tag">RATE OF FORCE DEVELOPMENT</div>
+          <h3 class="training-title">3. RFD（立ち上がり速度）の強化</h3>
+          <p class="training-desc">ジャンプに必要な「0.2秒以内」で全筋力を集中発揮するための神経系・スピード筋力トレーニングです。</p>
+          <ul class="exercise-list">
+            <li><strong>ジャンプスクワット:</strong> 自重〜軽量(20%)で最速跳躍</li>
+            <li><strong>ケトルベルスイング:</strong> 股関節の高速伸展動作</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="explanation">
+      <h2 class="section-heading">よくある質問 (FAQ)</h2>
+      <p class="section-subheading">アプリや測定方法に関する疑問にお答えします</p>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <div class="faq-question">動画からどうやって垂直跳びの高さを測定するのですか？</div>
+          <div class="faq-answer">ジャンプ時に足が地面を離れた瞬間（テイクオフ）と、再び地面に着地した瞬間（ランディング）のフレームを選択し、その間の時間（滞空時間）から物理公式（h = 1/8 · g · t²）を用いて自動算出します。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">スローモーション動画以外の通常の動画でも測定できますか？</div>
+          <div class="faq-answer">可能です。ただし、通常動画（30fps）はスロー動画（120fps/240fps）に比べて1フレームあたりの時間が長いため、ミリ単位の精度を高めたい場合はiPhoneのスローモーション撮影を推奨します。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">助走付きジャンプ（ダンクジャンプなど）も測定できますか？</div>
+          <div class="faq-answer">はい、測定可能です。助走の有無にかかわらず、足が空中に浮いてから着地するまでの純粋な滞空時間から計算するため、助走ジャンプの最高到達点測定にも最適です。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Android版はありますか？</div>
+          <div class="faq-answer">現在はiOS（iPhone / iPad）用アプリとしてリリースされております。App Storeより無料でダウンロードいただけます。</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Social Share Buttons -->
-    <div class="social-share-container" style="display: flex; gap: 12px; margin-bottom: 24px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 16px;">
-      <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">この記事をシェアする:</span>
-      <a href="https://twitter.com/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html&text=%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A%20-%20%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A%20%7C%20%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97%E5%8A%9B%E3%83%BB%E6%BB%9E%E7%A9%BA%E6%99%82%E9%96%93%E6%B8%AC%E5%AE%9A%E3%82%A2%E3%83%97%E3%83%AA%20%23%E3%83%88%E3%83%AC%E3%83%AA%E3%83%B3%E3%82%AF" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #000000; border: 1px solid var(--card-border); border-radius: var(--border-radius-full); text-decoration: none; color: white; font-size: 0.8rem; font-weight: 600; transition: var(--transition-fast);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        X (Twitter)
+    <div class="social-share-container">
+      <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">この記事・ツールをシェア:</span>
+      <a href="https://twitter.com/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html&text=%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A%20-%20%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A%20%7C%20%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97%E5%8A%9B%E3%83%BB%E6%BB%9E%E7%A9%BA%E6%99%82%E9%96%93%E6%B8%AC%E5%AE%9A%E3%82%A2%E3%83%97%E3%83%AA%20%23%E3%83%88%E3%83%AC%E3%83%AA%E3%83%B3%E3%82%AF" target="_blank" rel="noopener" class="share-btn share-x">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X (Twitter) で投稿
       </a>
-      <a href="https://social-plugins.line.me/lineit/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #06C755; border: 1px solid var(--card-border); border-radius: var(--border-radius-full); text-decoration: none; color: white; font-size: 0.8rem; font-weight: 600; transition: var(--transition-fast);">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738S0 4.935 0 10.304c0 4.81 3.999 8.847 9.4 9.596.365.078.862.24 1.072.552.195.289.128.742.062 1.034l-.271 1.624c-.082.495-.382 1.938.165 2.115.548.177 1.573-.979 2.204-1.637l2.548-2.658c.846-.777 1.256-1.21 1.705-1.921C21.6 18.91 24 14.927 24 10.304zm-14.733 2.18c0 .248-.201.449-.449.449H6.467c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v1.564h1.868c.248 0 .449.201.449.449v1.551zm2.983-.449c0 .248-.201.449-.449.449s-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v3.564zm4.868 0c0 .248-.201.449-.449.449h-2.247c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449h.449c.248 0 .449.201.449.449v2.217h1.35c.248 0 .449.201.449.449v.898zm3.868-1.782c0 .248-.201.449-.449.449h-1.35V10.22h1.35c.248 0 .449.201.449.449v.897zm0-1.782c0 .248-.201.449-.449.449h-1.35V8.47h1.35c.248 0 .449.201.449.449v.897z"/></svg>
-        LINE
+      <a href="https://social-plugins.line.me/lineit/share?url=https://gaburieru-dotcom.github.io/vertical-jump.html" target="_blank" rel="noopener" class="share-btn share-line">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738S0 4.935 0 10.304c0 4.81 3.999 8.847 9.4 9.596.365.078.862.24 1.072.552.195.289.128.742.062 1.034l-.271 1.624c-.082.495-.382 1.938.165 2.115.548.177 1.573-.979 2.204-1.637l2.548-2.658c.846-.777 1.256-1.21 1.705-1.921C21.6 18.91 24 14.927 24 10.304zm-14.733 2.18c0 .248-.201.449-.449.449H6.467c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v1.564h1.868c.248 0 .449.201.449.449v1.551zm2.983-.449c0 .248-.201.449-.449.449s-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449s.449.201.449.449v3.564zm4.868 0c0 .248-.201.449-.449.449h-2.247c-.248 0-.449-.201-.449-.449V8.47c0-.248.201-.449.449-.449h.449c.248 0 .449.201.449.449v2.217h1.35c.248 0 .449.201.449.449v.898zm3.868-1.782c0 .248-.201.449-.449.449h-1.35V10.22h1.35c.248 0 .449.201.449.449v.897zm0-1.782c0 .248-.201.449-.449.449h-1.35V8.47h1.35c.248 0 .449.201.449.449v.897z"/></svg>
+        LINEで送る
       </a>
     </div>
-    <!-- /Social Share Buttons -->
+
     <!-- Related Articles Section -->
-    <section class="related-articles-section" style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--card-border);">
-      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">こちらの記事もおすすめ</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
-          <a href="vertical-jump-average.html" style="text-decoration: none; color: inherit;">
-            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">垂直跳びの平均値とジャンプ力を伸ばす方法</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
-          </a>
-        </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
-          <a href="progressive-overload-guide.html" style="text-decoration: none; color: inherit;">
-            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">【筋トレの鉄則】漸進性過負荷の原則</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
-          </a>
-        </div>
-        <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; transition: var(--transition-fast); box-shadow: var(--shadow-sm);">
-          <a href="rm-calculator-guide.html" style="text-decoration: none; color: inherit;">
-            <h4 style="margin-top: 0; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); transition: var(--transition-fast);">1RM（最大挙上重量）の計算と予測表</h4>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0; margin-top: 8px;">記事を読む &rarr;</p>
-          </a>
-        </div>
+    <section class="related-articles-section">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 20px; color: white;">おすすめの関連トレーニング記事</h3>
+      <div class="related-grid">
+        <a href="vertical-jump-average.html" class="related-card">
+          <div class="related-card-title">【年齢別・競技別】垂直跳びの平均値とジャンプ力を伸ばすコツ</div>
+          <div class="related-card-link">記事を読む &rarr;</div>
+        </a>
+        <a href="progressive-overload-guide.html" class="related-card">
+          <div class="related-card-title">【筋トレの鉄則】漸進性過負荷（プログレッシブ・オーバーロード）の原則</div>
+          <div class="related-card-link">記事を読む &rarr;</div>
+        </a>
+        <a href="rm-calculator-guide.html" class="related-card">
+          <div class="related-card-title">1RM（最大挙上重量）の計算シミュレーターと換算表</div>
+          <div class="related-card-link">記事を読む &rarr;</div>
+        </a>
       </div>
     </section>
-    <!-- /Related Articles Section -->
 
   </main>
 
@@ -508,5 +1118,46 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const airtimeInput = document.getElementById('airtimeInput');
+      const jumpResult = document.getElementById('jumpResult');
+      const jumpEvaluation = document.getElementById('jumpEvaluation');
+
+      // g = 9.80665 m/s^2, Formula: h = 1/8 * g * t^2
+      function calculateJump(t) {
+        if (isNaN(t) || t <= 0) return 0;
+        const g = 9.80665;
+        const h_meters = 0.125 * g * (t * t);
+        return h_meters * 100; // cm
+      }
+
+      function getEvaluation(cm) {
+        if (cm < 25) return '🌱 一般男子平均以下（伸びしろ十分）';
+        if (cm < 38) return '🏃 一般成人平均レベル';
+        if (cm < 48) return '🏀 部活動経験者 / バスケ・バレー標準';
+        if (cm < 58) return '🔥 高校・大学主力選手クラス';
+        if (cm < 68) return '⚡ アスリート上位 / 卓越したバネ';
+        if (cm < 78) return '🚀 プロアスリート・B/Vリーグ級 (ダンク領域)';
+        return '👑 世界クラス / NBA・超人的レベル';
+      }
+
+      function updateCalculator() {
+        const timeVal = parseFloat(airtimeInput.value);
+        if (!isNaN(timeVal) && timeVal > 0) {
+          const heightCm = calculateJump(timeVal);
+          jumpResult.innerHTML = heightCm.toFixed(1) + '<span class="res-unit">cm</span>';
+          jumpEvaluation.innerText = getEvaluation(heightCm);
+        } else {
+          jumpResult.innerHTML = '0.0<span class="res-unit">cm</span>';
+          jumpEvaluation.innerText = '滞空時間を秒単位で入力してください';
+        }
+      }
+
+      airtimeInput.addEventListener('input', updateCalculator);
+      // initial call
+      updateCalculator();
+    });
+  </script>
 </body>
 </html>
