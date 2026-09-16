@@ -57,7 +57,6 @@
   </script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
     :root {
       --font-display: 'Outfit', sans-serif;
@@ -487,6 +486,7 @@
       }
     }
   </style>
+<link rel="stylesheet" href="assets/css/editorial.css">
 </head>
 <body>
 
@@ -759,7 +759,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       // === Theme Toggle ===
       const themeToggleBtn = document.getElementById('theme-toggle');
-      const currentTheme = localStorage.getItem('theme') || 'dark';
+      const currentTheme = localStorage.getItem('theme') || 'light';
 
       if (currentTheme === 'light') {
         document.documentElement.classList.add('light-mode');

@@ -55,7 +55,6 @@
   <meta name="twitter:image" content="https://gaburieru-dotcom.github.io/app_icon.png">
   <style>
 /* --- Inlined styles.css --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 /* --- Design Tokens & Variables --- */
 :root {
@@ -1656,6 +1655,7 @@ header.scrolled + .jump-nav-container {
       color: var(--secondary-color);
     }
   </style>
+<link rel="stylesheet" href="assets/css/editorial.css">
 </head>
 <body>
 
@@ -2213,7 +2213,7 @@ header.scrolled + .jump-nav-container {
 document.addEventListener('DOMContentLoaded', () => {
   // === Theme Toggle (Light / Dark Mode) ===
   const themeToggleBtn = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('theme') || 'dark';
+  const currentTheme = localStorage.getItem('theme') || 'light';
 
   // Apply initial theme
   if (currentTheme === 'light') {
