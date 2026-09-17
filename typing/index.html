@@ -1,2 +1,38 @@
-<!DOCTYPE html>
-< ]
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SlashTyper | 英語を読む、打つ、身につける。</title>
+<meta name="description" content="英文を意味のまとまりごとに読み、タイピングで練習。短文から文学・演説まで、和訳・単語辞書・読み上げ付きの無料英語学習アプリ。">
+<link rel="canonical" href="https://sbmgtech.com/typing/">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="trainer.css?v=20260917">
+<script defer src="sentences.js"></script><script defer src="dictionary.js"></script>
+<script defer src="engine.js?v=20260917"></script><script defer src="app.js?v=20260917"></script>
+</head>
+<body>
+<a class="skip" href="#practice">練習へ移動</a>
+<div class="shell">
+<header><a class="brand" href="./">SlashTyper<span>/</span></a><nav aria-label="メイン"><button id="library-open">教材を選ぶ</button><button id="history-open">学習履歴</button><button id="settings-open" aria-label="練習設定">設定</button></nav></header>
+<section class="intro"><div><p class="eyebrow">ENGLISH, ONE CHUNK AT A TIME</p><h1>英語を読む。<br class="mobile-break">打つ。身につける。</h1></div><p>意味のまとまりで読みながら、少しずつ前へ。<br>今日はひとつの英文から始めましょう。</p></section>
+<main id="practice">
+<div class="workspace">
+<section class="practice-card" aria-labelledby="lesson-title">
+<div class="lesson-top"><span class="eyebrow" id="lesson-category">QUICK START</span><span id="lesson-number"></span></div>
+<h2 id="lesson-title"></h2><p id="lesson-meta" class="muted"></p>
+<div class="progress-track" role="progressbar" aria-label="教材の進捗" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-bar"></div></div>
+<div id="passage" lang="en" aria-label="練習する英文"></div>
+<div class="input-area"><label for="typing-input">ここに英文を入力 <span>半角英数字・大文字小文字はどちらでもOK</span></label><input id="typing-input" type="text" inputmode="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-describedby="input-help input-status" placeholder="タップまたはクリックして開始"><p id="input-help">スペース・記号は自動で進みます。間違えたら、そのまま正しいキーを押してください。</p><p id="input-status" role="status" aria-live="polite">準備ができたら、最初の文字を入力しましょう。</p></div>
+<div id="result" class="result" hidden aria-live="polite"><p class="eyebrow">LESSON COMPLETE</p><h3>おつかれさまでした。</h3><p id="result-summary"></p><button id="next-lesson" class="primary">次の教材へ →</button></div>
+<div class="practice-actions"><button id="restart">最初からやり直す</button><button id="speak" aria-label="英文を読み上げる">▶ 英文を聴く</button><button id="stop-speech" hidden>音声を止める</button></div>
+</section>
+<aside><section class="metrics" aria-label="今回の記録"><p class="eyebrow">YOUR SESSION</p><div class="metric"><span>タイピング速度 <small>WPM</small></span><strong id="wpm">0</strong></div><div class="metric"><span>正確率</span><strong id="accuracy">100<small>%</small></strong></div><div class="metric"><span>進捗</span><strong id="progress">0<small>%</small></strong></div><p class="metric-note">WPMは1分あたりの入力語数の目安です（5文字＝1語）。離席中の時間は含みません。</p></section><section class="howto"><p class="eyebrow">小さな練習を、毎日に。</p><ol><li>英文を意味のまとまりで読む</li><li>英数字を順番に入力する</li><li>和訳と音声で振り返る</li></ol><p>英文の単語を選ぶと、辞書を開けます。途中の進捗はこのブラウザに保存します。</p><p id="storage-status" role="status"></p></section></aside>
+</div></main>
+<footer><a href="../">kpworks</a><div><a href="columns.html">学習コラム</a><a href="privacy-policy.html">プライバシー</a><a href="contact.html">お問い合わせ</a></div><span>© 2026 SlashTyper</span></footer>
+</div>
+<dialog id="library"><div class="dialog-head"><h2>今日の教材を選ぶ</h2><button data-close aria-label="教材選択を閉じる">×</button></div><p class="muted">まずは短文から。気になるテーマへ進んでみましょう。</p><label class="sr-only" for="lesson-search">教材を検索</label><input type="search" id="lesson-search" placeholder="タイトル・英文で検索"><div id="categories" class="filters" aria-label="教材カテゴリ"></div><p id="lesson-count" class="muted" role="status"></p><div id="lesson-list" class="lesson-list"></div></dialog>
+<dialog id="settings"><div class="dialog-head"><h2>練習設定</h2><button data-close aria-label="設定を閉じる">×</button></div><form id="settings-form"><label for="translation">和訳を表示するタイミング</label><select id="translation"><option value="completed">まとまりを打ち終えたら</option><option value="always">最初から表示</option><option value="hidden">表示しない</option></select><label for="voice-rate">読み上げ速度</label><select id="voice-rate"><option value="0.7">ゆっくり（0.7倍）</option><option value="1">標準（1倍）</option><option value="1.2">速め（1.2倍）</option></select><label class="check"><input type="checkbox" id="auto-voice">教材の完了時に英文を読み上げる</label><p class="muted">読み上げは端末・ブラウザの対応状況によって利用できない場合があります。</p><button class="primary" type="submit">設定を保存</button></form></dialog>
+<dialog id="history"><div class="dialog-head"><h2>学習の記録</h2><button data-close aria-label="学習履歴を閉じる">×</button></div><p id="history-summary"></p><div id="history-list"></div><p class="muted">直近100件をこのブラウザに保存します。他の端末とは共有されません。</p><button id="clear-history" class="danger">履歴を削除</button><div id="clear-confirm" hidden><p>学習履歴をすべて削除します。元に戻せません。</p><button id="confirm-clear" class="danger">削除する</button><button id="cancel-clear">キャンセル</button></div></dialog>
+<dialog id="dictionary"><div class="dialog-head"><h2 id="dictionary-word"></h2><button data-close aria-label="辞書を閉じる">×</button></div><p id="dictionary-meaning"></p><p class="muted">教材の語注・内蔵辞書による参考訳です。文脈によって意味が異なる場合があります。</p><a id="dictionary-link" target="_blank" rel="noopener noreferrer">Weblioで詳しく見る ↗</a></dialog>
+<noscript>このアプリを使うには、ブラウザのJavaScriptを有効にしてください。</noscript>
+</body></html>
