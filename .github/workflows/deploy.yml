@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test typing practice
+        run: node --test tests/typing.test.cjs
       - name: Prepare site and check assets
         run: python3 scripts/build_site.py
       - uses: actions/upload-pages-artifact@v4

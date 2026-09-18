@@ -29,4 +29,4 @@ python3 -m http.server 8000 --directory _site
 公開には `_site` 内のWeb用ファイルのみを使用し、Git履歴・作業メモ・スクリプトは含めません。
 
 既存の apps.html / articles.html の tower_defense.png は元画像が存在しないため警告扱いです。
-また、既存の typing/index.html は19バイトの不完全なHTMLで、タイピング画面の修復は別途必要です。
+タイピングアプリの入力・復元処理の検証: `node --test tests/typing.test.cjs`
