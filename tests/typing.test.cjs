@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const e = require('../typing/engine.js');
-const lessons = require('../typing/sentences.js');
+const e = require('../slashtyper/engine.js');
+const lessons = require('../slashtyper/sentences.js');
 test('ignores case and punctuation; errors do not advance; backspace removes one letter', () => {
  const text='Hi, you!'; const s=e.create(text);
  assert.equal(e.input(text,s,'x'),false);assert.equal(s.position,0);
