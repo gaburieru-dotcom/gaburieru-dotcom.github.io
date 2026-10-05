@@ -6,6 +6,7 @@ from urllib.parse import unquote, urlsplit
 import shutil
 import subprocess
 import sys
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / '_site'
@@ -13,6 +14,8 @@ SUFFIXES = {'.html', '.css', '.js', '.json', '.png', '.jpg', '.jpeg', '.svg',
             '.webp', '.gif', '.ico', '.woff', '.woff2', '.ttf', '.mp3', '.wav',
             '.mp4', '.webmanifest', '.xml', '.txt'}
 NAMES = {'CNAME', '.nojekyll', 'apple-app-site-association'}
+SITE_ORIGIN = 'https://sbmgtech.com'
+EXTERNALLY_HOSTED_PATHS = {'/FormCrossStudioApp/'}
 # Pre-existing references with no source image in either repository or workspace.
 LEGACY_MISSING = {('apps.html', 'assets/images/tower_defense.png'),
                   ('articles.html', 'assets/images/tower_defense.png')}
@@ -21,6 +24,8 @@ class Assets(HTMLParser):
     def __init__(self):
         super().__init__()
         self.urls = []
+        self.canonical = None
+        self.robots = ''
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -29,6 +34,10 @@ class Assets(HTMLParser):
         if tag == 'link' and set(attrs.get('rel', '').split()) & {
                 'stylesheet', 'icon', 'apple-touch-icon', 'manifest'}:
             self.urls.append(attrs.get('href', ''))
+        if tag == 'link' and 'canonical' in attrs.get('rel', '').split():
+            self.canonical = attrs.get('href')
+        if tag == 'meta' and attrs.get('name', '').lower() == 'robots':
+            self.robots = attrs.get('content', '').lower()
 
 def main():
     tracked = subprocess.check_output(
@@ -56,6 +65,29 @@ def main():
                      'assets/js/home.js', '.well-known/apple-app-site-association']:
         if not (OUTPUT / required).is_file():
             errors.append(f'Required file missing: {required}')
+    sitemap_root = ET.parse(OUTPUT / 'sitemap.xml').getroot()
+    sitemap_urls = {
+        element.text for element in sitemap_root.iter()
+        if element.tag.endswith('loc') and element.text
+    }
+    for url in sitemap_urls:
+        if not url.startswith(f'{SITE_ORIGIN}/'):
+            errors.append(f'Sitemap uses a non-canonical domain: {url}')
+            continue
+        path = urlsplit(url).path
+        if path in EXTERNALLY_HOSTED_PATHS:
+            continue
+        target = OUTPUT / ('index.html' if path == '/' else path.lstrip('/'))
+        if path.endswith('/') and path != '/':
+            target /= 'index.html'
+        if not target.is_file():
+            errors.append(f'Sitemap URL has no HTML file: {url}')
+
+    robots = (OUTPUT / 'robots.txt').read_text(encoding='utf-8')
+    expected_sitemap = f'Sitemap: {SITE_ORIGIN}/sitemap.xml'
+    if expected_sitemap not in robots:
+        errors.append(f'robots.txt must contain: {expected_sitemap}')
+
     for page in OUTPUT.rglob('*.html'):
         parser = Assets()
         parser.feed(page.read_text(encoding='utf-8', errors='replace'))
@@ -71,6 +103,22 @@ def main():
                     print(f'Warning: existing missing image in {page.name}: {url}')
                     continue
                 errors.append(f'{page.relative_to(OUTPUT)}: missing asset {url}')
+        relative = page.relative_to(OUTPUT).as_posix()
+        if relative == 'index.html':
+            expected_canonical = f'{SITE_ORIGIN}/'
+        elif relative.endswith('/index.html'):
+            expected_canonical = f'{SITE_ORIGIN}/{relative[:-10]}'
+        else:
+            expected_canonical = f'{SITE_ORIGIN}/{relative}'
+        if parser.canonical != expected_canonical:
+            errors.append(
+                f'{relative}: canonical must be {expected_canonical}, '
+                f'found {parser.canonical or "none"}')
+        is_indexable = 'noindex' not in parser.robots
+        if is_indexable and expected_canonical not in sitemap_urls:
+            errors.append(f'{relative}: indexable page missing from sitemap')
+        if not is_indexable and expected_canonical in sitemap_urls:
+            errors.append(f'{relative}: noindex page must not be in sitemap')
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         return 1

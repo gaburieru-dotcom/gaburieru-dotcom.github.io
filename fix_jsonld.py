@@ -17,7 +17,7 @@ if 'application/ld+json' not in content:
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "kpworks",
-    "url": "https://gaburieru-dotcom.github.io/"
+    "url": "https://sbmgtech.com/"
   }
   </script>
 """

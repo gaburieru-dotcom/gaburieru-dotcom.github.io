@@ -7,7 +7,7 @@ def replace_in_file(filepath):
     # Replace references
     new_content = content.replace('/typing/', '/slashtyper/')
     new_content = new_content.replace('href="typing/"', 'href="slashtyper/"')
-    new_content = new_content.replace('https://gaburieru-dotcom.github.io/typing/', 'https://sbmgtech.com/slashtyper/')
+    new_content = new_content.replace('https://sbmgtech.com/typing/', 'https://sbmgtech.com/slashtyper/')
 
     if new_content != content:
         with open(filepath, 'w', encoding='utf-8') as f:
