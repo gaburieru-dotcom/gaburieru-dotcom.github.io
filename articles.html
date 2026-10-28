@@ -87,14 +87,111 @@
       <!-- Filter Tabs -->
       <div class="filter-tabs reveal">
         <button class="filter-tab active" data-article-filter="all">すべて</button>
-        <button class="filter-tab" data-article-filter="fitness">フィットネス</button>
+        <button class="filter-tab" data-article-filter="fitness">フィットネス・筋トレ</button>
+        <button class="filter-tab" data-article-filter="app-guide">アプリ活用</button>
         <button class="filter-tab" data-article-filter="game-dev">ゲームデザイン</button>
         <button class="filter-tab" data-article-filter="tech">開発・生産性</button>
       </div>
 
       <!-- Articles Grid -->
-      <div class="grid grid-3" style="margin-top: 40px;">
+      <div class="grid grid-3" id="articles-grid" style="margin-top: 40px;">
         
+        <!-- Article: formX Guide -->
+        <div class="article-card-item reveal" data-category="app-guide">
+          <article class="card article-card">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #1e1b4b, #312e81);">
+              <img src="vertical_jump_icon_new.png" alt="formX" style="width: 72px; height: 72px; border-radius: 16px; box-shadow: var(--shadow-md);">
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.10.29</span>
+                <span>•</span>
+                <span>公式ガイド</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="formx-guide.html">formX - 動作解析＆垂直跳び測定の使い方と機能</a>
+              </h3>
+              <p class="article-excerpt">
+                iPhoneのスロー動画からタイムや垂直跳びを精密に自動算出。さらに骨格表示によるフォーム解析や2つの動画の同期比較（デュアル計測）の使い方を動画付きで詳しく解説します。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">formX</span>
+                <span class="tag tag-sec">動作解析</span>
+              </div>
+              <a href="formx-guide.html" class="read-more" style="margin-top: 20px;">ガイドを見る
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article: Vertical Jump Average -->
+        <div class="article-card-item reveal" data-category="fitness">
+          <article class="card article-card">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #431407, #7c2d12);">
+              <img src="vertical_jump_icon_new.png" alt="垂直跳び" style="width: 72px; height: 72px; border-radius: 16px; box-shadow: var(--shadow-md);">
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.10.29</span>
+                <span>•</span>
+                <span>6分で読める</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="vertical-jump-average.html">【年齢別・男女別】垂直跳びの平均値とジャンプ力を伸ばす方法</a>
+              </h3>
+              <p class="article-excerpt">
+                中学生・高校生・一般成人の垂直跳び平均データまとめ。スマホ動画から滞空時間で精密測定する仕組みや、スクワット・プライオメトリクスによるジャンプ力強化メニューを解説。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">垂直跳び</span>
+                <span class="tag tag-sec">瞬発力</span>
+              </div>
+              <a href="vertical-jump-average.html" class="read-more" style="margin-top: 20px;">記事を読む
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article: Anki Musou Guide -->
+        <div class="article-card-item reveal" data-category="app-guide">
+          <article class="card article-card">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #075985, #0369a1);">
+              <img src="anki_musou_icon.png" alt="暗記無双" style="width: 72px; height: 72px; border-radius: 16px; box-shadow: var(--shadow-md);">
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.10.26</span>
+                <span>•</span>
+                <span>公式ガイド</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="anki-musou.html">自分で作る単語帳〜暗記無双〜 使い方と機能ガイド</a>
+              </h3>
+              <p class="article-excerpt">
+                耳からの自動聞き流し再生、PC・Chrome拡張機能とのシームレス連携、SNSアプリブロック機能、全問正解アラームを搭載した自作単語帳アプリの活用法を徹底解説。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">暗記無双</span>
+                <span class="tag tag-sec">英語学習</span>
+              </div>
+              <a href="anki-musou.html" class="read-more" style="margin-top: 20px;">ガイドを見る
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
         <!-- Article 1 -->
         <div class="article-card-item reveal" data-category="fitness">
           <article class="card article-card">
@@ -127,11 +224,84 @@
           </article>
         </div>
 
-        <!-- Article 2 -->
+        <!-- Article: Beginner Gym Guide -->
+        <div class="article-card-item reveal" data-category="fitness">
+          <article class="card article-card">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #1e293b, #334155);">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 5v14M18 5v14M2 9v6M22 9v6M6 12h12M2 12h4M18 12h4"></path>
+              </svg>
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.07.25</span>
+                <span>•</span>
+                <span>7分で読める</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="beginner-gym-guide.html">ジム初心者のメニューと、種目の順番</a>
+              </h3>
+              <p class="article-excerpt">
+                週に何回通えるかを決めて、全身を効率よく鍛えるメニューを選ぶ。マシンの使い方やフリーウェイトへのステップアップまで分かりやすく解説。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">ジム初心者</span>
+                <span class="tag tag-sec">メニュー設計</span>
+              </div>
+              <a href="beginner-gym-guide.html" class="read-more" style="margin-top: 20px;">記事を読む
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article: PPL Guide -->
+        <div class="article-card-item reveal" data-category="fitness">
+          <article class="card article-card">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #0f172a, #1e1b4b);">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--secondary-color)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="article-card-content">
+              <div class="article-meta">
+                <span>2026.06.17</span>
+                <span>•</span>
+                <span>6分で読める</span>
+              </div>
+              <h3 class="article-card-title">
+                <a href="ppl-guide.html">PPL法の分け方と週間メニュー設計</a>
+              </h3>
+              <p class="article-excerpt">
+                押す（Push）・引く（Pull）・脚（Legs）に分けてトレーニングを組む世界標準の分割法。回復と筋肥大を両立させる実践的スケジュールを公開。
+              </p>
+              <div class="app-tags" style="margin-top: 16px; margin-bottom: 0;">
+                <span class="tag">PPL法</span>
+                <span class="tag tag-sec">分割法</span>
+              </div>
+              <a href="ppl-guide.html" class="read-more" style="margin-top: 20px;">記事を読む
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 2: Tower Defense -->
         <div class="article-card-item reveal" data-category="game-dev">
           <article class="card article-card">
-            <div class="article-card-img">
-              <img src="assets/images/tower_defense.png" alt="タワーディフェンス">
+            <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #1e1b4b, #312e81);">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 21v-4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path>
+                <path d="M4 11h16"></path>
+                <path d="M6 11V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6"></path>
+                <line x1="12" y1="3" x2="12" y2="7"></line>
+              </svg>
             </div>
             <div class="article-card-content">
               <div class="article-meta">
@@ -159,7 +329,7 @@
           </article>
         </div>
 
-        <!-- Article 3 -->
+        <!-- Article 3: Tech -->
         <div class="article-card-item reveal" data-category="tech">
           <article class="card article-card">
             <div class="article-card-img flex-center" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
@@ -243,5 +413,49 @@
 
   <!-- Scripts -->
   <script src="assets/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('article-search');
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const articleItems = document.querySelectorAll('.article-card-item');
+
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function filterArticles() {
+        articleItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          const title = (item.querySelector('.article-card-title')?.textContent || '').toLowerCase();
+          const excerpt = (item.querySelector('.article-excerpt')?.textContent || '').toLowerCase();
+          const tags = (item.querySelector('.app-tags')?.textContent || '').toLowerCase();
+
+          const matchesCategory = (currentCategory === 'all' || category === currentCategory);
+          const matchesQuery = !currentQuery || title.includes(currentQuery) || excerpt.includes(currentQuery) || tags.includes(currentQuery);
+
+          if (matchesCategory && matchesQuery) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentCategory = tab.getAttribute('data-article-filter');
+          filterArticles();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.trim().toLowerCase();
+          filterArticles();
+        });
+      }
+    });
+  </script>
 </body>
 </html>

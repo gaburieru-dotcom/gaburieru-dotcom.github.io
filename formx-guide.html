@@ -24,16 +24,16 @@
   
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="vertical_jump_icon_new.png">
-  <title>formX - 動作解析・タイム測定アプリ | 使い方と機能</title>
+  <title>formX - 動作解析＆垂直跳び測定アプリ | 使い方と機能</title>
   
   <!-- JSON-LD Structured Data for Rich Snippets -->
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "formX",
+  "name": "formX (旧: タイム測定 - 垂直跳び測定)",
   "url": "https://sbmgtech.com/formx-guide.html",
   "image": "https://sbmgtech.com/vertical_jump_icon_new.png",
-  "description": "動画からタイムと垂直跳びを測定し、2つの動画の比較や骨格表示による動作解析ができるアプリ。",
+  "description": "動画からタイムと垂直跳びを測定し、2つの動画の比較や骨格表示による動作解析ができるアプリ「formX」。",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "iOS",
   "offers": {
@@ -44,8 +44,8 @@
 }</script>
   
   <!-- OGP Meta Tags -->
-  <meta property="og:title" content="formX - 動作解析・タイム測定アプリ | 使い方と機能">
-  <meta property="og:description" content="動画からタイムと垂直跳びを測定。2つの動画の比較や骨格表示による動作解析も可能です。">
+  <meta property="og:title" content="formX - 動作解析＆垂直跳び測定アプリ | 使い方と機能">
+  <meta property="og:description" content="動画からタイムと垂直跳びを測定。2つの動画の比較や骨格表示による動作解析も可能です。（旧：タイム測定 - 垂直跳び測定）">
   <meta property="og:image" content="https://sbmgtech.com/vertical_jump_icon_new.png">
   <meta property="og:url" content="https://sbmgtech.com/formx-guide.html">
   <meta property="og:type" content="article">
@@ -413,9 +413,15 @@
     </div>
     <!-- /Social Share Buttons -->
     <h1 class="text-gradient">動画で動きを可視化する</h1>
-    <p style="font-size: 1.1rem; max-width: 750px; margin: 0 auto;">
+    <p style="font-size: 1.1rem; max-width: 750px; margin: 0 auto 20px;">
       タイム測定、垂直跳びの算出、2つの動画の比較、骨格表示による動作解析まで。<br>動画の分析をこれひとつで。
     </p>
+
+    <!-- Update notice -->
+    <div style="background: rgba(var(--primary-rgb), 0.08); border: 1px solid rgba(var(--primary-rgb), 0.25); border-radius: var(--border-radius-md); padding: 12px 20px; max-width: 680px; margin: 0 auto; text-align: left; font-size: 0.9rem; line-height: 1.6;">
+      <strong style="color: var(--primary-color);">【旧「タイム測定 - 垂直跳び測定」をお使いの方へ】</strong><br>
+      本アプリは「タイム測定 - 垂直跳び測定」から「formX」へと進化しました。従来の滞空時間からの垂直跳び自動算出機能はそのまま引き継ぎ、新たに骨格表示や2画面比較によるフォーム解析がご利用いただけます。
+    </div>
   </section>
 
   <!-- Main Content -->
@@ -427,43 +433,87 @@
     <div class="table-of-contents" style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 24px; margin-bottom: 32px; box-shadow: var(--shadow-sm);">
       <h3 style="margin-top: 0; margin-bottom: 12px; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-primary); border-bottom: 1px solid var(--card-border); padding-bottom: 6px;">目次</h3>
       <ul style="list-style: none; margin-left: 0; margin-bottom: 0;">
-        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">formXの主な機能</a></li>
-        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">垂直跳びの測定方法（チュートリアル）</a></li>
-        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">デュアル計測・比較について</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-1" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">1. formXの主な機能と特徴</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-2" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">2. 垂直跳びの測定方法（チュートリアル＆計算の仕組み）</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-3" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">3. 骨格表示（スケルトン解析）によるフォームチェック</a></li>
+        <li style="margin-bottom: 8px;"><a href="#section-4" style="color: var(--primary-color); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition-fast);">4. 2つの動画を並べて比較（デュアル計測）</a></li>
       </ul>
     </div>
     <!-- /Table of Contents -->
 
-    <h2 id="section-1">formXの主な機能</h2>
+    <h2 id="section-1">1. formXの主な機能と特徴</h2>
       <p>
-        「formX」は、スポーツやトレーニングの動作解析に役立つ多機能アプリです。以下の機能を搭載しています。
+        「formX」は、スポーツやトレーニングの動作解析に特化した多機能ビデオ分析アプリです（App Storeでの登録名：タイム測定 - 垂直跳び測定）。
       </p>
 
-      <h3>1. 動画からタイム・垂直跳び測定</h3>
-      <p>動画のフレームを選択するだけで、精密なタイムを計測。離地・着地フレームから滞空時間を測り、正確に垂直跳びの高さを推定します。</p>
+      <h3>① 動画からタイム・垂直跳びの精密測定</h3>
+      <p>iPhoneで撮影した動画から、離地（テイクオフ）と着地（ランディング）のフレームを1コマずつ確認して指定するだけで、ミリ秒単位の滞空時間と物理計算による正確な垂直跳びの高さを自動算出します。</p>
 
-      <h3>2. 2つの動画を並べて比較（デュアル計測）</h3>
-      <p>過去の自分と今の自分、または自分と他者の動画を並べて同時に再生し、タイム差やフォームの違いを視覚的に比較できます。</p>
+      <h3>② 骨格表示による動作解析（スケルトン表示）</h3>
+      <p>AIが動画内の人物の関節・骨格を自動検出し、線画オーバーレイで可視化します。ジャンプの溜め動作、膝の角度、踏み込み時の重心移動、腕の振り上げタイミングなどを科学的に分析できます。</p>
 
-      <h3>3. 骨格表示で動作解析</h3>
-      <p>動画内の人物の骨格（スケルトン）をオーバーレイ表示し、体の使い方の詳細な分析が可能です。</p>
+      <h3>③ 2つの動画を並べて比較（デュアル計測）</h3>
+      <p>「過去の自己ベストと現在のフォーム」「自分とお手本選手」など、2本の動画を上下・左右に並べて同時に再生し、フォームの違いやタイム差を視覚的に比較できます。</p>
+
+      <h3>④ 測定データの動画焼き付け＆シェア</h3>
+      <p>計測したジャンプ高やタイムの数値を動画上にグラフィックとして合成して書き出せます。チームメイトとの共有やSNSでの発信に最適です。</p>
     </article>
 
     <article class="guide-card">
-      <h2 id="section-2">垂直跳びの測定方法（チュートリアル）</h2>
+      <h2 id="section-2">2. 垂直跳びの測定方法（チュートリアル＆計算の仕組み）</h2>
       <p>
         動画から離地・着地フレームを指定して、滞空時間から正確に垂直跳びの高さを算出する方法を解説します。
       </p>
       
-      <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 24px; border-radius: 12px; box-shadow: var(--shadow-md);">
+      <div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 24px; margin-bottom: 24px; border-radius: 12px; box-shadow: var(--shadow-md);">
         <iframe src="https://www.youtube.com/embed/phVn9fJFRvM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="垂直跳びの測定方法"></iframe>
+      </div>
+
+      <h3>垂直跳び算出の物理計算式</h3>
+      <p>
+        本アプリでは、地球上の重力加速度（\(g = 9.81\text{m/s}^2\)）をもとに、放物運動の物理公式から跳躍高（\(h\)）を厳密に逆算しています。
+      </p>
+      <div style="background: rgba(var(--primary-rgb), 0.05); border: 1px dashed var(--primary-color); border-radius: var(--border-radius-sm); padding: 16px; margin: 16px 0; text-align: center;">
+        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">跳躍高の計算式</span>
+        <div style="font-size: 1.4rem; font-weight: 700; color: var(--primary-color); margin-top: 6px; font-family: monospace;">h = 1/8 × g × t²</div>
+        <span style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-top: 6px;">（t: 離地から着地までの滞空時間 / g: 重力加速度 9.81m/s²）</span>
+      </div>
+      <p>
+        壁にチョークをつけて測る従来の方法と異なり、「手の伸ばし具合による誤差」や「壁にぶつかるリスク」が一切なく、スマホ1台で誰でも安全かつ客観的に真のジャンプ力を記録できます。
+      </p>
+
+      <!-- Link to Average Guide -->
+      <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--border-radius-md); padding: 20px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+        <div>
+          <span style="font-size: 0.8rem; color: var(--primary-color); font-weight: 700;">関連記事</span>
+          <h4 style="margin: 4px 0; font-size: 1.05rem;">年代別・男女別の垂直跳び平均値まとめ</h4>
+          <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary);">中学生・高校生・大人の平均データと、ジャンプ力を伸ばす筋トレメニューを解説。</p>
+        </div>
+        <a href="vertical-jump-average.html" class="btn btn-secondary" style="font-size: 0.85rem; white-space: nowrap;">
+          平均値ガイドを見る &rarr;
+        </a>
       </div>
     </article>
 
     <article class="guide-card">
-      <h2 id="section-3">デュアル計測・比較について（追加予定）</h2>
+      <h2 id="section-3">3. 骨格表示（スケルトン解析）によるフォームチェック</h2>
       <p>
-        2つの動画を同時に並べて再生し、タイムの差分を確認したり、フォームを比較する方法の解説動画は、今後追加予定です。
+        formXでは、Appleの高度なVisionフレームワークを活用し、撮影した動画内の人物の主要関節（肩・肘・手首・腰・膝・足首）を自動検出します。
+      </p>
+      <ul>
+        <li><strong>踏み込み時の沈み込み深さ</strong>: 膝が深すぎず、SSC（ストレッチ・ショートニング・サイクル）を活かせる最適な角度で溜めを作れているか確認できます。</li>
+        <li><strong>テイクオフ時の身体の軸</strong>: 空中へ真っ直ぐ力が伝達しているか、前後にブレていないかを視覚的に把握できます。</li>
+        <li><strong>腕の振り上げの連動</strong>: 脚の伸展と腕の振り上げのタイミングが一致しているかをスロー再生で確認できます。</li>
+      </ul>
+    </article>
+
+    <article class="guide-card">
+      <h2 id="section-4">4. 2つの動画を並べて比較（デュアル計測）</h2>
+      <p>
+        ジャンプフォームの向上やスプリントの加速改善において最も重要なのは「過去の自分や手本との違いに気づくこと」です。
+      </p>
+      <p>
+        formXのデュアル計測モードを使えば、離地の瞬間やスタートの瞬間を基準にして2つの動画を同期させ、コマ送りで同時に比較再生することができます。「なぜ前回のほうが跳べたのか」「お手本選手と何が違うのか」を数値と映像の両面から突き止められます。
       </p>
     </article>
 
@@ -477,6 +527,9 @@
         <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 6px;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -2px;"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
           App Storeでダウンロード
+        </a>
+        <a href="vertical-jump.html" class="btn btn-secondary" style="font-size: 0.9rem;">
+          垂直跳び測定の解説を見る ↗
         </a>
       </div>
     </div>
