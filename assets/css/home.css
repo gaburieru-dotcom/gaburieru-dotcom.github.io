@@ -9,4 +9,18 @@
 #apps .section-heading{margin-bottom:16px}
 #apps .section-heading .eyebrow{display:none}
 .tools-section{margin-top:64px}
-@media(max-width:760px){.app-intro{grid-template-columns:1fr;gap:14px;padding:30px 0 26px}.app-intro h1{font-size:27px}.app-intro .lead{font-size:12px;margin:0}.app-intro .lead br{display:none}#apps{margin-top:0}.tools-section{margin-top:40px}}
+.tool-grid-4{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:#fbfaf6}
+.tool-grid-4 .tool+.tool{border-left:1px solid var(--line)}
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:3px;background:#e5ebd9;color:var(--green);font-weight:700;margin-left:6px;vertical-align:middle;letter-spacing:0.02em}
+.badge-orange{background:#fbeee4;color:#ad591f}
+.hero-cta{display:flex;gap:16px;align-items:center;margin-top:16px;flex-wrap:wrap}
+.hero-cta a{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.hero-cta a.primary-cta{background:var(--green);color:#fff;padding:8px 16px;border-radius:4px}
+.hero-cta a.primary-cta:hover{background:#193b2d}
+.hero-cta a.secondary-cta{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.view-all-apps{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#ecefe6;border:1px solid var(--line);margin-top:20px;border-radius:4px;font-size:13px;font-weight:600}
+.view-all-apps:hover{background:#e3e8dc}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.footer-links a:hover{text-decoration:underline;color:var(--green)}
+@media(max-width:960px){.tool-grid-4{grid-template-columns:repeat(2,1fr)}.tool-grid-4 .tool:nth-child(3){border-top:1px solid var(--line);border-left:none}.tool-grid-4 .tool:nth-child(4){border-top:1px solid var(--line)}}
+@media(max-width:760px){.app-intro{grid-template-columns:1fr;gap:14px;padding:30px 0 26px}.app-intro h1{font-size:27px}.app-intro .lead{font-size:12px;margin:0}.app-intro .lead br{display:none}#apps{margin-top:0}.tools-section{margin-top:40px}.tool-grid-4{grid-template-columns:1fr}.tool-grid-4 .tool+.tool{border-left:0;border-top:1px solid var(--line)}}
