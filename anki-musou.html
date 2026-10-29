@@ -607,9 +607,66 @@
       line-height: 1.5;
     }
 
-    /* === How to Use Section === */
+    /* === How to Use Section & Interactive Tabs === */
     .steps-section {
       padding: 60px 0;
+    }
+
+    .guide-tab-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .guide-tab-btn {
+      padding: 10px 18px;
+      border-radius: var(--border-radius-full);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+    }
+
+    .guide-tab-btn:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .guide-tab-btn.active {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.25);
+    }
+
+    .guide-tab-content {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .guide-pane {
+      display: none;
+      animation: tabFadeIn 0.25s ease;
+    }
+
+    .guide-pane.active {
+      display: block;
+    }
+
+    @keyframes tabFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .steps-container {
@@ -619,38 +676,44 @@
     }
 
     .step-box {
-      background: var(--card-bg);
+      background: rgba(0, 0, 0, 0.02);
       border: 1px solid var(--card-border);
-      border-radius: var(--border-radius-md);
-      padding: 32px 24px;
-      text-align: center;
+      border-radius: var(--border-radius-sm);
+      padding: 24px 20px;
+      text-align: left;
       position: relative;
+    }
+
+    html.dark-mode .step-box {
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .step-num {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      background: var(--primary-color);
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.3);
     }
 
     .step-box h3 {
-      font-size: 1.15rem;
-      margin-bottom: 12px;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--text-primary);
     }
 
     .step-box p {
       font-size: 0.9rem;
       color: var(--text-secondary);
       margin-bottom: 0;
+      line-height: 1.7;
     }
 
     /* === Comparison / Benefits Table === */
@@ -857,6 +920,16 @@
       }
     }
 
+    body.is-embedded header,
+    body.is-embedded footer,
+    body.is-embedded .related-apps {
+      display: none !important;
+    }
+
+    body.is-embedded .hero-section {
+      padding-top: 24px !important;
+    }
+
     @media (max-width: 600px) {
       .gallery-grid {
         grid-template-columns: 1fr;
@@ -873,6 +946,9 @@
       <a href="index.html" class="wordmark" aria-label="kpworks ホーム">kpworks<span class="brand-dot">.</span></a>
 
       <div class="header-actions">
+        <a href="anki-musou-guide.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; color: var(--primary-color); border-color: var(--primary-color);">
+          使い方マニュアル ↗
+        </a>
         <a href="apps.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
           アプリ一覧
         </a>
@@ -1095,30 +1171,173 @@
       </div>
     </section>
 
-    <!-- How to use Steps -->
-    <section class="steps-section">
+    <!-- How to use Tabs Section -->
+    <section id="guide" class="steps-section">
       <div class="container">
         <div class="section-title-wrap">
           <p class="section-eyebrow">HOW TO USE</p>
-          <h2>迷わず使える、かんたん3ステップ</h2>
-          <p style="color: var(--text-secondary);">シンプル設計だから、インストールして数分ですぐに使えます。</p>
+          <h2>機能別 使い方ガイド</h2>
+          <p style="color: var(--text-secondary);">気になる機能のタブをタップすると、具体的な設定・活用ステップを確認できます。</p>
         </div>
 
-        <div class="steps-container">
-          <div class="step-box">
-            <span class="step-num">1</span>
-            <h3>単語を登録（PC連携もOK）</h3>
-            <p>手入力、テキストの一括貼り付け、またはPCのChrome拡張機能からワンクリックで追加。</p>
+        <!-- Guide Tab Bar -->
+        <div class="guide-tab-bar" role="tablist">
+          <button class="guide-tab-btn active" data-guide-target="tab-basic">🔰 基本の使い方</button>
+          <button class="guide-tab-btn" data-guide-target="tab-autoplay">🎧 自動再生・耳学習</button>
+          <button class="guide-tab-btn" data-guide-target="tab-pc">💻 PC・Chrome連携</button>
+          <button class="guide-tab-btn" data-guide-target="tab-alarm">⏰ 目覚ましアラーム</button>
+          <button class="guide-tab-btn" data-guide-target="tab-block">🔒 アプリ制限ブロック</button>
+          <button class="guide-tab-btn" data-guide-target="tab-reader">📖 洋書リーダー</button>
+        </div>
+
+        <!-- Guide Tab Content Box -->
+        <div class="guide-tab-content">
+          <!-- Pane 1: Basic -->
+          <div id="tab-basic" class="guide-pane active">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">🔰 単語帳の作成と暗記の基本サイクル</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">まずは単語の追加とテストの基本をマスターしましょう。</p>
+            <div class="steps-container">
+              <div class="step-box">
+                <span class="step-num">1</span>
+                <h3>単語帳を作成して登録</h3>
+                <p>ホーム右下の「＋」から単語帳を作成。手入力またはテキスト貼り付けで一括インポートも可能です。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">2</span>
+                <h3>カードめくりテスト</h3>
+                <p>表面の単語を見て意味を思い出し、タップで裏面を確認。ネイティブ音声も自動再生されます。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">3</span>
+                <h3>覚えた単語は即除外！</h3>
+                <p>「覚えた」を押すと習得済みへ移動。未習得の苦手単語だけに絞って効率的に周回できます。</p>
+              </div>
+            </div>
           </div>
-          <div class="step-box">
-            <span class="step-num">2</span>
-            <h3>自動再生スタート</h3>
-            <p>「自動再生」を押すだけ。イヤホンをつけて、画面を見ずに耳からのインプットに集中。</p>
+
+          <!-- Pane 2: Auto Play -->
+          <div id="tab-autoplay" class="guide-pane">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">🎧 ハンズフリー自動再生（耳からの聞き流し学習）</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">通勤・通学、散歩、家事の時間をそのまま暗記時間に変えられます。</p>
+            <div class="steps-container">
+              <div class="step-box">
+                <span class="step-num">1</span>
+                <h3>単語帳を開いて「▶」再生</h3>
+                <p>下部の再生ボタンをタップするだけで、登録された単語が自動ループ再生されます。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">2</span>
+                <h3>間隔・速度をカスタム</h3>
+                <p>「単語 ➔ 意味 ➔ 単語」の再生リズムや、0.8〜1.5倍速の速度調整を自由に設定可能。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">3</span>
+                <h3>画面オフで聞き流し</h3>
+                <p>バックグラウンド再生に対応。iPhoneをポケットに入れたままイヤホン操作で暗記できます。</p>
+              </div>
+            </div>
           </div>
-          <div class="step-box">
-            <span class="step-num">3</span>
-            <h3>覚えた単語は除外</h3>
-            <p>覚えた単語はタップひとつで「習得済み」へ。未習得単語だけが残り、圧倒的スピードで定着！</p>
+
+          <!-- Pane 3: PC Sync -->
+          <div id="tab-pc" class="guide-pane">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">💻 PC・Chrome拡張機能とのリアルタイム同期</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">PCで読んでいるWeb小説やニュースからワンクリックで単語帳へ取り込み。</p>
+            <div class="steps-container">
+              <div class="step-box">
+                <span class="step-num">1</span>
+                <h3>拡張機能を追加</h3>
+                <p>PCのGoogle Chromeに「暗記無双 Chrome Extension」をインストールします。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">2</span>
+                <h3>連携コードを入力</h3>
+                <p>アプリの「設定」➔「PC連携」に表示される6桁のPINコードを拡張機能に入力（登録不要）。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">3</span>
+                <h3>単語を選択して追加</h3>
+                <p>ブラウザで気になる英文単語をドラッグ選択し右クリック。「暗記無双に追加」で即同期されます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 4: Alarm -->
+          <div id="tab-alarm" class="guide-pane">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">⏰ 全問正解するまで鳴り止まない「目覚まし単語」</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">朝起きられない悩みを強制的な学習習慣に変える強力な機能です。</p>
+            <div class="steps-container">
+              <div class="step-box">
+                <span class="step-num">1</span>
+                <h3>アラーム時刻を設定</h3>
+                <p>「アラーム」タブから起床時間と出題元の単語帳（例：「TOEIC最重要単語」）を選択。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">2</span>
+                <h3>正解ノルマを決める</h3>
+                <p>解除に必要な連続正解数を設定（3〜10問）。間違えるとリセットされる厳格設定も可能。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">3</span>
+                <h3>朝起きてクイズに全問回答</h3>
+                <p>アラームが鳴ると自動で単語クイズ起動。全問正解して脳を完全に覚醒させ二度寝を防止！</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 5: App Block -->
+          <div id="tab-block" class="guide-pane">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">🔒 SNS・誘惑アプリを制限（単語学習で解除）</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">Instagram、X、YouTube、ゲームなどの無駄な時間を自動で学習時間へ転換。</p>
+            <div class="steps-container">
+              <div class="step-box">
+                <span class="step-num">1</span>
+                <h3>スクリーンタイム許可</h3>
+                <p>Apple公式のFamilyControls権限を許可し、ブロックしたいアプリを選択します。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">2</span>
+                <h3>制限時間帯を設定</h3>
+                <p>日中や勉強時間帯にSNSをロック。開こうとすると暗記無双の制限画面が表示されます。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">3</span>
+                <h3>単語クイズで一時解除</h3>
+                <p>「学習して解除」を選び、指定問数の単語テストに正解すると一定時間だけ利用可能になります。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 6: Reader -->
+          <div id="tab-reader" class="guide-pane">
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">📖 洋書・長文テキストの対訳＆音読リーダー</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 0.95rem;">難しい長文読解や洋書を挫折せずに読むためのアシスタント機能。</p>
+            <div class="steps-container">
+              <div class="step-box">
+                <span class="step-num">1</span>
+                <h3>英文テキストを読み込み</h3>
+                <p>読みたい英文小説や記事を貼り付け。一文（センテンス）ごとに自動分割されます。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">2</span>
+                <h3>対訳と音読でスラスラ読了</h3>
+                <p>一文ごとの日本語対訳とネイティブ音読が同時に確認でき、文脈を見失いません。</p>
+              </div>
+              <div class="step-box">
+                <span class="step-num">3</span>
+                <h3>未知語を即ストック</h3>
+                <p>知らない単語を長押しすると、前後の例文と一緒にワンタップで自分の単語帳へ保存できます。</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full Manual CTA Card -->
+          <div style="margin-top: 32px; padding: 20px; background: rgba(var(--primary-rgb), 0.05); border: 1px dashed var(--card-border); border-radius: var(--border-radius-sm); text-align: center;">
+            <p style="margin-bottom: 12px; font-weight: 600; color: var(--text-primary); font-size: 0.95rem;">
+              トラブルシューティングや詳しい設定手順をすべて網羅した公式マニュアルはこちら
+            </p>
+            <a href="anki-musou-guide.html" class="btn btn-secondary" style="font-size: 0.9rem; font-weight: 700; color: var(--primary-color); border-color: var(--primary-color);">
+              暗記無双 公式使い方マニュアル（全項目）を見る ↗
+            </a>
           </div>
         </div>
       </div>
@@ -1341,6 +1560,30 @@
       };
       window.addEventListener('scroll', checkScroll);
       checkScroll();
+
+      // === Guide Tabs Logic ===
+      const guideTabBtns = document.querySelectorAll('.guide-tab-btn');
+      const guidePanes = document.querySelectorAll('.guide-pane');
+
+      guideTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-guide-target');
+          if (!targetId) return;
+
+          guideTabBtns.forEach(b => b.classList.remove('active'));
+          guidePanes.forEach(p => p.classList.remove('active'));
+
+          btn.classList.add('active');
+          const activePane = document.getElementById(targetId);
+          if (activePane) activePane.classList.add('active');
+        });
+      });
+
+      // Handle query or hash for embedded view or direct tab link
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('embedded') === '1' || urlParams.get('app') === '1') {
+        document.body.classList.add('is-embedded');
+      }
 
       // === FAQ Accordion ===
       const faqItems = document.querySelectorAll('.faq-item');
