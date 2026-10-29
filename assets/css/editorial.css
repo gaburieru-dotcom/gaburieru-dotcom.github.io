@@ -54,8 +54,51 @@ body {
 }
 
 /* Headings */
-h1, h2, h3, h4 {
-  color: var(--text-primary);
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+.article-title, .app-callout-title, .feature-title {
+  color: var(--text-primary) !important;
+}
+
+.logo-link, .logo {
+  color: var(--text-primary) !important;
+}
+
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  color: var(--text-primary) !important;
+}
+
+/* Prevent invisible white text on light editorial background */
+body:not(.dark-mode) h1,
+body:not(.dark-mode) h2,
+body:not(.dark-mode) h3,
+body:not(.dark-mode) h4,
+body:not(.dark-mode) h5,
+body:not(.dark-mode) h6,
+body:not(.dark-mode) .article-title,
+body:not(.dark-mode) .logo-link,
+body:not(.dark-mode) .logo-link span,
+body:not(.dark-mode) .logo,
+body:not(.dark-mode) .back-btn,
+body:not(.dark-mode) .back-link,
+body:not(.dark-mode) .data-table th,
+body:not(.dark-mode) table th,
+body:not(.dark-mode) .feature-title,
+body:not(.dark-mode) .app-callout-title,
+body:not(.dark-mode) .result-card h3 {
+  color: var(--text-primary) !important;
+}
+
+body:not(.dark-mode) .back-btn:hover,
+body:not(.dark-mode) .back-link:hover {
+  color: var(--primary-color) !important;
 }
 
 .text-gradient {
@@ -142,7 +185,7 @@ th, td {
 th {
   background: rgba(0, 0, 0, 0.03);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
 }
 
 html.dark-mode th {

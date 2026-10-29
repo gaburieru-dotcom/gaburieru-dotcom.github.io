@@ -3023,18 +3023,18 @@ header.scrolled + .jump-nav-container {
 <body>
 
   <!-- Deep Link Redirection Overlay -->
-  <div id="redirect-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #08090d; color: #fff; z-index: 99999; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; padding: 20px;">
-    <div style="text-align: center; max-width: 400px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 24px; padding: 40px 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
-      <img src="app_icon.png" alt="トレリンク アイコン" style="width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 24px auto; display: block; box-shadow: 0 8px 24px rgba(0, 221, 255, 0.25);">
-      <h2 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; background: linear-gradient(90deg, #00ddff, #00ffe0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: -0.5px;">トレリンク を起動しています</h2>
-      <p style="margin: 0 0 32px 0; font-size: 14px; color: #a0aec0; line-height: 1.6;">
+  <div id="redirect-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(245, 243, 237, 0.95); color: var(--text-primary); z-index: 99999; align-items: center; justify-content: center; font-family: var(--font-body); box-sizing: border-box; padding: 20px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+    <div style="text-align: center; max-width: 400px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow-lg);">
+      <img src="app_icon.png" alt="トレリンク アイコン" style="width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 24px auto; display: block; box-shadow: var(--shadow-md);">
+      <h2 style="margin: 0 0 12px 0; font-size: 22px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.5px;">トレリンク を起動しています</h2>
+      <p style="margin: 0 0 32px 0; font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
         アプリが自動的に起動しない、またはインストールされていない場合は、下のボタンを押してください。
       </p>
-      <a id="btn-open-app" href="#" style="display: block; text-decoration: none; background: linear-gradient(90deg, #00ddff, #00bfff); color: #0a0a0e; font-weight: 700; font-size: 16px; padding: 16px 24px; border-radius: 14px; box-shadow: 0 8px 20px rgba(0, 221, 255, 0.25); text-align: center;">
+      <a id="btn-open-app" href="#" style="display: block; text-decoration: none; background: var(--primary-color); color: #ffffff; font-weight: 700; font-size: 16px; padding: 16px 24px; border-radius: 12px; box-shadow: var(--shadow-sm); text-align: center;">
         アプリを起動 / ダウンロード
       </a>
       <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px; font-size: 14px;">
-        <a href="#" id="btn-close-overlay" style="color: #a0aec0; text-decoration: none; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; transition: all 0.2s; background: rgba(255,255,255,0.02);">このページを見る</a>
+        <a href="#" id="btn-close-overlay" style="color: var(--text-secondary); text-decoration: none; padding: 8px 16px; border: 1px solid var(--card-border); border-radius: 8px; transition: all 0.2s; background: transparent;">このページを見る</a>
       </div>
     </div>
   </div>
