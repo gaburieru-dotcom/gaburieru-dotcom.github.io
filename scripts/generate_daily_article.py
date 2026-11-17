@@ -2,16 +2,14 @@ import os
 import json
 import re
 import datetime
-import urllib.request
-import urllib.error
 
-# 設定
 SCRATCH_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INDEX_PATH = os.path.join(SCRATCH_DIR, "index.html")
+SITEMAP_PATH = os.path.join(SCRATCH_DIR, "sitemap.xml")
 GA_TAG = "G-2KWG97NY59"
-BASE_URL = "https://gaburieru-dotcom.github.io"
+BASE_URL = "https://sbmgtech.com"
 
-# 厳選されたストックトピック（Gemini APIキーなしでも即時・確実に高品質記事を出力できるキュー）
+# 厳選されたストックトピック
 TOPIC_QUEUE = [
     {
         "slug": "pomodoro-technique-english-vocabulary",
@@ -44,11 +42,11 @@ TOPIC_QUEUE = [
         ],
         "sections": [
             ("朝のベッドの中でのスマホスクロールが1日の集中力を破壊する",
-             "<p>朝目覚めた瞬間にスマホを手に取り、SNSのタイムラインやショート動画を流し見していませんか？</p><p>寝起きの無防備な脳に大量の受動的刺激を浴びせると、朝からドーパミン受容体が疲弊し、その日1日中「退屈な勉強や仕事に集中できない脳」になってしまいます。</p>"),
+             "<p>朝目覚めた瞬間にスマホを手に取り、SNSのタイムラインやショート動画を流し見していませんか？寝起きの無防備な脳に大量の受動的刺激を浴びせると、その日1日中集中できない脳になってしまいます。</p>"),
             ("習慣のすり替えテクニック：スマホを手放すのではなく『関所』にする",
-             "<p>「朝スマホを見ないようにしよう」と意志の力で我慢するのは至難の業です。習慣化の科学（ジェームズ・クリアの『Atomic Habits』など）では、悪習慣を完全に消すよりも、<strong>「同じトリガーに対して行動だけをすり替える」</strong>方が成功率が格段に高いとされています。</p><p>つまり、「朝スマホを触る」というトリガーをそのまま活かし、開いた画面を「英単語のテスト」に変えてしまうのです。</p>"),
+             "<p>「朝スマホを見ないようにしよう」と我慢するのではなく、「スマホをタップしたら英単語テストが出る」という関所にすり替えることで、抵抗感なく学習をスタートできます。</p>"),
             ("暗記無双で目覚まし代わりに頭をブースト",
-             "<p>暗記無双で朝よく開くSNSにロックをかけておけば、ベッドの中でスマホをタップした瞬間にテストが起動します。</p><p>数問の単語クイズに答えるだけで、前頭葉が刺激されてスッキリと目が覚め、ベッドを出る前に「今日も朝から勉強できた」という強烈な自己肯定感が手に入ります。</p>")
+             "<p>暗記無双で朝よく開くSNSにロックをかけておけば、ベッドの中でスマホを触った瞬間にテストが起動。数問解くだけで頭が冴え渡ります。</p>")
         ]
     },
     {
@@ -58,35 +56,16 @@ TOPIC_QUEUE = [
         "description": "ジャンプ力を上げるために必要なSSC（ストレッチ・ショートニング・サイクル）とプライオメトリクスの原理。スロー動画とカメラ測定で跳躍高を可視化する重要性。",
         "app_type": "jump",
         "faq": [
-            ("垂直跳びを伸ばすのにスクワットだけでは不十分ですか？", "スクワットで基礎筋力を高めることは重要ですが、実際の跳躍では0.2秒以内の極めて短い時間で力を発揮する『爆発的パワー（RFD）』と腱のバネ（SSC）が不可欠です。プライオメトリクスと併用する必要があります。"),
-            ("自分の垂直跳びを正確に測るにはどうすればいいですか？", "壁にチョークをつけて測る方法のほか、スマホカメラのスロー動画から離地〜着地の滞空時間をフレーム単位で割り出す測定アプリ（formXなど）を使うと1人でも高精度に測定できます。")
+            ("垂直跳びを伸ばすのにスクワットだけでは不十分ですか？", "スクワットで基礎筋力を高めることは重要ですが、実際の跳躍では0.2秒以内の極めて短い時間で力を発揮する爆発的パワー（RFD）と腱のバネ（SSC）が不可欠です。"),
+            ("自分の垂直跳びを正確に測るにはどうすればいいですか？", "スマホカメラのスロー動画から離地〜着地の滞空時間をフレーム単位で割り出す測定アプリ（formXなど）を使うと1人でも高精度に測定できます。")
         ],
         "sections": [
             ("垂直跳びの決定因子：最大筋力×力発揮率（RFD）",
-             "<p>高く跳ぶためには、単にバーベルを重く担げるだけでは足りません。地面に足がついているわずか0.15〜0.2秒の間に、どれだけ大きな力を一気に地面に伝えられるか（Rate of Force Development: RFD）が勝負を分けます。</p>"),
+             "<p>高く跳ぶためには、単にバーベルを重く担げるだけでは足りません。地面に足がついているわずか0.15〜0.2秒の間に、どれだけ大きな力を一気に地面に伝えられるか（RFD）が重要です。</p>"),
             ("SSC（ストレッチ・ショートニング・サイクル）を鍛えるプライオメトリクス",
-             "<p>筋肉が引き伸ばされた直後に急激に収縮することで、腱の弾性エネルギーを爆発力に変換する仕組みをSSCと呼びます。デプスジャンプやボックスジャンプなど、接地時間を短く保つ跳躍トレーニングが垂直跳びの向上に直結します。</p>"),
+             "<p>筋肉が引き伸ばされた直後に急激に収縮することで、腱の弾性エネルギーを爆発力に変換する仕組みをSSCと呼びます。デプスジャンプなどの跳躍ドリルが効果的です。</p>"),
             ("formX（タイム・垂直跳び測定）で滞空時間とフォームを徹底分析",
-             "<p>ジャンプ力向上の最大の壁は「自分の跳躍の高さが伸びているか客観的に把握しにくい」点です。</p><p>アプリ『formX』を使えば、スマホカメラの映像から離地フレームと着地フレームを高精度にトラッキングし、滞空時間から垂直跳びの数値を自動算出。骨格表示による動作解析で、膝の抜き方や腕振りのタイミングも視覚的にチェックできます。</p>")
-        ]
-    },
-    {
-        "slug": "toeic-vocabulary-retention-technique",
-        "category": "英語学習・集中力と習慣化",
-        "title": "TOEICスコアが劇的に伸びる英単語の『秒速復習法』！机に向かわない隙間時間暗記術",
-        "description": "TOEIC L&Rテストで800点・900点を突破するために不可欠な英単語の瞬発力。1単語に10秒以上かけず、1日何十回もの極小隙間時間で定着させる暗記無双の活用法。",
-        "app_type": "anki",
-        "faq": [
-            ("1単語にかける時間はどのくらいが適切ですか？", "1単語あたり1秒〜2秒で意味が想起できるかテストするのが理想です。じっくりノートに書いてスペルを覚えるのではなく、回転数を高めて接触回数を増やす方が記憶に残ります。"),
-            ("暗記無双はTOEIC用の単語にも対応していますか？", "はい、暗記無双ではPCのChrome拡張機能から単語を即座に同期できるほか、覚えたい単語リストを自在に登録して関所テストとして出題させることができます。")
-        ],
-        "sections": [
-            ("TOEIC本番で時間が足りない原因は『単語の想起スピード』にある",
-             "<p>Part 7の長文読解が最後まで終わらない最大の要因は、英文を読みながら『この単語、どういう意味だっけ…』と0.5秒立ち止まる回数が多すぎることにあります。</p><p>TOEICに必要なのは『知っている』単語ではなく、見た瞬間にイメージが浮かぶ『反射レベル』の単語力です。</p>"),
-            ("隙間時間のチリツモ暗記が分厚い単語帳を凌駕する",
-             "<p>『まとまった休日に2時間勉強する』よりも、『平日に1分×30回勉強する』方が、記憶のメンテナンスとしては圧倒的に優れています。脳は接触頻度が高い情報を『重要度が高い』と判定するためです。</p>"),
-            ("暗記無双でTOEIC単語の強制インプット環境を構築する",
-             "<p>通勤電車の中、エレベーターの待ち時間、就寝前など、スマホに手を伸ばすすべての瞬間に暗記無双の関所テストを配置。意志力ゼロでTOEIC必須単語の想起トレーニングを積み上げましょう。</p>")
+             "<p>アプリ『formX』を使えば、スマホカメラの映像から離地フレームと着地フレームを高精度にトラッキングし、滞空時間から垂直跳びの数値を自動算出します。</p>")
         ]
     }
 ]
@@ -230,8 +209,8 @@ def generate_article_html(topic):
   }}
   </script>
 
-  <link rel="stylesheet" href="home.css">
-  <link rel="stylesheet" href="editorial.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/editorial.css">
   <style>
     .guide-container {{
       max-width: 800px;
@@ -329,18 +308,6 @@ def generate_article_html(topic):
       color: var(--text-body, #374151);
       padding-left: 24px;
       margin-bottom: 16px;
-    }}
-    .highlight-box {{
-      background: #eef2ff;
-      border-left: 4px solid #4f46e5;
-      padding: 18px 20px;
-      border-radius: 0 8px 8px 0;
-      margin: 20px 0;
-    }}
-    .highlight-box p {{
-      margin: 0;
-      color: #312e81;
-      font-weight: 500;
     }}
     .app-cta-card {{
       background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
@@ -462,20 +429,35 @@ def update_index_html(topic):
     with open(INDEX_PATH, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # カウント更新: e.g. <span class="count">19 ARTICLES</span>
     count_match = re.search(r'<span class="count">(\d+)\s+ARTICLES</span>', content)
     if count_match:
         cur_count = int(count_match.group(1))
         new_count = cur_count + 1
         content = content.replace(count_match.group(0), f'<span class="count">{new_count} ARTICLES</span>')
 
-    # リンク追加（カテゴリ04の末尾）
     link_html = f'<a class="guide-link" href="{topic["slug"]}.html"><div><h4>{topic["title"][:28]}...</h4><p>{topic["description"][:45]}...</p></div><span aria-hidden="true">↗</span></a></div></section>'
     if '</div></section><section class="about">' in content:
         content = content.replace('</div></section><section class="about">', link_html + '<section class="about">', 1)
 
     with open(INDEX_PATH, "w", encoding="utf-8") as f:
         f.write(content)
+
+def update_sitemap_xml(topic):
+    today = datetime.date.today().isoformat()
+    with open(SITEMAP_PATH, "r", encoding="utf-8") as f:
+        sm = f.read()
+
+    new_entry = f"""  <url>
+    <loc>{BASE_URL}/{topic['slug']}.html</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>"""
+    if topic["slug"] not in sm:
+        sm = sm.replace("</urlset>", new_entry)
+        with open(SITEMAP_PATH, "w", encoding="utf-8") as f:
+            f.write(sm)
 
 def main():
     existing = get_existing_slugs()
@@ -486,23 +468,21 @@ def main():
             break
 
     if not target_topic:
-        print("All queue topics already exist! Generating dynamic topic or skipping.")
+        print("All queue topics already exist!")
         return
 
-    # 記事HTML作成
     article_html = generate_article_html(target_topic)
     file_path = os.path.join(SCRATCH_DIR, f"{target_topic['slug']}.html")
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(article_html)
 
-    # index.html更新
     update_index_html(target_topic)
+    update_sitemap_xml(target_topic)
 
     full_url = f"{BASE_URL}/{target_topic['slug']}.html"
     print(f"GENERATED_URL={full_url}")
     print(f"GENERATED_TITLE={target_topic['title']}")
 
-    # GitHub Actions の step output に出力
     gh_output = os.getenv("GITHUB_OUTPUT")
     if gh_output:
         with open(gh_output, "a", encoding="utf-8") as f:

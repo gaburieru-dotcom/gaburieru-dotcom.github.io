@@ -2,9 +2,9 @@ name: Daily Autonomous SEO Growth
 
 on:
   schedule:
-    # 毎日 日本時間 午前2:00 (UTC 17:00) に実行
+    # 毎日 日本時間 深夜2:00 (UTC 17:00) に自動実行
     - cron: '0 17 * * *'
-  workflow_dispatch: # GitHubのブラウザ画面から手動実行も可能
+  workflow_dispatch: # GitHub画面からの手動実行ボタン
 
 permissions:
   contents: write
@@ -28,33 +28,34 @@ jobs:
           python scripts/generate_daily_article.py
 
       - name: Commit and Push changes
+        id: git_push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           if git diff --staged --quiet; then
             echo "No changes to commit."
-            echo "has_changes=false" >> $GITHUB_ENV
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
-            git commit -m "Auto-publish daily SEO article: ${{ steps.generate.outputs.page_title }}"
+            git commit -m "Auto-publish daily SEO article"
             git push origin main
-            echo "has_changes=true" >> $GITHUB_ENV
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create Notification Issue for Search Console Registration
-        if: env.has_changes == 'true'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const url = process.env.NEW_PAGE_URL;
-            const title = process.env.NEW_PAGE_TITLE;
-            if (!url) return;
-            
-            const issueTitle = `【新着記事公開】Search Console登録用: ${title}`;
-            const issueBody = `## 🚀 新しいSEO記事が自動公開されました！
+        if: steps.git_push.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGE_URL: ${{ steps.generate.outputs.page_url }}
+          PAGE_TITLE: ${{ steps.generate.outputs.page_title }}
+        run: |
+          if [ -n "$PAGE_URL" ]; then
+            gh issue create \
+              --title "【新着記事公開】Search Console登録用: $PAGE_TITLE" \
+              --body "## 🚀 新しいSEO記事が自動公開されました！
 
 ### 📌 Google Search Console 登録用URL
-**${url}**
+**$PAGE_URL**
 
 > **インデックス登録手順**:
 > 1. 上記のURLをコピーします。
@@ -62,17 +63,7 @@ jobs:
 > 3. **「インデックス登録をリクエスト」** をクリックして完了です。
 
 ---
-- **記事タイトル**: ${title}
-- **公開日時**: ${new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}
-- **トップページ**: https://gaburieru-dotcom.github.io/
-`;
-
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: issueTitle,
-              body: issueBody
-            });
-        env:
-          NEW_PAGE_URL: ${{ steps.generate.outputs.page_url }}
-          NEW_PAGE_TITLE: ${{ steps.generate.outputs.page_title }}
+- **記事タイトル**: $PAGE_TITLE
+- **トップページ**: https://sbmgtech.com/
+"
+          fi
