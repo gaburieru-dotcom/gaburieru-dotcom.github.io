@@ -1,17 +1,17 @@
-name: Daily Autonomous SEO Growth
+name: Daily Autonomous SEO Draft (Review First)
 
 on:
   schedule:
-    # 毎日 日本時間 深夜2:00 (UTC 17:00) に自動実行
+    # 毎日 日本時間 深夜2:00 (UTC 17:00) に下書きを作成
     - cron: '0 17 * * *'
   workflow_dispatch: # GitHub画面からの手動実行ボタン
 
 permissions:
   contents: write
-  issues: write
+  pull-requests: write
 
 jobs:
-  auto-publish:
+  create-draft:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,43 +27,48 @@ jobs:
         run: |
           python scripts/generate_daily_article.py
 
-      - name: Commit and Push changes
-        id: git_push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --staged --quiet; then
-            echo "No changes to commit."
-            echo "has_changes=false" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "Auto-publish daily SEO article"
-            git push origin main
-            echo "has_changes=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Create Notification Issue for Search Console Registration
-        if: steps.git_push.outputs.has_changes == 'true'
+      - name: Create Draft Branch and Submit Pull Request
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAGE_URL: ${{ steps.generate.outputs.page_url }}
           PAGE_TITLE: ${{ steps.generate.outputs.page_title }}
+          PAGE_SLUG: ${{ steps.generate.outputs.slug }}
         run: |
-          if [ -n "$PAGE_URL" ]; then
-            gh issue create \
-              --title "【新着記事公開】Search Console登録用: $PAGE_TITLE" \
-              --body "## 🚀 新しいSEO記事が自動公開されました！
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 変更があるか確認
+          if git diff --quiet; then
+            echo "No changes generated. Skipping PR creation."
+            exit 0
+          fi
 
-### 📌 Google Search Console 登録用URL
-**$PAGE_URL**
+          DATE_STR=$(date +'%Y%m%d')
+          BRANCH_NAME="draft/seo-${DATE_STR}-${PAGE_SLUG}"
+          
+          # 新しい下書きブランチを作成してプッシュ
+          git checkout -b "$BRANCH_NAME"
+          git add -A
+          git commit -m "Draft: $PAGE_TITLE"
+          git push -u origin "$BRANCH_NAME" --force
 
-> **インデックス登録手順**:
-> 1. 上記のURLをコピーします。
-> 2. [Google Search Console](https://search.google.com/search-console) の上部検索窓（URL検査）に貼り付けます。
-> 3. **「インデックス登録をリクエスト」** をクリックして完了です。
+          # Pull Request（下書きレビュー申請）を作成
+          gh pr create \
+            --base main \
+            --head "$BRANCH_NAME" \
+            --title "【下書き確認】$PAGE_TITLE" \
+            --body "## 📝 新しいSEO記事の下書きが作成されました！
+
+> **注意**: この下書きはまだ本番サイトには公開（デプロイ）されていません。
+> 内容を確認し、**「Merge pull request」** ボタンを押すか、チャットで「デプロイして」と指示することで本番公開されます。
 
 ---
-- **記事タイトル**: $PAGE_TITLE
-- **トップページ**: https://sbmgtech.com/
+
+### 📄 記事情報
+- **タイトル**: $PAGE_TITLE
+- **ファイル**: \`$PAGE_SLUG.html\`
+- **公開予定URL**: $PAGE_URL
+
+### 📌 デプロイ後の手順（Google Search Console登録）
+本記事を承認・デプロイした後は、上記の公開予定URLを [Google Search Console](https://search.google.com/search-console) の上部URL検査窓に貼り付け、**「インデックス登録をリクエスト」** してください。
 "
-          fi
