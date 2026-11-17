@@ -84,8 +84,14 @@ def generate_article_html(topic):
         app_cta = """
       <!-- アプリCTA -->
       <div class="app-cta-card">
-        <h3>意志に頼らず、スマホを最高の学習装置へ</h3>
-        <p>SNSを開くたびに英単語テストが立ち塞がる。勉強の挫折を構造的に防ぐiPhone英語学習アプリ。</p>
+        <div class="app-cta-header">
+          <img src="anki_musou_icon.png" alt="暗記無双 アイコン" width="68" height="68" class="app-cta-icon">
+          <div class="app-cta-title-wrap">
+            <h3>暗記無双</h3>
+            <p class="app-cta-tagline">英単語帳とアプリ制限で勉強を習慣化する英語学習アプリ</p>
+          </div>
+        </div>
+        <p class="app-cta-desc">SNSやYouTubeを開くたびに英単語テストが強制起動。スマホ依存を根本から断ち切り、無意識の時間を勉強時間に変えるiPhoneアプリ。</p>
         <a href="https://apps.apple.com/jp/app/%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C-%E8%8B%B1%E5%8D%98%E8%AA%9E%E5%B8%B3%E3%81%A8%E3%82%A2%E3%83%97%E3%83%AA%E5%88%B6%E9%99%90%E3%81%A7%E5%8B%89%E5%BC%B7%E3%82%92%E7%BF%92%E6%85%A3%E5%8C%96%E3%81%99%E3%82%8B%E8%8B%B1%E8%AA%9E%E5%AD%A6%E7%9F%92/id6740898516" target="_blank" rel="noopener noreferrer" class="app-cta-btn">
           「暗記無双」をApp Storeで見る ↗
         </a>
@@ -95,13 +101,64 @@ def generate_article_html(topic):
         app_cta = """
       <!-- アプリCTA -->
       <div class="app-cta-card">
-        <h3>動画からタイムと垂直跳びを高精度測定</h3>
-        <p>スマホカメラのスロー動画で離地・着地を自動検出。骨格表示による動作解析で跳躍力を可視化するアプリ。</p>
-        <a href="formx-guide.html" class="app-cta-btn">
-          「formX」の使い方を見る ↗
+        <div class="app-cta-header">
+          <img src="vertical_jump_icon_new.png" alt="formX アイコン" width="68" height="68" class="app-cta-icon">
+          <div class="app-cta-title-wrap">
+            <h3>formX（タイム・垂直跳び測定）</h3>
+            <p class="app-cta-tagline">動画からタイムや垂直跳びを測定・骨格表示による動作解析アプリ</p>
+          </div>
+        </div>
+        <p class="app-cta-desc">スマホカメラのスロー動画から離地・着地をフレーム単位で自動検出。跳躍力アップのフォーム分析に最適。</p>
+        <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" target="_blank" rel="noopener noreferrer" class="app-cta-btn">
+          「formX」をApp Storeで見る ↗
         </a>
       </div>
         """
+
+    app_shelf_html = """
+    <!-- kpworks アプリ一覧 -->
+    <section class="article-apps-section" aria-label="kpworksのアプリ一覧">
+      <h2 class="article-apps-title">kpworksのアプリ</h2>
+      <p class="article-apps-subtitle">日々の学習・トレーニング・習慣化をサポートするアプリを開発しています。</p>
+      <div class="article-apps-grid">
+        <a href="https://apps.apple.com/jp/app/%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C-%E8%8B%B1%E5%8D%98%E8%AA%9E%E5%B8%B3%E3%81%A8%E3%82%A2%E3%83%97%E3%83%AA%E5%88%B6%E9%99%90%E3%81%A7%E5%8B%89%E5%BC%B7%E3%82%92%E7%BF%92%E6%85%A3%E5%8C%96%E3%81%99%E3%82%8B%E8%8B%B1%E8%AA%9E%E5%AD%A6%E7%9F%92/id6740898516" target="_blank" rel="noopener noreferrer" class="article-app-card">
+          <img src="anki_musou_icon.png" alt="暗記無双" width="52" height="52" loading="lazy">
+          <div class="article-app-info">
+            <h4>暗記無双</h4>
+            <p>SNS起動時に単語テストを強制。勉強を習慣化する英語アプリ。</p>
+          </div>
+        </a>
+        <a href="https://apps.apple.com/jp/app/%E9%9F%B3%E6%A5%BD%E3%81%8C%E6%B5%81%E3%81%9B%E3%82%8B%E7%AD%8B%E3%83%88%E3%83%AC%E3%82%BF%E3%82%A4%E3%83%9E%E3%83%BC-hiit-%E3%81%9F%E3%81%B0%E3%81%9F%E5%BC%8F/id6754508192" target="_blank" rel="noopener noreferrer" class="article-app-card">
+          <img src="muscle_timer_icon.png" alt="音楽が流せる筋トレタイマー" width="52" height="52" loading="lazy">
+          <div class="article-app-info">
+            <h4>音楽が流せる筋トレタイマー</h4>
+            <p>音楽を流しながらインターバル管理できるワークアウトタイマー。</p>
+          </div>
+        </a>
+        <a href="https://apps.apple.com/jp/app/%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%B7%E3%83%A3%E3%83%88%E3%83%AB%E3%83%A9%E3%83%B3/id6752814242" target="_blank" rel="noopener noreferrer" class="article-app-card">
+          <img src="shuttle_run_icon.png" alt="スマートシャトルラン" width="52" height="52" loading="lazy">
+          <div class="article-app-info">
+            <h4>スマートシャトルラン</h4>
+            <p>20mシャトルランの公式音源再生と記録管理ツール。</p>
+          </div>
+        </a>
+        <a href="https://apps.apple.com/jp/app/%E3%82%BF%E3%82%A4%E3%83%A0%E6%B8%AC%E5%AE%9A-%E5%9E%82%E7%9B%B4%E8%B7%B3%E3%81%B3%E6%B8%AC%E5%AE%9A/id6759228838" target="_blank" rel="noopener noreferrer" class="article-app-card">
+          <img src="vertical_jump_icon_new.png" alt="formX" width="52" height="52" loading="lazy">
+          <div class="article-app-info">
+            <h4>formX（タイム・垂直跳び測定）</h4>
+            <p>動画からタイムや垂直跳びを測定。骨格表示による動作解析も可能。</p>
+          </div>
+        </a>
+        <a href="menus.html" class="article-app-card">
+          <img src="app_icon.png" alt="トレリンク" width="52" height="52" loading="lazy">
+          <div class="article-app-info">
+            <h4>トレリンク / TreLink</h4>
+            <p>筋トレの記録とメニュー共有のためのWeb/アプリ（公開メニューあり）。</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    """
 
     faq_json = []
     faq_html = []
@@ -163,7 +220,7 @@ def generate_article_html(topic):
         "@type": "Article",
         "headline": "{topic['title']}",
         "description": "{topic['description']}",
-        "image": "{BASE_URL}/app_icon.png",
+        "image": "{BASE_URL}/anki_musou_icon.png",
         "author": {{
           "@type": "Organization",
           "name": "kpworks"
@@ -173,7 +230,7 @@ def generate_article_html(topic):
           "name": "kpworks",
           "logo": {{
             "@type": "ImageObject",
-            "url": "{BASE_URL}/app_icon.png"
+            "url": "{BASE_URL}/anki_musou_icon.png"
           }}
         }},
         "mainEntityOfPage": {{
@@ -309,38 +366,6 @@ def generate_article_html(topic):
       padding-left: 24px;
       margin-bottom: 16px;
     }}
-    .app-cta-card {{
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-      color: #ffffff;
-      border-radius: 12px;
-      padding: 32px;
-      text-align: center;
-      margin: 32px 0 16px;
-    }}
-    .app-cta-card h3 {{
-      color: #ffffff;
-      margin-top: 0;
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }}
-    .app-cta-card p {{
-      color: #e0e7ff;
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }}
-    .app-cta-btn {{
-      display: inline-block;
-      background: #ffffff;
-      color: #4f46e5;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }}
-    .app-cta-btn:hover {{
-      opacity: 0.9;
-    }}
     .reading-next {{
       background: var(--card-bg, #f9fafb);
       border: 1px solid var(--border-color, #e5e7eb);
@@ -404,6 +429,8 @@ def generate_article_html(topic):
         {''.join(faq_html)}
       </div>
     </article>
+
+    {app_shelf_html}
 
     <!-- 関連ガイド -->
     <nav class="reading-next" aria-label="あわせて読みたい">

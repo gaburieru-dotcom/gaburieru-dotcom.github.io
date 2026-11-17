@@ -308,3 +308,133 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     font-size: 26px;
   }
 }
+
+/* App CTA Card with Icon */
+.app-cta-card {
+  background: var(--card-bg) !important;
+  border: 2px solid var(--primary-color) !important;
+  border-radius: var(--border-radius-md) !important;
+  padding: 28px !important;
+  margin: 32px 0 16px !important;
+  box-shadow: var(--shadow-md) !important;
+  text-align: left !important;
+  color: var(--text-primary) !important;
+}
+
+.app-cta-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.app-cta-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.app-cta-title-wrap h3 {
+  margin: 0 0 4px 0 !important;
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  color: var(--text-primary) !important;
+}
+
+.app-cta-tagline {
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  color: var(--text-muted) !important;
+}
+
+.app-cta-desc {
+  margin: 0 0 20px 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+  color: var(--text-secondary) !important;
+}
+
+.app-cta-btn {
+  display: inline-block;
+  background: var(--primary-color) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  text-decoration: none !important;
+  transition: opacity 0.2s;
+}
+
+.app-cta-btn:hover {
+  opacity: 0.9;
+}
+
+/* Article Footer App Shelf (アプリ一覧) */
+.article-apps-section {
+  margin-top: 48px;
+  padding-top: 36px;
+  border-top: 2px solid var(--card-border);
+}
+
+.article-apps-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 8px !important;
+  color: var(--text-primary) !important;
+}
+
+.article-apps-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 24px !important;
+}
+
+.article-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.article-app-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius-md);
+  padding: 16px;
+  text-decoration: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.article-app-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.article-app-card img {
+  width: 52px;
+  height: 52px;
+  border-radius: 11px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.article-app-info h4 {
+  margin: 0 0 4px 0 !important;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary) !important;
+}
+
+.article-app-info p {
+  margin: 0 !important;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
