@@ -92,9 +92,10 @@ def generate_article_html(topic):
           </div>
         </div>
         <p class="app-cta-desc">SNSやYouTubeを開くたびに英単語テストが強制起動。スマホ依存を根本から断ち切り、無意識の時間を勉強時間に変えるiPhoneアプリ。</p>
-        <a href="https://apps.apple.com/jp/app/%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C-%E8%8B%B1%E5%8D%98%E8%AA%9E%E5%B8%B3%E3%81%A8%E3%82%A2%E3%83%97%E3%83%AA%E5%88%B6%E9%99%90%E3%81%A7%E5%8B%89%E5%BC%B7%E3%82%92%E7%BF%92%E6%85%A3%E5%8C%96%E3%81%99%E3%82%8B%E8%8B%B1%E8%AA%9E%E5%AD%A6%E7%9F%92/id6740898516" target="_blank" rel="noopener noreferrer" class="app-cta-btn">
-          「暗記無双」をApp Storeで見る ↗
+        <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="app-cta-btn">
+          「暗記無双」をApp Storeで無料ダウンロード ↗
         </a>
+        <p style="margin-top: 10px; font-size: 0.85rem;"><a href="anki-musou.html" style="color: inherit; text-decoration: underline;">アプリの機能・10秒体験デモを見る →</a></p>
       </div>
         """
     elif topic["app_type"] == "jump":
@@ -121,7 +122,7 @@ def generate_article_html(topic):
       <h2 class="article-apps-title">kpworksのアプリ</h2>
       <p class="article-apps-subtitle">日々の学習・トレーニング・習慣化をサポートするアプリを開発しています。</p>
       <div class="article-apps-grid">
-        <a href="https://apps.apple.com/jp/app/%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C-%E8%8B%B1%E5%8D%98%E8%AA%9E%E5%B8%B3%E3%81%A8%E3%82%A2%E3%83%97%E3%83%AA%E5%88%B6%E9%99%90%E3%81%A7%E5%8B%89%E5%BC%B7%E3%82%92%E7%BF%92%E6%85%A3%E5%8C%96%E3%81%99%E3%82%8B%E8%8B%B1%E8%AA%9E%E5%AD%A6%E7%9F%92/id6740898516" target="_blank" rel="noopener noreferrer" class="article-app-card">
+        <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="article-app-card">
           <img src="anki_musou_icon.png" alt="暗記無双" width="52" height="52" loading="lazy">
           <div class="article-app-info">
             <h4>暗記無双</h4>

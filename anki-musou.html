@@ -1071,12 +1071,320 @@
 
     body.is-embedded header,
     body.is-embedded footer,
-    body.is-embedded .related-apps {
+    body.is-embedded .related-apps,
+    body.is-embedded .sticky-mobile-cta {
       display: none !important;
     }
 
     body.is-embedded .hero-section {
       padding-top: 24px !important;
+    }
+
+    /* === Conversion-Focused Enhancements === */
+    .btn-header-dl {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: #fff !important;
+      border: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.28);
+    }
+
+    .btn-header-dl:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.38);
+      color: #fff !important;
+    }
+
+    .hero-reassurance {
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Interactive Demo Section */
+    .demo-section {
+      padding: 20px 0 64px;
+    }
+
+    .demo-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .demo-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .demo-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+      margin-bottom: 8px;
+    }
+
+    .demo-header p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .demo-stage {
+      background: rgba(var(--primary-rgb), 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-md);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .demo-app-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .demo-app-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .demo-app-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .demo-quiz-box,
+    .demo-unlocked-box {
+      display: none;
+    }
+
+    .demo-quiz-box.active,
+    .demo-unlocked-box.active {
+      display: block;
+      animation: fadeSlideUp 0.25s ease;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .demo-lock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(var(--secondary-rgb), 0.14);
+      color: var(--secondary-color);
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .demo-word {
+      font-family: var(--font-display);
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+
+    .demo-word-sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+    }
+
+    .demo-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .demo-option-btn {
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .demo-option-btn:hover {
+      border-color: var(--primary-color);
+      background: rgba(var(--primary-rgb), 0.08);
+    }
+
+    .demo-option-btn.wrong {
+      border-color: #ef4444;
+      background: rgba(239, 68, 68, 0.12);
+      color: #dc2626;
+    }
+
+    .demo-feedback {
+      min-height: 22px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+    }
+
+    .demo-unlocked-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(5, 150, 105, 0.14);
+      color: var(--accent-green);
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .demo-unlocked-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .demo-unlocked-box p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    .demo-retry-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* Mid-Page CTA Strip */
+    .mid-cta-strip {
+      margin-top: 40px;
+      padding: 24px 28px;
+      border-radius: var(--border-radius-md);
+      background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.1), rgba(var(--secondary-rgb), 0.08));
+      border: 1px solid var(--card-border-hover);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .mid-cta-strip h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .mid-cta-strip p {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Sticky Mobile Download Bar */
+    .sticky-mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1100;
+      background: var(--header-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--card-border);
+      box-shadow: 0 -8px 24px rgba(15, 23, 42, 0.12);
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transform: translateY(110%);
+      transition: transform 0.26s ease;
+    }
+
+    .sticky-mobile-cta.visible {
+      transform: translateY(0);
+    }
+
+    .sticky-mobile-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .sticky-mobile-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .sticky-mobile-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-mobile-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .sticky-mobile-btn {
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.35);
+    }
+
+    @media (min-width: 901px) {
+      .sticky-mobile-cta {
+        display: none;
+      }
     }
 
     @media (max-width: 600px) {
@@ -1088,6 +1396,18 @@
       }
       .guide-tab-bar {
         border-radius: var(--border-radius-md);
+      }
+      .demo-card {
+        padding: 24px 18px;
+      }
+      .demo-options {
+        grid-template-columns: 1fr;
+      }
+      .header-hide-mobile {
+        display: none;
+      }
+      body {
+        padding-bottom: 76px;
       }
     }
   </style>
@@ -1101,11 +1421,14 @@
       <a href="index.html" class="wordmark" aria-label="kpworks ホーム">kpworks<span class="brand-dot">.</span></a>
 
       <div class="header-actions">
-        <a href="anki-musou-guide.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px; color: var(--primary-color); border-color: var(--primary-color);">
-          使い方マニュアル ↗
+        <a href="anki-musou-guide.html" class="btn btn-secondary header-hide-mobile" style="font-size: 0.85rem; padding: 8px 16px;">
+          使い方マニュアル
         </a>
-        <a href="apps.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
+        <a href="apps.html" class="btn btn-secondary header-hide-mobile" style="font-size: 0.85rem; padding: 8px 16px;">
           アプリ一覧
+        </a>
+        <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn btn-header-dl" data-cta-placement="header">
+          無料ダウンロード ↗
         </a>
         <button id="theme-toggle" class="theme-toggle" aria-label="テーマ切り替え">
           <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1136,48 +1459,49 @@
             <img src="anki_musou_icon.png" alt="自分で作る単語帳〜暗記無双〜 アイコン" style="width: 64px; height: 64px; border-radius: 16px; box-shadow: var(--shadow-md);">
             <div class="hero-badge" style="margin-bottom: 0;">
               <span class="pulse-dot"></span>
-              <span>耳から覚える × PC連携 × 習慣化</span>
+              <span>SNSブロック × 単語クイズ × PC同期</span>
             </div>
           </div>
           <h1>
-            単語暗記を、無双化せよ。<br>
+            SNSを開く前に、<br>英単語クイズを強制起動。<br>
             <span class="text-gradient">自分で作る単語帳〜暗記無双〜</span>
           </h1>
           <p class="hero-lead">
-            PC上のWeb小説やニュースからワンクリックで単語帳へ取り込み。<br>
-            通勤・通学時は「自動再生」で耳から聞き流しインプット。<br>
-            さらに「目覚ましアラーム」や「SNSアプリ制限」と融合し、日々の無駄な時間を自動で学習時間へと変える究極の暗記サポートツールです。
+            「ついスマホを見てしまう」をそのまま語彙力に変えるiPhoneアプリ。<br>
+            Instagram・X・YouTubeをロックし、単語テストに正解すると解除。<br>
+            さらに<strong>目覚ましクイズ</strong>・<strong>自動聞き流し</strong>・<strong>Chrome拡張（YouTube字幕/Web同期）</strong>まで1つに集約しました。
           </p>
 
           <div class="hero-cta-group">
-            <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn-appstore">
+            <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn-appstore" data-cta-placement="hero_primary">
               <svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
               <span>App Storeで無料ダウンロード</span>
             </a>
-            <a href="https://chromewebstore.google.com/detail/%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C-%E5%8D%98%E8%AA%9E%E5%B8%B3%E9%80%A3%E6%90%BA-%E8%8B%B1%E6%96%87%E7%BF%BB%E8%A8%B3%EF%BC%86%E9%87%8D%E8%A6%81%E5%8D%98%E8%AA%9E%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/cgiacdldilfeaoaladapdggbhmjjadhf?hl=ja" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <a href="https://chromewebstore.google.com/detail/%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C-%E5%8D%98%E8%AA%9E%E5%B8%B3%E9%80%A3%E6%90%BA-%E8%8B%B1%E6%96%87%E7%BF%BB%E8%A8%B3%EF%BC%86%E9%87%8D%E8%A6%81%E5%8D%98%E8%AA%9E%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF/cgiacdldilfeaoaladapdggbhmjjadhf?hl=ja" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-cta-placement="hero_chrome">
               Chrome拡張機能 ↗
             </a>
-            <a href="#gallery" class="btn btn-secondary">
-              アプリ画面を見る
+            <a href="#interactive-demo" class="btn btn-secondary">
+              10秒デモを体験 ↓
             </a>
           </div>
+          <p class="hero-reassurance">iPhone対応（iOS 17以降）・無料ダウンロード・面倒なアカウント登録不要ですぐ使えます</p>
 
           <div class="app-meta-tags">
             <span class="app-meta-item">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              無料ダウンロード
+              SNSアプリ制限＆クイズ解除
             </span>
             <span class="app-meta-item">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              PC・Chrome拡張機能連携
+              二度寝防止・目覚ましクイズ
             </span>
             <span class="app-meta-item">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              スクリーンタイム解除クイズ
+              PC・YouTube字幕ワンクリック同期
             </span>
             <span class="app-meta-item">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              洋書・小説対訳リーダー
+              画面オフ対応・自動聞き流し
             </span>
           </div>
         </div>
@@ -1192,8 +1516,52 @@
             </div>
             <div class="hero-screen-card main-card">
               <div class="screen-inner">
-                <img src="assets/images/anki_musou/screenshot_2_auto_play.png" alt="自動再生画面">
+                <img src="assets/images/anki_musou/screenshot_5_app_block.png" alt="SNSアプリ制限・クイズ解除画面">
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive 10-second Demo -->
+    <section id="interactive-demo" class="demo-section">
+      <div class="container">
+        <div class="demo-card">
+          <div class="demo-header">
+            <p class="section-eyebrow">TRY IN 10 SECONDS</p>
+            <h2>SNSブロック解除を、今ここで体験</h2>
+            <p>ついつい開いてしまうアプリをタップしてみてください。</p>
+          </div>
+          <div class="demo-stage">
+            <div id="demo-step-pick">
+              <p style="font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;">どのアプリを開こうとしましたか？</p>
+              <div class="demo-app-pills">
+                <button type="button" class="demo-app-btn" data-demo-app="Instagram">📸 Instagram を開く</button>
+                <button type="button" class="demo-app-btn" data-demo-app="X（旧Twitter）">𝕏 X を開く</button>
+                <button type="button" class="demo-app-btn" data-demo-app="YouTube">▶️ YouTube を開く</button>
+              </div>
+            </div>
+
+            <div id="demo-step-quiz" class="demo-quiz-box">
+              <div class="demo-lock-badge">🔒 <span id="demo-locked-app-name">Instagram</span> はロック中です</div>
+              <p class="demo-word-sub">英単語クイズに正解するとロックが解除されます（体験版：1問）</p>
+              <div class="demo-word" id="demo-quiz-word">inevitable</div>
+              <div class="demo-options" id="demo-quiz-options"></div>
+              <div class="demo-feedback" id="demo-quiz-feedback"></div>
+            </div>
+
+            <div id="demo-step-unlocked" class="demo-unlocked-box">
+              <div class="demo-unlocked-badge">✅ ロック解除完了！ +1 単語を記憶</div>
+              <h3>この「1回の割り込み」が、1ヶ月で数百単語の差になります。</h3>
+              <p>意志力でSNSを我慢する必要はありません。あなたのiPhoneでも同じ仕組みを無料で今すぐ設定できます。</p>
+              <div>
+                <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn-appstore" data-cta-placement="interactive_demo">
+                  <svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+                  <span>自分のiPhoneで試す（無料）</span>
+                </a>
+              </div>
+              <button type="button" class="demo-retry-link" id="demo-retry-btn">別の単語でもう一度試す</button>
             </div>
           </div>
         </div>
@@ -1276,6 +1644,17 @@
               英文小説や長文テキストを一文ごとの対訳付きでスムーズに閲覧可能。自動音読と和訳切り替えに対応し、難しい洋書や長文読解も挫折せずに楽しめます。
             </p>
           </div>
+        </div>
+
+        <div class="mid-cta-strip">
+          <div>
+            <h3>まずは無料で「SNSロック × 単語帳」を体験</h3>
+            <p>面倒なアカウント登録なし。ダウンロード後1分でアプリ制限と自動再生を始められます。</p>
+          </div>
+          <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn-appstore" data-cta-placement="mid_features">
+            <svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
+            <span>App Storeで無料ダウンロード</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1595,6 +1974,16 @@
         </div>
 
         <div class="faq-list">
+          <div class="faq-item active">
+            <div class="faq-question">
+              <span>無料でどこまで使えますか？</span>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              アプリのダウンロードと基本機能（自作単語帳の作成、自動聞き流し再生、SNSアプリ制限ブロック、目覚ましクイズ、PC・Chrome拡張との単語同期）は無料ですぐに始められます。よりヘビーに使いたい方向けに、広告非表示・無制限同期・長文Bookインポートなどが解放されるProプラン（年額プランは初回無料トライアル付き）も用意しています。
+            </div>
+          </div>
+
           <div class="faq-item">
             <div class="faq-question">
               <span>PCとの連携には何が必要ですか？</span>
@@ -1657,7 +2046,7 @@
           単語学習を自動化・無双化する新体験を今すぐ手に入れましょう。
         </p>
         <div style="display: flex; justify-content: center;">
-          <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn-appstore" style="font-size: 1.05rem; padding: 15px 32px;">
+          <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="btn-appstore" data-cta-placement="bottom_banner" style="font-size: 1.05rem; padding: 15px 32px;">
             <svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,22C14.32,22.05 13.89,21.24 12.37,21.24C10.84,21.24 10.37,22 9.09,22.05C7.79,22.1 6.8,20.77 5.96,19.5C4.26,17 2.96,12.39 4.71,9.37C5.58,7.87 7.13,6.93 8.8,6.9C10.07,6.87 11.27,7.75 12.05,7.75C12.83,7.75 14.28,6.7 15.8,6.86C16.44,6.89 18.23,7.12 19.4,8.84C19.3,8.9 17.15,10.15 17.17,12.68C17.19,15.71 19.8,16.72 19.82,16.78C19.8,16.83 19.4,18.2 18.71,19.5M15.97,4.17C16.63,3.37 17.07,2.28 16.95,1C16,1.04 14.9,1.6 14.24,2.38C13.68,3.04 13.19,4.14 13.34,5.39C14.39,5.47 15.4,4.88 15.97,4.17Z"/></svg>
             <span>App Storeでダウンロード（無料）</span>
           </a>
@@ -1718,6 +2107,20 @@
     </div>
   </footer>
 
+  <!-- Sticky Mobile Download Bar -->
+  <div class="sticky-mobile-cta" id="sticky-mobile-cta" aria-label="アプリダウンロードバー">
+    <div class="sticky-mobile-info">
+      <img src="anki_musou_icon.png" alt="暗記無双">
+      <div>
+        <div class="sticky-mobile-title">暗記無双（無料）</div>
+        <div class="sticky-mobile-sub">SNS制限 × 単語クイズ</div>
+      </div>
+    </div>
+    <a href="https://apps.apple.com/jp/app/%E8%87%AA%E5%88%86%E3%81%A7%E4%BD%9C%E3%82%8B%E5%8D%98%E8%AA%9E%E5%B8%B3-%E6%9A%97%E8%A8%98%E7%84%A1%E5%8F%8C/id6670315761" target="_blank" rel="noopener noreferrer" class="sticky-mobile-btn" data-cta-placement="sticky_mobile_bar">
+      無料で入手 ↗
+    </a>
+  </div>
+
   <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1737,17 +2140,104 @@
         });
       }
 
-      // === Sticky Header ===
+      // === Sticky Header & Mobile CTA Bar ===
       const header = document.querySelector('header');
+      const stickyBar = document.getElementById('sticky-mobile-cta');
       const checkScroll = () => {
         if (window.scrollY > 20) {
           header.classList.add('scrolled');
         } else {
           header.classList.remove('scrolled');
         }
+        if (stickyBar) {
+          if (window.scrollY > 360) {
+            stickyBar.classList.add('visible');
+          } else {
+            stickyBar.classList.remove('visible');
+          }
+        }
       };
-      window.addEventListener('scroll', checkScroll);
+      window.addEventListener('scroll', checkScroll, { passive: true });
       checkScroll();
+
+      // === Interactive 10-second Lock-Quiz Demo ===
+      const demoQuestions = [
+        { word: 'inevitable', answer: '避けられない', choices: ['避けられない', '一時的な', 'あいまいな', '慎重な'] },
+        { word: 'implement', answer: '実行する・導入する', choices: ['延期する', '実行する・導入する', '拒絶する', '推測する'] },
+        { word: 'substantial', answer: 'かなりの・実質的な', choices: ['わずかな', '偶然の', 'かなりの・実質的な', '表面的な'] }
+      ];
+      let demoIndex = 0;
+      const stepPick = document.getElementById('demo-step-pick');
+      const stepQuiz = document.getElementById('demo-step-quiz');
+      const stepUnlocked = document.getElementById('demo-step-unlocked');
+      const lockedAppName = document.getElementById('demo-locked-app-name');
+      const quizWord = document.getElementById('demo-quiz-word');
+      const quizOptions = document.getElementById('demo-quiz-options');
+      const quizFeedback = document.getElementById('demo-quiz-feedback');
+      const retryBtn = document.getElementById('demo-retry-btn');
+
+      const renderDemoQuestion = (appName) => {
+        const q = demoQuestions[demoIndex % demoQuestions.length];
+        if (lockedAppName && appName) lockedAppName.textContent = appName;
+        if (quizWord) quizWord.textContent = q.word;
+        if (quizFeedback) quizFeedback.textContent = '';
+        if (!quizOptions) return;
+        quizOptions.innerHTML = '';
+        q.choices.forEach((choice) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'demo-option-btn';
+          btn.textContent = choice;
+          btn.addEventListener('click', () => {
+            if (choice === q.answer) {
+              stepQuiz.classList.remove('active');
+              stepUnlocked.classList.add('active');
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'interactive_demo_complete', { word: q.word });
+              }
+            } else {
+              btn.classList.add('wrong');
+              if (quizFeedback) quizFeedback.textContent = '惜しい！正解するまでロックは解除されません。もう一度選んでみましょう。';
+            }
+          });
+          quizOptions.appendChild(btn);
+        });
+      };
+
+      document.querySelectorAll('[data-demo-app]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const appName = btn.getAttribute('data-demo-app');
+          if (stepPick) stepPick.style.display = 'none';
+          if (stepUnlocked) stepUnlocked.classList.remove('active');
+          if (stepQuiz) stepQuiz.classList.add('active');
+          renderDemoQuestion(appName);
+        });
+      });
+
+      if (retryBtn) {
+        retryBtn.addEventListener('click', () => {
+          demoIndex += 1;
+          stepUnlocked.classList.remove('active');
+          stepQuiz.classList.add('active');
+          renderDemoQuestion();
+        });
+      }
+
+      // === GA4 Conversion Tracking ===
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a');
+        if (!link || typeof window.gtag !== 'function') return;
+        const destination = new URL(link.href, location.href);
+        const placement = link.getAttribute('data-cta-placement') || link.closest('section')?.id || 'page';
+        if (destination.hostname === 'apps.apple.com') {
+          window.gtag('event', 'app_store_click', {
+            app_id: destination.pathname.match(/id\d+/)?.[0] || '',
+            placement
+          });
+        } else if (destination.hostname === 'chromewebstore.google.com') {
+          window.gtag('event', 'chrome_store_click', { placement });
+        }
+      });
 
       // === Guide Tabs Logic ===
       const guideTabBtns = document.querySelectorAll('.guide-tab-btn');
